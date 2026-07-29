@@ -1,0 +1,42 @@
+{
+  "conformal_nash": {
+    "measurements": 40,
+    "mean_operational_qoe": 4.136611657357705,
+    "worst_user_mean_operational_qoe": 3.5105715169045904,
+    "jain_user_mean_operational_qoe": 0.9890695566326005,
+    "service_floor": 1.5,
+    "service_violation_rate": 0.0,
+    "mean_service_shortfall": 0.0,
+    "mean_throughput_mbps": 0.5428311344263187,
+    "total_stall_s": 22.226588,
+    "switch_rate": 0.725,
+    "mean_debt_after": 0.0,
+    "mean_epoch_wall_s": 8.969731667624984,
+    "maximum_allocation_capacity_excess_mbps": -0.010827000000000142
+  },
+  "risk_debt": {
+    "measurements": 40,
+    "mean_operational_qoe": 4.1202355941152415,
+    "worst_user_mean_operational_qoe": 3.4165375043466777,
+    "jain_user_mean_operational_qoe": 0.9875578356277336,
+    "service_floor": 1.5,
+    "service_violation_rate": 0.0,
+    "mean_service_shortfall": 0.0,
+    "mean_throughput_mbps": 0.5428768134318795,
+    "total_stall_s": 22.215508,
+    "switch_rate": 0.725,
+    "mean_debt_after": 0.0,
+    "mean_epoch_wall_s": 8.967858429999993,
+    "maximum_allocation_capacity_excess_mbps": -0.010827000000000142
+  },
+  "paired_delta_risk_debt_minus_conformal_nash": {
+    "mean_operational_qoe": -0.01637606324246388,
+    "worst_user_mean_operational_qoe": -0.09403401255791266,
+    "jain_user_mean_operational_qoe": -0.0015117210048669616,
+    "service_violation_rate": 0.0,
+    "mean_service_shortfall": 0.0,
+    "total_stall_s": -0.011079999999999757,
+    "switch_rate": 0.0,
+    "mean_debt_after": 0.0
+  }
+}

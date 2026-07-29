@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/AhmedOsamaBasil/PhD",
+  "qoe": {
+    "source": "AhmedOsamaBasil/PhD: Collected Data (Used for Training and Validation)/matlab.mat",
+    "source_sha256": "fdb4573e23b27639a590b56d565f2a38f6e5fb19a4fd4b7c175df504ee43f9fd",
+    "output": "testbed/data/published_qoe.csv",
+    "rows": 170,
+    "features": 13,
+    "raters": 36,
+    "stimulus_groups": 15,
+    "feature_name_note": "Names were recovered from the exported MATLAB classifiers' RequiredVariables, the paper's Table 6, DASH player metric order, and numeric range/correlation checks. Source spelling 'DropedFrames' is retained. Resolution stores the selected representation bandwidth in bps in this workspace."
+  },
+  "pcap_traces": 30,
+  "trace_caveat": "PCAP-derived series measure observed traffic on captured switch interfaces. They are replay signals, not direct estimates of latent link capacity. Final experiments should add independent public capacity traces and a live controlled network."
+}

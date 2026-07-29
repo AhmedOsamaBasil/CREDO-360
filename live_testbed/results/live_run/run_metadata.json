@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-07-28T23:12:15.947772+00:00",
+  "media_root": "/mnt/c/Users/aosah/Documents/Codex/2026-07-28/you/work/source-phd/PhD-main/Segments",
+  "model": "/mnt/c/Users/aosah/Documents/Codex/2026-07-28/you/outputs/qoe_fairness_topic/live_testbed/artifacts/qoe_ensemble.json",
+  "portable_max_abs_error": 2.404843928438538e-07,
+  "controllers": [
+    "conformal_nash",
+    "risk_debt"
+  ],
+  "users": 5,
+  "epochs": 8,
+  "capacity_profile_mbps": [
+    2.0,
+    3.5,
+    1.4,
+    2.6,
+    1.8,
+    4.2,
+    1.3,
+    3.0
+  ],
+  "segment_duration_s": 10.0,
+  "target_operational_qoe": 4.0,
+  "shared_bottleneck": "server-s1 egress TBF",
+  "qoe_semantics": "model-estimated operational QoE from measured transport features; not a new subjective human score"
+}

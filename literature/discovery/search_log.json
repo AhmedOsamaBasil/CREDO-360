@@ -1,0 +1,31 @@
+{
+  "search_date": "2026-07-28",
+  "searches": {
+    "qoe_fairness": "quality of experience fairness adaptive video streaming DASH resource allocation",
+    "immersive_multiuser": "360 video immersive VR QoE fairness multi-user viewport bitrate allocation",
+    "conformal_network": "conformal prediction uncertainty quantification streaming network resource allocation",
+    "temporal_fairness": "temporal fairness long-term fairness persistent deprivation network scheduling",
+    "qoe_shift": "QoE prediction distribution shift uncertainty adaptive streaming"
+  },
+  "seed_titles": [
+    "Improving Fairness, Efficiency, and Stability in HTTP-based Adaptive Video Streaming with FESTIVE",
+    "Neural Adaptive Video Streaming with Pensieve",
+    "BOLA: Near-Optimal Bitrate Adaptation for Online Videos",
+    "A Control-Theoretic Approach for Dynamic Adaptive Video Streaming over HTTP",
+    "Learning to Predict Streaming Video QoE: Distortions, Rebuffering and Memory",
+    "Streaming Video QoE Modeling and Prediction: A Long Short-Term Memory Approach",
+    "Modeling the Time-Varying Subjective Quality of HTTP Video Streams With Rate Adaptations",
+    "Flare: Practical Viewport-Adaptive 360-Degree Video Streaming for Mobile Devices",
+    "Pano: Optimizing 360 Video Streaming with a Better Understanding of Quality Perception",
+    "VAS360: QoE-Driven Viewport Adaptive Streaming for 360 Video",
+    "Probabilistic Viewport Adaptive Streaming for 360-degree Videos",
+    "Adaptive Conformal Inference Under Distribution Shift",
+    "Conformalized Quantile Regression",
+    "A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification",
+    "Fair Resource Allocation in Federated Learning",
+    "Risk as a Resource: Personalized 360\u00b0 Streaming via Adaptive Conformal Prediction",
+    "FairEdge360: Distributed Multi-Agent Reinforcement Learning for QoE-Fair 360\u00b0 Video Streaming with Uncertainty-Aware Edge Coordination"
+  ],
+  "raw_records": 557,
+  "deduplicated_records": 470
+}

@@ -1,0 +1,21 @@
+{
+  "paired_design": true,
+  "seeds": [
+    20260728,
+    20260729,
+    20260730,
+    20260731,
+    20260732,
+    20260733,
+    20260734,
+    20260735,
+    20260736,
+    20260737,
+    20260738,
+    20260739
+  ],
+  "bootstrap_resamples": 20000,
+  "test": "two-sided paired Wilcoxon signed-rank",
+  "multiplicity": "Holm within each metric",
+  "warning": "Eight paired seeds provide limited power. Treat p-values as prototype evidence and increase replications for a submission."
+}

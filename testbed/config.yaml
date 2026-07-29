@@ -1,0 +1,28 @@
+seed: 20260728
+predictor:
+  ensemble_size: 5
+  epochs: 1200
+  hidden_width: 96
+  learning_rate: 0.001
+  weight_decay: 0.0001
+experiment:
+  users: 5
+  steps: 160
+  seeds: 12
+  # Prototype service floor. This is intentionally inside the replayed QoE
+  # support; a floor of 3.0 made debt grow without bound in the tuning run.
+  target_qoe: 1.5
+  debt_decay: 0.90
+  debt_weight: 1.0
+  switch_weight: 0.08
+  conformal_alpha: 0.10
+  online_window: 120
+  # Ladder from the published experiment (converted from bps to Mbps).
+  bitrate_ladder_mbps: [0.045373, 0.088482, 0.252988, 0.368912, 0.987061, 3.792491]
+controllers:
+  - mean_greedy
+  - proportional_fair
+  - uncertainty_nash
+  - conformal_nash
+  - risk_debt_static
+  - risk_debt

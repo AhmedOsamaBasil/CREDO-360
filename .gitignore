@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.matplotlib/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Large locally generated media and packet captures are not redistributed.
+*.pcap
+*.pcapng
+*.m4s
+*.mp4
+
+# Local scratch/output directories. Curated paper results remain tracked.
+work/
+scratch/

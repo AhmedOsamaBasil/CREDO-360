@@ -1,0 +1,51 @@
+{
+  "predictor": {
+    "test_rows": 33,
+    "test_groups": 4,
+    "mae": 0.3321449311092647,
+    "rmse": 0.4073648187334808,
+    "mean_predictive_std": 0.11079578846693039,
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "elapsed_seconds": 44.05079913139343,
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "config": {
+    "seed": 20260728,
+    "predictor": {
+      "ensemble_size": 5,
+      "epochs": 1200,
+      "hidden_width": 96,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001
+    },
+    "experiment": {
+      "users": 5,
+      "steps": 80,
+      "seeds": 2,
+      "target_qoe": 2.0,
+      "debt_decay": 0.9,
+      "debt_weight": 1.0,
+      "switch_weight": 0.08,
+      "conformal_alpha": 0.1,
+      "online_window": 120,
+      "bitrate_ladder_mbps": [
+        0.045373,
+        0.088482,
+        0.252988,
+        0.368912,
+        0.987061,
+        3.792491
+      ]
+    },
+    "controllers": [
+      "uncertainty_nash",
+      "conformal_nash",
+      "risk_debt_static",
+      "risk_debt"
+    ]
+  },
+  "methodological_caveat": "This is a GPU-backed replay/simulation testbed grounded in published subjective ratings and captured traffic. It is not a live multi-user VR network experiment and must not be reported as one."
+}

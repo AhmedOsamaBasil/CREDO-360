@@ -1,0 +1,272 @@
+[
+  {
+    "trace": "trace_000.csv",
+    "source_relative": "experiment 1\\s1-eth1_out.pcap",
+    "source_sha256": "3cc64a48bd4dc40ef4cd762f73821835341efb6f63323b206c092a8ebdb18044",
+    "bins": 129,
+    "mean_active_mbps": 0.0018385454545454547,
+    "p10_active_mbps": 0.001344,
+    "p90_active_mbps": 0.002448
+  },
+  {
+    "trace": "trace_001.csv",
+    "source_relative": "experiment 1\\s1-eth2_out.pcap",
+    "source_sha256": "d040ecafd720ae7670c52e16ea7c6a4294f635edaa86608ef88bd088af53108e",
+    "bins": 200,
+    "mean_active_mbps": 0.020291191011235953,
+    "p10_active_mbps": 0.0075848,
+    "p90_active_mbps": 0.027970400000000013
+  },
+  {
+    "trace": "trace_002.csv",
+    "source_relative": "experiment 1\\s1-eth3_out.pcap",
+    "source_sha256": "1bb033490b6961d00e164df7591887b19258de975e2ff3b8fd1063cd515c2a5d",
+    "bins": 129,
+    "mean_active_mbps": 0.0019270000000000003,
+    "p10_active_mbps": 0.00144,
+    "p90_active_mbps": 0.002848
+  },
+  {
+    "trace": "trace_003.csv",
+    "source_relative": "experiment 1\\s1-eth4_out.pcap",
+    "source_sha256": "0dc8e6cbf27d2bf0a4647a213904eb91374d5a550d2e4679d7e0ca444a30fd03",
+    "bins": 199,
+    "mean_active_mbps": 0.2089233966480447,
+    "p10_active_mbps": 0.005464,
+    "p90_active_mbps": 0.303328
+  },
+  {
+    "trace": "trace_004.csv",
+    "source_relative": "experiment 1\\s2-eth1_out.pcap",
+    "source_sha256": "2cfca8ad7fcd8d77f3b8679d1b46d5a512057158789f031af26751a9538e4f8d",
+    "bins": 128,
+    "mean_active_mbps": 0.0019330909090909093,
+    "p10_active_mbps": 0.00088,
+    "p90_active_mbps": 0.002128
+  },
+  {
+    "trace": "trace_005.csv",
+    "source_relative": "experiment 1\\s2-eth2_out.pcap",
+    "source_sha256": "1326cb15d408d57fead4aaa45a1c644a3e32a9eb4f734ea42ae08e8313ac6d12",
+    "bins": 128,
+    "mean_active_mbps": 0.0019072,
+    "p10_active_mbps": 0.000848,
+    "p90_active_mbps": 0.0026015999999999986
+  },
+  {
+    "trace": "trace_006.csv",
+    "source_relative": "experiment 1\\s2-eth3_out.pcap",
+    "source_sha256": "7b99809e7d30002eb02e2ec2d1d4ccb8cb06691c0e0adb9ea9d413db5892dab1",
+    "bins": 196,
+    "mean_active_mbps": 0.001616787878787879,
+    "p10_active_mbps": 0.000632,
+    "p90_active_mbps": 0.00288
+  },
+  {
+    "trace": "trace_007.csv",
+    "source_relative": "experiment 1\\s2-eth4_out.pcap",
+    "source_sha256": "a83c206e96b44b903f59e9e5373dce3387874d5ddadade68c86ac7a3933e1766",
+    "bins": 128,
+    "mean_active_mbps": 0.0029250909090909093,
+    "p10_active_mbps": 0.001568,
+    "p90_active_mbps": 0.004256
+  },
+  {
+    "trace": "trace_008.csv",
+    "source_relative": "experiment 1\\s3-eth1_out.pcap",
+    "source_sha256": "9f6698c98d6fc28d26bd7059902a47666c32247260d6aa9efa8615bb8f4a360b",
+    "bins": 198,
+    "mean_active_mbps": 0.21124641807909603,
+    "p10_active_mbps": 0.005464,
+    "p90_active_mbps": 0.436032
+  },
+  {
+    "trace": "trace_009.csv",
+    "source_relative": "experiment 1\\s3-eth2_out.pcap",
+    "source_sha256": "f38f394fe970d26eec95bb3f8a939239795a48b4255d935132a92aa2f6a3a79a",
+    "bins": 198,
+    "mean_active_mbps": 0.019216539325842698,
+    "p10_active_mbps": 0.006864,
+    "p90_active_mbps": 0.024957600000000017
+  },
+  {
+    "trace": "trace_010.csv",
+    "source_relative": "experiment 1\\s3-eth3_out.pcap",
+    "source_sha256": "b1fd9c2e395d7389ce4ddfd49c6398c3eef5fc0c4f62e7c3484a772a564a9b30",
+    "bins": 128,
+    "mean_active_mbps": 0.0021390000000000003,
+    "p10_active_mbps": 0.00144,
+    "p90_active_mbps": 0.003352
+  },
+  {
+    "trace": "trace_012.csv",
+    "source_relative": "experiment 2\\s1-eth2_out.pcap",
+    "source_sha256": "f581797a4508d2e082dc62650472217dd13a7c66b44f76efbcf62da3841eae1b",
+    "bins": 134,
+    "mean_active_mbps": 0.024768914285714285,
+    "p10_active_mbps": 0.010024,
+    "p90_active_mbps": 0.03506240000000001
+  },
+  {
+    "trace": "trace_014.csv",
+    "source_relative": "experiment 2\\s1-eth4_out.pcap",
+    "source_sha256": "727cc5ceadcc64fc99aaa490663b0e18841513b2390cd03e2599dcb6f8bf6708",
+    "bins": 136,
+    "mean_active_mbps": 0.4069445565217391,
+    "p10_active_mbps": 0.005464,
+    "p90_active_mbps": 0.7028128
+  },
+  {
+    "trace": "trace_016.csv",
+    "source_relative": "experiment 2\\s2-eth2_out.pcap",
+    "source_sha256": "983e35dc00c878ad8a60b22138ee5c1d749fe70f64966ae2e7e9556acd9d467f",
+    "bins": 128,
+    "mean_active_mbps": 0.002018909090909091,
+    "p10_active_mbps": 0.00056,
+    "p90_active_mbps": 0.003008
+  },
+  {
+    "trace": "trace_017.csv",
+    "source_relative": "experiment 2\\s2-eth3_out.pcap",
+    "source_sha256": "cf052f4989367a10ae93336a0a760290da39eb0164c0f7f3467824ad94d8c1cd",
+    "bins": 135,
+    "mean_active_mbps": 0.0018760449438202248,
+    "p10_active_mbps": 0.000632,
+    "p90_active_mbps": 0.003896
+  },
+  {
+    "trace": "trace_018.csv",
+    "source_relative": "experiment 2\\s2-eth4_out.pcap",
+    "source_sha256": "8b7b501005e02035b5800634cf6693f27a00aad8b5f4b3cfbd05260e6b7c8e86",
+    "bins": 128,
+    "mean_active_mbps": 0.0029250909090909093,
+    "p10_active_mbps": 0.001568,
+    "p90_active_mbps": 0.004448
+  },
+  {
+    "trace": "trace_019.csv",
+    "source_relative": "experiment 2\\s3-eth1_out.pcap",
+    "source_sha256": "42406d449e54a5c9afe3b3b1234331f793582cf8f7748c9dcf5e86e46ca8f9da",
+    "bins": 135,
+    "mean_active_mbps": 0.42929644036697256,
+    "p10_active_mbps": 0.005464,
+    "p90_active_mbps": 0.9124384000000001
+  },
+  {
+    "trace": "trace_020.csv",
+    "source_relative": "experiment 2\\s3-eth2_out.pcap",
+    "source_sha256": "16711ff565859b656424ad40a237db3113c0e26e1d61131b94110bd04b1166ca",
+    "bins": 135,
+    "mean_active_mbps": 0.022088071428571426,
+    "p10_active_mbps": 0.010024,
+    "p90_active_mbps": 0.040036000000000016
+  },
+  {
+    "trace": "trace_021.csv",
+    "source_relative": "experiment 2\\s3-eth3_out.pcap",
+    "source_sha256": "47888cfe7c3f2efd8c3da30169203803cf15d4546d5ca0807e6acc5d22557235",
+    "bins": 128,
+    "mean_active_mbps": 0.0020900000000000003,
+    "p10_active_mbps": 0.001,
+    "p90_active_mbps": 0.004136
+  },
+  {
+    "trace": "trace_022.csv",
+    "source_relative": "experiment 3\\s1-eth1_out.pcap",
+    "source_sha256": "7dffff7771cc462beaad6f7e20a4c2c1a568ca53bf10f1b4f184191f58e55e3b",
+    "bins": 128,
+    "mean_active_mbps": 0.0020480000000000003,
+    "p10_active_mbps": 0.0013520000000000001,
+    "p90_active_mbps": 0.0028735999999999987
+  },
+  {
+    "trace": "trace_023.csv",
+    "source_relative": "experiment 3\\s1-eth2_out.pcap",
+    "source_sha256": "90c7ed86988d7c415aaf9a369fe2ef166a2f03a4b7f966e980ef72a642aba705",
+    "bins": 158,
+    "mean_active_mbps": 0.025577810218978102,
+    "p10_active_mbps": 0.010024,
+    "p90_active_mbps": 0.014604800000000001
+  },
+  {
+    "trace": "trace_024.csv",
+    "source_relative": "experiment 3\\s1-eth3_out.pcap",
+    "source_sha256": "1a482a2e6c9e4f7a7ef2c5b566de5068f9971989f0b9b1486513d72d4d79670c",
+    "bins": 129,
+    "mean_active_mbps": 0.0019854545454545455,
+    "p10_active_mbps": 0.00144,
+    "p90_active_mbps": 0.003136
+  },
+  {
+    "trace": "trace_025.csv",
+    "source_relative": "experiment 3\\s1-eth4_out.pcap",
+    "source_sha256": "c5326e5b9cc8f6ebe63d99f681122d38f8bcb614abadd8ea6f03e400ee57e779",
+    "bins": 156,
+    "mean_active_mbps": 0.5545879999999999,
+    "p10_active_mbps": 0.005464,
+    "p90_active_mbps": 0.006904
+  },
+  {
+    "trace": "trace_026.csv",
+    "source_relative": "experiment 3\\s2-eth1_out.pcap",
+    "source_sha256": "321e4eaadfa163fd11e1c9c579f8501fb1197b7e9f842b6a4ee357496e58df3d",
+    "bins": 128,
+    "mean_active_mbps": 0.002032,
+    "p10_active_mbps": 0.0013520000000000001,
+    "p90_active_mbps": 0.0028575999999999988
+  },
+  {
+    "trace": "trace_027.csv",
+    "source_relative": "experiment 3\\s2-eth2_out.pcap",
+    "source_sha256": "fb3106109dce33f9d7399bbe78c4c53d2ece7998931a8c8ea0e279328af0a992",
+    "bins": 128,
+    "mean_active_mbps": 0.0021264,
+    "p10_active_mbps": 0.0013520000000000001,
+    "p90_active_mbps": 0.002951999999999998
+  },
+  {
+    "trace": "trace_028.csv",
+    "source_relative": "experiment 3\\s2-eth3_out.pcap",
+    "source_sha256": "59411e54bab28c4540a45689e37c1379bb33997c5e9cc3801c510e79222e53bb",
+    "bins": 155,
+    "mean_active_mbps": 0.0016959259259259258,
+    "p10_active_mbps": 0.000648,
+    "p90_active_mbps": 0.002735999999999999
+  },
+  {
+    "trace": "trace_029.csv",
+    "source_relative": "experiment 3\\s2-eth4_out.pcap",
+    "source_sha256": "b328e5cdbd4ac9a245b4cd35ed2bf4b7344a129a1d0faa62a993306f7dd51fd2",
+    "bins": 128,
+    "mean_active_mbps": 0.0018880000000000001,
+    "p10_active_mbps": 0.00056,
+    "p90_active_mbps": 0.004488000000000001
+  },
+  {
+    "trace": "trace_030.csv",
+    "source_relative": "experiment 3\\s3-eth1_out.pcap",
+    "source_sha256": "62e419de780942598d1503dd88964f099d159143653e458584cfeda6ac83eebf",
+    "bins": 155,
+    "mean_active_mbps": 0.5702170225563911,
+    "p10_active_mbps": 0.005464,
+    "p90_active_mbps": 0.006615999999999996
+  },
+  {
+    "trace": "trace_031.csv",
+    "source_relative": "experiment 3\\s3-eth2_out.pcap",
+    "source_sha256": "7791b690812390ed92a4cef3e25faa885a905d7e915b2209f56248fe8fb67ba1",
+    "bins": 155,
+    "mean_active_mbps": 0.024542176470588234,
+    "p10_active_mbps": 0.010024,
+    "p90_active_mbps": 0.011916
+  },
+  {
+    "trace": "trace_032.csv",
+    "source_relative": "experiment 3\\s3-eth3_out.pcap",
+    "source_sha256": "3e414d3cac6c4722ab129ac6b6ba22d4c984bd959e3232f54b68d7ce45dcc6eb",
+    "bins": 128,
+    "mean_active_mbps": 0.0022592000000000003,
+    "p10_active_mbps": 0.0014080000000000002,
+    "p90_active_mbps": 0.0043744
+  }
+]
