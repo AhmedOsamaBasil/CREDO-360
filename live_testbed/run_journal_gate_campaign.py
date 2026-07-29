@@ -7,6 +7,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -119,7 +120,18 @@ def main() -> None:
         default=Path(sys.executable),
         help="Python interpreter containing pandas, SciPy, and Matplotlib.",
     )
+    parser.add_argument(
+        "--max-infrastructure-retries",
+        type=int,
+        default=3,
+        help=(
+            "Retries after a failed Mininet subprocess. Each retry cleans the "
+            "topology and relies on --resume to discard only the incomplete pair."
+        ),
+    )
     args = parser.parse_args()
+    if args.max_infrastructure_retries < 0:
+        parser.error("--max-infrastructure-retries must be non-negative")
 
     script_root = Path(__file__).resolve().parent
     script = script_root / "run_mininet_experiment.py"
@@ -140,6 +152,7 @@ def main() -> None:
             "debt_weight": 1.0,
             "debt_decay": 0.90,
             "switch_weight": 0.08,
+            "max_infrastructure_retries": args.max_infrastructure_retries,
         },
         "conditions": {},
     }
@@ -155,27 +168,54 @@ def main() -> None:
             "status": "running",
             "started_utc": datetime.now(timezone.utc).isoformat(),
             "output": str(output),
+            "infrastructure_retries": 0,
         }
         write_status(status_path, status)
-        subprocess.run(["mn", "-c"], check=True)
-        try:
-            subprocess.run(
-                experiment_command(
-                    script,
-                    args.model,
-                    args.media_root,
-                    output,
-                    condition,
-                ),
-                check=True,
-            )
-        except BaseException:
-            status["conditions"][condition]["status"] = "failed_or_interrupted"
-            status["conditions"][condition][
-                "stopped_utc"
-            ] = datetime.now(timezone.utc).isoformat()
+        attempts = args.max_infrastructure_retries + 1
+        for attempt in range(1, attempts + 1):
+            subprocess.run(["mn", "-c"], check=True)
+            status["conditions"][condition]["attempt"] = attempt
             write_status(status_path, status)
-            raise
+            try:
+                subprocess.run(
+                    experiment_command(
+                        script,
+                        args.model,
+                        args.media_root,
+                        output,
+                        condition,
+                    ),
+                    check=True,
+                )
+                break
+            except subprocess.CalledProcessError as error:
+                condition_status = status["conditions"][condition]
+                condition_status["last_failure_utc"] = datetime.now(
+                    timezone.utc
+                ).isoformat()
+                condition_status["last_returncode"] = error.returncode
+                if attempt == attempts:
+                    condition_status["status"] = "failed_or_interrupted"
+                    condition_status["stopped_utc"] = datetime.now(
+                        timezone.utc
+                    ).isoformat()
+                    write_status(status_path, status)
+                    raise
+                condition_status["infrastructure_retries"] = attempt
+                condition_status["status"] = "retrying"
+                write_status(status_path, status)
+                time.sleep(min(5 * attempt, 30))
+                condition_status["status"] = "running"
+                write_status(status_path, status)
+            except BaseException:
+                status["conditions"][condition][
+                    "status"
+                ] = "failed_or_interrupted"
+                status["conditions"][condition][
+                    "stopped_utc"
+                ] = datetime.now(timezone.utc).isoformat()
+                write_status(status_path, status)
+                raise
         status["conditions"][condition]["status"] = "complete"
         status["conditions"][condition][
             "completed_utc"

@@ -1,10 +1,13 @@
 """Tests for the frozen two-condition journal campaign orchestrator."""
 
+import json
 from pathlib import Path
+import subprocess
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import run_journal_gate_campaign as campaign
 from run_journal_gate_campaign import (
     CONTROLLERS,
     analysis_commands,
@@ -96,3 +99,46 @@ def test_unimpaired_timeout_remains_an_infrastructure_failure():
             28,
             allow_censoring=False,
         )
+
+
+def test_campaign_retries_failed_subprocess_and_completes(tmp_path, monkeypatch):
+    experiment_attempts = {"non_actionable": 0, "capacity_only": 0}
+
+    def fake_run(command, check):
+        if any(str(part).endswith("run_mininet_experiment.py") for part in command):
+            condition = command[command.index("--impairment") + 1]
+            experiment_attempts[condition] += 1
+            if condition == "non_actionable" and experiment_attempts[condition] == 1:
+                raise subprocess.CalledProcessError(28, command)
+        return subprocess.CompletedProcess(command, 0)
+
+    monkeypatch.setattr(campaign.subprocess, "run", fake_run)
+    monkeypatch.setattr(campaign.time, "sleep", lambda _seconds: None)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "run_journal_gate_campaign.py",
+            "--model",
+            str(tmp_path / "model.json"),
+            "--media-root",
+            str(tmp_path / "Segments"),
+            "--output-root",
+            str(tmp_path / "results"),
+            "--analysis-python",
+            sys.executable,
+        ],
+    )
+
+    campaign.main()
+
+    status = json.loads(
+        (tmp_path / "results" / "journal_gate_orchestration.json").read_text()
+    )
+    assert experiment_attempts == {
+        "non_actionable": 2,
+        "capacity_only": 1,
+    }
+    assert status["conditions"]["non_actionable"]["infrastructure_retries"] == 1
+    assert status["conditions"]["non_actionable"]["status"] == "complete"
+    assert status["analysis"]["status"] == "complete"

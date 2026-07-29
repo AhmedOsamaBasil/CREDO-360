@@ -86,3 +86,12 @@ separate validations and will not be pooled with Experiment A.
   censoring indicator and curl return code. A deadline on any unimpaired client
   remains an infrastructure failure. Outcomes, controllers, seeds, and network
   parameters remain unchanged, and the interrupted pair is rerun.
+- 29 July 2026: a transient deadline occurred on unimpaired client c4 during
+  the final epoch of the third controller for seed 20260747. The same client,
+  object, allocation, and bottleneck profile completed in approximately 9.3 s
+  for both preceding paired controllers, supporting classification as an
+  infrastructure failure rather than censoring. The orchestrator now performs
+  up to three bounded infrastructure retries, cleaning Mininet before each
+  attempt. Resume processing retains complete controller--seed pairs and
+  discards the incomplete pair, so retrying does not duplicate observations or
+  modify experimental parameters.
