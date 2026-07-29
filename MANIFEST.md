@@ -9,6 +9,8 @@
 - `LIVE_POWERED_EXPERIMENT_REPORT.md` - 30-seed paired live campaign,
   confirmatory inference, mechanism analysis, and claim boundary.
 - `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM journal-extension protocol.
+- `JOURNAL_GATE_FINAL_REPORT.md` - completed 30-seed, two-condition
+  gate-identification result and qualified claims.
 - `JOURNAL_SCALABILITY_REPORT.md` - completed single-threaded WSL controller
   latency, bounded-candidate, feasibility, and peak-memory result.
 - `JOURNAL_IMPAIRMENT_SMOKE_REPORT.md` - one-seed engineering validation of
@@ -61,6 +63,11 @@
   aggregate table, metadata, and figure from the 30-seed journal campaign.
 - `live_testbed/results/journal_impairment_smoke/` - one-seed engineering
   trace used only to validate the powered impairment design.
+- `live_testbed/results/journal_gate_nonactionable_30seed/` and
+  `journal_gate_capacity_30seed/` - complete raw 30-seed paired conditions.
+- `live_testbed/results/journal_gate_analysis/` - passed audits, seed and
+  aggregate metrics, frozen primary tests, condition interactions, and
+  publication PNG/PDF.
 - `live_testbed/results/live_run_floor15_rejected/` - preserved zero-debt run.
 - Phase-1 and `screen_*` folders are retained as tuning and negative runs.
   They document decisions and are not confirmatory evidence.

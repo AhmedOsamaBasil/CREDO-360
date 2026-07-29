@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-07-29T20:46:07.033088+00:00",
+  "media_root_name": "Segments",
+  "model_name": "qoe_ensemble.json",
+  "portable_max_abs_error": 2.404843928438538e-07,
+  "controllers": [
+    "conformal_nash",
+    "resource_debt_ungated",
+    "risk_debt"
+  ],
+  "users": 5,
+  "epochs": 8,
+  "warmup_epochs": 1,
+  "first_seed": 20260730,
+  "seeds": 30,
+  "regimes": [
+    "stable",
+    "bursty",
+    "shift"
+  ],
+  "impairment": "capacity_only",
+  "impaired_client_selection": null,
+  "impaired_service_ceiling_mbps": null,
+  "impaired_access_delay_ms": null,
+  "counterbalanced_order": true,
+  "campaign_plan": "campaign_plan.json",
+  "segment_duration_s": 10.0,
+  "max_new_pairs_per_invocation": 1,
+  "transfer_deadline_s": 426,
+  "transfer_censoring": "curl exit 28 is a right-censored observation only for the predeclared impaired client; download_s is the censoring deadline, stall is a lower bound, and no segment is added to its buffer",
+  "target_operational_qoe": 4.0,
+  "debt_weight": 1.0,
+  "debt_decay": 0.9,
+  "switch_weight": 0.08,
+  "shared_bottleneck": "server-s1 egress TBF",
+  "qoe_semantics": "model-estimated operational QoE from measured transport features; not a new subjective human score"
+}

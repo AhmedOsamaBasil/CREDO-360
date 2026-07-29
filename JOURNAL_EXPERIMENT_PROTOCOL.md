@@ -106,3 +106,10 @@ separate validations and will not be pooled with Experiment A.
   The frozen campaign plan is regenerated in full on every invocation and
   `--resume` skips completed pairs, preserving schedules, controller order, and
   all estimands.
+- 29 July 2026: the first automated analysis correctly halted because its audit
+  applied the non-actionable condition's one-impaired-client invariant to the
+  capacity-only control. The audit was corrected to require zero impaired
+  clients for `capacity_only` and exactly one for `non_actionable`; seed metric
+  construction was likewise made condition-specific. No raw measurement,
+  outcome definition, or inferential parameter changed. Both completed
+  datasets then passed all audit checks and the frozen analysis completed.

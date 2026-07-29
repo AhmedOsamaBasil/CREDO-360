@@ -87,6 +87,16 @@ The opportunity gate was saturated and the confirmatory comparison with
 ungated debt was null; this limits the gate-specific claim. See
 `LIVE_POWERED_EXPERIMENT_REPORT.md`.
 
+The subsequent frozen journal gate-identification experiment targets that
+limitation with paired capacity-only and non-actionable conditions. Across 30
+paired seeds, CREDO-360 reduced wasted allocation by 73.9% and total stall by
+70.8% versus ungated resource debt, while improving the worst unimpaired
+user's operational QoE by 0.203 points. All three effects remain significant
+after Holm correction; the activation-frequency outcome remains null and is
+reported as such. Both 4,050-row condition audits pass. See
+`JOURNAL_GATE_FINAL_REPORT.md` and
+`live_testbed/results/journal_gate_analysis/`.
+
 ## Package map
 
 - `testbed/` - GPU code, named data, tests, configurations, and results.
@@ -99,6 +109,8 @@ ungated debt was null; this limits the gate-specific claim. See
   measurements, summary, and figure.
 - `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM extension covering
   non-actionable impairment, scalability, and independent-content validation.
+- `JOURNAL_GATE_FINAL_REPORT.md` - completed two-condition gate-identification
+  experiment, paired inference, null result, and claim boundary.
 - `live_testbed/benchmark_scalability.py` - reproducible 5--30-user
   controller-side benchmark.
 - `prototype.py` / `results.csv` - original dependency-light feasibility seed.

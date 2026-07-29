@@ -1,0 +1,14 @@
+{
+  "primary_metrics": [
+    "mean_wasted_allocation_mbps",
+    "worst_unimpaired_user_mean_operational_qoe",
+    "debt_weighted_opportunity_activation",
+    "total_stall_s"
+  ],
+  "proposed": "risk_debt",
+  "baseline": "resource_debt_ungated",
+  "warmup_excluded": true,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 20260729,
+  "multiple_testing": "Holm across exactly four primary outcomes"
+}

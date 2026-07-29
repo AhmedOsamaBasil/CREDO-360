@@ -117,6 +117,7 @@ def audit_condition(raw: pd.DataFrame) -> dict:
     impaired_per_epoch = analysed.groupby(
         ["seed", "controller", "run_epoch"]
     )["impaired_user"].sum()
+    expected_impaired_per_epoch = 1 if condition == "non_actionable" else 0
     controllers = set(raw["controller"].unique())
     failures = []
     if controllers != EXPECTED_CONTROLLERS:
@@ -131,8 +132,11 @@ def audit_condition(raw: pd.DataFrame) -> dict:
         failures.append("controller capacity-profile mismatch")
     if not (profile_segment == 1).all():
         failures.append("controller segment-profile mismatch")
-    if not (impaired_per_epoch == 1).all():
-        failures.append("each epoch must identify exactly one impaired user")
+    if not (impaired_per_epoch == expected_impaired_per_epoch).all():
+        failures.append(
+            "impaired-user count does not match condition "
+            f"(expected {expected_impaired_per_epoch} per epoch)"
+        )
     if (analysed["capacity_slack_mbps"] < -1e-9).any():
         failures.append("positive allocation-capacity excess")
     censored = analysed["transfer_censored"].astype(int)
@@ -153,7 +157,10 @@ def audit_condition(raw: pd.DataFrame) -> dict:
         "duplicate_rows": int(raw.duplicated(duplicate_key).sum()),
         "capacity_profile_mismatch_cells": int((profile_capacity != 1).sum()),
         "segment_profile_mismatch_cells": int((profile_segment != 1).sum()),
-        "impaired_identity_mismatch_cells": int((impaired_per_epoch != 1).sum()),
+        "expected_impaired_users_per_epoch": expected_impaired_per_epoch,
+        "impaired_identity_mismatch_cells": int(
+            (impaired_per_epoch != expected_impaired_per_epoch).sum()
+        ),
         "maximum_capacity_excess_mbps": float(
             max(0.0, -analysed["capacity_slack_mbps"].min())
         ),
@@ -173,7 +180,12 @@ def seed_metrics(raw: pd.DataFrame) -> pd.DataFrame:
     ):
         impaired = group[group["impaired_user"].astype(int) == 1]
         unimpaired = group[group["impaired_user"].astype(int) == 0]
-        if len(impaired) != EXPECTED_ANALYSED_EPOCHS:
+        expected_impaired_rows = (
+            EXPECTED_ANALYSED_EPOCHS
+            if condition == "non_actionable"
+            else 0
+        )
+        if len(impaired) != expected_impaired_rows:
             raise ValueError(
                 f"{condition}/{seed}/{controller}: impaired rows={len(impaired)}"
             )
@@ -186,15 +198,26 @@ def seed_metrics(raw: pd.DataFrame) -> pd.DataFrame:
         ).astype(float)
         ceiling = impaired["service_ceiling_mbps"].to_numpy(float)
         allocation = impaired["allocated_mbps"].to_numpy(float)
+        mean_wasted = (
+            float(np.maximum(allocation - ceiling, 0).mean())
+            if len(impaired)
+            else 0.0
+        )
+        mean_impaired_allocation = (
+            float(allocation.mean()) if len(impaired) else np.nan
+        )
+        mean_impaired_throughput = (
+            float(impaired["throughput_mbps"].mean())
+            if len(impaired)
+            else np.nan
+        )
         records.append(
             {
                 "condition": condition,
                 "seed": int(seed),
                 "regime": regime,
                 "controller": controller,
-                "mean_wasted_allocation_mbps": float(
-                    np.maximum(allocation - ceiling, 0).mean()
-                ),
+                "mean_wasted_allocation_mbps": mean_wasted,
                 "worst_unimpaired_user_mean_operational_qoe": float(
                     user_means.min()
                 ),
@@ -206,10 +229,8 @@ def seed_metrics(raw: pd.DataFrame) -> pd.DataFrame:
                 "censored_transfers": int(
                     group["transfer_censored"].astype(int).sum()
                 ),
-                "mean_impaired_allocation_mbps": float(allocation.mean()),
-                "mean_impaired_throughput_mbps": float(
-                    impaired["throughput_mbps"].mean()
-                ),
+                "mean_impaired_allocation_mbps": mean_impaired_allocation,
+                "mean_impaired_throughput_mbps": mean_impaired_throughput,
                 "mean_unimpaired_operational_qoe": float(
                     unimpaired["operational_qoe"].mean()
                 ),

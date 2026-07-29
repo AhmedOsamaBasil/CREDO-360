@@ -12,10 +12,36 @@ from analyze_gate_campaign import (
     BASELINE,
     PRIMARY_METRICS,
     PROPOSED,
+    audit_condition,
     holm_adjust,
     primary_tests,
     seed_metrics,
 )
+
+
+def synthetic_audit_condition(condition: str) -> pd.DataFrame:
+    rows = []
+    for controller in ("conformal_nash", BASELINE, PROPOSED):
+        for epoch in range(8):
+            for user in range(1, 6):
+                rows.append(
+                    {
+                        "condition": condition,
+                        "seed": 1,
+                        "controller": controller,
+                        "run_epoch": epoch,
+                        "user": user,
+                        "warmup": 0,
+                        "capacity_mbps": 3.0,
+                        "segment_number": epoch + 1,
+                        "impaired_user": int(
+                            condition == "non_actionable" and user == 3
+                        ),
+                        "capacity_slack_mbps": 0.1,
+                        "transfer_censored": 0,
+                    }
+                )
+    return pd.DataFrame(rows)
 
 
 def synthetic_raw() -> pd.DataFrame:
@@ -62,6 +88,29 @@ def test_seed_metric_definitions():
     assert metrics.loc[PROPOSED, "worst_unimpaired_user_mean_operational_qoe"] == 4
     assert metrics.loc[BASELINE, "total_stall_s"] == 32
     assert metrics.loc[PROPOSED, "debt_weighted_opportunity_activation"] == 1
+
+
+def test_audit_uses_condition_specific_impaired_user_count():
+    capacity_audit = audit_condition(
+        synthetic_audit_condition("capacity_only")
+    )
+    non_actionable_audit = audit_condition(
+        synthetic_audit_condition("non_actionable")
+    )
+    assert capacity_audit["passed"]
+    assert capacity_audit["expected_impaired_users_per_epoch"] == 0
+    assert non_actionable_audit["passed"]
+    assert non_actionable_audit["expected_impaired_users_per_epoch"] == 1
+
+
+def test_capacity_only_seed_metrics_do_not_require_impaired_rows():
+    raw = synthetic_raw().copy()
+    raw["condition"] = "capacity_only"
+    raw["impaired_user"] = 0
+    raw["service_ceiling_mbps"] = 100.0
+    metrics = seed_metrics(raw)
+    assert (metrics["mean_wasted_allocation_mbps"] == 0).all()
+    assert metrics["mean_impaired_allocation_mbps"].isna().all()
 
 
 def test_holm_is_monotone_in_sorted_p_order():
