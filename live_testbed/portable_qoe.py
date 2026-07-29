@@ -137,19 +137,33 @@ def select_action(
     mean, uncertainty = model.predict(features)
     mean, uncertainty = mean.reshape(rows, users), uncertainty.reshape(rows, users)
     lower = np.clip(mean - radius, 1.0, 5.0)
+    reference = lower[0]
+    recoverable = np.maximum(lower - reference[None, :], 0)
+    normalized_debt = debt / (1.0 + debt.mean())
     switching = np.mean(
         np.abs(np.log((feasible + 0.05) / (previous_rate[None, :] + 0.05))),
         axis=1,
     )
-    if controller == "uncertainty_nash":
+    debt_term = np.zeros(rows, dtype=float)
+    if controller == "mean_greedy":
+        score = mean.sum(axis=1)
+    elif controller == "proportional_fair":
+        score = np.log(np.clip(mean, 1.0, 5.0)).sum(axis=1)
+    elif controller == "uncertainty_nash":
         score = np.log(np.clip(mean - 1.28 * uncertainty, 1.0, 5.0)).sum(axis=1)
     elif controller == "conformal_nash":
         score = np.log(lower).sum(axis=1)
+    elif controller == "conformal_debt_ungated":
+        # Conventional QoE-debt weighting: a deprived user's absolute
+        # calibrated floor is rewarded without asking whether the candidate
+        # improves that user relative to minimum service.
+        debt_term = debt_weight * (normalized_debt[None, :] * lower).sum(axis=1)
+        score = np.log(lower).sum(axis=1) + debt_term
     elif controller == "risk_debt":
-        recoverable = np.maximum(lower - lower[0][None, :], 0)
-        normalized_debt = debt / (1.0 + debt.mean())
-        score = np.log(lower).sum(axis=1)
-        score += debt_weight * (normalized_debt[None, :] * recoverable).sum(axis=1)
+        debt_term = debt_weight * (
+            normalized_debt[None, :] * recoverable
+        ).sum(axis=1)
+        score = np.log(lower).sum(axis=1) + debt_term
     else:
         raise ValueError(f"Unknown controller: {controller}")
     score -= switch_weight * switching
@@ -157,4 +171,11 @@ def select_action(
     return feasible[selected], {
         "candidate_count": int(rows),
         "objective": float(score[selected]),
+        "debt_term": float(debt_term[selected]),
+        "switching_term": float(switch_weight * switching[selected]),
+        "selected_mean": mean[selected].tolist(),
+        "selected_uncertainty": uncertainty[selected].tolist(),
+        "selected_lower": lower[selected].tolist(),
+        "selected_opportunity": recoverable[selected].tolist(),
+        "capacity_slack_mbps": float(capacity_mbps - feasible[selected].sum()),
     }
