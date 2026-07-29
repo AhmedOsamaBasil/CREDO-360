@@ -15,6 +15,26 @@ The accepted integration configuration uses `--target-qoe 4.0`. The earlier
 1.5-floor run is preserved under `results/live_run_floor15_rejected/` because
 its debt queue never activated.
 
+## Powered paired campaign
+
+The publication campaign is preserved in `results/live_campaign_30seed/`.
+It contains 30 complete paired seeds, six controllers, five clients, three
+capacity regimes, counterbalanced controller order, and 8,100 measured rows.
+The analysis plan was frozen in `POWERED_EXPERIMENT_PROTOCOL.md`.
+
+Recreate its statistics and figures with:
+
+```bash
+python live_testbed/analyze_live.py \
+  live_testbed/results/live_campaign_30seed/live_measurements.csv \
+  --output live_testbed/results/live_campaign_30seed
+```
+
+See `../LIVE_POWERED_EXPERIMENT_REPORT.md` for the confirmatory results and
+the interpretation boundary. The key negative result is retained: opportunity
+gating was active for 99.3--100% of users, so this capacity-only campaign
+cannot establish a gate-specific benefit over ungated debt.
+
 ## Reproduce
 
 From the repository root. Export the model on the CUDA host:

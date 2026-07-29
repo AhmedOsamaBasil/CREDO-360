@@ -12,7 +12,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from scipy.stats import wilcoxon
+from scipy.stats import rankdata, wilcoxon
 
 
 PRIMARY_METRICS = [
@@ -60,12 +60,24 @@ def paired_bootstrap(
     return tuple(np.quantile(sampled, [0.025, 0.975]))
 
 
+def matched_rank_biserial(delta: np.ndarray) -> float:
+    nonzero = delta[~np.isclose(delta, 0)]
+    if not len(nonzero):
+        return 0.0
+    ranks = rankdata(np.abs(nonzero))
+    return float(
+        (ranks[nonzero > 0].sum() - ranks[nonzero < 0].sum()) / ranks.sum()
+    )
+
+
 def prepare_frame(path: Path) -> pd.DataFrame:
     frame = pd.read_csv(path)
     if "seed" not in frame:
         frame["seed"] = 0
     if "regime" not in frame:
         frame["regime"] = "legacy"
+    if "controller_position" not in frame:
+        frame["controller_position"] = 0
     if "warmup" not in frame:
         frame["warmup"] = 0
     if "decision_ms" not in frame:
@@ -95,6 +107,7 @@ def seed_metrics(frame: pd.DataFrame, target: float) -> pd.DataFrame:
                 "seed": int(seed),
                 "regime": regime,
                 "controller": controller,
+                "controller_position": int(group["controller_position"].iloc[0]),
                 "mean_operational_qoe": qoe.mean(),
                 "worst_user_mean_operational_qoe": user_means.min(),
                 "cvar10_operational_qoe": cvar(qoe),
@@ -131,7 +144,7 @@ def aggregate_metrics(metrics: pd.DataFrame) -> pd.DataFrame:
     numeric = [
         column
         for column in metrics.select_dtypes(include=[np.number]).columns
-        if column != "seed"
+        if column not in {"seed", "controller_position"}
     ]
     rows = []
     for controller, group in metrics.groupby("controller", sort=False):
@@ -156,6 +169,79 @@ def aggregate_metrics(metrics: pd.DataFrame) -> pd.DataFrame:
                 }
             )
     return pd.DataFrame(rows)
+
+
+def stratified_metrics(metrics: pd.DataFrame, stratum: str) -> pd.DataFrame:
+    outcomes = [
+        "mean_operational_qoe",
+        "worst_user_mean_operational_qoe",
+        "jain_user_mean_operational_qoe",
+        "service_violation_rate",
+        "total_stall_s",
+        "switch_rate",
+        "mean_decision_ms",
+    ]
+    rows = []
+    for (controller, value), group in metrics.groupby(
+        ["controller", stratum], sort=False
+    ):
+        for metric in outcomes:
+            observations = group[metric].dropna().to_numpy()
+            rows.append(
+                {
+                    "controller": controller,
+                    stratum: value,
+                    "metric": metric,
+                    "n": len(observations),
+                    "mean": observations.mean(),
+                    "std": (
+                        observations.std(ddof=1)
+                        if len(observations) > 1
+                        else np.nan
+                    ),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def audit_campaign(raw: pd.DataFrame) -> dict:
+    pair_counts = raw.groupby(["seed", "controller"]).size()
+    profile_capacity_nunique = raw.groupby(["seed", "run_epoch"])[
+        "capacity_mbps"
+    ].nunique()
+    profile_segment_nunique = raw.groupby(["seed", "run_epoch"])[
+        "segment_number"
+    ].nunique()
+    order_balance = (
+        raw.drop_duplicates(["seed", "controller"])[
+            ["controller", "controller_position"]
+        ]
+        .value_counts()
+        .sort_index()
+    )
+    return {
+        "rows": int(len(raw)),
+        "seeds": int(raw.seed.nunique()),
+        "controllers": int(raw.controller.nunique()),
+        "controller_seed_pairs": int(len(pair_counts)),
+        "minimum_rows_per_pair": int(pair_counts.min()),
+        "maximum_rows_per_pair": int(pair_counts.max()),
+        "warmup_rows": int((raw.warmup.astype(int) == 1).sum()),
+        "analysed_rows": int((raw.warmup.astype(int) == 0).sum()),
+        "capacity_profile_mismatch_cells": int(
+            (profile_capacity_nunique != 1).sum()
+        ),
+        "segment_profile_mismatch_cells": int(
+            (profile_segment_nunique != 1).sum()
+        ),
+        "maximum_capacity_excess_mbps": float(
+            max(0.0, -raw["capacity_slack_mbps"].min())
+        ),
+        "controller_position_counts": {
+            f"{controller}@{position}": int(count)
+            for (controller, position), count in order_balance.items()
+        },
+    }
 
 
 def paired_inference(
@@ -190,6 +276,9 @@ def paired_inference(
                     "baseline_mean": right.mean(),
                     "mean_delta": delta.mean(),
                     "median_delta": np.median(delta),
+                    "positive_pairs": int((delta > 0).sum()),
+                    "negative_pairs": int((delta < 0).sum()),
+                    "rank_biserial": matched_rank_biserial(delta),
                     "wilcoxon_statistic": statistic,
                     "p_value": p_value,
                 }
@@ -253,10 +342,33 @@ def controller_figure(metrics: pd.DataFrame, output: Path) -> None:
         colors = [
             "#1f77b4" if name == "risk_debt" else "#a7b7c7" for name in order
         ]
-        axis.bar(np.arange(len(order)), means, yerr=errors, capsize=3, color=colors)
+        positions = np.arange(len(order))
+        axis.errorbar(
+            positions,
+            means,
+            yerr=errors,
+            fmt="none",
+            ecolor="#303030",
+            elinewidth=1.2,
+            capsize=3,
+            zorder=2,
+        )
+        axis.scatter(
+            positions,
+            means,
+            s=58,
+            c=colors,
+            edgecolor="#303030",
+            linewidth=0.5,
+            zorder=3,
+        )
         axis.set_xticks(np.arange(len(order)), [labels[name] for name in order])
         axis.set_title(title)
         axis.grid(axis="y", alpha=0.25)
+        lower = np.min(means - errors)
+        upper = np.max(means + errors)
+        padding = max((upper - lower) * 0.24, 0.002)
+        axis.set_ylim(lower - padding, upper + padding)
         if lower_is_better:
             axis.text(
                 0.98,
@@ -307,16 +419,76 @@ def mechanism_figure(frame: pd.DataFrame, output: Path) -> None:
     axes[0].grid(alpha=0.25)
     axes[1].plot(
         x,
-        summary.opportunity,
+        summary.debt_term,
         marker="s",
         color="#1f77b4",
-        label="Users with positive opportunity",
+        label="Debt objective contribution",
     )
-    axes[1].set_ylabel("Opportunity activation")
+    axes[1].set_ylabel("Selected debt term")
     axes[1].set_xlabel("Analysed segment epoch")
-    axes[1].set_ylim(-0.02, 1.02)
     axes[1].grid(alpha=0.25)
-    fig.suptitle("CREDO-360 debt accumulation and opportunity gating")
+    activation_min = 100.0 * float(summary.opportunity.min())
+    activation_max = 100.0 * float(summary.opportunity.max())
+    axes[1].text(
+        0.98,
+        0.95,
+        f"gate active for {activation_min:.1f}–{activation_max:.1f}% of users",
+        transform=axes[1].transAxes,
+        ha="right",
+        va="top",
+        fontsize=8,
+    )
+    fig.suptitle("CREDO-360 debt state and objective contribution")
+    fig.tight_layout()
+    fig.savefig(output, dpi=220, bbox_inches="tight")
+    plt.close(fig)
+
+
+def regime_delta_figure(metrics: pd.DataFrame, output: Path) -> None:
+    proposed = metrics[metrics.controller == "risk_debt"].set_index("seed")
+    baseline = metrics[metrics.controller == "conformal_nash"].set_index("seed")
+    common = proposed.index.intersection(baseline.index)
+    panels = [
+        ("worst_user_mean_operational_qoe", "Worst-user mean QoE"),
+        ("jain_user_mean_operational_qoe", "Jain fairness"),
+        ("mean_operational_qoe", "Mean operational QoE"),
+        ("service_violation_rate", "Service-violation rate"),
+    ]
+    regimes = ["stable", "bursty", "shift"]
+    fig, axes = plt.subplots(2, 2, figsize=(8.4, 5.8))
+    for axis, (metric, title) in zip(axes.flat, panels):
+        means, errors = [], []
+        for regime in regimes:
+            seeds = [
+                seed
+                for seed in common
+                if proposed.loc[seed, "regime"] == regime
+            ]
+            delta = (
+                proposed.loc[seeds, metric].to_numpy()
+                - baseline.loc[seeds, metric].to_numpy()
+            )
+            means.append(delta.mean())
+            errors.append(
+                1.96 * delta.std(ddof=1) / np.sqrt(len(delta))
+                if len(delta) > 1
+                else 0
+            )
+        positions = np.arange(len(regimes))
+        axis.axhline(0, color="#555555", linewidth=0.9)
+        axis.errorbar(
+            positions,
+            means,
+            yerr=errors,
+            fmt="o",
+            color="#1f77b4",
+            capsize=4,
+        )
+        axis.set_xticks(positions, [name.capitalize() for name in regimes])
+        axis.set_title(title)
+        axis.set_ylabel(r"$\Delta$ CREDO-360 $-$ conformal Nash")
+        axis.grid(axis="y", alpha=0.25)
+    fig.suptitle("Paired live effect by capacity regime")
     fig.tight_layout()
     fig.savefig(output, dpi=220, bbox_inches="tight")
     plt.close(fig)
@@ -336,20 +508,31 @@ def main() -> None:
         else {}
     )
     target = float(metadata.get("target_operational_qoe", 4.0))
+    raw = pd.read_csv(args.input)
+    audit = audit_campaign(raw)
     frame = prepare_frame(args.input)
     metrics = seed_metrics(frame, target)
     aggregate = aggregate_metrics(metrics)
+    regime = stratified_metrics(metrics, "regime")
+    order = stratified_metrics(metrics, "controller_position")
     tests, intervals = paired_inference(metrics)
 
     metrics.to_csv(output / "live_seed_metrics.csv", index=False)
     aggregate.to_csv(output / "live_aggregate_metrics.csv", index=False)
+    regime.to_csv(output / "live_regime_metrics.csv", index=False)
+    order.to_csv(output / "live_order_metrics.csv", index=False)
     tests.to_csv(output / "live_paired_tests.csv", index=False)
     intervals.to_csv(output / "live_bootstrap_ci.csv", index=False)
     controller_figure(metrics, output / "live_controller_comparison.png")
     mechanism_figure(frame, output / "live_debt_mechanism.png")
+    regime_delta_figure(metrics, output / "live_regime_deltas.png")
+    (output / "campaign_audit.json").write_text(
+        json.dumps(audit, indent=2), encoding="utf-8"
+    )
 
     summary = {
         "metadata": metadata,
+        "audit": audit,
         "completed_seeds": int(metrics.seed.nunique()),
         "controllers": metrics.controller.unique().tolist(),
         "aggregate": aggregate.to_dict(orient="records"),

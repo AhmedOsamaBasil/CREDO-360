@@ -7,8 +7,8 @@ This repository contains the prototype, CUDA replay experiment, statistical
 analysis, literature-review evidence, exported learned model, and live
 Mininet/DASH integration used by the CREDO-360 paper.
 
-> Research status: artifact release `v0.1.0`. The manuscript is in preparation.
-> The live experiment validates controller mechanics, not subjective efficacy.
+> Research status: powered live-emulation campaign complete. The manuscript is
+> in preparation. Operational QoE is model-estimated, not a new subjective MOS.
 
 ## Topic
 
@@ -64,14 +64,15 @@ fairness/continuity trade-off, not universal QoE improvement.
 See `EXPERIMENT_REPORT.md`. The rejected anonymous-feature phase is preserved
 as `EXPERIMENT_REPORT_PHASE1_REJECTED.md`.
 
-The next stage now runs in WSL2/Mininet: five clients fetch real DASH segments
-concurrently through one measured, time-varying shared bottleneck. The exact
-learned ensemble is exported from RTX/PyTorch and verified in WSL/NumPy.
-The eight-epoch integration run activated QoE debt and improved worst-user mean
-operational QoE by `0.2769` and Jain fairness by `0.0091` against conformal
-Nash, while reducing mean operational QoE by `0.0946` and worsening the
-service-violation rate by `0.05`. These descriptive values are not
-statistically confirmatory. See `LIVE_EXPERIMENT_REPORT.md`.
+The powered WSL2/Mininet campaign uses five clients fetching DASH segments
+concurrently through one measured, time-varying shared bottleneck. Across 30
+paired seeds and six controllers, CREDO-360 improved worst-user mean
+operational QoE by `0.2090` over conformal Nash
+(`p_Holm=1.12e-7`, paired-bootstrap 95% CI `[0.1416, 0.2886]`) and Jain
+fairness by `0.002393` (`p_Holm=8.20e-7`). Stall time did not improve.
+The opportunity gate was saturated and the confirmatory comparison with
+ungated debt was null; this limits the gate-specific claim. See
+`LIVE_POWERED_EXPERIMENT_REPORT.md`.
 
 ## Package map
 
@@ -136,7 +137,8 @@ after the anonymity period.
 
 ## Interpretation
 
-The network stage is now live emulation with real segment transfer, but it is
-not yet a headset or human-subject experiment. The next publication stage
-should add randomized paired traces, independent content, additional live
-baselines, and independently validated live QoE labels.
+The network stage is live emulation with real segment transfer and 30 paired,
+counterbalanced seeds, but it is not a headset or human-subject experiment.
+The next validation stage should add independent content, non-actionable
+impairments that can exercise the opportunity gate, and independently
+validated live QoE labels.
