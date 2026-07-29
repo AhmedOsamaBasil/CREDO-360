@@ -38,6 +38,7 @@ class PortableModelTests(unittest.TestCase):
             "uncertainty_nash",
             "conformal_nash",
             "conformal_debt_ungated",
+            "resource_debt_ungated",
             "risk_debt",
         ]
         for controller in controllers:

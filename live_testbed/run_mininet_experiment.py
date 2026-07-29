@@ -35,6 +35,7 @@ DEFAULT_CONTROLLERS = [
     "conformal_debt_ungated",
     "risk_debt",
 ]
+CONTROLLER_CHOICES = DEFAULT_CONTROLLERS + ["resource_debt_ungated"]
 REGIMES = ("stable", "bursty", "shift")
 
 
@@ -105,6 +106,22 @@ def set_shared_rate(host, interface: str, capacity_mbps: float) -> None:
         raise RuntimeError(f"Failed to shape {interface}: {result}")
 
 
+def set_access_profile(
+    switch,
+    interface: str,
+    *,
+    rate_mbps: float,
+    delay_ms: float,
+) -> None:
+    """Shape switch-to-client egress to impose a measured service ceiling."""
+    result = switch.cmd(
+        f"tc qdisc replace dev {shlex.quote(interface)} root "
+        f"netem delay {delay_ms:.1f}ms rate {rate_mbps:.3f}mbit; echo $?"
+    ).strip()
+    if result.splitlines()[-1] != "0":
+        raise RuntimeError(f"Failed to shape {interface}: {result}")
+
+
 def download_one(host, url: str):
     command = (
         "curl --silent --show-error --connect-timeout 5 --max-time 160 "
@@ -127,7 +144,7 @@ def main() -> None:
         "--controllers",
         nargs="+",
         default=DEFAULT_CONTROLLERS,
-        choices=DEFAULT_CONTROLLERS,
+        choices=CONTROLLER_CHOICES,
     )
     parser.add_argument("--users", type=int, default=5)
     parser.add_argument("--epochs", type=int, default=8)
@@ -170,6 +187,15 @@ def main() -> None:
     parser.add_argument("--debt-weight", type=float, default=1.0)
     parser.add_argument("--debt-decay", type=float, default=0.90)
     parser.add_argument("--switch-weight", type=float, default=0.08)
+    parser.add_argument(
+        "--impairment",
+        choices=("capacity_only", "non_actionable"),
+        default="capacity_only",
+        help=(
+            "Journal gate-identification condition. non_actionable applies a "
+            "persistent 0.18 Mb/s/180 ms ceiling to one counterbalanced client."
+        ),
+    )
     args = parser.parse_args()
     if args.users < 2:
         parser.error("--users must be at least 2")
@@ -247,13 +273,18 @@ def main() -> None:
     switch = net.addSwitch("s1")
     server_link = net.addLink(server, switch, bw=100, delay="4ms")
     clients = []
+    client_switch_interfaces = []
     for index in range(args.users):
         client = net.addHost(f"c{index + 1}", ip=f"10.0.0.{index + 2}/24")
-        net.addLink(client, switch, bw=100, delay=f"{6 + index * 3}ms")
+        link = net.addLink(client, switch, bw=100, delay=f"{6 + index * 3}ms")
         clients.append(client)
+        client_switch_interfaces.append(link.intf2.name)
     fieldnames = [
         "seed",
         "regime",
+        "impairment",
+        "impaired_user",
+        "service_ceiling_mbps",
         "controller",
         "controller_position",
         "controller_order",
@@ -324,6 +355,9 @@ def main() -> None:
         for plan in campaign_plan:
             seed = int(plan["seed"])
             regime = str(plan["regime"])
+            impaired_user = (
+                seed % args.users if args.impairment == "non_actionable" else -1
+            )
             capacity_profile = plan["capacity_profile_mbps"]
             segments = plan["segment_numbers"]
             controller_order = plan["controller_order"]
@@ -342,6 +376,21 @@ def main() -> None:
                     [0.010 + 0.006 * i for i in range(args.users)]
                 )
                 debt = np.zeros(args.users)
+                for user, interface in enumerate(client_switch_interfaces):
+                    if user == impaired_user:
+                        set_access_profile(
+                            switch,
+                            interface,
+                            rate_mbps=0.18,
+                            delay_ms=180.0,
+                        )
+                    else:
+                        set_access_profile(
+                            switch,
+                            interface,
+                            rate_mbps=100.0,
+                            delay_ms=6.0 + user * 3.0,
+                        )
                 for run_epoch, (capacity, segment_number) in enumerate(
                     zip(capacity_profile, segments)
                 ):
@@ -452,6 +501,11 @@ def main() -> None:
                             {
                                 "seed": seed,
                                 "regime": regime,
+                                "impairment": args.impairment,
+                                "impaired_user": int(user == impaired_user),
+                                "service_ceiling_mbps": (
+                                    0.18 if user == impaired_user else 100.0
+                                ),
                                 "controller": controller,
                                 "controller_position": controller_position,
                                 "controller_order": order_text,
@@ -537,6 +591,16 @@ def main() -> None:
         "first_seed": args.seed,
         "seeds": args.seeds,
         "regimes": args.regimes,
+        "impairment": args.impairment,
+        "impaired_client_selection": (
+            "seed modulo users" if args.impairment == "non_actionable" else None
+        ),
+        "impaired_service_ceiling_mbps": (
+            0.18 if args.impairment == "non_actionable" else None
+        ),
+        "impaired_access_delay_ms": (
+            180.0 if args.impairment == "non_actionable" else None
+        ),
         "counterbalanced_order": not args.fixed_order,
         "campaign_plan": "campaign_plan.json",
         "segment_duration_s": SEGMENT_DURATION_S,

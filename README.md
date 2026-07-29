@@ -64,6 +64,18 @@ fairness/continuity trade-off, not universal QoE improvement.
 See `EXPERIMENT_REPORT.md`. The rejected anonymous-feature phase is preserved
 as `EXPERIMENT_REPORT_PHASE1_REJECTED.md`.
 
+The TMM journal extension adds a deterministic low-discrepancy action cover
+that avoids materializing the full bitrate Cartesian product. A frozen
+30-seed controller benchmark evaluates 5, 10, 20, and 30 users with 240
+decisions per population size. On the portable CPU/NumPy path, median latency
+increases from 48.93 ms at five users to 285.15 ms at 30 users; 30-user p99 is
+337.55 ms, with zero feasibility violations. See
+`JOURNAL_EXPERIMENT_PROTOCOL.md` and
+`live_testbed/results/journal_scalability/`.
+The non-actionable Mininet condition has also passed a one-seed engineering
+test; its deliberately limited observation is documented in
+`JOURNAL_IMPAIRMENT_SMOKE_REPORT.md`.
+
 The powered WSL2/Mininet campaign uses five clients fetching DASH segments
 concurrently through one measured, time-varying shared bottleneck. Across 30
 paired seeds and six controllers, CREDO-360 improved worst-user mean
@@ -84,6 +96,10 @@ ungated debt was null; this limits the gate-specific claim. See
   qualified novelty assessment.
 - `live_testbed/` - learned-model export, Mininet harness, tests, raw live
   measurements, summary, and figure.
+- `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM extension covering
+  non-actionable impairment, scalability, and independent-content validation.
+- `live_testbed/benchmark_scalability.py` - reproducible 5--30-user
+  controller-side benchmark.
 - `prototype.py` / `results.csv` - original dependency-light feasibility seed.
 - `MANIFEST.md` - complete inventory.
 - `REPRODUCIBILITY.md` - minimal checks and end-to-end reproduction commands.

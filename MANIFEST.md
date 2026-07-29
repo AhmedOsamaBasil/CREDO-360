@@ -8,6 +8,9 @@
 - `LIVE_EXPERIMENT_REPORT.md` - measured Mininet integration experiment.
 - `LIVE_POWERED_EXPERIMENT_REPORT.md` - 30-seed paired live campaign,
   confirmatory inference, mechanism analysis, and claim boundary.
+- `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM journal-extension protocol.
+- `JOURNAL_IMPAIRMENT_SMOKE_REPORT.md` - one-seed engineering validation of
+  the non-actionable service-ceiling condition; not inferential evidence.
 - `EXPERIMENT_REPORT_PHASE1_REJECTED.md` - preserved rejected first phase.
 - `testbed/README.md` - reproduction and interpretation guide.
 - `testbed/FEATURE_SCHEMA.md` - recovered 13-column published-data schema.
@@ -22,6 +25,11 @@
 - `testbed/data/provenance.json` - source provenance and limitations.
 - `live_testbed/export_portable_model.py` - RTX training and portable export.
 - `live_testbed/portable_qoe.py` - NumPy inference and live controller.
+- `live_testbed/benchmark_scalability.py` - deterministic-cover scalability
+  campaign.
+- `live_testbed/plot_scalability.py` - journal scalability figure generator.
+- `live_testbed/test_candidate_scaling.py` - 5--30-user feasibility,
+  boundedness, and determinism tests.
 - `live_testbed/run_mininet_experiment.py` - shared-link concurrent DASH run.
 - `live_testbed/POWERED_EXPERIMENT_PROTOCOL.md` - frozen live analysis plan.
 - `live_testbed/analyze_live.py` / `plot_live.py` - live inference and figures.
@@ -43,6 +51,10 @@
 - `live_testbed/results/live_run/` - accepted floor-4.0 integration trace.
 - `live_testbed/results/live_campaign_30seed/` - complete 30-seed paired
   campaign, audit, seed metrics, tests, intervals, and publication figures.
+- `live_testbed/results/journal_scalability/` - raw per-decision timing,
+  aggregate table, metadata, and figure from the 30-seed journal campaign.
+- `live_testbed/results/journal_impairment_smoke/` - one-seed engineering
+  trace used only to validate the powered impairment design.
 - `live_testbed/results/live_run_floor15_rejected/` - preserved zero-debt run.
 - Phase-1 and `screen_*` folders are retained as tuning and negative runs.
   They document decisions and are not confirmatory evidence.

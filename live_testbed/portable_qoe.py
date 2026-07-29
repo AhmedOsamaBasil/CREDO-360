@@ -97,15 +97,110 @@ def build_features(
     return templates
 
 
-def candidate_allocations(ladder: np.ndarray, users: int, capacity: float) -> np.ndarray:
-    feasible = np.asarray(
-        [a for a in itertools.product(ladder, repeat=users) if sum(a) <= capacity],
-        dtype=float,
-    )
-    if len(feasible) <= 384:
-        return feasible
-    indices = np.unique(np.linspace(0, len(feasible) - 1, 384, dtype=int))
-    return feasible[indices]
+def _first_primes(count: int) -> list[int]:
+    """Return enough small primes to construct a deterministic Halton cover."""
+    primes: list[int] = []
+    candidate = 2
+    while len(primes) < count:
+        if all(candidate % prime for prime in primes if prime * prime <= candidate):
+            primes.append(candidate)
+        candidate += 1
+    return primes
+
+
+def _radical_inverse(index: int, base: int) -> float:
+    value = 0.0
+    factor = 1.0 / base
+    while index:
+        index, digit = divmod(index, base)
+        value += digit * factor
+        factor /= base
+    return value
+
+
+def _repair_to_capacity(
+    indices: np.ndarray,
+    ladder: np.ndarray,
+    capacity: float,
+) -> np.ndarray:
+    """Project ladder indices to feasibility with deterministic round-robin cuts."""
+    repaired = indices.copy()
+    cursor = 0
+    while ladder[repaired].sum() > capacity + 1e-9 and repaired.max() > 0:
+        reducible = np.flatnonzero(repaired > 0)
+        user = reducible[cursor % len(reducible)]
+        repaired[user] -= 1
+        cursor += 1
+    return repaired
+
+
+def candidate_allocations(
+    ladder: np.ndarray,
+    users: int,
+    capacity: float,
+    max_candidates: int = 384,
+) -> np.ndarray:
+    """Build a deterministic feasible action cover without exponential materialization.
+
+    Exact enumeration is retained for small systems. Above that threshold, a
+    low-discrepancy Halton cover is combined with minimum, uniform, and
+    single-user extreme actions, then projected to the discrete capacity set.
+    This makes the journal scalability experiment executable at 10--30 users
+    while preserving deterministic paired comparisons.
+    """
+    ladder = np.asarray(ladder, dtype=float)
+    minimum = float(ladder[0]) * users
+    if minimum > capacity + 1e-9:
+        raise ValueError("Capacity is below the minimum feasible allocation")
+    total = len(ladder) ** users
+    if total <= 250_000:
+        feasible = np.asarray(
+            [
+                action
+                for action in itertools.product(ladder, repeat=users)
+                if sum(action) <= capacity + 1e-9
+            ],
+            dtype=float,
+        )
+        if len(feasible) <= max_candidates:
+            return feasible
+        selected = np.unique(
+            np.linspace(0, len(feasible) - 1, max_candidates, dtype=int)
+        )
+        return feasible[selected]
+
+    index_rows: list[np.ndarray] = [np.zeros(users, dtype=int)]
+    for level in range(1, len(ladder)):
+        uniform = np.full(users, level, dtype=int)
+        index_rows.append(_repair_to_capacity(uniform, ladder, capacity))
+    for user in range(users):
+        extreme = np.zeros(users, dtype=int)
+        extreme[user] = len(ladder) - 1
+        index_rows.append(_repair_to_capacity(extreme, ladder, capacity))
+
+    primes = _first_primes(users)
+    sample_index = 1
+    while len(index_rows) < max_candidates * 2:
+        row = np.asarray(
+            [
+                min(
+                    int(_radical_inverse(sample_index, base) * len(ladder)),
+                    len(ladder) - 1,
+                )
+                for base in primes
+            ],
+            dtype=int,
+        )
+        index_rows.append(_repair_to_capacity(row, ladder, capacity))
+        sample_index += 1
+
+    unique = np.unique(np.stack(index_rows), axis=0)
+    if len(unique) > max_candidates:
+        selected = np.unique(
+            np.linspace(0, len(unique) - 1, max_candidates, dtype=int)
+        )
+        unique = unique[selected]
+    return ladder[unique]
 
 
 def select_action(
@@ -158,6 +253,15 @@ def select_action(
         # calibrated floor is rewarded without asking whether the candidate
         # improves that user relative to minimum service.
         debt_term = debt_weight * (normalized_debt[None, :] * lower).sum(axis=1)
+        score = np.log(lower).sum(axis=1) + debt_term
+    elif controller == "resource_debt_ungated":
+        # Resource-obligation comparator for the journal gate experiment.
+        # Debt directly rewards allocated representation rate, irrespective
+        # of whether that rate has calibrated QoE opportunity for the user.
+        normalized_rate = feasible / float(ladder[-1])
+        debt_term = debt_weight * (
+            normalized_debt[None, :] * normalized_rate
+        ).sum(axis=1)
         score = np.log(lower).sum(axis=1) + debt_term
     elif controller == "risk_debt":
         debt_term = debt_weight * (
