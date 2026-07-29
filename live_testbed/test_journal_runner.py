@@ -5,7 +5,11 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from run_journal_gate_campaign import CONTROLLERS, experiment_command
+from run_journal_gate_campaign import (
+    CONTROLLERS,
+    analysis_commands,
+    experiment_command,
+)
 
 
 def test_frozen_command_contains_both_pairing_and_analysis_parameters():
@@ -26,3 +30,22 @@ def test_frozen_command_contains_both_pairing_and_analysis_parameters():
     assert command[command.index("--seed") + 1] == "20260730"
     assert command[command.index("--impairment") + 1] == "non_actionable"
     assert "--resume" in command
+
+
+def test_analysis_commands_consume_both_frozen_conditions():
+    commands = analysis_commands(
+        Path("/venv/python"),
+        Path("live_testbed"),
+        Path("results"),
+    )
+    assert len(commands) == 2
+    analysis = commands[0]
+    assert (
+        "capacity_only=results/journal_gate_capacity_30seed/live_measurements.csv"
+        in analysis
+    )
+    assert (
+        "non_actionable=results/journal_gate_nonactionable_30seed/live_measurements.csv"
+        in analysis
+    )
+    assert commands[1][-1] == "results/journal_gate_analysis/gate_primary_outcomes.png"

@@ -65,6 +65,42 @@ def experiment_command(
     ]
 
 
+def analysis_commands(
+    analysis_python: Path,
+    script_root: Path,
+    output_root: Path,
+) -> list[list[str]]:
+    analysis_output = output_root / "journal_gate_analysis"
+    capacity = output_root / "journal_gate_capacity_30seed" / "live_measurements.csv"
+    non_actionable = (
+        output_root
+        / "journal_gate_nonactionable_30seed"
+        / "live_measurements.csv"
+    )
+    return [
+        [
+            str(analysis_python),
+            str(script_root / "analyze_gate_campaign.py"),
+            "--condition",
+            f"capacity_only={capacity}",
+            "--condition",
+            f"non_actionable={non_actionable}",
+            "--output",
+            str(analysis_output),
+        ],
+        [
+            str(analysis_python),
+            str(script_root / "plot_gate_campaign.py"),
+            "--metrics",
+            str(analysis_output / "gate_seed_metrics.csv"),
+            "--tests",
+            str(analysis_output / "gate_primary_tests.csv"),
+            "--output",
+            str(analysis_output / "gate_primary_outcomes.png"),
+        ],
+    ]
+
+
 def write_status(path: Path, status: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(status, indent=2), encoding="utf-8")
@@ -77,9 +113,16 @@ def main() -> None:
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--media-root", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
+    parser.add_argument(
+        "--analysis-python",
+        type=Path,
+        default=Path(sys.executable),
+        help="Python interpreter containing pandas, SciPy, and Matplotlib.",
+    )
     args = parser.parse_args()
 
-    script = Path(__file__).resolve().with_name("run_mininet_experiment.py")
+    script_root = Path(__file__).resolve().parent
+    script = script_root / "run_mininet_experiment.py"
     status_path = args.output_root / "journal_gate_orchestration.json"
     status = {
         "started_utc": datetime.now(timezone.utc).isoformat(),
@@ -139,6 +182,26 @@ def main() -> None:
         ] = datetime.now(timezone.utc).isoformat()
         write_status(status_path, status)
 
+    status["analysis"] = {
+        "status": "running",
+        "started_utc": datetime.now(timezone.utc).isoformat(),
+        "python": str(args.analysis_python),
+    }
+    write_status(status_path, status)
+    try:
+        for command in analysis_commands(
+            args.analysis_python,
+            script_root,
+            args.output_root,
+        ):
+            subprocess.run(command, check=True)
+    except BaseException:
+        status["analysis"]["status"] = "failed_or_interrupted"
+        status["analysis"]["stopped_utc"] = datetime.now(timezone.utc).isoformat()
+        write_status(status_path, status)
+        raise
+    status["analysis"]["status"] = "complete"
+    status["analysis"]["completed_utc"] = datetime.now(timezone.utc).isoformat()
     status["completed_utc"] = datetime.now(timezone.utc).isoformat()
     write_status(status_path, status)
     print(status_path)

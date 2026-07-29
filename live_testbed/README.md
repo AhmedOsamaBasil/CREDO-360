@@ -52,7 +52,8 @@ sequentially with resumable controller--seed checkpoints:
 sudo python3 live_testbed/run_journal_gate_campaign.py \
   --model live_testbed/artifacts/qoe_ensemble.json \
   --media-root /path/to/dash/media \
-  --output-root live_testbed/results
+  --output-root live_testbed/results \
+  --analysis-python /path/to/analysis-venv/bin/python
 ```
 
 To reproduce only the non-actionable condition:
