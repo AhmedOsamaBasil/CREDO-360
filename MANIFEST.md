@@ -37,6 +37,8 @@
 - `live_testbed/analyze_live.py` / `plot_live.py` - live inference and figures.
 - `live_testbed/analyze_gate_campaign.py` / `plot_gate_campaign.py` - frozen
   Experiment A audit, paired inference, interactions, and journal figure.
+- `live_testbed/run_journal_gate_campaign.py` - resumable sequential runner
+  for both frozen Experiment A conditions.
 - `live_testbed/test_portable.py` - export and capacity-safety checks.
 
 ## Literature

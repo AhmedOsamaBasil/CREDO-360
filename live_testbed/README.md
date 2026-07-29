@@ -45,7 +45,17 @@ controller-scalability result are in:
 - `../JOURNAL_SCALABILITY_REPORT.md`.
 
 The non-actionable campaign adds a persistent 0.18 Mb/s and 180 ms access
-ceiling to one seed-counterbalanced client. Reproduce one condition with:
+ceiling to one seed-counterbalanced client. Run both frozen conditions
+sequentially with resumable controller--seed checkpoints:
+
+```bash
+sudo python3 live_testbed/run_journal_gate_campaign.py \
+  --model live_testbed/artifacts/qoe_ensemble.json \
+  --media-root /path/to/dash/media \
+  --output-root live_testbed/results
+```
+
+To reproduce only the non-actionable condition:
 
 ```bash
 sudo python3 live_testbed/run_mininet_experiment.py \
