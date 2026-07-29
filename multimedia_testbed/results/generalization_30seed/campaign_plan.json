@@ -1,0 +1,1322 @@
+[
+  {
+    "seed": 20260760,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.058,
+      2.874,
+      2.997,
+      2.897,
+      3.053,
+      3.122
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 1
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 4
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 5
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 6
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 9
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260761,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.608,
+      1.729,
+      3.397,
+      1.388,
+      4.051,
+      1.377
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 10
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 11
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 12
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 13
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 15
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260762,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.796,
+      3.304,
+      3.429,
+      1.544,
+      1.336,
+      1.582
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 16
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 17
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 20
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 21
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 22
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260763,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.815,
+      3.116,
+      3.108,
+      3.041,
+      2.919,
+      2.963
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 23
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 26
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 27
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 28
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 1
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260764,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.9,
+      1.696,
+      3.578,
+      1.485,
+      3.422,
+      1.486
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 4
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 5
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 6
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 9
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 10
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260765,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.689,
+      3.598,
+      3.466,
+      1.653,
+      1.668,
+      1.488
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 11
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 12
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 13
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 15
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 16
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260766,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.291,
+      3.095,
+      3.004,
+      2.871,
+      3.116,
+      3.199
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 17
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 20
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 21
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 22
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 23
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260767,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.536,
+      1.78,
+      3.915,
+      1.576,
+      3.905,
+      1.547
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 26
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 27
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 28
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 1
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 4
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260768,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.481,
+      3.109,
+      3.523,
+      1.512,
+      1.586,
+      1.555
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 5
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 6
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 9
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 10
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 11
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260769,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.043,
+      3.021,
+      2.94,
+      3.089,
+      2.798,
+      3.24
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 12
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 13
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 15
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 16
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 17
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260770,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.823,
+      1.42,
+      3.24,
+      1.407,
+      3.735,
+      1.441
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 20
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 21
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 22
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 23
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 26
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260771,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.875,
+      3.884,
+      3.434,
+      1.447,
+      1.496,
+      1.645
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 27
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 28
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 1
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 4
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 5
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260772,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.258,
+      2.97,
+      2.917,
+      2.927,
+      2.775,
+      2.944
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 6
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 9
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 10
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 11
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 12
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260773,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.438,
+      1.552,
+      3.776,
+      1.393,
+      4.01,
+      1.476
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 13
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 15
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 16
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 17
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 20
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260774,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.688,
+      3.933,
+      3.682,
+      1.439,
+      1.615,
+      1.514
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 21
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 22
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 23
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 26
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 27
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260775,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.01,
+      2.955,
+      2.922,
+      3.129,
+      3.163,
+      3.3
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 28
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 1
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 4
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 5
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 6
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260776,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.56,
+      1.773,
+      3.865,
+      1.372,
+      3.422,
+      1.763
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 9
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 10
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 11
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 12
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 13
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260777,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.501,
+      3.585,
+      3.205,
+      1.503,
+      1.488,
+      1.485
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 15
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 16
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 17
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 20
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 21
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260778,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.065,
+      2.823,
+      3.345,
+      3.034,
+      3.164,
+      3.005
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 22
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 23
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 26
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 27
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 28
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260779,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.842,
+      1.374,
+      3.233,
+      1.36,
+      3.354,
+      1.534
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 1
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 4
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 5
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 6
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 9
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260780,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.806,
+      3.546,
+      3.607,
+      1.51,
+      1.346,
+      1.571
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 10
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 11
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 12
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 13
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 15
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260781,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.899,
+      3.279,
+      2.967,
+      2.806,
+      3.02,
+      3.19
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 16
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 17
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 20
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 21
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 22
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260782,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.852,
+      1.401,
+      3.56,
+      1.422,
+      4.184,
+      1.508
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 23
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 26
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 27
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 28
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 1
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260783,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.865,
+      3.496,
+      3.816,
+      1.495,
+      1.631,
+      1.889
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 4
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 5
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 6
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 9
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 10
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260784,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.741,
+      2.776,
+      3.073,
+      2.94,
+      3.192,
+      2.976
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 11
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 12
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 13
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 15
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 16
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260785,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.735,
+      1.757,
+      3.369,
+      1.787,
+      3.464,
+      1.59
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 17
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 20
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 21
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 22
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 23
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260786,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.489,
+      3.716,
+      3.635,
+      1.521,
+      1.701,
+      1.481
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 26
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 27
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 28
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 1
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 4
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260787,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.043,
+      2.968,
+      3.194,
+      2.936,
+      3.173,
+      2.891
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Badminton05",
+        "subject": 5
+      },
+      {
+        "user": 2,
+        "content": "ForestWalk03",
+        "subject": 6
+      },
+      {
+        "user": 3,
+        "content": "Skateboarding01",
+        "subject": 9
+      },
+      {
+        "user": 4,
+        "content": "Badminton05",
+        "subject": 10
+      },
+      {
+        "user": 5,
+        "content": "ForestWalk03",
+        "subject": 11
+      }
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260788,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.525,
+      1.5,
+      3.223,
+      1.644,
+      3.777,
+      1.492
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "ForestWalk03",
+        "subject": 12
+      },
+      {
+        "user": 2,
+        "content": "Skateboarding01",
+        "subject": 13
+      },
+      {
+        "user": 3,
+        "content": "Badminton05",
+        "subject": 15
+      },
+      {
+        "user": 4,
+        "content": "ForestWalk03",
+        "subject": 16
+      },
+      {
+        "user": 5,
+        "content": "Skateboarding01",
+        "subject": 17
+      }
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260789,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.779,
+      3.244,
+      3.6,
+      1.384,
+      1.559,
+      1.277
+    ],
+    "assignments": [
+      {
+        "user": 1,
+        "content": "Skateboarding01",
+        "subject": 20
+      },
+      {
+        "user": 2,
+        "content": "Badminton05",
+        "subject": 21
+      },
+      {
+        "user": 3,
+        "content": "ForestWalk03",
+        "subject": 22
+      },
+      {
+        "user": 4,
+        "content": "Skateboarding01",
+        "subject": 23
+      },
+      {
+        "user": 5,
+        "content": "Badminton05",
+        "subject": 26
+      }
+    ],
+    "controller_order": [
+      "risk_debt",
+      "conformal_nash",
+      "resource_debt_ungated"
+    ]
+  }
+]

@@ -59,6 +59,23 @@ mechanics, not subjective MOS validity.
   fairness. If a human/headset experiment is not completed, all perceptual
   conclusions remain explicitly limited to validated objective measures.
 
+### Post-run completion record
+
+Completed 29 July 2026 without changing the declared contents or outcomes.
+The selected QoEVAVE sequences are Badminton05, ForestWalk03, and
+Skateboarding01. P.910-style SI/TI measurements establish their relative
+medium/high/low complexity ordering. A deterministic subject hash produces 9
+calibration and 19 held-out users per content; only held-out traces enter the
+30-seed paired campaign. Six NVENC representations, actual VBR segment sizes,
+a 12x6 distortion grid, and measured HMD viewport centres produce objective
+VW-PSNR. The audit passes all 2,700 rows.
+
+CREDO-360 improves worst-user VW-PSNR by 0.483 dB and Jain fairness over
+per-user mean objective quality by 0.00815 versus conformal Nash, with both
+effects surviving Holm correction. Stall is tied and switching is a
+nonsignificant 0.0244 higher. Secondary mean-quality effects are heterogeneous
+across content. No subjective/perceptual superiority is claimed.
+
 ## Stopping and reporting
 
 Parameters and primary outcomes will not be changed after aggregate inspection.

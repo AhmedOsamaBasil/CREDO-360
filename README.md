@@ -97,6 +97,17 @@ reported as such. Both 4,050-row condition audits pass. See
 `JOURNAL_GATE_FINAL_REPORT.md` and
 `live_testbed/results/journal_gate_analysis/`.
 
+Experiment C adds independent multimedia validation using three public
+QoEVAVE 8K 360-degree sequences and user-disjoint HMD traces. Across 30 paired
+seeds, CREDO-360 improves worst-user objective VW-PSNR by 0.483 dB
+(`p_Holm=0.000601`, paired-bootstrap 95% CI `[0.270, 0.703]`) and Jain
+fairness over per-user mean viewport quality by 0.00815
+(`p_Holm=0.000519`). Stall is exactly tied and switching does not improve.
+Content-specific mean-quality effects are heterogeneous, so the result is
+reported as a worst-user/fairness effect rather than universal multimedia
+quality improvement. See `JOURNAL_MULTIMEDIA_GENERALIZATION_REPORT.md` and
+`multimedia_testbed/results/generalization_analysis/`.
+
 ## Package map
 
 - `testbed/` - GPU code, named data, tests, configurations, and results.
@@ -107,6 +118,8 @@ reported as such. Both 4,050-row condition audits pass. See
   qualified novelty assessment.
 - `live_testbed/` - learned-model export, Mininet harness, tests, raw live
   measurements, summary, and figure.
+- `multimedia_testbed/` - independent 360-degree media preparation,
+  held-out head-trace replay, paired statistics, results, and figures.
 - `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM extension covering
   non-actionable impairment, scalability, and independent-content validation.
 - `JOURNAL_GATE_FINAL_REPORT.md` - completed two-condition gate-identification
@@ -168,6 +181,7 @@ after the anonymity period.
 
 The network stage is live emulation with real segment transfer and 30 paired,
 counterbalanced seeds, but it is not a headset or human-subject experiment.
-The next validation stage should add independent content, non-actionable
-impairments that can exercise the opportunity gate, and independently
-validated live QoE labels.
+Independent-content and non-actionable-impairment stages are now complete.
+The remaining external-validity step is a preregistered headset/user study or
+an independently validated perceptual outcome model evaluated on the same
+compressed/stalled representations.

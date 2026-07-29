@@ -12,6 +12,7 @@
 | Portable learned model | `live_testbed/portable_qoe.py` | `live_testbed/artifacts/qoe_ensemble.json` |
 | TMM gate-identification campaign | `live_testbed/analyze_gate_campaign.py` | `live_testbed/results/journal_gate_analysis/` |
 | TMM deterministic-cover scaling | `live_testbed/benchmark_scalability.py` | `live_testbed/results/journal_scalability/` |
+| Independent multimedia generalization | `multimedia_testbed/run_generalization.py` | `multimedia_testbed/results/generalization_analysis/` |
 
 ## Minimal verification
 
@@ -61,6 +62,24 @@ python live_testbed/analyze_live.py \
 ```
 
 See `live_testbed/ENVIRONMENT.md` for the validated platform.
+
+## Independent multimedia generalization
+
+Third-party QoEVAVE media and traces are not committed. The manifest contains
+the official URLs and the preparation output records their SHA-256 hashes.
+From WSL with FFmpeg/NVENC and the scientific dependencies installed:
+
+```bash
+python3 multimedia_testbed/prepare_qoevave.py
+python3 multimedia_testbed/run_generalization.py
+python3 multimedia_testbed/analyze_generalization.py
+python3 -m pytest multimedia_testbed/test_generalization.py -q
+```
+
+Expected outputs are under `multimedia_testbed/artifacts/qoevave/`,
+`multimedia_testbed/results/generalization_30seed/`, and
+`multimedia_testbed/results/generalization_analysis/`. The campaign audit must
+report `passed: true`, 2,700 rows, and 30 paired seeds.
 
 ## Integrity and interpretation
 
