@@ -43,6 +43,49 @@ TRANSFER_TIMEOUT_S = max(
     + 5,
 )
 PROCESS_TIMEOUT_S = TRANSFER_TIMEOUT_S + 30
+MEASUREMENT_FIELDS = [
+    "seed",
+    "regime",
+    "impairment",
+    "impaired_user",
+    "service_ceiling_mbps",
+    "controller",
+    "controller_position",
+    "controller_order",
+    "run_epoch",
+    "epoch",
+    "warmup",
+    "segment_number",
+    "user",
+    "capacity_mbps",
+    "allocated_mbps",
+    "capacity_slack_mbps",
+    "bytes",
+    "download_s",
+    "ttfb_s",
+    "throughput_mbps",
+    "transfer_censored",
+    "curl_returncode",
+    "buffer_before_s",
+    "buffer_after_s",
+    "stall_s",
+    "decision_predicted_qoe",
+    "decision_predicted_std",
+    "decision_lower_qoe",
+    "opportunity_gain",
+    "predicted_qoe",
+    "predicted_std",
+    "operational_qoe",
+    "debt_before",
+    "debt_after",
+    "switched",
+    "candidate_count",
+    "objective",
+    "debt_term",
+    "switching_term",
+    "decision_ms",
+    "epoch_wall_s",
+]
 DEFAULT_CONTROLLERS = [
     "mean_greedy",
     "proportional_fair",
@@ -150,6 +193,44 @@ def download_one(host, url: str):
     return host.popen(command, shell=True, text=True, stdout=-1, stderr=-1)
 
 
+def parse_curl_measurement(
+    output: str,
+    error: str,
+    returncode: int,
+    *,
+    allow_censoring: bool,
+) -> tuple[float, float, float, float, bool, int]:
+    """Parse curl output, treating exit 28 as a right-censored transfer."""
+    values = output.strip().split(",")
+    if returncode == 28 and allow_censoring:
+        if len(values) == 5:
+            size, _total, ttfb, speed, _status = values
+            return (
+                float(size or 0),
+                float(TRANSFER_TIMEOUT_S),
+                float(ttfb or 0),
+                float(speed or 0),
+                True,
+                returncode,
+            )
+        return 0.0, float(TRANSFER_TIMEOUT_S), 0.0, 0.0, True, returncode
+    if returncode != 0:
+        raise RuntimeError(f"curl failed: {error}")
+    if len(values) != 5:
+        raise RuntimeError(f"Malformed curl measurement: {output!r}")
+    size, total, ttfb, speed, status = values
+    if status != "200":
+        raise RuntimeError(f"HTTP {status}")
+    return (
+        float(size),
+        float(total),
+        float(ttfb),
+        float(speed),
+        False,
+        returncode,
+    )
+
+
 def main() -> None:
     if os.geteuid() != 0:
         raise SystemExit("Run with sudo; Mininet requires root.")
@@ -250,9 +331,12 @@ def main() -> None:
         ]
         if retained:
             with csv_path.open("w", newline="", encoding="utf-8") as handle:
-                writer = csv.DictWriter(handle, fieldnames=list(retained[0]))
+                writer = csv.DictWriter(handle, fieldnames=MEASUREMENT_FIELDS)
                 writer.writeheader()
-                writer.writerows(retained)
+                for row in retained:
+                    row.setdefault("transfer_censored", "0")
+                    row.setdefault("curl_returncode", "0")
+                    writer.writerow(row)
         else:
             csv_path.unlink(missing_ok=True)
     elif csv_path.exists():
@@ -296,47 +380,6 @@ def main() -> None:
         link = net.addLink(client, switch, bw=100, delay=f"{6 + index * 3}ms")
         clients.append(client)
         client_switch_interfaces.append(link.intf2.name)
-    fieldnames = [
-        "seed",
-        "regime",
-        "impairment",
-        "impaired_user",
-        "service_ceiling_mbps",
-        "controller",
-        "controller_position",
-        "controller_order",
-        "run_epoch",
-        "epoch",
-        "warmup",
-        "segment_number",
-        "user",
-        "capacity_mbps",
-        "allocated_mbps",
-        "capacity_slack_mbps",
-        "bytes",
-        "download_s",
-        "ttfb_s",
-        "throughput_mbps",
-        "buffer_before_s",
-        "buffer_after_s",
-        "stall_s",
-        "decision_predicted_qoe",
-        "decision_predicted_std",
-        "decision_lower_qoe",
-        "opportunity_gain",
-        "predicted_qoe",
-        "predicted_std",
-        "operational_qoe",
-        "debt_before",
-        "debt_after",
-        "switched",
-        "candidate_count",
-        "objective",
-        "debt_term",
-        "switching_term",
-        "decision_ms",
-        "epoch_wall_s",
-    ]
     rows_written = 0
     server_process = None
     csv_handle = None
@@ -364,7 +407,7 @@ def main() -> None:
 
         file_exists = csv_path.exists() and csv_path.stat().st_size > 0
         csv_handle = csv_path.open("a", newline="", encoding="utf-8")
-        writer = csv.DictWriter(csv_handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(csv_handle, fieldnames=MEASUREMENT_FIELDS)
         if not file_exists:
             writer.writeheader()
             csv_handle.flush()
@@ -448,27 +491,28 @@ def main() -> None:
                         output, error = process.communicate(
                             timeout=PROCESS_TIMEOUT_S
                         )
-                        if process.returncode != 0:
+                        try:
+                            measurement = parse_curl_measurement(
+                                output,
+                                error,
+                                process.returncode,
+                                allow_censoring=(user == impaired_user),
+                            )
+                        except RuntimeError as failure:
                             raise RuntimeError(
-                                f"curl failed for c{user + 1}: {error}"
-                            )
-                        size, total, ttfb, speed, status = (
-                            output.strip().split(",")
-                        )
-                        if status != "200":
-                            raise RuntimeError(f"HTTP {status} for {url}")
-                        measurements.append(
-                            (
-                                float(size),
-                                float(total),
-                                float(ttfb),
-                                float(speed),
-                            )
-                        )
+                                f"{failure} for c{user + 1}: {url}"
+                            ) from failure
+                        measurements.append(measurement)
                     wall_s = time.perf_counter() - started
                     size_bytes = np.array([m[0] for m in measurements])
                     download_s = np.array([m[1] for m in measurements])
                     ttfb_s = np.array([m[2] for m in measurements])
+                    transfer_censored = np.array(
+                        [m[4] for m in measurements], dtype=bool
+                    )
+                    curl_returncode = np.array(
+                        [m[5] for m in measurements], dtype=int
+                    )
                     throughput = (
                         8.0
                         * size_bytes
@@ -479,7 +523,7 @@ def main() -> None:
                     buffer_before = buffer_s.copy()
                     buffer_s = np.clip(
                         np.maximum(buffer_s - download_s, 0)
-                        + SEGMENT_DURATION_S,
+                        + SEGMENT_DURATION_S * (~transfer_censored),
                         0,
                         30,
                     )
@@ -523,7 +567,9 @@ def main() -> None:
                                 "impairment": args.impairment,
                                 "impaired_user": int(user == impaired_user),
                                 "service_ceiling_mbps": (
-                                    0.18 if user == impaired_user else 100.0
+                                    IMPAIRED_RATE_MBPS
+                                    if user == impaired_user
+                                    else 100.0
                                 ),
                                 "controller": controller,
                                 "controller_position": controller_position,
@@ -542,6 +588,10 @@ def main() -> None:
                                 "download_s": download_s[user],
                                 "ttfb_s": ttfb_s[user],
                                 "throughput_mbps": throughput[user],
+                                "transfer_censored": int(
+                                    transfer_censored[user]
+                                ),
+                                "curl_returncode": curl_returncode[user],
                                 "buffer_before_s": buffer_before[user],
                                 "buffer_after_s": buffer_s[user],
                                 "stall_s": stall_s[user],
@@ -586,6 +636,7 @@ def main() -> None:
                         f"controller={controller} epoch={epoch} "
                         f"capacity={capacity:.3f} "
                         f"mean_qoe={operational_qoe.mean():.3f} "
+                        f"censored={transfer_censored.sum()} "
                         f"decision={decision_ms:.1f}ms wall={wall_s:.2f}s",
                         flush=True,
                     )
@@ -615,7 +666,9 @@ def main() -> None:
             "seed modulo users" if args.impairment == "non_actionable" else None
         ),
         "impaired_service_ceiling_mbps": (
-            0.18 if args.impairment == "non_actionable" else None
+            IMPAIRED_RATE_MBPS
+            if args.impairment == "non_actionable"
+            else None
         ),
         "impaired_access_delay_ms": (
             180.0 if args.impairment == "non_actionable" else None
@@ -623,6 +676,12 @@ def main() -> None:
         "counterbalanced_order": not args.fixed_order,
         "campaign_plan": "campaign_plan.json",
         "segment_duration_s": SEGMENT_DURATION_S,
+        "transfer_deadline_s": TRANSFER_TIMEOUT_S,
+        "transfer_censoring": (
+            "curl exit 28 is a right-censored observation only for the "
+            "predeclared impaired client; download_s is the censoring deadline, "
+            "stall is a lower bound, and no segment is added to its buffer"
+        ),
         "target_operational_qoe": args.target_qoe,
         "debt_weight": args.debt_weight,
         "debt_decay": args.debt_decay,

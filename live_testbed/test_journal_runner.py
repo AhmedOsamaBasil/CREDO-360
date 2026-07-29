@@ -16,6 +16,7 @@ from run_mininet_experiment import (
     PROCESS_TIMEOUT_S,
     SEGMENT_DURATION_S,
     TRANSFER_TIMEOUT_S,
+    parse_curl_measurement,
 )
 
 
@@ -66,3 +67,32 @@ def test_transfer_watchdog_covers_largest_segment_at_impaired_ceiling():
     )
     assert TRANSFER_TIMEOUT_S >= 2 * worst_case_s
     assert PROCESS_TIMEOUT_S > TRANSFER_TIMEOUT_S
+
+
+def test_impaired_timeout_is_recorded_as_right_censored():
+    measurement = parse_curl_measurement(
+        "1024,426.0,0.2,2.4,200",
+        "curl: (28) Operation timed out",
+        28,
+        allow_censoring=True,
+    )
+    assert measurement == (
+        1024.0,
+        float(TRANSFER_TIMEOUT_S),
+        0.2,
+        2.4,
+        True,
+        28,
+    )
+
+
+def test_unimpaired_timeout_remains_an_infrastructure_failure():
+    import pytest
+
+    with pytest.raises(RuntimeError, match="curl failed"):
+        parse_curl_measurement(
+            "",
+            "curl: (28) Operation timed out",
+            28,
+            allow_censoring=False,
+        )

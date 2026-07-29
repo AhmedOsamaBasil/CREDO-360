@@ -43,6 +43,7 @@ def synthetic_raw() -> pd.DataFrame:
                         "opportunity_gain": 1.0 if controller == PROPOSED else 0.0,
                         "stall_s": stall if impaired else 0.0,
                         "throughput_mbps": 0.17 if impaired else 0.8,
+                        "transfer_censored": 0,
                         "switched": 0,
                         "decision_ms": 50.0,
                     }

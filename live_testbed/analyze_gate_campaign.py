@@ -80,6 +80,7 @@ def load_condition(specification: str) -> pd.DataFrame:
         "allocated_mbps",
         "capacity_slack_mbps",
         "throughput_mbps",
+        "transfer_censored",
         "stall_s",
         "operational_qoe",
         "debt_before",
@@ -134,6 +135,12 @@ def audit_condition(raw: pd.DataFrame) -> dict:
         failures.append("each epoch must identify exactly one impaired user")
     if (analysed["capacity_slack_mbps"] < -1e-9).any():
         failures.append("positive allocation-capacity excess")
+    censored = analysed["transfer_censored"].astype(int)
+    invalid_censoring = analysed[
+        (censored == 1) & (analysed["impaired_user"].astype(int) != 1)
+    ]
+    if len(invalid_censoring):
+        failures.append("censoring observed outside the impaired client")
     return {
         "condition": condition,
         "rows": int(len(raw)),
@@ -150,6 +157,8 @@ def audit_condition(raw: pd.DataFrame) -> dict:
         "maximum_capacity_excess_mbps": float(
             max(0.0, -analysed["capacity_slack_mbps"].min())
         ),
+        "censored_transfers": int(censored.sum()),
+        "censored_unimpaired_transfers": int(len(invalid_censoring)),
         "failures": failures,
         "passed": not failures,
     }
@@ -194,6 +203,9 @@ def seed_metrics(raw: pd.DataFrame) -> pd.DataFrame:
                 ),
                 "total_stall_s": float(group["stall_s"].sum()),
                 "impaired_total_stall_s": float(impaired["stall_s"].sum()),
+                "censored_transfers": int(
+                    group["transfer_censored"].astype(int).sum()
+                ),
                 "mean_impaired_allocation_mbps": float(allocation.mean()),
                 "mean_impaired_throughput_mbps": float(
                     impaired["throughput_mbps"].mean()

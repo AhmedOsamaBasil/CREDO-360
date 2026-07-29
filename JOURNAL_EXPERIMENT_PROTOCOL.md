@@ -76,3 +76,13 @@ separate validations and will not be pooled with Experiment A.
   worst-case transfer time plus 5 s (426 s), with a further 30 s parent-process
   margin. The campaign was resumed from complete controller--seed pairs; the
   interrupted pair was rerun under its original seed.
+- 29 July 2026: seed 20260743 demonstrated that a valid impaired-client
+  transfer can remain unfinished even at the 426 s engineering deadline.
+  Because this is an intended consequence of the non-actionable treatment,
+  curl deadline exit 28 is henceforth recorded as a right-censored transfer
+  only for the predeclared impaired client. Its observed duration is the
+  censoring deadline, its stall is therefore a conservative lower bound, and
+  no completed segment is added to its buffer. The raw record includes the
+  censoring indicator and curl return code. A deadline on any unimpaired client
+  remains an infrastructure failure. Outcomes, controllers, seeds, and network
+  parameters remain unchanged, and the interrupted pair is rerun.
