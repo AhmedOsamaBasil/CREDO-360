@@ -107,7 +107,8 @@ def set_shared_rate(host, interface: str, capacity_mbps: float) -> None:
 
 def download_one(host, url: str):
     command = (
-        "curl --silent --show-error --output /dev/null "
+        "curl --silent --show-error --connect-timeout 5 --max-time 160 "
+        "--output /dev/null "
         "--write-out '%{size_download},%{time_total},%{time_starttransfer},"
         "%{speed_download},%{http_code}' "
         + shlex.quote(url)
@@ -378,7 +379,7 @@ def main() -> None:
                         )
                     measurements = []
                     for user, rate, url, process in processes:
-                        output, error = process.communicate(timeout=90)
+                        output, error = process.communicate(timeout=180)
                         if process.returncode != 0:
                             raise RuntimeError(
                                 f"curl failed for c{user + 1}: {error}"
