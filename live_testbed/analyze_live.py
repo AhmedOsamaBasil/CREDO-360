@@ -24,6 +24,12 @@ PRIMARY_METRICS = [
     "total_stall_s",
     "switch_rate",
 ]
+CONFIRMATORY_BASELINES = ["conformal_nash", "conformal_debt_ungated"]
+CONFIRMATORY_METRICS = [
+    "worst_user_mean_operational_qoe",
+    "jain_user_mean_operational_qoe",
+    "total_stall_s",
+]
 
 
 def cvar(values: np.ndarray, proportion: float = 0.10) -> float:
@@ -206,6 +212,13 @@ def paired_inference(
     tests_frame["p_holm_within_metric"] = tests_frame.groupby("metric")[
         "p_value"
     ].transform(lambda values: holm_adjust(values.to_numpy()))
+    confirmatory = tests_frame.baseline.isin(
+        CONFIRMATORY_BASELINES
+    ) & tests_frame.metric.isin(CONFIRMATORY_METRICS)
+    tests_frame["p_holm_confirmatory"] = np.nan
+    tests_frame.loc[confirmatory, "p_holm_confirmatory"] = holm_adjust(
+        tests_frame.loc[confirmatory, "p_value"].to_numpy()
+    )
     return tests_frame, pd.DataFrame(intervals)
 
 
