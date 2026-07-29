@@ -27,6 +27,22 @@ from portable_qoe import (
 
 LADDER_BPS = [45373, 88482, 252988, 368912, 987061, 3792491]
 SEGMENT_DURATION_S = 10.0
+IMPAIRED_RATE_MBPS = 0.18
+# The largest 10 s representation is about 37.9 Mbit. At the deliberately
+# imposed 0.18 Mbit/s service ceiling it needs roughly 211 s before protocol
+# overhead. Keep the measurement watchdog above twice that transfer budget so
+# a valid low-rate observation is not misclassified as an infrastructure fault.
+TRANSFER_TIMEOUT_S = max(
+    160,
+    int(
+        2.0
+        * SEGMENT_DURATION_S
+        * max(LADDER_BPS)
+        / (IMPAIRED_RATE_MBPS * 1_000_000)
+    )
+    + 5,
+)
+PROCESS_TIMEOUT_S = TRANSFER_TIMEOUT_S + 30
 DEFAULT_CONTROLLERS = [
     "mean_greedy",
     "proportional_fair",
@@ -124,7 +140,8 @@ def set_access_profile(
 
 def download_one(host, url: str):
     command = (
-        "curl --silent --show-error --connect-timeout 5 --max-time 160 "
+        f"curl --silent --show-error --connect-timeout 5 "
+        f"--max-time {TRANSFER_TIMEOUT_S} "
         "--output /dev/null "
         "--write-out '%{size_download},%{time_total},%{time_starttransfer},"
         "%{speed_download},%{http_code}' "
@@ -381,7 +398,7 @@ def main() -> None:
                         set_access_profile(
                             switch,
                             interface,
-                            rate_mbps=0.18,
+                            rate_mbps=IMPAIRED_RATE_MBPS,
                             delay_ms=180.0,
                         )
                     else:
@@ -428,7 +445,9 @@ def main() -> None:
                         )
                     measurements = []
                     for user, rate, url, process in processes:
-                        output, error = process.communicate(timeout=180)
+                        output, error = process.communicate(
+                            timeout=PROCESS_TIMEOUT_S
+                        )
                         if process.returncode != 0:
                             raise RuntimeError(
                                 f"curl failed for c{user + 1}: {error}"

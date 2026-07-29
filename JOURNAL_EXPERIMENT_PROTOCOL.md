@@ -65,3 +65,14 @@ Parameters and primary outcomes will not be changed after aggregate inspection.
 Engineering failures are rerun with the same seed. Null and adverse results,
 including gate saturation, remain in the report. Experiments B and C are
 separate validations and will not be pooled with Experiment A.
+
+## Engineering incident log
+
+- 29 July 2026: the non-actionable campaign stopped during seed 20260738
+  because the original 160 s transfer watchdog was shorter than the physical
+  transfer time of the largest 10 s representation at the frozen 0.18 Mbit/s
+  impaired-client ceiling. No primary outcome or controller parameter was
+  changed. The watchdog was deterministically set to twice the theoretical
+  worst-case transfer time plus 5 s (426 s), with a further 30 s parent-process
+  margin. The campaign was resumed from complete controller--seed pairs; the
+  interrupted pair was rerun under its original seed.

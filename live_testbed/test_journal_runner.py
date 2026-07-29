@@ -10,6 +10,13 @@ from run_journal_gate_campaign import (
     analysis_commands,
     experiment_command,
 )
+from run_mininet_experiment import (
+    IMPAIRED_RATE_MBPS,
+    LADDER_BPS,
+    PROCESS_TIMEOUT_S,
+    SEGMENT_DURATION_S,
+    TRANSFER_TIMEOUT_S,
+)
 
 
 def test_frozen_command_contains_both_pairing_and_analysis_parameters():
@@ -49,3 +56,13 @@ def test_analysis_commands_consume_both_frozen_conditions():
         in analysis
     )
     assert commands[1][-1] == "results/journal_gate_analysis/gate_primary_outcomes.png"
+
+
+def test_transfer_watchdog_covers_largest_segment_at_impaired_ceiling():
+    worst_case_s = (
+        SEGMENT_DURATION_S
+        * max(LADDER_BPS)
+        / (IMPAIRED_RATE_MBPS * 1_000_000)
+    )
+    assert TRANSFER_TIMEOUT_S >= 2 * worst_case_s
+    assert PROCESS_TIMEOUT_S > TRANSFER_TIMEOUT_S
