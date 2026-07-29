@@ -10,6 +10,8 @@
 | Service-floor sensitivity | `testbed/analyze_sensitivity.py` | `testbed/sensitivity/` |
 | Live shared-bottleneck integration | `live_testbed/run_mininet_experiment.py` | `live_testbed/results/live_run/` |
 | Portable learned model | `live_testbed/portable_qoe.py` | `live_testbed/artifacts/qoe_ensemble.json` |
+| TMM gate-identification campaign | `live_testbed/analyze_gate_campaign.py` | `live_testbed/results/journal_gate_analysis/` |
+| TMM deterministic-cover scaling | `live_testbed/benchmark_scalability.py` | `live_testbed/results/journal_scalability/` |
 
 ## Minimal verification
 
@@ -76,4 +78,3 @@ See `live_testbed/ENVIRONMENT.md` for the validated platform.
 This repository identifies the author. For a double-blind venue, create an
 anonymous archival snapshot without account identifiers and cite that snapshot
 during review. Reveal this canonical repository after the anonymity period.
-

@@ -67,9 +67,10 @@ as `EXPERIMENT_REPORT_PHASE1_REJECTED.md`.
 The TMM journal extension adds a deterministic low-discrepancy action cover
 that avoids materializing the full bitrate Cartesian product. A frozen
 30-seed controller benchmark evaluates 5, 10, 20, and 30 users with 240
-decisions per population size. On the portable CPU/NumPy path, median latency
-increases from 48.93 ms at five users to 285.15 ms at 30 users; 30-user p99 is
-337.55 ms, with zero feasibility violations. See
+decisions per population size. On the single-threaded WSL CPU/NumPy path,
+median latency increases from 77.07 ms at five users to 438.35 ms at 30
+users; 30-user p99 is 540.39 ms, peak process RSS is 80.2 MiB, and there are
+zero feasibility violations. See `JOURNAL_SCALABILITY_REPORT.md`,
 `JOURNAL_EXPERIMENT_PROTOCOL.md` and
 `live_testbed/results/journal_scalability/`.
 The non-actionable Mininet condition has also passed a one-seed engineering

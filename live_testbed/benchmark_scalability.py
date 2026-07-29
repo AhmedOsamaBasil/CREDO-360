@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import platform
 import time
 from pathlib import Path
@@ -20,6 +21,29 @@ except ImportError:  # Windows benchmark host
 
 
 LADDER = np.array([0.045373, 0.088482, 0.252988, 0.368912, 0.987061, 3.792491])
+
+
+def cpu_model() -> str:
+    """Return an auditable CPU identity on Linux and Windows."""
+    identity = platform.processor().strip()
+    if identity:
+        return identity
+    cpuinfo = Path("/proc/cpuinfo")
+    if cpuinfo.exists():
+        for line in cpuinfo.read_text(encoding="utf-8", errors="replace").splitlines():
+            if line.lower().startswith("model name"):
+                return line.split(":", 1)[1].strip()
+    return "unreported"
+
+
+def peak_rss() -> tuple[int | None, str | None]:
+    """Standardize ru_maxrss to bytes while retaining its platform semantics."""
+    if resource is None:
+        return None, None
+    native = int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+    if platform.system() == "Darwin":
+        return native, "bytes (macOS ru_maxrss)"
+    return native * 1024, "bytes (Linux ru_maxrss converted from KiB)"
 
 
 def percentile(values: list[float], q: float) -> float:
@@ -121,16 +145,28 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(summary)
 
+    max_rss_bytes, max_rss_semantics = peak_rss()
     metadata = {
         "platform": platform.platform(),
-        "processor": platform.processor(),
+        "processor": cpu_model(),
         "python": platform.python_version(),
-        "portable_export_max_abs_error": export_error,
-        "max_rss_native_units": (
-            resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-            if resource is not None
-            else None
+        "numpy": np.__version__,
+        "execution_backend": "CPU/NumPy portable ensemble",
+        "thread_environment": {
+            name: os.environ.get(name)
+            for name in (
+                "OMP_NUM_THREADS",
+                "OPENBLAS_NUM_THREADS",
+                "MKL_NUM_THREADS",
+                "NUMEXPR_NUM_THREADS",
+            )
+        },
+        "timing_warmup": (
+            "PortableEnsemble self-check only; no controller decisions excluded"
         ),
+        "portable_export_max_abs_error": export_error,
+        "peak_process_rss_bytes": max_rss_bytes,
+        "peak_process_rss_semantics": max_rss_semantics,
         "scope": (
             "Controller-side NumPy inference and deterministic candidate-cover "
             "benchmark; this is not a network or subjective-QoE result."

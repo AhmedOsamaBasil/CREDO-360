@@ -9,6 +9,8 @@
 - `LIVE_POWERED_EXPERIMENT_REPORT.md` - 30-seed paired live campaign,
   confirmatory inference, mechanism analysis, and claim boundary.
 - `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM journal-extension protocol.
+- `JOURNAL_SCALABILITY_REPORT.md` - completed single-threaded WSL controller
+  latency, bounded-candidate, feasibility, and peak-memory result.
 - `JOURNAL_IMPAIRMENT_SMOKE_REPORT.md` - one-seed engineering validation of
   the non-actionable service-ceiling condition; not inferential evidence.
 - `EXPERIMENT_REPORT_PHASE1_REJECTED.md` - preserved rejected first phase.
@@ -33,6 +35,8 @@
 - `live_testbed/run_mininet_experiment.py` - shared-link concurrent DASH run.
 - `live_testbed/POWERED_EXPERIMENT_PROTOCOL.md` - frozen live analysis plan.
 - `live_testbed/analyze_live.py` / `plot_live.py` - live inference and figures.
+- `live_testbed/analyze_gate_campaign.py` / `plot_gate_campaign.py` - frozen
+  Experiment A audit, paired inference, interactions, and journal figure.
 - `live_testbed/test_portable.py` - export and capacity-safety checks.
 
 ## Literature
