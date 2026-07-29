@@ -95,3 +95,14 @@ separate validations and will not be pooled with Experiment A.
   attempt. Resume processing retains complete controller--seed pairs and
   discards the incomplete pair, so retrying does not duplicate observations or
   modify experimental parameters.
+- 29 July 2026: the capacity-only campaign later produced zero-byte deadlines
+  across different clients and media objects after long-lived Mininet/HTTP
+  operation, exhausting the bounded retry budget despite advancing between
+  failures. This cross-object pattern indicates process-lifetime degradation,
+  not a content-specific observation. Each invocation is now limited to one
+  newly completed controller--seed pair, after which Mininet and the HTTP server
+  are cleanly restarted. Three consecutive failures at an unchanged checkpoint
+  remain fatal, while any successful pair resets the consecutive-failure count.
+  The frozen campaign plan is regenerated in full on every invocation and
+  `--resume` skips completed pairs, preserving schedules, controller order, and
+  all estimands.

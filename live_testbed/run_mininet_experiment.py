@@ -277,6 +277,15 @@ def main() -> None:
         help="Retain complete seed/controller pairs and resume an interrupted campaign.",
     )
     parser.add_argument(
+        "--max-new-pairs",
+        type=int,
+        default=0,
+        help=(
+            "Stop successfully after this many newly completed controller-seed "
+            "pairs; zero runs all remaining pairs."
+        ),
+    )
+    parser.add_argument(
         "--target-qoe",
         type=float,
         default=4.0,
@@ -299,6 +308,8 @@ def main() -> None:
         parser.error("--users must be at least 2")
     if args.epochs < 1 or args.warmup_epochs < 0 or args.seeds < 1:
         parser.error("--epochs/--seeds must be positive and warm-up non-negative")
+    if args.max_new_pairs < 0:
+        parser.error("--max-new-pairs must be non-negative")
 
     media = locate_media(args.media_root)
     model = PortableEnsemble(args.model)
@@ -412,6 +423,8 @@ def main() -> None:
             writer.writeheader()
             csv_handle.flush()
 
+        new_pairs_completed = 0
+        stop_requested = False
         for plan in campaign_plan:
             seed = int(plan["seed"])
             regime = str(plan["regime"])
@@ -640,6 +653,15 @@ def main() -> None:
                         f"decision={decision_ms:.1f}ms wall={wall_s:.2f}s",
                         flush=True,
                     )
+                new_pairs_completed += 1
+                if (
+                    args.max_new_pairs
+                    and new_pairs_completed >= args.max_new_pairs
+                ):
+                    stop_requested = True
+                    break
+            if stop_requested:
+                break
     finally:
         if csv_handle is not None:
             csv_handle.close()
@@ -676,6 +698,7 @@ def main() -> None:
         "counterbalanced_order": not args.fixed_order,
         "campaign_plan": "campaign_plan.json",
         "segment_duration_s": SEGMENT_DURATION_S,
+        "max_new_pairs_per_invocation": args.max_new_pairs,
         "transfer_deadline_s": TRANSFER_TIMEOUT_S,
         "transfer_censoring": (
             "curl exit 28 is a right-censored observation only for the "

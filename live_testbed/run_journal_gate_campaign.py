@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import os
 import subprocess
@@ -18,6 +19,9 @@ CONTROLLERS = [
     "risk_debt",
 ]
 CONDITIONS = ["non_actionable", "capacity_only"]
+EXPECTED_PAIR_ROWS = 5 * (1 + 8)
+EXPECTED_PAIRS_PER_CONDITION = 30 * len(CONTROLLERS)
+PAIRS_PER_INVOCATION = 1
 
 
 def experiment_command(
@@ -62,6 +66,8 @@ def experiment_command(
         "0.08",
         "--impairment",
         condition,
+        "--max-new-pairs",
+        str(PAIRS_PER_INVOCATION),
         "--resume",
     ]
 
@@ -105,6 +111,17 @@ def analysis_commands(
 def write_status(path: Path, status: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(status, indent=2), encoding="utf-8")
+
+
+def complete_pair_count(csv_path: Path) -> int:
+    if not csv_path.exists():
+        return 0
+    counts: dict[tuple[int, str], int] = {}
+    with csv_path.open(encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            key = (int(row["seed"]), row["controller"])
+            counts[key] = counts.get(key, 0) + 1
+    return sum(count == EXPECTED_PAIR_ROWS for count in counts.values())
 
 
 def main() -> None:
@@ -153,6 +170,7 @@ def main() -> None:
             "debt_decay": 0.90,
             "switch_weight": 0.08,
             "max_infrastructure_retries": args.max_infrastructure_retries,
+            "pairs_per_invocation": PAIRS_PER_INVOCATION,
         },
         "conditions": {},
     }
@@ -169,12 +187,20 @@ def main() -> None:
             "started_utc": datetime.now(timezone.utc).isoformat(),
             "output": str(output),
             "infrastructure_retries": 0,
+            "consecutive_failures": 0,
+            "invocations_completed": 0,
+            "completed_pairs": complete_pair_count(
+                output / "live_measurements.csv"
+            ),
+            "expected_pairs": EXPECTED_PAIRS_PER_CONDITION,
         }
         write_status(status_path, status)
-        attempts = args.max_infrastructure_retries + 1
-        for attempt in range(1, attempts + 1):
+        condition_status = status["conditions"][condition]
+        while condition_status["completed_pairs"] < EXPECTED_PAIRS_PER_CONDITION:
+            condition_status["attempt"] = (
+                condition_status["consecutive_failures"] + 1
+            )
             subprocess.run(["mn", "-c"], check=True)
-            status["conditions"][condition]["attempt"] = attempt
             write_status(status_path, status)
             try:
                 subprocess.run(
@@ -187,35 +213,58 @@ def main() -> None:
                     ),
                     check=True,
                 )
-                break
             except subprocess.CalledProcessError as error:
-                condition_status = status["conditions"][condition]
                 condition_status["last_failure_utc"] = datetime.now(
                     timezone.utc
                 ).isoformat()
                 condition_status["last_returncode"] = error.returncode
-                if attempt == attempts:
+                condition_status["infrastructure_retries"] += 1
+                condition_status["consecutive_failures"] += 1
+                if (
+                    condition_status["consecutive_failures"]
+                    > args.max_infrastructure_retries
+                ):
                     condition_status["status"] = "failed_or_interrupted"
                     condition_status["stopped_utc"] = datetime.now(
                         timezone.utc
                     ).isoformat()
                     write_status(status_path, status)
                     raise
-                condition_status["infrastructure_retries"] = attempt
                 condition_status["status"] = "retrying"
                 write_status(status_path, status)
-                time.sleep(min(5 * attempt, 30))
+                time.sleep(
+                    min(5 * condition_status["consecutive_failures"], 30)
+                )
                 condition_status["status"] = "running"
                 write_status(status_path, status)
+                continue
             except BaseException:
-                status["conditions"][condition][
-                    "status"
-                ] = "failed_or_interrupted"
-                status["conditions"][condition][
-                    "stopped_utc"
-                ] = datetime.now(timezone.utc).isoformat()
+                condition_status["status"] = "failed_or_interrupted"
+                condition_status["stopped_utc"] = datetime.now(
+                    timezone.utc
+                ).isoformat()
                 write_status(status_path, status)
                 raise
+            previous_count = condition_status["completed_pairs"]
+            current_count = complete_pair_count(
+                output / "live_measurements.csv"
+            )
+            if current_count <= previous_count:
+                condition_status["status"] = "failed_or_interrupted"
+                condition_status["stopped_utc"] = datetime.now(
+                    timezone.utc
+                ).isoformat()
+                condition_status["last_error"] = (
+                    "successful invocation made no complete-pair progress"
+                )
+                write_status(status_path, status)
+                raise RuntimeError(condition_status["last_error"])
+            condition_status["completed_pairs"] = current_count
+            condition_status["invocations_completed"] += 1
+            condition_status["consecutive_failures"] = 0
+            condition_status["attempt"] = 1
+            condition_status["status"] = "running"
+            write_status(status_path, status)
         status["conditions"][condition]["status"] = "complete"
         status["conditions"][condition][
             "completed_utc"

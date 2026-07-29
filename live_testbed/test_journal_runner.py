@@ -40,6 +40,7 @@ def test_frozen_command_contains_both_pairing_and_analysis_parameters():
     assert command[command.index("--warmup-epochs") + 1] == "1"
     assert command[command.index("--seed") + 1] == "20260730"
     assert command[command.index("--impairment") + 1] == "non_actionable"
+    assert command[command.index("--max-new-pairs") + 1] == "1"
     assert "--resume" in command
 
 
@@ -103,6 +104,7 @@ def test_unimpaired_timeout_remains_an_infrastructure_failure():
 
 def test_campaign_retries_failed_subprocess_and_completes(tmp_path, monkeypatch):
     experiment_attempts = {"non_actionable": 0, "capacity_only": 0}
+    completed_pairs = {"non_actionable": 0, "capacity_only": 0}
 
     def fake_run(command, check):
         if any(str(part).endswith("run_mininet_experiment.py") for part in command):
@@ -110,10 +112,21 @@ def test_campaign_retries_failed_subprocess_and_completes(tmp_path, monkeypatch)
             experiment_attempts[condition] += 1
             if condition == "non_actionable" and experiment_attempts[condition] == 1:
                 raise subprocess.CalledProcessError(28, command)
+            completed_pairs[condition] += 1
         return subprocess.CompletedProcess(command, 0)
+
+    def fake_complete_pair_count(path):
+        condition = (
+            "non_actionable"
+            if "nonactionable" in str(path)
+            else "capacity_only"
+        )
+        return completed_pairs[condition]
 
     monkeypatch.setattr(campaign.subprocess, "run", fake_run)
     monkeypatch.setattr(campaign.time, "sleep", lambda _seconds: None)
+    monkeypatch.setattr(campaign, "complete_pair_count", fake_complete_pair_count)
+    monkeypatch.setattr(campaign, "EXPECTED_PAIRS_PER_CONDITION", 2)
     monkeypatch.setattr(
         sys,
         "argv",
@@ -136,8 +149,8 @@ def test_campaign_retries_failed_subprocess_and_completes(tmp_path, monkeypatch)
         (tmp_path / "results" / "journal_gate_orchestration.json").read_text()
     )
     assert experiment_attempts == {
-        "non_actionable": 2,
-        "capacity_only": 1,
+        "non_actionable": 3,
+        "capacity_only": 2,
     }
     assert status["conditions"]["non_actionable"]["infrastructure_retries"] == 1
     assert status["conditions"]["non_actionable"]["status"] == "complete"
