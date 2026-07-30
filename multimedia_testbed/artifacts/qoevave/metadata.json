@@ -1,9 +1,12 @@
 {
-  "format": "credo360-qoevave-v1",
+  "format": "credo360-qoevave-v2",
   "manifest": "qoevave_manifest.json",
   "contents": [
     "Badminton05",
+    "BuskingCity01",
+    "ConferenceCenter01",
     "ForestWalk03",
+    "Lake01",
     "Skateboarding01"
   ],
   "ladder_mbps": [
@@ -28,7 +31,10 @@
     100.0,
     100.0
   ],
-  "viewport_metric": "luma PSNR from per-frame equirectangular tile MSE, weighted by the measured HMD viewport and spherical tile area",
+  "viewport_metrics": {
+    "vw_psnr_db": "luma PSNR from per-frame equirectangular tile MSE, weighted by the measured HMD viewport and spherical tile area",
+    "vw_ssim": "luma SSIM over each equirectangular tile, weighted by the measured HMD viewport and spherical tile area"
+  },
   "split_rule": "SHA-256(qoevave-subject-ID)[0] < 85 is calibration; all other subjects are held-out test",
   "perceptual_claim": "objective metric only; not subjective MOS"
 }

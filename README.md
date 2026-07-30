@@ -1,19 +1,20 @@
 # CREDO-360
 
-**Open testbed for coverage-calibrated QoE deprivation recovery in fair
-multi-user immersive streaming.**
+**Open testbed for coverage-calibrated viewport-quality deprivation recovery
+in fair multi-user immersive streaming.**
 
 This repository contains the prototype, CUDA replay experiment, statistical
 analysis, literature-review evidence, exported learned model, and live
 Mininet/DASH integration used by the CREDO-360 paper.
 
-> Research status: powered live-emulation campaign complete. The manuscript is
-> in preparation. Operational QoE is model-estimated, not a new subjective MOS.
+> Research status: powered live-emulation and objective multimedia campaigns
+> complete. The manuscript is in preparation. The paper makes controller and
+> objective viewport-quality claims, not new subjective MOS or human-QoE claims.
 
 ## Topic
 
-**Coverage-Calibrated Risk and Experiential Deprivation-Aware Optimization for
-Multi-User 360-Degree Streaming**
+**Coverage-Calibrated Risk and Viewport-Quality Deprivation-Aware Optimization
+for Multi-User 360-Degree Streaming**
 
 The system combines:
 
@@ -64,7 +65,7 @@ fairness/continuity trade-off, not universal QoE improvement.
 See `EXPERIMENT_REPORT.md`. The rejected anonymous-feature phase is preserved
 as `EXPERIMENT_REPORT_PHASE1_REJECTED.md`.
 
-The TMM journal extension adds a deterministic low-discrepancy action cover
+The journal testbed adds a deterministic low-discrepancy action cover
 that avoids materializing the full bitrate Cartesian product. A frozen
 30-seed controller benchmark evaluates 5, 10, 20, and 30 users with 240
 decisions per population size. On the single-threaded WSL CPU/NumPy path,
@@ -79,15 +80,15 @@ test; its deliberately limited observation is documented in
 
 The powered WSL2/Mininet campaign uses five clients fetching DASH segments
 concurrently through one measured, time-varying shared bottleneck. Across 30
-paired seeds and six controllers, CREDO-360 improved worst-user mean
-operational QoE by `0.2090` over conformal Nash
+paired seeds and six controllers, CREDO-360 improved the worst-user
+operational quality index by `0.2090` over conformal Nash
 (`p_Holm=1.12e-7`, paired-bootstrap 95% CI `[0.1416, 0.2886]`) and Jain
 fairness by `0.002393` (`p_Holm=8.20e-7`). Stall time did not improve.
 The opportunity gate was saturated and the confirmatory comparison with
 ungated debt was null; this limits the gate-specific claim. See
 `LIVE_POWERED_EXPERIMENT_REPORT.md`.
 
-The subsequent frozen journal gate-identification experiment targets that
+The subsequent frozen gate-identification experiment targets that
 limitation with paired capacity-only and non-actionable conditions. Across 30
 paired seeds, CREDO-360 reduced wasted allocation by 73.9% and total stall by
 70.8% versus ungated resource debt, while improving the worst unimpaired
@@ -97,16 +98,18 @@ reported as such. Both 4,050-row condition audits pass. See
 `JOURNAL_GATE_FINAL_REPORT.md` and
 `live_testbed/results/journal_gate_analysis/`.
 
-Experiment C adds independent multimedia validation using three public
+Experiment C adds independent objective multimedia validation using six public
 QoEVAVE 8K 360-degree sequences and user-disjoint HMD traces. Across 30 paired
-seeds, CREDO-360 improves worst-user objective VW-PSNR by 0.483 dB
-(`p_Holm=0.000601`, paired-bootstrap 95% CI `[0.270, 0.703]`) and Jain
-fairness over per-user mean viewport quality by 0.00815
-(`p_Holm=0.000519`). Stall is exactly tied and switching does not improve.
-Content-specific mean-quality effects are heterogeneous, so the result is
-reported as a worst-user/fairness effect rather than universal multimedia
-quality improvement. See `JOURNAL_MULTIMEDIA_GENERALIZATION_REPORT.md` and
-`multimedia_testbed/results/generalization_analysis/`.
+seeds, CREDO-360 improves worst-user VW-PSNR by 1.179 dB
+(`p_Holm=2.05e-5`), worst-user VW-SSIM by 0.01796
+(`p_Holm=2.75e-5`), and Jain viewport-quality fairness by 0.01057
+(`p_Holm=1.66e-5`). Stall is exactly tied and switching is nonsignificant.
+The six-cell component ablation identifies persistent debt as the active
+fairness mechanism; the opportunity gate is action-equivalent in this
+capacity-only replay. Two executable recent-method adaptations and
+heterogeneous content-level effects are reported with explicit claim limits.
+See `JOURNAL_MULTIMEDIA_GENERALIZATION_REPORT.md` and
+`multimedia_testbed/results/generalization_v2_analysis/`.
 
 ## Package map
 
@@ -120,7 +123,7 @@ quality improvement. See `JOURNAL_MULTIMEDIA_GENERALIZATION_REPORT.md` and
   measurements, summary, and figure.
 - `multimedia_testbed/` - independent 360-degree media preparation,
   held-out head-trace replay, paired statistics, results, and figures.
-- `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM extension covering
+- `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen evaluation protocol covering
   non-actionable impairment, scalability, and independent-content validation.
 - `JOURNAL_GATE_FINAL_REPORT.md` - completed two-condition gate-identification
   experiment, paired inference, null result, and claim boundary.

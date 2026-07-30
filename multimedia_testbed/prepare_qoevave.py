@@ -3,7 +3,8 @@
 The script deliberately keeps third-party media outside Git. It verifies the
 source assets, creates six reproducible H.264 representations, measures
 P.910-style spatial/temporal information, and combines tile-level distortion
-with public HMD traces to produce viewport-weighted PSNR (VW-PSNR).
+with public HMD traces to produce viewport-weighted PSNR (VW-PSNR) and
+viewport-weighted structural similarity (VW-SSIM).
 """
 
 from __future__ import annotations
@@ -206,6 +207,42 @@ def tile_mse(reference: np.ndarray, distorted: np.ndarray) -> np.ndarray:
     ).mean(axis=(2, 4))
 
 
+def tile_ssim(reference: np.ndarray, distorted: np.ndarray) -> np.ndarray:
+    """Framewise SSIM over each declared equirectangular tile."""
+    count = min(len(reference), len(distorted))
+    tile_height = HEIGHT // TILE_ROWS
+    tile_width = WIDTH // TILE_COLUMNS
+    ref = reference[:count].reshape(
+        count,
+        TILE_ROWS,
+        tile_height,
+        TILE_COLUMNS,
+        tile_width,
+    )
+    dis = distorted[:count].reshape(
+        count,
+        TILE_ROWS,
+        tile_height,
+        TILE_COLUMNS,
+        tile_width,
+    )
+    axes = (2, 4)
+    ref_mean = ref.mean(axis=axes)
+    dis_mean = dis.mean(axis=axes)
+    ref_zero = ref - ref_mean[:, :, None, :, None]
+    dis_zero = dis - dis_mean[:, :, None, :, None]
+    ref_var = np.mean(ref_zero**2, axis=axes)
+    dis_var = np.mean(dis_zero**2, axis=axes)
+    covariance = np.mean(ref_zero * dis_zero, axis=axes)
+    c1 = (0.01 * 255.0) ** 2
+    c2 = (0.03 * 255.0) ** 2
+    numerator = (2 * ref_mean * dis_mean + c1) * (2 * covariance + c2)
+    denominator = (
+        (ref_mean**2 + dis_mean**2 + c1) * (ref_var + dis_var + c2)
+    )
+    return np.clip(numerator / np.maximum(denominator, 1e-12), -1.0, 1.0)
+
+
 def viewport_weights(yaw: float, pitch: float) -> np.ndarray:
     yaw_centres = np.linspace(
         -180 + 180 / TILE_COLUMNS,
@@ -232,25 +269,33 @@ def viewport_weights(yaw: float, pitch: float) -> np.ndarray:
     return weights / weights.sum()
 
 
-def viewport_psnr(
-    mse: np.ndarray, trace: dict[str, np.ndarray], duration_s: int
-) -> list[float]:
+def viewport_scores(
+    mse: np.ndarray,
+    ssim: np.ndarray,
+    trace: dict[str, np.ndarray],
+    duration_s: int,
+) -> tuple[list[float], list[float]]:
     frame_times = np.arange(len(mse), dtype=float) + 0.5
     indices = np.searchsorted(trace["time"], frame_times, side="left")
     indices = np.clip(indices, 0, len(trace["time"]) - 1)
-    weighted = []
+    weighted_mse = []
+    weighted_ssim = []
     for frame_index, trace_index in enumerate(indices):
         weights = viewport_weights(
             float(trace["yaw"][trace_index]),
             float(trace["pitch"][trace_index]),
         )
-        weighted.append(float(np.sum(mse[frame_index] * weights)))
-    segment_scores = []
+        weighted_mse.append(float(np.sum(mse[frame_index] * weights)))
+        weighted_ssim.append(float(np.sum(ssim[frame_index] * weights)))
+    segment_psnr = []
+    segment_ssim = []
     for start in range(0, duration_s, SEGMENT_S):
-        values = weighted[start : start + SEGMENT_S]
-        mean_mse = max(float(np.mean(values)), 1e-12)
-        segment_scores.append(10 * math.log10(255.0**2 / mean_mse))
-    return segment_scores
+        mse_values = weighted_mse[start : start + SEGMENT_S]
+        ssim_values = weighted_ssim[start : start + SEGMENT_S]
+        mean_mse = max(float(np.mean(mse_values)), 1e-12)
+        segment_psnr.append(10 * math.log10(255.0**2 / mean_mse))
+        segment_ssim.append(float(np.mean(ssim_values)))
+    return segment_psnr, segment_ssim
 
 
 def segment_sizes(path: Path, duration_s: int) -> list[int]:
@@ -354,6 +399,7 @@ def main() -> None:
             encode_rendition(source, rendition, float(bitrate), duration_s)
             distorted = decoded_frames(rendition, duration_s)
             mse = tile_mse(reference, distorted)
+            ssim = tile_ssim(reference, distorted)
             for segment, size in enumerate(segment_sizes(rendition, duration_s)):
                 size_rows.append(
                     {
@@ -365,8 +411,12 @@ def main() -> None:
                     }
                 )
             for subject, trace in traces.items():
-                scores = viewport_psnr(mse, trace, duration_s)
-                for segment, score in enumerate(scores):
+                psnr_scores, ssim_scores = viewport_scores(
+                    mse, ssim, trace, duration_s
+                )
+                for segment, (psnr_score, ssim_score) in enumerate(
+                    zip(psnr_scores, ssim_scores)
+                ):
                     quality_rows.append(
                         {
                             "content": content,
@@ -375,7 +425,8 @@ def main() -> None:
                             "segment": segment,
                             "ladder_index": ladder_index,
                             "bitrate_mbps": bitrate,
-                            "vw_psnr_db": score,
+                            "vw_psnr_db": psnr_score,
+                            "vw_ssim": ssim_score,
                         }
                     )
             print(
@@ -384,7 +435,7 @@ def main() -> None:
                 flush=True,
             )
 
-    # Complexity labels are empirical ranks over the declared three-sequence set.
+    # Complexity labels are empirical tercile ranks over the declared set.
     si_values = np.asarray(
         [float(row["spatial_information"]) for row in content_rows]
     )
@@ -394,8 +445,10 @@ def main() -> None:
     composite = (si_values - si_values.mean()) / max(si_values.std(), 1e-9)
     composite += (ti_values - ti_values.mean()) / max(ti_values.std(), 1e-9)
     labels = ["low", "medium", "high"]
+    content_count = len(content_rows)
     for rank, index in enumerate(np.argsort(composite)):
-        content_rows[int(index)]["relative_complexity"] = labels[rank]
+        label_index = min(2, (3 * rank) // max(content_count, 1))
+        content_rows[int(index)]["relative_complexity"] = labels[label_index]
         content_rows[int(index)]["complexity_score"] = float(composite[index])
 
     write_csv(
@@ -419,7 +472,7 @@ def main() -> None:
         quality_rows,
     )
     metadata = {
-        "format": "credo360-qoevave-v1",
+        "format": "credo360-qoevave-v2",
         "manifest": args.manifest.name,
         "contents": list(manifest["contents"]),
         "ladder_mbps": LADDER_MBPS.tolist(),
@@ -428,10 +481,16 @@ def main() -> None:
         "segment_duration_s": SEGMENT_S,
         "tile_grid": [TILE_COLUMNS, TILE_ROWS],
         "viewport_fov_degrees": [FOV_WIDTH_DEG, FOV_HEIGHT_DEG],
-        "viewport_metric": (
-            "luma PSNR from per-frame equirectangular tile MSE, weighted by "
-            "the measured HMD viewport and spherical tile area"
-        ),
+        "viewport_metrics": {
+            "vw_psnr_db": (
+                "luma PSNR from per-frame equirectangular tile MSE, weighted "
+                "by the measured HMD viewport and spherical tile area"
+            ),
+            "vw_ssim": (
+                "luma SSIM over each equirectangular tile, weighted by the "
+                "measured HMD viewport and spherical tile area"
+            ),
+        },
         "split_rule": (
             "SHA-256(qoevave-subject-ID)[0] < 85 is calibration; all other "
             "subjects are held-out test"

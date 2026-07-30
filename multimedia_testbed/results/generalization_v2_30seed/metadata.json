@@ -1,0 +1,73 @@
+{
+  "format": "credo360-multimedia-generalization-v2",
+  "seeds": 30,
+  "first_seed": 20260760,
+  "users": 5,
+  "epochs": 6,
+  "controllers": [
+    "mean_nash",
+    "conformal_nash",
+    "mean_debt_ungated",
+    "mean_debt_gated",
+    "conformal_debt_ungated",
+    "risk_debt",
+    "fair_edge_nsw_proxy",
+    "aci_nash"
+  ],
+  "paired_within_seed": true,
+  "user_disjoint_split": "only split=test traces enter outcomes",
+  "transport": "exact equal processor-sharing completion times for simultaneous flows, using measured VBR representation segment sizes",
+  "outcomes": [
+    "viewport-weighted luma PSNR from measured held-out HMD traces",
+    "viewport-weighted luma SSIM from measured held-out HMD traces"
+  ],
+  "quality_index": "1 + 4*clip((VW-PSNR-18)/24,0,1); objective, not MOS",
+  "component_ablation": {
+    "mean_nash": [
+      0,
+      0,
+      0
+    ],
+    "conformal_nash": [
+      1,
+      0,
+      0
+    ],
+    "mean_debt_ungated": [
+      0,
+      1,
+      0
+    ],
+    "mean_debt_gated": [
+      0,
+      1,
+      1
+    ],
+    "conformal_debt_ungated": [
+      1,
+      1,
+      0
+    ],
+    "risk_debt": [
+      1,
+      1,
+      1
+    ],
+    "factor_order": [
+      "calibration",
+      "debt",
+      "opportunity_gate"
+    ],
+    "structural_aliases_omitted": "gate-on/debt-off cells equal their gate-off counterparts"
+  },
+  "recent_method_adaptations": {
+    "fair_edge_nsw_proxy": "uncertainty-adjusted Nash-welfare objective aligned with the FairEdge360 edge reward; not its trained MARL/GNN policy",
+    "aci_nash": "per-user adaptive conformal alpha feedback with Nash welfare; an executable risk-control comparator, not a reproduction of the single-user Risk-as-a-Resource viewport model"
+  },
+  "portable_model_max_abs_error": 2.404843928438538e-07,
+  "target_quality_index": 4.0,
+  "debt_weight": 1.0,
+  "debt_decay": 0.9,
+  "switch_weight": 0.08,
+  "aci_gamma": 0.02
+}

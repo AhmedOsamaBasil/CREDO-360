@@ -11,10 +11,25 @@
       "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton05/Badminton05_AV_7680x3840_60fps_64s_25Mbps_ambiX1_24bit.mp4",
       "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/Badminton05/1_No_Audio/1_No_Audio_Badminton05_Full_Duration.zip"
     },
+    "BuskingCity01": {
+      "duration_s": 51,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity01/BuskingCity01_AV_7680x3840_60fps_51s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/BuskingCity01/1_No_Audio/1_No_Audio_BuskingCity01_Full_Duration.zip"
+    },
+    "ConferenceCenter01": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference01/Conference01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/1_No_Audio/1_No_Audio_ConferenceCenter01_Full_Duration.zip"
+    },
     "ForestWalk03": {
       "duration_s": 60,
       "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk03/ForestWalk03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
       "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ForestWalk03/1_No_Audio/1_No_Audio_ForestWalk03_Full_Duration.zip"
+    },
+    "Lake01": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Lake01/Lake01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/Lake01/1_No_Audio/1_No_Audio_Lake01_Full_Duration.zip"
     },
     "Skateboarding01": {
       "duration_s": 60,

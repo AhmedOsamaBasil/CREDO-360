@@ -19,9 +19,14 @@ from portable_qoe import (  # noqa: E402
 )
 
 CONTROLLERS = [
+    "mean_nash",
     "conformal_nash",
-    "resource_debt_ungated",
+    "mean_debt_ungated",
+    "mean_debt_gated",
+    "conformal_debt_ungated",
     "risk_debt",
+    "fair_edge_nsw_proxy",
+    "aci_nash",
 ]
 LADDER = np.array(
     [0.045373, 0.088482, 0.252988, 0.368912, 0.987061, 3.792491]
@@ -45,7 +50,12 @@ FIELDS = [
     "buffer_after_s",
     "stall_s",
     "vw_psnr_db",
+    "vw_ssim",
     "viewport_quality_index",
+    "decision_predicted_quality",
+    "decision_lower_quality",
+    "aci_alpha_before",
+    "aci_alpha_after",
     "debt_before",
     "debt_after",
     "switched",
@@ -124,7 +134,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("multimedia_testbed/results/generalization_30seed"),
+        default=Path("multimedia_testbed/results/generalization_v2_30seed"),
     )
     parser.add_argument("--seed", type=int, default=20260760)
     parser.add_argument("--seeds", type=int, default=30)
@@ -133,11 +143,12 @@ def main() -> None:
     parser.add_argument("--debt-weight", type=float, default=1.0)
     parser.add_argument("--debt-decay", type=float, default=0.90)
     parser.add_argument("--switch-weight", type=float, default=0.08)
+    parser.add_argument("--aci-gamma", type=float, default=0.02)
     args = parser.parse_args()
 
     quality_rows = read_rows(args.artifacts / "viewport_quality.csv")
     size_rows = read_rows(args.artifacts / "segment_sizes.csv")
-    quality: dict[tuple[str, int, int, int], float] = {}
+    quality: dict[tuple[str, int, int, int], tuple[float, float]] = {}
     test_subjects: dict[str, list[int]] = {}
     for row in quality_rows:
         if row["split"] != "test":
@@ -152,7 +163,7 @@ def main() -> None:
                 int(row["segment"]),
                 int(row["ladder_index"]),
             )
-        ] = float(row["vw_psnr_db"])
+        ] = (float(row["vw_psnr_db"]), float(row["vw_ssim"]))
     for content in test_subjects:
         test_subjects[content] = sorted(set(test_subjects[content]))
     sizes = {
@@ -163,8 +174,10 @@ def main() -> None:
     }
     contents = sorted(test_subjects)
     epochs = 6
-    if len(contents) < 3 or any(len(value) < args.users for value in test_subjects.values()):
-        parser.error("Need three contents and at least one test trace per user")
+    if len(contents) < 6 or any(
+        len(value) < args.users for value in test_subjects.values()
+    ):
+        parser.error("Need six contents and at least one test trace per user")
 
     model = PortableEnsemble(args.model)
     model_error = model.verify_export()
@@ -174,6 +187,8 @@ def main() -> None:
         payload["calibration"]["one_sided_residuals"],
         float(payload["calibration"]["alpha"]),
     )
+    target_alpha = float(payload["calibration"]["alpha"])
+    residuals = payload["calibration"]["one_sided_residuals"]
     args.output.mkdir(parents=True, exist_ok=True)
     measurements: list[dict] = []
     plans: list[dict] = []
@@ -208,8 +223,18 @@ def main() -> None:
             previous = np.full(args.users, LADDER[1])
             latency = np.linspace(0.010, 0.034, args.users)
             debt = np.zeros(args.users)
+            aci_alpha = np.full(args.users, target_alpha)
             for epoch, capacity in enumerate(capacities):
-                action, _ = select_action(
+                alpha_before = aci_alpha.copy()
+                controller_radius: float | np.ndarray = radius
+                if controller == "aci_nash":
+                    controller_radius = np.asarray(
+                        [
+                            conformal_radius(residuals, float(alpha))
+                            for alpha in aci_alpha
+                        ]
+                    )
+                action, decision = select_action(
                     controller,
                     model,
                     template,
@@ -220,7 +245,7 @@ def main() -> None:
                     previous,
                     latency,
                     debt,
-                    radius,
+                    controller_radius,
                     debt_weight=args.debt_weight,
                     switch_weight=args.switch_weight,
                 )
@@ -247,15 +272,29 @@ def main() -> None:
                     0.0,
                     30.0,
                 )
-                psnr = np.asarray(
-                    [
-                        quality[(content, subject, epoch, int(ladder_index))]
-                        for (content, subject), ladder_index in zip(
-                            assignments, ladder_indices
-                        )
-                    ]
-                )
+                scores = [
+                    quality[(content, subject, epoch, int(ladder_index))]
+                    for (content, subject), ladder_index in zip(
+                        assignments, ladder_indices
+                    )
+                ]
+                psnr = np.asarray([score[0] for score in scores])
+                ssim = np.asarray([score[1] for score in scores])
                 objective_index = quality_index(psnr)
+                selected_mean = np.asarray(
+                    decision["selected_mean"], dtype=float
+                )
+                selected_lower = np.asarray(
+                    decision["selected_lower"], dtype=float
+                )
+                if controller == "aci_nash":
+                    miss = (objective_index < selected_lower).astype(float)
+                    aci_alpha = np.clip(
+                        aci_alpha
+                        + args.aci_gamma * (target_alpha - miss),
+                        0.01,
+                        0.50,
+                    )
                 debt_before = debt.copy()
                 debt = np.maximum(
                     args.debt_decay * debt
@@ -286,7 +325,12 @@ def main() -> None:
                             "buffer_after_s": buffer_s[user],
                             "stall_s": stall[user],
                             "vw_psnr_db": psnr[user],
+                            "vw_ssim": ssim[user],
                             "viewport_quality_index": objective_index[user],
+                            "decision_predicted_quality": selected_mean[user],
+                            "decision_lower_quality": selected_lower[user],
+                            "aci_alpha_before": alpha_before[user],
+                            "aci_alpha_after": aci_alpha[user],
                             "debt_before": debt_before[user],
                             "debt_after": debt[user],
                             "switched": int(action[user] != previous[user]),
@@ -303,7 +347,7 @@ def main() -> None:
         json.dumps(plans, indent=2), encoding="utf-8"
     )
     metadata = {
-        "format": "credo360-multimedia-generalization-v1",
+        "format": "credo360-multimedia-generalization-v2",
         "seeds": args.seeds,
         "first_seed": args.seed,
         "users": args.users,
@@ -315,13 +359,40 @@ def main() -> None:
             "exact equal processor-sharing completion times for simultaneous "
             "flows, using measured VBR representation segment sizes"
         ),
-        "outcome": "viewport-weighted luma PSNR from measured held-out HMD traces",
+        "outcomes": [
+            "viewport-weighted luma PSNR from measured held-out HMD traces",
+            "viewport-weighted luma SSIM from measured held-out HMD traces",
+        ],
         "quality_index": "1 + 4*clip((VW-PSNR-18)/24,0,1); objective, not MOS",
+        "component_ablation": {
+            "mean_nash": [0, 0, 0],
+            "conformal_nash": [1, 0, 0],
+            "mean_debt_ungated": [0, 1, 0],
+            "mean_debt_gated": [0, 1, 1],
+            "conformal_debt_ungated": [1, 1, 0],
+            "risk_debt": [1, 1, 1],
+            "factor_order": ["calibration", "debt", "opportunity_gate"],
+            "structural_aliases_omitted": (
+                "gate-on/debt-off cells equal their gate-off counterparts"
+            ),
+        },
+        "recent_method_adaptations": {
+            "fair_edge_nsw_proxy": (
+                "uncertainty-adjusted Nash-welfare objective aligned with the "
+                "FairEdge360 edge reward; not its trained MARL/GNN policy"
+            ),
+            "aci_nash": (
+                "per-user adaptive conformal alpha feedback with Nash welfare; "
+                "an executable risk-control comparator, not a reproduction of "
+                "the single-user Risk-as-a-Resource viewport model"
+            ),
+        },
         "portable_model_max_abs_error": model_error,
         "target_quality_index": args.target_quality_index,
         "debt_weight": args.debt_weight,
         "debt_decay": args.debt_decay,
         "switch_weight": args.switch_weight,
+        "aci_gamma": args.aci_gamma,
     }
     (args.output / "metadata.json").write_text(
         json.dumps(metadata, indent=2), encoding="utf-8"

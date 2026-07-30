@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import numpy as np
 
-from prepare_qoevave import subject_split, tile_mse, viewport_weights
+from prepare_qoevave import (
+    subject_split,
+    tile_mse,
+    tile_ssim,
+    viewport_weights,
+)
 from analyze_generalization import holm, jain, rank_biserial
 from run_generalization import processor_sharing_completion, quality_index
 
@@ -28,6 +33,18 @@ def test_tile_mse_preserves_grid():
     result = tile_mse(reference, distorted)
     assert result.shape == (2, 6, 12)
     assert np.allclose(result, 9.0)
+
+
+def test_tile_ssim_is_one_for_identical_frames_and_bounded():
+    reference = np.arange(480 * 960, dtype=np.float32).reshape(
+        1, 480, 960
+    ) % 255
+    identical = tile_ssim(reference, reference)
+    shifted = tile_ssim(reference, np.clip(reference + 20, 0, 255))
+    assert identical.shape == (1, 6, 12)
+    assert np.allclose(identical, 1.0)
+    assert np.all((-1.0 <= shifted) & (shifted <= 1.0))
+    assert np.mean(shifted) < 1.0
 
 
 def test_processor_sharing_completion():
