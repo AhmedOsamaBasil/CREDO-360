@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "rows": 7200,
+  "seeds": 30,
+  "controllers": [
+    "aci_nash",
+    "conformal_debt_ungated",
+    "conformal_nash",
+    "fair_edge_nsw_proxy",
+    "mean_debt_gated",
+    "mean_debt_ungated",
+    "mean_nash",
+    "risk_debt"
+  ],
+  "expected_rows_per_controller_seed": 30,
+  "duplicate_rows": 0,
+  "incomplete_pair_cells": 0,
+  "paired_plan_mismatches": 0,
+  "held_out_test_traces_only": true
+}

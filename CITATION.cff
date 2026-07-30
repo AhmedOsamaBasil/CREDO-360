@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use CREDO-360, please cite the software and the associated paper."
-title: "CREDO-360: Coverage-Calibrated QoE Deprivation Recovery Testbed"
+title: "CREDO-360: Coverage-Calibrated Viewport-Quality Deprivation Recovery Testbed"
 type: software
 authors:
   - family-names: "Al-Mashhadani"
@@ -9,10 +9,10 @@ authors:
 repository-code: "https://github.com/AhmedOsamaBasil/CREDO-360"
 url: "https://github.com/AhmedOsamaBasil/CREDO-360"
 license: MIT
-version: 0.1.0
-date-released: 2026-07-29
+version: 0.2.0
+date-released: 2026-07-30
 keywords:
-  - quality of experience
+  - objective viewport quality
   - 360-degree video
   - adaptive streaming
   - fairness
@@ -21,11 +21,10 @@ keywords:
   - reproducibility
 preferred-citation:
   type: article
-  title: "CREDO-360: Coverage-Calibrated QoE Deprivation Recovery for Fair Multi-User Immersive Streaming"
+  title: "CREDO-360: Coverage-Calibrated Viewport-Quality Deprivation Recovery for Fair Multi-User Immersive Streaming"
   authors:
     - family-names: "Al-Mashhadani"
       given-names: "Ahmed Osama Basil"
       orcid: "https://orcid.org/0000-0002-8980-0658"
   year: 2026
   notes: "Manuscript in preparation; update this record with the DOI and venue after publication."
-

@@ -214,7 +214,7 @@ def select_action(
     previous_rate: np.ndarray,
     latency_s: np.ndarray,
     debt: np.ndarray,
-    radius: float,
+    radius: float | np.ndarray,
     debt_weight: float = 1.0,
     switch_weight: float = 0.08,
 ) -> tuple[np.ndarray, dict]:
@@ -231,7 +231,12 @@ def select_action(
     )
     mean, uncertainty = model.predict(features)
     mean, uncertainty = mean.reshape(rows, users), uncertainty.reshape(rows, users)
-    lower = np.clip(mean - radius, 1.0, 5.0)
+    radius_array = np.asarray(radius, dtype=float)
+    if radius_array.ndim > 1 or (
+        radius_array.ndim == 1 and len(radius_array) != users
+    ):
+        raise ValueError("radius must be scalar or one value per user")
+    lower = np.clip(mean - radius_array, 1.0, 5.0)
     reference = lower[0]
     recoverable = np.maximum(lower - reference[None, :], 0)
     normalized_debt = debt / (1.0 + debt.mean())
@@ -242,12 +247,30 @@ def select_action(
     debt_term = np.zeros(rows, dtype=float)
     if controller == "mean_greedy":
         score = mean.sum(axis=1)
-    elif controller == "proportional_fair":
+    elif controller in {"proportional_fair", "mean_nash"}:
         score = np.log(np.clip(mean, 1.0, 5.0)).sum(axis=1)
-    elif controller == "uncertainty_nash":
+    elif controller in {"uncertainty_nash", "fair_edge_nsw_proxy"}:
+        # Executable objective-aligned proxy for uncertainty-aware Nash edge
+        # coordination. It is not a reproduction of a trained MARL/GNN policy.
         score = np.log(np.clip(mean - 1.28 * uncertainty, 1.0, 5.0)).sum(axis=1)
-    elif controller == "conformal_nash":
+    elif controller in {"conformal_nash", "aci_nash"}:
         score = np.log(lower).sum(axis=1)
+    elif controller == "mean_debt_ungated":
+        mean_floor = np.clip(mean, 1.0, 5.0)
+        debt_term = debt_weight * (
+            normalized_debt[None, :] * mean_floor
+        ).sum(axis=1)
+        score = np.log(mean_floor).sum(axis=1) + debt_term
+    elif controller == "mean_debt_gated":
+        mean_floor = np.clip(mean, 1.0, 5.0)
+        mean_reference = mean_floor[0]
+        mean_recoverable = np.maximum(
+            mean_floor - mean_reference[None, :], 0
+        )
+        debt_term = debt_weight * (
+            normalized_debt[None, :] * mean_recoverable
+        ).sum(axis=1)
+        score = np.log(mean_floor).sum(axis=1) + debt_term
     elif controller == "conformal_debt_ungated":
         # Conventional QoE-debt weighting: a deprived user's absolute
         # calibrated floor is rewarded without asking whether the candidate
