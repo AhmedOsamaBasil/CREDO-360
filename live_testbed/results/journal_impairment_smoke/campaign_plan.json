@@ -1,0 +1,19 @@
+[
+  {
+    "seed": 20260728,
+    "seed_index": 0,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.209,
+      3.081
+    ],
+    "segment_numbers": [
+      57,
+      9
+    ],
+    "controller_order": [
+      "resource_debt_ungated",
+      "risk_debt"
+    ]
+  }
+]

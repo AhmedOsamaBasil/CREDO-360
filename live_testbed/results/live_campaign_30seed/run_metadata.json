@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-07-29T06:15:03.750334+00:00",
+  "media_root_name": "Segments",
+  "model_name": "qoe_ensemble.json",
+  "portable_max_abs_error": 2.404843928438538e-07,
+  "controllers": [
+    "mean_greedy",
+    "proportional_fair",
+    "uncertainty_nash",
+    "conformal_nash",
+    "conformal_debt_ungated",
+    "risk_debt"
+  ],
+  "users": 5,
+  "epochs": 8,
+  "warmup_epochs": 1,
+  "first_seed": 20260730,
+  "seeds": 30,
+  "regimes": [
+    "stable",
+    "bursty",
+    "shift"
+  ],
+  "counterbalanced_order": true,
+  "campaign_plan": "campaign_plan.json",
+  "segment_duration_s": 10.0,
+  "target_operational_qoe": 4.0,
+  "debt_weight": 1.0,
+  "debt_decay": 0.9,
+  "switch_weight": 0.08,
+  "shared_bottleneck": "server-s1 egress TBF",
+  "qoe_semantics": "model-estimated operational QoE from measured transport features; not a new subjective human score"
+}

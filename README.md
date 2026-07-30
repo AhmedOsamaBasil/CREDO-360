@@ -7,8 +7,8 @@ This repository contains the prototype, CUDA replay experiment, statistical
 analysis, literature-review evidence, exported learned model, and live
 Mininet/DASH integration used by the CREDO-360 paper.
 
-> Research status: artifact release `v0.1.0`. The manuscript is in preparation.
-> The live experiment validates controller mechanics, not subjective efficacy.
+> Research status: powered live-emulation campaign complete. The manuscript is
+> in preparation. Operational QoE is model-estimated, not a new subjective MOS.
 
 ## Topic
 
@@ -64,14 +64,49 @@ fairness/continuity trade-off, not universal QoE improvement.
 See `EXPERIMENT_REPORT.md`. The rejected anonymous-feature phase is preserved
 as `EXPERIMENT_REPORT_PHASE1_REJECTED.md`.
 
-The next stage now runs in WSL2/Mininet: five clients fetch real DASH segments
-concurrently through one measured, time-varying shared bottleneck. The exact
-learned ensemble is exported from RTX/PyTorch and verified in WSL/NumPy.
-The eight-epoch integration run activated QoE debt and improved worst-user mean
-operational QoE by `0.2769` and Jain fairness by `0.0091` against conformal
-Nash, while reducing mean operational QoE by `0.0946` and worsening the
-service-violation rate by `0.05`. These descriptive values are not
-statistically confirmatory. See `LIVE_EXPERIMENT_REPORT.md`.
+The TMM journal extension adds a deterministic low-discrepancy action cover
+that avoids materializing the full bitrate Cartesian product. A frozen
+30-seed controller benchmark evaluates 5, 10, 20, and 30 users with 240
+decisions per population size. On the single-threaded WSL CPU/NumPy path,
+median latency increases from 77.07 ms at five users to 438.35 ms at 30
+users; 30-user p99 is 540.39 ms, peak process RSS is 80.2 MiB, and there are
+zero feasibility violations. See `JOURNAL_SCALABILITY_REPORT.md`,
+`JOURNAL_EXPERIMENT_PROTOCOL.md` and
+`live_testbed/results/journal_scalability/`.
+The non-actionable Mininet condition has also passed a one-seed engineering
+test; its deliberately limited observation is documented in
+`JOURNAL_IMPAIRMENT_SMOKE_REPORT.md`.
+
+The powered WSL2/Mininet campaign uses five clients fetching DASH segments
+concurrently through one measured, time-varying shared bottleneck. Across 30
+paired seeds and six controllers, CREDO-360 improved worst-user mean
+operational QoE by `0.2090` over conformal Nash
+(`p_Holm=1.12e-7`, paired-bootstrap 95% CI `[0.1416, 0.2886]`) and Jain
+fairness by `0.002393` (`p_Holm=8.20e-7`). Stall time did not improve.
+The opportunity gate was saturated and the confirmatory comparison with
+ungated debt was null; this limits the gate-specific claim. See
+`LIVE_POWERED_EXPERIMENT_REPORT.md`.
+
+The subsequent frozen journal gate-identification experiment targets that
+limitation with paired capacity-only and non-actionable conditions. Across 30
+paired seeds, CREDO-360 reduced wasted allocation by 73.9% and total stall by
+70.8% versus ungated resource debt, while improving the worst unimpaired
+user's operational QoE by 0.203 points. All three effects remain significant
+after Holm correction; the activation-frequency outcome remains null and is
+reported as such. Both 4,050-row condition audits pass. See
+`JOURNAL_GATE_FINAL_REPORT.md` and
+`live_testbed/results/journal_gate_analysis/`.
+
+Experiment C adds independent multimedia validation using three public
+QoEVAVE 8K 360-degree sequences and user-disjoint HMD traces. Across 30 paired
+seeds, CREDO-360 improves worst-user objective VW-PSNR by 0.483 dB
+(`p_Holm=0.000601`, paired-bootstrap 95% CI `[0.270, 0.703]`) and Jain
+fairness over per-user mean viewport quality by 0.00815
+(`p_Holm=0.000519`). Stall is exactly tied and switching does not improve.
+Content-specific mean-quality effects are heterogeneous, so the result is
+reported as a worst-user/fairness effect rather than universal multimedia
+quality improvement. See `JOURNAL_MULTIMEDIA_GENERALIZATION_REPORT.md` and
+`multimedia_testbed/results/generalization_analysis/`.
 
 ## Package map
 
@@ -83,6 +118,14 @@ statistically confirmatory. See `LIVE_EXPERIMENT_REPORT.md`.
   qualified novelty assessment.
 - `live_testbed/` - learned-model export, Mininet harness, tests, raw live
   measurements, summary, and figure.
+- `multimedia_testbed/` - independent 360-degree media preparation,
+  held-out head-trace replay, paired statistics, results, and figures.
+- `JOURNAL_EXPERIMENT_PROTOCOL.md` - frozen TMM extension covering
+  non-actionable impairment, scalability, and independent-content validation.
+- `JOURNAL_GATE_FINAL_REPORT.md` - completed two-condition gate-identification
+  experiment, paired inference, null result, and claim boundary.
+- `live_testbed/benchmark_scalability.py` - reproducible 5--30-user
+  controller-side benchmark.
 - `prototype.py` / `results.csv` - original dependency-light feasibility seed.
 - `MANIFEST.md` - complete inventory.
 - `REPRODUCIBILITY.md` - minimal checks and end-to-end reproduction commands.
@@ -136,7 +179,9 @@ after the anonymity period.
 
 ## Interpretation
 
-The network stage is now live emulation with real segment transfer, but it is
-not yet a headset or human-subject experiment. The next publication stage
-should add randomized paired traces, independent content, additional live
-baselines, and independently validated live QoE labels.
+The network stage is live emulation with real segment transfer and 30 paired,
+counterbalanced seeds, but it is not a headset or human-subject experiment.
+Independent-content and non-actionable-impairment stages are now complete.
+The remaining external-validity step is a preregistered headset/user study or
+an independently validated perceptual outcome model evaluated on the same
+compressed/stalled representations.

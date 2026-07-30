@@ -1,0 +1,18 @@
+{
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "processor": "11th Gen Intel(R) Core(TM) i9-11900K @ 3.50GHz",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "execution_backend": "CPU/NumPy portable ensemble",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "timing_warmup": "PortableEnsemble self-check only; no controller decisions excluded",
+  "portable_export_max_abs_error": 2.404843928438538e-07,
+  "peak_process_rss_bytes": 84115456,
+  "peak_process_rss_semantics": "bytes (Linux ru_maxrss converted from KiB)",
+  "scope": "Controller-side NumPy inference and deterministic candidate-cover benchmark; this is not a network or subjective-QoE result."
+}

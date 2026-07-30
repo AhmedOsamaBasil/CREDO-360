@@ -27,6 +27,116 @@ from portable_qoe import (
 
 LADDER_BPS = [45373, 88482, 252988, 368912, 987061, 3792491]
 SEGMENT_DURATION_S = 10.0
+IMPAIRED_RATE_MBPS = 0.18
+# The largest 10 s representation is about 37.9 Mbit. At the deliberately
+# imposed 0.18 Mbit/s service ceiling it needs roughly 211 s before protocol
+# overhead. Keep the measurement watchdog above twice that transfer budget so
+# a valid low-rate observation is not misclassified as an infrastructure fault.
+TRANSFER_TIMEOUT_S = max(
+    160,
+    int(
+        2.0
+        * SEGMENT_DURATION_S
+        * max(LADDER_BPS)
+        / (IMPAIRED_RATE_MBPS * 1_000_000)
+    )
+    + 5,
+)
+PROCESS_TIMEOUT_S = TRANSFER_TIMEOUT_S + 30
+MEASUREMENT_FIELDS = [
+    "seed",
+    "regime",
+    "impairment",
+    "impaired_user",
+    "service_ceiling_mbps",
+    "controller",
+    "controller_position",
+    "controller_order",
+    "run_epoch",
+    "epoch",
+    "warmup",
+    "segment_number",
+    "user",
+    "capacity_mbps",
+    "allocated_mbps",
+    "capacity_slack_mbps",
+    "bytes",
+    "download_s",
+    "ttfb_s",
+    "throughput_mbps",
+    "transfer_censored",
+    "curl_returncode",
+    "buffer_before_s",
+    "buffer_after_s",
+    "stall_s",
+    "decision_predicted_qoe",
+    "decision_predicted_std",
+    "decision_lower_qoe",
+    "opportunity_gain",
+    "predicted_qoe",
+    "predicted_std",
+    "operational_qoe",
+    "debt_before",
+    "debt_after",
+    "switched",
+    "candidate_count",
+    "objective",
+    "debt_term",
+    "switching_term",
+    "decision_ms",
+    "epoch_wall_s",
+]
+DEFAULT_CONTROLLERS = [
+    "mean_greedy",
+    "proportional_fair",
+    "uncertainty_nash",
+    "conformal_nash",
+    "conformal_debt_ungated",
+    "risk_debt",
+]
+CONTROLLER_CHOICES = DEFAULT_CONTROLLERS + ["resource_debt_ungated"]
+REGIMES = ("stable", "bursty", "shift")
+
+
+def make_capacity_profile(
+    regime: str, epochs: int, rng: np.random.Generator
+) -> list[float]:
+    """Generate a deterministic paired bottleneck profile for one seed."""
+    if regime == "stable":
+        noise = np.zeros(epochs)
+        for index in range(epochs):
+            innovation = rng.normal(0, 0.22)
+            noise[index] = innovation if index == 0 else 0.65 * noise[index - 1] + innovation
+        profile = 2.8 + noise
+    elif regime == "bursty":
+        low = rng.uniform(1.25, 1.85, epochs)
+        high = rng.uniform(3.1, 4.4, epochs)
+        state = rng.integers(0, 2)
+        values = []
+        for index in range(epochs):
+            if index and rng.random() < 0.55:
+                state = 1 - state
+            values.append(high[index] if state else low[index])
+        profile = np.asarray(values)
+    elif regime == "shift":
+        midpoint = max(1, epochs // 2)
+        profile = np.concatenate(
+            [
+                rng.normal(3.45, 0.30, midpoint),
+                rng.normal(1.55, 0.18, epochs - midpoint),
+            ]
+        )
+    else:
+        raise ValueError(f"Unknown capacity regime: {regime}")
+    return np.round(np.clip(profile, 1.2, 4.5), 3).tolist()
+
+
+def counterbalanced_order(controllers: list[str], index: int) -> list[str]:
+    """Cyclic Latin-square order: each controller occupies every position."""
+    if not controllers:
+        return []
+    shift = index % len(controllers)
+    return controllers[shift:] + controllers[:shift]
 
 
 def locate_media(explicit: Path | None) -> Path:
@@ -55,14 +165,70 @@ def set_shared_rate(host, interface: str, capacity_mbps: float) -> None:
         raise RuntimeError(f"Failed to shape {interface}: {result}")
 
 
+def set_access_profile(
+    switch,
+    interface: str,
+    *,
+    rate_mbps: float,
+    delay_ms: float,
+) -> None:
+    """Shape switch-to-client egress to impose a measured service ceiling."""
+    result = switch.cmd(
+        f"tc qdisc replace dev {shlex.quote(interface)} root "
+        f"netem delay {delay_ms:.1f}ms rate {rate_mbps:.3f}mbit; echo $?"
+    ).strip()
+    if result.splitlines()[-1] != "0":
+        raise RuntimeError(f"Failed to shape {interface}: {result}")
+
+
 def download_one(host, url: str):
     command = (
-        "curl --silent --show-error --output /dev/null "
+        f"curl --silent --show-error --connect-timeout 5 "
+        f"--max-time {TRANSFER_TIMEOUT_S} "
+        "--output /dev/null "
         "--write-out '%{size_download},%{time_total},%{time_starttransfer},"
         "%{speed_download},%{http_code}' "
         + shlex.quote(url)
     )
     return host.popen(command, shell=True, text=True, stdout=-1, stderr=-1)
+
+
+def parse_curl_measurement(
+    output: str,
+    error: str,
+    returncode: int,
+    *,
+    allow_censoring: bool,
+) -> tuple[float, float, float, float, bool, int]:
+    """Parse curl output, treating exit 28 as a right-censored transfer."""
+    values = output.strip().split(",")
+    if returncode == 28 and allow_censoring:
+        if len(values) == 5:
+            size, _total, ttfb, speed, _status = values
+            return (
+                float(size or 0),
+                float(TRANSFER_TIMEOUT_S),
+                float(ttfb or 0),
+                float(speed or 0),
+                True,
+                returncode,
+            )
+        return 0.0, float(TRANSFER_TIMEOUT_S), 0.0, 0.0, True, returncode
+    if returncode != 0:
+        raise RuntimeError(f"curl failed: {error}")
+    if len(values) != 5:
+        raise RuntimeError(f"Malformed curl measurement: {output!r}")
+    size, total, ttfb, speed, status = values
+    if status != "200":
+        raise RuntimeError(f"HTTP {status}")
+    return (
+        float(size),
+        float(total),
+        float(ttfb),
+        float(speed),
+        False,
+        returncode,
+    )
 
 
 def main() -> None:
@@ -75,19 +241,75 @@ def main() -> None:
     parser.add_argument(
         "--controllers",
         nargs="+",
-        default=["conformal_nash", "risk_debt"],
-        choices=["uncertainty_nash", "conformal_nash", "risk_debt"],
+        default=DEFAULT_CONTROLLERS,
+        choices=CONTROLLER_CHOICES,
     )
     parser.add_argument("--users", type=int, default=5)
     parser.add_argument("--epochs", type=int, default=8)
+    parser.add_argument(
+        "--warmup-epochs",
+        type=int,
+        default=1,
+        help="Paired warm-up epochs retained in raw logs but excluded from inference.",
+    )
     parser.add_argument("--seed", type=int, default=20260728)
+    parser.add_argument(
+        "--seeds",
+        type=int,
+        default=1,
+        help="Number of consecutive paired seeds in the live campaign.",
+    )
+    parser.add_argument(
+        "--regimes",
+        nargs="+",
+        default=list(REGIMES),
+        choices=REGIMES,
+        help="Capacity regimes assigned cyclically across paired seeds.",
+    )
+    parser.add_argument(
+        "--fixed-order",
+        action="store_true",
+        help="Disable cyclic controller-order counterbalancing.",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Retain complete seed/controller pairs and resume an interrupted campaign.",
+    )
+    parser.add_argument(
+        "--max-new-pairs",
+        type=int,
+        default=0,
+        help=(
+            "Stop successfully after this many newly completed controller-seed "
+            "pairs; zero runs all remaining pairs."
+        ),
+    )
     parser.add_argument(
         "--target-qoe",
         type=float,
         default=4.0,
         help="Declared live operational-QoE floor used by the debt queue.",
     )
+    parser.add_argument("--debt-weight", type=float, default=1.0)
+    parser.add_argument("--debt-decay", type=float, default=0.90)
+    parser.add_argument("--switch-weight", type=float, default=0.08)
+    parser.add_argument(
+        "--impairment",
+        choices=("capacity_only", "non_actionable"),
+        default="capacity_only",
+        help=(
+            "Journal gate-identification condition. non_actionable applies a "
+            "persistent 0.18 Mb/s/180 ms ceiling to one counterbalanced client."
+        ),
+    )
     args = parser.parse_args()
+    if args.users < 2:
+        parser.error("--users must be at least 2")
+    if args.epochs < 1 or args.warmup_epochs < 0 or args.seeds < 1:
+        parser.error("--epochs/--seeds must be positive and warm-up non-negative")
+    if args.max_new_pairs < 0:
+        parser.error("--max-new-pairs must be non-negative")
 
     media = locate_media(args.media_root)
     model = PortableEnsemble(args.model)
@@ -99,20 +321,79 @@ def main() -> None:
         payload["calibration"]["one_sided_residuals"],
         float(payload["calibration"]["alpha"]),
     )
-    capacity_profile = [2.0, 3.5, 1.4, 2.6, 1.8, 4.2, 1.3, 3.0]
     args.output.mkdir(parents=True, exist_ok=True)
+    csv_path = args.output / "live_measurements.csv"
+    expected_pair_rows = args.users * (args.warmup_epochs + args.epochs)
+    completed_pairs: set[tuple[int, str]] = set()
+    if args.resume and csv_path.exists():
+        with csv_path.open(encoding="utf-8") as handle:
+            existing_rows = list(csv.DictReader(handle))
+        counts: dict[tuple[int, str], int] = {}
+        for row in existing_rows:
+            key = (int(row["seed"]), row["controller"])
+            counts[key] = counts.get(key, 0) + 1
+        completed_pairs = {
+            key for key, count in counts.items() if count == expected_pair_rows
+        }
+        retained = [
+            row
+            for row in existing_rows
+            if (int(row["seed"]), row["controller"]) in completed_pairs
+        ]
+        if retained:
+            with csv_path.open("w", newline="", encoding="utf-8") as handle:
+                writer = csv.DictWriter(handle, fieldnames=MEASUREMENT_FIELDS)
+                writer.writeheader()
+                for row in retained:
+                    row.setdefault("transfer_censored", "0")
+                    row.setdefault("curl_returncode", "0")
+                    writer.writerow(row)
+        else:
+            csv_path.unlink(missing_ok=True)
+    elif csv_path.exists():
+        csv_path.unlink()
+
+    total_epochs = args.warmup_epochs + args.epochs
+    campaign_plan = []
+    for seed_index in range(args.seeds):
+        seed = args.seed + seed_index
+        rng = np.random.default_rng(seed)
+        regime = args.regimes[seed_index % len(args.regimes)]
+        profile = make_capacity_profile(regime, total_epochs, rng)
+        segments = rng.integers(1, 61, size=total_epochs).tolist()
+        order = (
+            list(args.controllers)
+            if args.fixed_order
+            else counterbalanced_order(list(args.controllers), seed_index)
+        )
+        campaign_plan.append(
+            {
+                "seed": seed,
+                "seed_index": seed_index,
+                "regime": regime,
+                "capacity_profile_mbps": profile,
+                "segment_numbers": segments,
+                "controller_order": order,
+            }
+        )
+    (args.output / "campaign_plan.json").write_text(
+        json.dumps(campaign_plan, indent=2), encoding="utf-8"
+    )
 
     net = Mininet(controller=None, switch=OVSBridge, link=TCLink, build=False)
     server = net.addHost("server", ip="10.0.0.1/24")
     switch = net.addSwitch("s1")
     server_link = net.addLink(server, switch, bw=100, delay="4ms")
     clients = []
+    client_switch_interfaces = []
     for index in range(args.users):
         client = net.addHost(f"c{index + 1}", ip=f"10.0.0.{index + 2}/24")
-        net.addLink(client, switch, bw=100, delay=f"{6 + index * 3}ms")
+        link = net.addLink(client, switch, bw=100, delay=f"{6 + index * 3}ms")
         clients.append(client)
-    rows = []
+        client_switch_interfaces.append(link.intf2.name)
+    rows_written = 0
     server_process = None
+    csv_handle = None
     try:
         net.build()
         net.start()
@@ -135,138 +416,299 @@ def main() -> None:
         if any(client.cmd("ping -c1 -W1 10.0.0.1 >/dev/null; echo $?").strip() != "0" for client in clients):
             raise RuntimeError("Client-to-server connectivity check failed")
 
-        for controller in args.controllers:
-            rng = np.random.default_rng(args.seed)
-            buffer_s = np.full(args.users, 4.0)
-            previous = np.full(args.users, ladder[1])
-            throughput = np.full(args.users, capacity_profile[0] / args.users)
-            latency = np.array([0.010 + 0.006 * i for i in range(args.users)])
-            debt = np.zeros(args.users)
-            for epoch in range(args.epochs):
-                capacity = capacity_profile[epoch % len(capacity_profile)]
-                set_shared_rate(server, server_interface, capacity)
-                action, decision = select_action(
-                    controller,
-                    model,
-                    template,
-                    ladder,
-                    capacity,
-                    throughput,
-                    buffer_s,
-                    previous,
-                    latency,
-                    debt,
-                    radius,
+        file_exists = csv_path.exists() and csv_path.stat().st_size > 0
+        csv_handle = csv_path.open("a", newline="", encoding="utf-8")
+        writer = csv.DictWriter(csv_handle, fieldnames=MEASUREMENT_FIELDS)
+        if not file_exists:
+            writer.writeheader()
+            csv_handle.flush()
+
+        new_pairs_completed = 0
+        stop_requested = False
+        for plan in campaign_plan:
+            seed = int(plan["seed"])
+            regime = str(plan["regime"])
+            impaired_user = (
+                seed % args.users if args.impairment == "non_actionable" else -1
+            )
+            capacity_profile = plan["capacity_profile_mbps"]
+            segments = plan["segment_numbers"]
+            controller_order = plan["controller_order"]
+            order_text = "|".join(controller_order)
+            for controller_position, controller in enumerate(controller_order):
+                pair = (seed, controller)
+                if pair in completed_pairs:
+                    print(f"skip complete seed={seed} controller={controller}")
+                    continue
+                buffer_s = np.full(args.users, 4.0)
+                previous = np.full(args.users, ladder[1])
+                throughput = np.full(
+                    args.users, capacity_profile[0] / args.users
                 )
-                segment_number = 1 + (epoch % 60)
-                processes = []
-                started = time.perf_counter()
-                for user, (client, rate) in enumerate(zip(clients, action)):
-                    ladder_index = int(np.abs(ladder - rate).argmin())
-                    bitrate = LADDER_BPS[ladder_index]
-                    url = (
-                        f"http://10.0.0.1:8000/bunny_{bitrate}bps/"
-                        f"BigBuckBunny_10s{segment_number}.m4s"
+                latency = np.array(
+                    [0.010 + 0.006 * i for i in range(args.users)]
+                )
+                debt = np.zeros(args.users)
+                for user, interface in enumerate(client_switch_interfaces):
+                    if user == impaired_user:
+                        set_access_profile(
+                            switch,
+                            interface,
+                            rate_mbps=IMPAIRED_RATE_MBPS,
+                            delay_ms=180.0,
+                        )
+                    else:
+                        set_access_profile(
+                            switch,
+                            interface,
+                            rate_mbps=100.0,
+                            delay_ms=6.0 + user * 3.0,
+                        )
+                for run_epoch, (capacity, segment_number) in enumerate(
+                    zip(capacity_profile, segments)
+                ):
+                    set_shared_rate(server, server_interface, capacity)
+                    decision_started = time.perf_counter()
+                    action, decision = select_action(
+                        controller,
+                        model,
+                        template,
+                        ladder,
+                        capacity,
+                        throughput,
+                        buffer_s,
+                        previous,
+                        latency,
+                        debt,
+                        radius,
+                        debt_weight=args.debt_weight,
+                        switch_weight=args.switch_weight,
                     )
-                    processes.append((user, rate, url, download_one(client, url)))
-                measurements = []
-                for user, rate, url, process in processes:
-                    output, error = process.communicate(timeout=90)
-                    if process.returncode != 0:
-                        raise RuntimeError(f"curl failed for c{user + 1}: {error}")
-                    size, total, ttfb, speed, status = output.strip().split(",")
-                    if status != "200":
-                        raise RuntimeError(f"HTTP {status} for {url}")
-                    measurements.append(
-                        (float(size), float(total), float(ttfb), float(speed))
+                    decision_ms = 1000 * (
+                        time.perf_counter() - decision_started
                     )
-                wall_s = time.perf_counter() - started
-                size_bytes = np.array([m[0] for m in measurements])
-                download_s = np.array([m[1] for m in measurements])
-                ttfb_s = np.array([m[2] for m in measurements])
-                throughput = 8.0 * size_bytes / np.maximum(download_s, 1e-6) / 1e6
-                stall_s = np.maximum(download_s - buffer_s, 0)
-                buffer_before = buffer_s.copy()
-                buffer_s = np.clip(
-                    np.maximum(buffer_s - download_s, 0) + SEGMENT_DURATION_S,
-                    0,
-                    30,
-                )
-                actual_features = build_features(
-                    template,
-                    action,
-                    throughput,
-                    buffer_before,
-                    previous,
-                    ttfb_s,
-                )
-                predicted_qoe, predicted_std = model.predict(actual_features)
-                operational_qoe = np.clip(
-                    predicted_qoe
-                    - 0.30 * stall_s
-                    - 0.08 * np.abs(np.log((action + 0.05) / (previous + 0.05))),
-                    1,
-                    5,
-                )
-                debt_before = debt.copy()
-                debt = np.maximum(
-                    0.90 * debt + args.target_qoe - operational_qoe, 0
-                )
-                for user in range(args.users):
-                    rows.append(
-                        {
-                            "controller": controller,
-                            "epoch": epoch,
-                            "user": user + 1,
-                            "capacity_mbps": capacity,
-                            "allocated_mbps": action[user],
-                            "bytes": int(size_bytes[user]),
-                            "download_s": download_s[user],
-                            "ttfb_s": ttfb_s[user],
-                            "throughput_mbps": throughput[user],
-                            "buffer_before_s": buffer_before[user],
-                            "buffer_after_s": buffer_s[user],
-                            "stall_s": stall_s[user],
-                            "predicted_qoe": predicted_qoe[user],
-                            "predicted_std": predicted_std[user],
-                            "operational_qoe": operational_qoe[user],
-                            "debt_before": debt_before[user],
-                            "debt_after": debt[user],
-                            "switched": int(action[user] != previous[user]),
-                            "candidate_count": decision["candidate_count"],
-                            "objective": decision["objective"],
-                            "epoch_wall_s": wall_s,
-                        }
+                    processes = []
+                    started = time.perf_counter()
+                    for user, (client, rate) in enumerate(zip(clients, action)):
+                        ladder_index = int(np.abs(ladder - rate).argmin())
+                        bitrate = LADDER_BPS[ladder_index]
+                        url = (
+                            f"http://10.0.0.1:8000/bunny_{bitrate}bps/"
+                            f"BigBuckBunny_10s{segment_number}.m4s"
+                        )
+                        processes.append(
+                            (user, rate, url, download_one(client, url))
+                        )
+                    measurements = []
+                    for user, rate, url, process in processes:
+                        output, error = process.communicate(
+                            timeout=PROCESS_TIMEOUT_S
+                        )
+                        try:
+                            measurement = parse_curl_measurement(
+                                output,
+                                error,
+                                process.returncode,
+                                allow_censoring=(user == impaired_user),
+                            )
+                        except RuntimeError as failure:
+                            raise RuntimeError(
+                                f"{failure} for c{user + 1}: {url}"
+                            ) from failure
+                        measurements.append(measurement)
+                    wall_s = time.perf_counter() - started
+                    size_bytes = np.array([m[0] for m in measurements])
+                    download_s = np.array([m[1] for m in measurements])
+                    ttfb_s = np.array([m[2] for m in measurements])
+                    transfer_censored = np.array(
+                        [m[4] for m in measurements], dtype=bool
                     )
-                previous = action
-                print(
-                    f"{controller} epoch={epoch} capacity={capacity:.1f} "
-                    f"mean_qoe={operational_qoe.mean():.3f} "
-                    f"wall={wall_s:.2f}s"
-                )
+                    curl_returncode = np.array(
+                        [m[5] for m in measurements], dtype=int
+                    )
+                    throughput = (
+                        8.0
+                        * size_bytes
+                        / np.maximum(download_s, 1e-6)
+                        / 1e6
+                    )
+                    stall_s = np.maximum(download_s - buffer_s, 0)
+                    buffer_before = buffer_s.copy()
+                    buffer_s = np.clip(
+                        np.maximum(buffer_s - download_s, 0)
+                        + SEGMENT_DURATION_S * (~transfer_censored),
+                        0,
+                        30,
+                    )
+                    actual_features = build_features(
+                        template,
+                        action,
+                        throughput,
+                        buffer_before,
+                        previous,
+                        ttfb_s,
+                    )
+                    predicted_qoe, predicted_std = model.predict(
+                        actual_features
+                    )
+                    operational_qoe = np.clip(
+                        predicted_qoe
+                        - 0.30 * stall_s
+                        - 0.08
+                        * np.abs(
+                            np.log(
+                                (action + 0.05) / (previous + 0.05)
+                            )
+                        ),
+                        1,
+                        5,
+                    )
+                    debt_before = debt.copy()
+                    debt = np.maximum(
+                        args.debt_decay * debt
+                        + args.target_qoe
+                        - operational_qoe,
+                        0,
+                    )
+                    is_warmup = run_epoch < args.warmup_epochs
+                    epoch = run_epoch - args.warmup_epochs
+                    for user in range(args.users):
+                        writer.writerow(
+                            {
+                                "seed": seed,
+                                "regime": regime,
+                                "impairment": args.impairment,
+                                "impaired_user": int(user == impaired_user),
+                                "service_ceiling_mbps": (
+                                    IMPAIRED_RATE_MBPS
+                                    if user == impaired_user
+                                    else 100.0
+                                ),
+                                "controller": controller,
+                                "controller_position": controller_position,
+                                "controller_order": order_text,
+                                "run_epoch": run_epoch,
+                                "epoch": epoch,
+                                "warmup": int(is_warmup),
+                                "segment_number": segment_number,
+                                "user": user + 1,
+                                "capacity_mbps": capacity,
+                                "allocated_mbps": action[user],
+                                "capacity_slack_mbps": decision[
+                                    "capacity_slack_mbps"
+                                ],
+                                "bytes": int(size_bytes[user]),
+                                "download_s": download_s[user],
+                                "ttfb_s": ttfb_s[user],
+                                "throughput_mbps": throughput[user],
+                                "transfer_censored": int(
+                                    transfer_censored[user]
+                                ),
+                                "curl_returncode": curl_returncode[user],
+                                "buffer_before_s": buffer_before[user],
+                                "buffer_after_s": buffer_s[user],
+                                "stall_s": stall_s[user],
+                                "decision_predicted_qoe": decision[
+                                    "selected_mean"
+                                ][user],
+                                "decision_predicted_std": decision[
+                                    "selected_uncertainty"
+                                ][user],
+                                "decision_lower_qoe": decision[
+                                    "selected_lower"
+                                ][user],
+                                "opportunity_gain": decision[
+                                    "selected_opportunity"
+                                ][user],
+                                "predicted_qoe": predicted_qoe[user],
+                                "predicted_std": predicted_std[user],
+                                "operational_qoe": operational_qoe[user],
+                                "debt_before": debt_before[user],
+                                "debt_after": debt[user],
+                                "switched": int(
+                                    action[user] != previous[user]
+                                ),
+                                "candidate_count": decision[
+                                    "candidate_count"
+                                ],
+                                "objective": decision["objective"],
+                                "debt_term": decision["debt_term"],
+                                "switching_term": decision[
+                                    "switching_term"
+                                ],
+                                "decision_ms": decision_ms,
+                                "epoch_wall_s": wall_s,
+                            }
+                        )
+                        rows_written += 1
+                    csv_handle.flush()
+                    previous = action
+                    print(
+                        f"seed={seed} regime={regime} "
+                        f"order={controller_position + 1}/{len(controller_order)} "
+                        f"controller={controller} epoch={epoch} "
+                        f"capacity={capacity:.3f} "
+                        f"mean_qoe={operational_qoe.mean():.3f} "
+                        f"censored={transfer_censored.sum()} "
+                        f"decision={decision_ms:.1f}ms wall={wall_s:.2f}s",
+                        flush=True,
+                    )
+                new_pairs_completed += 1
+                if (
+                    args.max_new_pairs
+                    and new_pairs_completed >= args.max_new_pairs
+                ):
+                    stop_requested = True
+                    break
+            if stop_requested:
+                break
     finally:
+        if csv_handle is not None:
+            csv_handle.close()
         if server_process is not None:
             server_process.send_signal(signal.SIGTERM)
             server_process.wait(timeout=5)
         net.stop()
         os.system("mn -c >/dev/null 2>&1")
 
-    csv_path = args.output / "live_measurements.csv"
-    with csv_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
-        writer.writeheader()
-        writer.writerows(rows)
     metadata = {
         "created_utc": datetime.now(timezone.utc).isoformat(),
-        "media_root": str(media),
-        "model": str(args.model.resolve()),
+        "media_root_name": media.name,
+        "model_name": args.model.name,
         "portable_max_abs_error": export_error,
         "controllers": args.controllers,
         "users": args.users,
         "epochs": args.epochs,
-        "capacity_profile_mbps": capacity_profile[: args.epochs],
+        "warmup_epochs": args.warmup_epochs,
+        "first_seed": args.seed,
+        "seeds": args.seeds,
+        "regimes": args.regimes,
+        "impairment": args.impairment,
+        "impaired_client_selection": (
+            "seed modulo users" if args.impairment == "non_actionable" else None
+        ),
+        "impaired_service_ceiling_mbps": (
+            IMPAIRED_RATE_MBPS
+            if args.impairment == "non_actionable"
+            else None
+        ),
+        "impaired_access_delay_ms": (
+            180.0 if args.impairment == "non_actionable" else None
+        ),
+        "counterbalanced_order": not args.fixed_order,
+        "campaign_plan": "campaign_plan.json",
         "segment_duration_s": SEGMENT_DURATION_S,
+        "max_new_pairs_per_invocation": args.max_new_pairs,
+        "transfer_deadline_s": TRANSFER_TIMEOUT_S,
+        "transfer_censoring": (
+            "curl exit 28 is a right-censored observation only for the "
+            "predeclared impaired client; download_s is the censoring deadline, "
+            "stall is a lower bound, and no segment is added to its buffer"
+        ),
         "target_operational_qoe": args.target_qoe,
+        "debt_weight": args.debt_weight,
+        "debt_decay": args.debt_decay,
+        "switch_weight": args.switch_weight,
         "shared_bottleneck": "server-s1 egress TBF",
         "qoe_semantics": (
             "model-estimated operational QoE from measured transport features; "
@@ -276,7 +718,7 @@ def main() -> None:
     (args.output / "run_metadata.json").write_text(
         json.dumps(metadata, indent=2), encoding="utf-8"
     )
-    print(f"Wrote {len(rows)} measurements to {csv_path}")
+    print(f"Wrote {rows_written} new measurements to {csv_path}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "rows": 2700,
+  "seeds": 30,
+  "controllers": [
+    "conformal_nash",
+    "resource_debt_ungated",
+    "risk_debt"
+  ],
+  "expected_rows_per_controller_seed": 30,
+  "duplicate_rows": 0,
+  "incomplete_pair_cells": 0,
+  "paired_plan_mismatches": 0,
+  "held_out_test_traces_only": true
+}

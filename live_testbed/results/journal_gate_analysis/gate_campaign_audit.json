@@ -1,0 +1,50 @@
+[
+  {
+    "condition": "capacity_only",
+    "rows": 4050,
+    "analysed_rows": 3600,
+    "seeds": 30,
+    "controllers": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ],
+    "seed_controller_pairs": 90,
+    "minimum_analysed_rows_per_pair": 40,
+    "maximum_analysed_rows_per_pair": 40,
+    "duplicate_rows": 0,
+    "capacity_profile_mismatch_cells": 0,
+    "segment_profile_mismatch_cells": 0,
+    "expected_impaired_users_per_epoch": 0,
+    "impaired_identity_mismatch_cells": 0,
+    "maximum_capacity_excess_mbps": 0.0,
+    "censored_transfers": 0,
+    "censored_unimpaired_transfers": 0,
+    "failures": [],
+    "passed": true
+  },
+  {
+    "condition": "non_actionable",
+    "rows": 4050,
+    "analysed_rows": 3600,
+    "seeds": 30,
+    "controllers": [
+      "conformal_nash",
+      "resource_debt_ungated",
+      "risk_debt"
+    ],
+    "seed_controller_pairs": 90,
+    "minimum_analysed_rows_per_pair": 40,
+    "maximum_analysed_rows_per_pair": 40,
+    "duplicate_rows": 0,
+    "capacity_profile_mismatch_cells": 0,
+    "segment_profile_mismatch_cells": 0,
+    "expected_impaired_users_per_epoch": 1,
+    "impaired_identity_mismatch_cells": 0,
+    "maximum_capacity_excess_mbps": 0.0,
+    "censored_transfers": 0,
+    "censored_unimpaired_transfers": 0,
+    "failures": [],
+    "passed": true
+  }
+]

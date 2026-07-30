@@ -1,4 +1,9 @@
-# Live Mininet experiment report
+# Live Mininet integration report
+
+> This document records the initial eight-epoch integration run. The completed
+> 30-seed confirmatory campaign supersedes it for efficacy claims; see
+> `LIVE_POWERED_EXPERIMENT_REPORT.md`. The initial run remains preserved as a
+> transparent engineering milestone.
 
 ## Purpose
 
@@ -65,6 +70,7 @@ The run validates:
 
 It does not establish statistical efficacy, conformal coverage under live
 labels, generalization to a headset/player, or subjective QoE improvement.
-Publication-grade evaluation still needs at least 30 paired randomized traces,
-counterbalanced controller order, more baselines, independent content, and
-human or independently validated live QoE labels.
+The subsequent powered campaign adds 30 paired seeds, counterbalanced
+controller order, five baselines, a frozen analysis protocol, and
+multiplicity-corrected inference. Independent content and human or
+independently validated live QoE labels remain necessary.

@@ -26,3 +26,4 @@ Thumbs.db
 # Local scratch/output directories. Curated paper results remain tracked.
 work/
 scratch/
+.external/

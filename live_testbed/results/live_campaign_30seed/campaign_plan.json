@@ -1,0 +1,1052 @@
+[
+  {
+    "seed": 20260730,
+    "seed_index": 0,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.097,
+      3.184,
+      3.22,
+      2.93,
+      3.157,
+      2.958,
+      2.958,
+      3.095,
+      3.332
+    ],
+    "segment_numbers": [
+      5,
+      5,
+      27,
+      40,
+      48,
+      1,
+      44,
+      37,
+      42
+    ],
+    "controller_order": [
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260731,
+    "seed_index": 1,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      3.758,
+      1.298,
+      3.343,
+      1.441,
+      3.253,
+      1.562,
+      1.372,
+      3.652,
+      4.132
+    ],
+    "segment_numbers": [
+      13,
+      24,
+      54,
+      37,
+      35,
+      59,
+      46,
+      22,
+      12
+    ],
+    "controller_order": [
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy"
+    ]
+  },
+  {
+    "seed": 20260732,
+    "seed_index": 2,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.261,
+      3.342,
+      3.838,
+      3.688,
+      1.596,
+      1.499,
+      1.634,
+      1.318,
+      1.844
+    ],
+    "segment_numbers": [
+      30,
+      40,
+      14,
+      42,
+      4,
+      28,
+      5,
+      51,
+      50
+    ],
+    "controller_order": [
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair"
+    ]
+  },
+  {
+    "seed": 20260733,
+    "seed_index": 3,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.933,
+      2.969,
+      3.129,
+      3.007,
+      3.068,
+      2.765,
+      2.833,
+      2.906,
+      2.82
+    ],
+    "segment_numbers": [
+      45,
+      14,
+      60,
+      10,
+      11,
+      58,
+      10,
+      60,
+      15
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash"
+    ]
+  },
+  {
+    "seed": 20260734,
+    "seed_index": 4,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.286,
+      3.477,
+      1.444,
+      1.414,
+      4.314,
+      3.907,
+      3.558,
+      3.997,
+      4.266
+    ],
+    "segment_numbers": [
+      44,
+      40,
+      32,
+      1,
+      51,
+      24,
+      14,
+      28,
+      34
+    ],
+    "controller_order": [
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260735,
+    "seed_index": 5,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.393,
+      3.349,
+      3.877,
+      3.955,
+      1.661,
+      1.263,
+      1.452,
+      1.43,
+      1.464
+    ],
+    "segment_numbers": [
+      16,
+      15,
+      20,
+      32,
+      17,
+      9,
+      53,
+      20,
+      56
+    ],
+    "controller_order": [
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260736,
+    "seed_index": 6,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.651,
+      3.113,
+      2.764,
+      2.983,
+      2.813,
+      2.949,
+      2.68,
+      2.555,
+      2.743
+    ],
+    "segment_numbers": [
+      19,
+      55,
+      11,
+      50,
+      24,
+      58,
+      52,
+      30,
+      5
+    ],
+    "controller_order": [
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260737,
+    "seed_index": 7,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.786,
+      3.713,
+      4.35,
+      3.106,
+      3.237,
+      3.6,
+      4.055,
+      4.31,
+      4.014
+    ],
+    "segment_numbers": [
+      8,
+      53,
+      14,
+      25,
+      46,
+      5,
+      60,
+      39,
+      23
+    ],
+    "controller_order": [
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy"
+    ]
+  },
+  {
+    "seed": 20260738,
+    "seed_index": 8,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.634,
+      3.6,
+      3.775,
+      3.7,
+      1.477,
+      1.2,
+      1.485,
+      1.2,
+      1.276
+    ],
+    "segment_numbers": [
+      30,
+      10,
+      5,
+      46,
+      6,
+      41,
+      11,
+      5,
+      35
+    ],
+    "controller_order": [
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair"
+    ]
+  },
+  {
+    "seed": 20260739,
+    "seed_index": 9,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.997,
+      3.201,
+      2.951,
+      3.061,
+      2.732,
+      2.944,
+      2.807,
+      2.873,
+      2.654
+    ],
+    "segment_numbers": [
+      11,
+      35,
+      55,
+      51,
+      39,
+      59,
+      44,
+      46,
+      30
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash"
+    ]
+  },
+  {
+    "seed": 20260740,
+    "seed_index": 10,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.459,
+      3.894,
+      1.799,
+      1.766,
+      3.711,
+      4.175,
+      1.708,
+      1.719,
+      1.346
+    ],
+    "segment_numbers": [
+      12,
+      1,
+      38,
+      1,
+      2,
+      51,
+      58,
+      36,
+      35
+    ],
+    "controller_order": [
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260741,
+    "seed_index": 11,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.792,
+      3.276,
+      3.219,
+      3.267,
+      1.615,
+      1.532,
+      1.388,
+      1.853,
+      1.476
+    ],
+    "segment_numbers": [
+      60,
+      55,
+      12,
+      5,
+      27,
+      9,
+      35,
+      52,
+      56
+    ],
+    "controller_order": [
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260742,
+    "seed_index": 12,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.858,
+      2.937,
+      2.898,
+      3.01,
+      2.793,
+      3.052,
+      2.76,
+      2.91,
+      2.709
+    ],
+    "segment_numbers": [
+      40,
+      31,
+      50,
+      46,
+      30,
+      22,
+      32,
+      42,
+      44
+    ],
+    "controller_order": [
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260743,
+    "seed_index": 13,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.409,
+      1.295,
+      3.139,
+      1.601,
+      1.33,
+      1.298,
+      1.474,
+      1.501,
+      3.99
+    ],
+    "segment_numbers": [
+      12,
+      40,
+      6,
+      52,
+      47,
+      37,
+      26,
+      20,
+      50
+    ],
+    "controller_order": [
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy"
+    ]
+  },
+  {
+    "seed": 20260744,
+    "seed_index": 14,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.092,
+      3.221,
+      3.62,
+      3.303,
+      1.39,
+      1.502,
+      1.46,
+      1.56,
+      1.702
+    ],
+    "segment_numbers": [
+      11,
+      46,
+      49,
+      51,
+      16,
+      23,
+      42,
+      54,
+      16
+    ],
+    "controller_order": [
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair"
+    ]
+  },
+  {
+    "seed": 20260745,
+    "seed_index": 15,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.057,
+      3.319,
+      3.607,
+      3.312,
+      3.118,
+      3.064,
+      3.033,
+      2.83,
+      2.756
+    ],
+    "segment_numbers": [
+      47,
+      48,
+      20,
+      40,
+      12,
+      19,
+      56,
+      56,
+      25
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash"
+    ]
+  },
+  {
+    "seed": 20260746,
+    "seed_index": 16,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.336,
+      1.675,
+      1.788,
+      3.468,
+      3.773,
+      1.472,
+      4.353,
+      1.478,
+      3.982
+    ],
+    "segment_numbers": [
+      34,
+      60,
+      21,
+      55,
+      11,
+      1,
+      24,
+      9,
+      18
+    ],
+    "controller_order": [
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260747,
+    "seed_index": 17,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.62,
+      3.545,
+      3.29,
+      4.117,
+      1.564,
+      1.94,
+      1.421,
+      1.297,
+      1.57
+    ],
+    "segment_numbers": [
+      46,
+      7,
+      22,
+      53,
+      39,
+      17,
+      15,
+      27,
+      12
+    ],
+    "controller_order": [
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260748,
+    "seed_index": 18,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.055,
+      2.867,
+      3.155,
+      3.023,
+      2.899,
+      2.708,
+      2.932,
+      3.123,
+      3.068
+    ],
+    "segment_numbers": [
+      42,
+      29,
+      47,
+      31,
+      41,
+      40,
+      55,
+      13,
+      5
+    ],
+    "controller_order": [
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260749,
+    "seed_index": 19,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.301,
+      1.647,
+      4.072,
+      1.811,
+      4.388,
+      3.612,
+      3.35,
+      1.716,
+      4.354
+    ],
+    "segment_numbers": [
+      29,
+      59,
+      10,
+      9,
+      14,
+      58,
+      59,
+      29,
+      5
+    ],
+    "controller_order": [
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy"
+    ]
+  },
+  {
+    "seed": 20260750,
+    "seed_index": 20,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.266,
+      3.719,
+      3.389,
+      3.506,
+      1.726,
+      1.637,
+      1.354,
+      1.533,
+      1.749
+    ],
+    "segment_numbers": [
+      33,
+      8,
+      37,
+      16,
+      21,
+      14,
+      41,
+      15,
+      25
+    ],
+    "controller_order": [
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair"
+    ]
+  },
+  {
+    "seed": 20260751,
+    "seed_index": 21,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      3.031,
+      3.14,
+      2.941,
+      3.022,
+      2.956,
+      3.061,
+      2.443,
+      3.026,
+      2.753
+    ],
+    "segment_numbers": [
+      3,
+      13,
+      42,
+      32,
+      28,
+      42,
+      60,
+      8,
+      26
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash"
+    ]
+  },
+  {
+    "seed": 20260752,
+    "seed_index": 22,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.443,
+      1.822,
+      1.261,
+      1.529,
+      1.548,
+      3.814,
+      1.739,
+      3.841,
+      1.678
+    ],
+    "segment_numbers": [
+      57,
+      4,
+      15,
+      35,
+      12,
+      58,
+      41,
+      6,
+      7
+    ],
+    "controller_order": [
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260753,
+    "seed_index": 23,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.604,
+      3.912,
+      3.564,
+      3.96,
+      1.42,
+      1.693,
+      1.584,
+      1.475,
+      1.71
+    ],
+    "segment_numbers": [
+      14,
+      24,
+      49,
+      21,
+      3,
+      8,
+      59,
+      46,
+      13
+    ],
+    "controller_order": [
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated"
+    ]
+  },
+  {
+    "seed": 20260754,
+    "seed_index": 24,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.798,
+      2.995,
+      3.017,
+      3.224,
+      3.242,
+      3.489,
+      3.405,
+      3.373,
+      3.223
+    ],
+    "segment_numbers": [
+      57,
+      25,
+      60,
+      56,
+      58,
+      34,
+      15,
+      13,
+      15
+    ],
+    "controller_order": [
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt"
+    ]
+  },
+  {
+    "seed": 20260755,
+    "seed_index": 25,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      1.519,
+      4.323,
+      1.624,
+      1.505,
+      3.308,
+      4.168,
+      1.477,
+      1.406,
+      4.1
+    ],
+    "segment_numbers": [
+      49,
+      59,
+      6,
+      27,
+      56,
+      25,
+      17,
+      39,
+      40
+    ],
+    "controller_order": [
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy"
+    ]
+  },
+  {
+    "seed": 20260756,
+    "seed_index": 26,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      2.909,
+      3.375,
+      3.44,
+      3.646,
+      1.569,
+      1.395,
+      1.883,
+      1.858,
+      1.54
+    ],
+    "segment_numbers": [
+      35,
+      8,
+      37,
+      36,
+      56,
+      47,
+      27,
+      52,
+      34
+    ],
+    "controller_order": [
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair"
+    ]
+  },
+  {
+    "seed": 20260757,
+    "seed_index": 27,
+    "regime": "stable",
+    "capacity_profile_mbps": [
+      2.732,
+      2.164,
+      2.654,
+      2.697,
+      2.327,
+      2.494,
+      2.545,
+      2.929,
+      3.047
+    ],
+    "segment_numbers": [
+      13,
+      26,
+      43,
+      7,
+      29,
+      55,
+      8,
+      10,
+      40
+    ],
+    "controller_order": [
+      "conformal_nash",
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash"
+    ]
+  },
+  {
+    "seed": 20260758,
+    "seed_index": 28,
+    "regime": "bursty",
+    "capacity_profile_mbps": [
+      4.015,
+      1.781,
+      1.269,
+      1.661,
+      3.383,
+      4.152,
+      1.731,
+      3.3,
+      3.32
+    ],
+    "segment_numbers": [
+      46,
+      51,
+      5,
+      56,
+      29,
+      56,
+      50,
+      4,
+      60
+    ],
+    "controller_order": [
+      "conformal_debt_ungated",
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash"
+    ]
+  },
+  {
+    "seed": 20260759,
+    "seed_index": 29,
+    "regime": "shift",
+    "capacity_profile_mbps": [
+      3.721,
+      3.627,
+      4.009,
+      3.662,
+      1.716,
+      1.385,
+      1.657,
+      1.821,
+      1.586
+    ],
+    "segment_numbers": [
+      55,
+      3,
+      5,
+      3,
+      24,
+      54,
+      28,
+      9,
+      43
+    ],
+    "controller_order": [
+      "risk_debt",
+      "mean_greedy",
+      "proportional_fair",
+      "uncertainty_nash",
+      "conformal_nash",
+      "conformal_debt_ungated"
+    ]
+  }
+]

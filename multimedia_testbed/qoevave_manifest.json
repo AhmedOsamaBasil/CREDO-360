@@ -1,0 +1,25 @@
+{
+  "dataset": "QoEVAVE Saliency Dataset",
+  "dataset_page": "https://qoevave.github.io/database/docs/Saliency",
+  "scenes_page": "https://qoevave.github.io/database/docs/Scenes",
+  "publication_doi": "10.1109/QoMEX58391.2023.10178588",
+  "audio_condition": "1_No_Audio",
+  "license_note": "Third-party media and traces are not redistributed. Consult the source dataset terms before use.",
+  "contents": {
+    "Badminton05": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton05/Badminton05_AV_7680x3840_60fps_64s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/Badminton05/1_No_Audio/1_No_Audio_Badminton05_Full_Duration.zip"
+    },
+    "ForestWalk03": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk03/ForestWalk03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ForestWalk03/1_No_Audio/1_No_Audio_ForestWalk03_Full_Duration.zip"
+    },
+    "Skateboarding01": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/Skateboarding01/1_No_Audio/1_No_Audio_Skateboarding01_Full_Duration.zip"
+    }
+  }
+}

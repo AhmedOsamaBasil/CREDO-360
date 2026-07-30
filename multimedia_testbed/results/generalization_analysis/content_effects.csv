@@ -1,0 +1,7 @@
+content,outcome,paired_seeds,mean_delta,ci95_low,ci95_high
+Badminton05,mean_vw_psnr_db,30,-0.1572872844826803,-0.4146544885818933,0.11227166825947583
+Badminton05,total_stall_s,30,0.0,0.0,0.0
+ForestWalk03,mean_vw_psnr_db,30,0.5246492989495288,0.3384692591740049,0.7237347104694162
+ForestWalk03,total_stall_s,30,0.0,0.0,0.0
+Skateboarding01,mean_vw_psnr_db,30,-0.6491115173368637,-1.1616392997275344,-0.20484571385445982
+Skateboarding01,total_stall_s,30,0.0,0.0,0.0

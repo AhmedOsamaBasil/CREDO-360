@@ -1,0 +1,22 @@
+{
+  "format": "credo360-multimedia-generalization-v1",
+  "seeds": 30,
+  "first_seed": 20260760,
+  "users": 5,
+  "epochs": 6,
+  "controllers": [
+    "conformal_nash",
+    "resource_debt_ungated",
+    "risk_debt"
+  ],
+  "paired_within_seed": true,
+  "user_disjoint_split": "only split=test traces enter outcomes",
+  "transport": "exact equal processor-sharing completion times for simultaneous flows, using measured VBR representation segment sizes",
+  "outcome": "viewport-weighted luma PSNR from measured held-out HMD traces",
+  "quality_index": "1 + 4*clip((VW-PSNR-18)/24,0,1); objective, not MOS",
+  "portable_model_max_abs_error": 2.404843928438538e-07,
+  "target_quality_index": 4.0,
+  "debt_weight": 1.0,
+  "debt_decay": 0.9,
+  "switch_weight": 0.08
+}
