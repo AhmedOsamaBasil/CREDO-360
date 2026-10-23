@@ -1,0 +1,11 @@
+{
+  "linux_python": "3.14.4",
+  "windows_python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.18.0",
+  "matplotlib": "3.11.1",
+  "optimization": "SciPy linprog(method=highs); exact joint enumeration for five users",
+  "preparation": "ffmpeg H264 NVENC; exact ffmpeg/GPU details recorded in data/v3/metadata.json",
+  "simulation": "Offline fluid transport; observed decision/contract runtime not injected into playback",
+  "platform_check": "Scientific replay excludes wall-clock runtime and permits only declared LF/CRLF text-source normalization"
+}

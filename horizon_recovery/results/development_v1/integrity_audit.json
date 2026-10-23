@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "configurations": 6,
+  "episodes_replayed": 720,
+  "user_rounds_recomputed": 432000,
+  "selected_horizon": 24,
+  "selected_strength": 8.0,
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "audit_source_sha256": "6ddeccde81687ef34960261930a126fd4d430fc4ccae9a979a7576cb3bdfc774",
+  "runtime_replayed": false
+}
