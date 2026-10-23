@@ -39,6 +39,8 @@ def main():
     for (scenario, policy), values in aggregation.items():
         n = values[0]
         rows.append({"scenario": scenario, "policy": policy, "rows": int(n), "zero_queue_fraction": values[1]/n,
+                     "decision_state": ("persistent_queue" if policy in {"fixed_debt", "ceiling_debt", "feasible_recovery"}
+                                        else "last_deficit" if policy == "memoryless_feasible" else "none"),
                      "mean_queue_target": values[2]/n, "mean_feasible_floor": values[3]/n,
                      "predicted_ceiling_relaxation": values[4]/n, "contention_relaxation": values[5]/n,
                      "realized_quality_meets_reference_fraction": values[6]/n})
@@ -67,6 +69,8 @@ def main():
     for policy, color in colors.items():
         vals = np.array([np.mean(curves[policy, t], axis=0) for t in range(90)])
         for i, ax in enumerate(axes):
+            if i == 0 and policy == "bounded_nash":
+                continue  # A shadow diagnostic queue is not Nash's decision state.
             ax.plot(np.arange(90), vals[:, i], label=policy.replace("_", " "), color=color, lw=1.25)
     for ax in axes:
         ax.axvspan(30, 59, color="#dedede", alpha=.5)
@@ -75,6 +79,7 @@ def main():
     axes[0].set_ylabel("Mean recovery queue (index units)")
     axes[1].set_ylabel("Mean fixed-target shortfall (index units)")
     axes[0].legend(fontsize=7)
+    axes[1].legend(fontsize=7)
     fig.suptitle("Known ceiling: paired-seed averages; shaded = impairment")
     for suffix in ("pdf", "png"):
         fig.savefig(folder / f"recovery_dynamics.{suffix}", dpi=180)

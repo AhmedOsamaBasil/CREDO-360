@@ -59,6 +59,9 @@ per-seed summaries, all matched contrasts, panel coverage and a frozen report.
 The analysis additionally reports action agreement with bounded Nash, zero
 debt, floor relaxation and content-wise effects; these are mechanism diagnostics,
 not substituted primary outcomes. See `INTERPRETATION.md` for the actual finding.
+Raw records maintain a shadow queue for non-queue baselines for auditing only;
+Nash/max-min ignore it, and the memoryless policy uses only the last deficit.
+The diagnostics identify which state actually affects each policy's decisions.
 
 ## Recreate the measurements
 
