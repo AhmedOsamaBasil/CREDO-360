@@ -1,0 +1,25 @@
+{
+  "dataset": "QoEVAVE fresh content holdout v2",
+  "dataset_page": "https://qoevave.github.io/database/docs/Saliency",
+  "scenes_page": "https://qoevave.github.io/database/docs/Scenes",
+  "publication_dois": ["10.1109/QoMEX55416.2022.9900893", "10.1109/QoMEX58391.2023.10178588"],
+  "audio_condition": "1_No_Audio",
+  "license_note": "Source media and HMD archives are not redistributed; consult original dataset terms.",
+  "contents": {
+    "ParkFountains01": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ParkFountains01/ParkFountains01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ParkFountains01/1_No_Audio/1_No_Audio_ParkFountains01_Full_Duration.zip"
+    },
+    "River01": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/River01/River01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/River01/1_No_Audio/1_No_Audio_River01_Full_Duration.zip"
+    },
+    "Train01": {
+      "duration_s": 60,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Train01/Train01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/Train01/1_No_Audio/1_No_Audio_Train01_Full_Duration.zip"
+    }
+  }
+}
