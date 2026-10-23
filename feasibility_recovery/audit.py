@@ -5,6 +5,7 @@ import csv
 import gzip
 import itertools
 import json
+import platform
 from pathlib import Path
 import numpy as np
 from feasibility_recovery.run import (
@@ -107,8 +108,9 @@ def audit(data, output):
     for a, b in zip(saved_comparisons, comparisons):
         assert_row_equal(a, b)
     passed, delta = progression(summaries, comparisons)
-    if passed != metadata["progression_gate_passed"] or delta != metadata["primary_mean_deltas"]:
+    if passed != metadata["progression_gate_passed"]:
         raise AssertionError("progression mismatch")
+    assert_row_equal(metadata["primary_mean_deltas"], delta)
     disagreements = read_csv(output / "action_disagreements.csv")
     if len(disagreements) != len(plans) * len(SCENARIOS) * 5:
         raise AssertionError("action diagnostic cardinality mismatch")
@@ -119,13 +121,26 @@ def audit(data, output):
             raise AssertionError("action diagnostic mismatch")
     errors = np.max(np.abs(1 + 4 * np.clip((psnr - 18) / 24, 0, 1) - model["predicted"][None]), axis=(1, 2))
     panels = json.loads((output / "heldout_panel_coverage.json").read_text())
+    if len(panels) != 19:
+        raise AssertionError("incomplete held-out panel coverage report")
     for row, sid, error in zip(panels, model["split"]["test"], errors):
         if row != {"subject": sid, "max_error": float(error), "covered": bool(error <= model["radius"] + 1e-12)}:
             raise AssertionError("held-out coverage mismatch")
+    diagnostics_verified = False
+    if (output / "diagnostics/manifest.json").exists():
+        figures = json.loads((output / "diagnostics/manifest.json").read_text())
+        verify_hashes(output, figures["inputs"])
+        verify_hashes(output / "diagnostics", figures["outputs"])
+        if sha256(ROOT / "feasibility_recovery/analyze.py") != figures["analysis_source_sha256"]:
+            raise AssertionError("diagnostic source mismatch")
+        diagnostics_verified = True
     return {"passed": True, "scientific_rows_replayed": total, "episodes": len(seen),
             "maximum_clock_residual_s": residual, "joint_feasibility_witnesses_checked": total // 5,
             "progression_gate_passed": passed, "calibration_panels": 9, "heldout_panels": 19,
-            "source_data_result_hashes_verified": True, "runtime_replayed": False}
+            "source_data_result_hashes_verified": True, "runtime_replayed": False,
+            "diagnostics_hashes_verified": diagnostics_verified, "platform": platform.platform(),
+            "python": platform.python_version(), "numpy": np.__version__,
+            "audit_source_sha256": sha256(Path(__file__))}
 
 
 def main():
@@ -133,10 +148,13 @@ def main():
     parser.add_argument("--data", type=Path, default=DATA)
     parser.add_argument("--output", type=Path, default=ROOT / "feasibility_recovery/results/v2")
     parser.add_argument("--save", action="store_true")
+    parser.add_argument("--report-name", default="integrity_audit.json")
     args = parser.parse_args()
+    if Path(args.report_name).name != args.report_name or not args.report_name.endswith(".json"):
+        parser.error("report name must be a local JSON filename")
     report = audit(args.data, args.output)
     if args.save:
-        with (args.output / "integrity_audit.json").open("x", encoding="utf-8") as handle:
+        with (args.output / args.report_name).open("x", encoding="utf-8") as handle:
             json.dump(report, handle, indent=2)
             handle.write("\n")
     print(json.dumps(report, indent=2))

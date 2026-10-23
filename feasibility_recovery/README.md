@@ -8,6 +8,8 @@ queue target; allocation objectives and information are matched.
 
 Read [PROTOCOL.md](PROTOCOL.md) for equations, fixed settings, freshness,
 calibration assumptions, metrics and the predeclared progression screen.
+The [method notes](METHOD_NOTES.md) derive the feasible-witness and queue
+properties, and distinguish them from claims that require experimental evidence.
 Protocol/core commit `0bbdaa3` preceded new source downloads; campaign commit
 `2d8a72d` preceded held-out evaluation. No post-outcome parameter search is used.
 
