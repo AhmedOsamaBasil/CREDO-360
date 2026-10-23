@@ -23,9 +23,12 @@ jobs:
       - name: Portable-model tests
         run: python live_testbed/test_portable.py
       - name: Objective recovery, timing and regression tests
-        run: python -m pytest recovery_pilot feasibility_recovery live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
+        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
       - name: Verify published pilot artifact integrity
         run: python -m recovery_pilot.audit_results
       - name: Replay and verify the fresh-content feasibility artifact
         run: python -m feasibility_recovery.audit
+      - name: Replay and verify the longer-horizon artifact when published
+        if: hashFiles('horizon_recovery/results/v3/metadata.json') != ''
+        run: python -m horizon_recovery.audit
 

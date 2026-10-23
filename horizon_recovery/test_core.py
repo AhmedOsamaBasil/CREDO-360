@@ -92,6 +92,40 @@ def test_split_and_feedback_delay():
     assert caps('delayed_ceiling', 81, 1)[1] == 5
 
 
+def test_old_history_can_change_action_with_identical_latest_feedback():
+    q, c = fixture()
+    ledger = WindowLedger(24, 2)
+    for _ in range(20):
+        ledger.update([4, 4], [3, 4])
+    ledger.update([4, 4], [4, 4])
+    window, _ = select_action('window_recovery',q,.2,c,16,ledger.state('window_recovery'),[3.5,3.5],24,8)
+    one_step, _ = select_action('memoryless_scaled',q,.2,c,16,ledger.state('memoryless_scaled'),[3.5,3.5],24,8)
+    assert not np.array_equal(window,one_step)
+    assert window[0] > one_step[0]
+
+
+def test_screen_requires_both_baselines_and_full_seed_count():
+    from horizon_recovery.evaluate import screen
+    summaries, paired, agreement = [], [], []
+    for seed in range(20):
+        for policy in ('window_recovery','nash','memoryless_scaled'):
+            candidate = policy == 'window_recovery'
+            summaries.append({'seed':seed,'scenario':'known_ceiling','policy':policy,
+                              'worst_user_quality':3.5 if candidate else 3.,
+                              'post_restoration_shortfall':1 if candidate else 2,
+                              'impaired_restoration_shortfall':1 if candidate else 2,
+                              'mean_quality':4.,'cumulative_shortfall':3.,'stall_s_per_user':2.,'active_state_fraction':.5})
+        for baseline in ('nash','memoryless_scaled'):
+            agreement.append({'scenario':'known_ceiling','baseline':baseline,'disagreements':10,'comparisons':100})
+    for baseline in ('nash','memoryless_scaled'):
+        paired.append({'scenario':'known_ceiling','baseline':baseline,'metric':'worst_user_quality','ci95_low':.1})
+    assert screen(summaries,paired,agreement)[0]
+    paired[1]['ci95_low'] = -.1
+    assert not screen(summaries,paired,agreement)[0]
+    paired[1]['ci95_low'] = .1
+    assert not screen(summaries[:-3],paired,agreement)[0]
+
+
 def test_contract_has_no_future_bandwidth_access(monkeypatch):
     import horizon_recovery.run as run
     monkeypatch.setattr(run, 'tables', lambda *a, **k: (None, None))

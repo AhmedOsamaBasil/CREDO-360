@@ -21,6 +21,12 @@ predeclared screen: aggregate shortfall/stall improve relative to fixed debt,
 but worst-user quality declines and actions nearly coincide with bounded Nash.
 Both studies' raw results, adverse findings and audits remain public.
 
+A separate [longer-horizon redesign](horizon_recovery/README.md) develops a
+joint-mixture service contract and signed-window recovery on exposed v2 data.
+Its complete six-configuration development search and stricter fresh-content
+protocol are frozen before evaluation. Comparisons include stateless Nash and
+a scale-matched memoryless control under a common per-round byte cap.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 

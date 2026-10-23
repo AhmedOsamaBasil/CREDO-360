@@ -7,6 +7,11 @@ and [fresh-content feasibility-aware v2](feasibility_recovery/README.md). The
 first failed its performance screen; historical files below are not silently
 recomputed with the repaired clock or new controller.
 
+The [longer-horizon v3 package](horizon_recovery/README.md) preserves all six
+exposed-data development configurations and separately freezes its fresh-content
+test against Nash and memoryless baselines. It adds full scientific-row replay,
+joint LP witness checks, signed-window expiry accounting and a common byte cap.
+
 | Layer | Entry point | Evidence |
 |---|---|---|
 | Dependency-light feasibility model | `prototype.py` | `results.csv` |
