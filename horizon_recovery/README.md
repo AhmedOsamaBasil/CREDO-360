@@ -22,6 +22,10 @@ For signed residual e(i,t)=target(i,t)-observed_quality(i,t), the controller sta
 is D(i,t)=max(0, sum of e(i,s) over the preceding H decisions). Positive delivery
 surplus can offset earlier shortfall. Sliding-window expiry is separately
 recorded: disappearance of old debt must not be called delivered recovery.
+The selected24-round memory is shorter than the40-round impairment. Pre-impairment
+residuals therefore expire before restoration, and the feasibility-aware target
+is itself reduced during a known ceiling. This is recent-window service tracking,
+not an entitlement to repay every fixed-target loss accumulated during an outage.
 Exact joint action selection maximizes bounded Nash utility minus the squared
 predicted terminal positive deficit, scaled by strength/(2H).
 
