@@ -1,0 +1,7 @@
+{
+  "horizon": 24,
+  "strength": 8.0,
+  "development_screen_passed": true,
+  "development_data": "feasibility_recovery/data/v2",
+  "selection_rule": "DEVELOPMENT.md; no fresh labels accessed"
+}

@@ -1,0 +1,25 @@
+{
+  "dataset": "QoEVAVE fresh content holdout v3",
+  "dataset_page": "https://qoevave.github.io/database/docs/Saliency",
+  "scenes_page": "https://qoevave.github.io/database/docs/Scenes",
+  "publication_dois": ["10.1109/QoMEX55416.2022.9900893", "10.1109/QoMEX58391.2023.10178588"],
+  "audio_condition": "1_No_Audio",
+  "license_note": "Source media and HMD archives are not redistributed; consult original dataset terms.",
+  "contents": {
+    "BuskingUnderpass05": {
+      "duration_s": 61,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass05/BuskingUnderpass05_AV_7680x3840_60fps_61s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/BuskingUnderpass05/1_No_Audio/1_No_Audio_BuskingUnderpass05_Full_Duration.zip"
+    },
+    "Cheerleading01": {
+      "duration_s": 68,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/Cheerleading01_AV_7680x3840_60fps_68s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/Cheerleading01/1_No_Audio/1_No_Audio_Cheerleading01_Full_Duration.zip"
+    },
+    "ConferenceParticipant02": {
+      "duration_s": 80,
+      "media_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_AV_7680x3840_60fps_80s_25Mbps_ambiX1_24bit.mp4",
+      "trace_url": "https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceParticipant02/1_No_Audio/1_No_Audio_ConferenceParticipant02_Full_Duration.zip"
+    }
+  }
+}
