@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import gzip
+import hashlib
 import itertools
 import json
 import platform
@@ -40,6 +41,19 @@ def audit(data, output):
     verify_hashes(output, metadata["result_sha256"])
     data_meta = json.loads((data / "metadata.json").read_text())
     verify_hashes(data, data_meta["result_sha256"])
+    if sha256(ROOT / "feasibility_recovery/manifest.json") != data_meta["manifest_sha256"]:
+        raise AssertionError("source manifest mismatch")
+    preparation_modes = {}
+    for name, digest in data_meta["preparation_sources_sha256"].items():
+        raw = (ROOT / name).read_bytes()
+        raw.decode("utf-8")  # Only the declared text preparation sources qualify.
+        lf = raw.replace(b"\r\n", b"\n")
+        if hashlib.sha256(raw).hexdigest() == digest:
+            preparation_modes[name] = "byte_exact"
+        elif digest in {hashlib.sha256(lf).hexdigest(), hashlib.sha256(lf.replace(b"\n", b"\r\n")).hexdigest()}:
+            preparation_modes[name] = "LF_CRLF_only"
+        else:
+            raise AssertionError(f"preparation source mismatch: {name}")
     model = fit(data)
     saved = json.loads((output / "calibration.json").read_text())
     np.testing.assert_allclose(saved["prediction"], model["predicted"], rtol=0, atol=0)
@@ -140,7 +154,7 @@ def audit(data, output):
             "source_data_result_hashes_verified": True, "runtime_replayed": False,
             "diagnostics_hashes_verified": diagnostics_verified, "platform": platform.platform(),
             "python": platform.python_version(), "numpy": np.__version__,
-            "audit_source_sha256": sha256(Path(__file__))}
+            "audit_source_sha256": sha256(Path(__file__)), "preparation_source_verification": preparation_modes}
 
 
 def main():
