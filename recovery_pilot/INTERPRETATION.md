@@ -19,6 +19,9 @@ Independent row checks verify input/source/result hashes, actual objective
 labels, causal capacity forecasts, selected predictions and gain bounds,
 admission budgets, all debt updates, playback conservation and saved summaries.
 Maximum pilot clock-conservation residual is about 1.4e-14 seconds.
+The same audit passes on a fresh Git-archive extraction of result commit
+`42b9559`; recorded canonical hashes handle Git's LF/CRLF text transport without
+allowing numerical or other content edits.
 
 Windows regression: 52 tests and 12 subtests passed. Linux portable regression:
 48 tests and 12 subtests passed; the four legacy PyTorch tests were not runnable

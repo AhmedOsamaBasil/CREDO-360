@@ -174,3 +174,6 @@ and existing Git history; this preference does not authorize rewriting either.
   Historical input CSVs can differ by Git's LF/CRLF checkout conversion; the
   bound raw/canonical hashes in `input_text_hashes.json` permit only that change.
   Hashed pilot source files use LF. CI verifies the saved artifact, not just tests.
+- Results/audits commit: `42b9559`. A fresh Git-archive extraction of that commit
+  also passed all 115,200-row integrity checks, including permitted LF/CRLF
+  transport differences. The manuscript remains outside this software change.

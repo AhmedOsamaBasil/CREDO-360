@@ -1,5 +1,5 @@
 # Keep frozen result bytes intact, including CSV line endings and compressed data.
-recovery_pilot/results/** -text
+recovery_pilot/results/** -text whitespace=cr-at-eol
 # The pilot records these source bytes; make their checkout form platform-stable.
 recovery_pilot/*.py text eol=lf
 recovery_pilot/PROTOCOL.md text eol=lf
