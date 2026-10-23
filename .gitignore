@@ -27,3 +27,7 @@ Thumbs.db
 work/
 scratch/
 .external/
+
+# Local contributor instructions are not part of the research artifact.
+[Aa][Gg][Ee][Nn][Tt][Ss].md
+.agents/
