@@ -1,0 +1,19 @@
+{
+  "inputs": {
+    "measurements.csv.gz": "0d42318055cd8f6ad41e197be7a720bb452ba59288e68d2a2da2126a599b445f",
+    "paired_diagnostics.csv": "5f0cafbb4b3eff18ff185e39060c1a05b5383c7d7cc9a236627a3e2fe00bef0f",
+    "seed_metrics.csv": "8ae22c6e6709b708949eb10f0c7008c2d375d4adbde9af203ceb4b5ab9ac0290",
+    "action_disagreements.csv": "d7ce74fbb59fd09bbc5b266b697590e7a65ce2b2f593dff7633f97a44c64e531"
+  },
+  "analysis_source_sha256": "5d7db29681205f3de016c4c54021372edbc3df4476c578e4dc0a3d1dd717fbb2",
+  "outputs": {
+    "agreement_summary.csv": "fb542c1fadb097bcd531f3d720bf8f862fddf4f3eb74dfad729053a26c8caca3",
+    "content_diagnostics.csv": "234387f7a5dd334c5c71ca46940937b2569dc9bb559b84c5eefd41ad8be363d4",
+    "paired_effects.pdf": "15d869d722ee2ff0e84265e57212197b14471e3b50ad628a95f97152dda39704",
+    "paired_effects.png": "8bccbdaa38473771f222f7f13ca589d6f699ef96968042191e90165473b59e85",
+    "queue_diagnostics.csv": "dbb4d61908065adefe17cb4c73a84b84bd9b3e229f7530e0dad72e43ecdae91c",
+    "recovery_dynamics.pdf": "93c16461029c60c81c0c4503305994a6e090483b0d68dd2bf64bb216763283e4",
+    "recovery_dynamics.png": "927aa5eae2943f9c03180faab7ffbc43b0507ef0c318e286919815b72723d9b2"
+  },
+  "scope": "descriptive mechanism/content diagnostics, not additional confirmatory endpoints"
+}

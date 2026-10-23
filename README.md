@@ -16,6 +16,10 @@ a jointly feasible anti-windup reference on three previously unused QoEVAVE
 scenes. Its fixed protocol, matched baselines and fresh calibration/test split
 are published before evaluation. Neither the historical gate nor a smaller
 internal queue should be read as evidence of delivered-quality improvement.
+The completed [v2 findings](feasibility_recovery/INTERPRETATION.md) also fail the
+predeclared screen: aggregate shortfall/stall improve relative to fixed debt,
+but worst-user quality declines and actions nearly coincide with bounded Nash.
+Both studies' raw results, adverse findings and audits remain public.
 
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**

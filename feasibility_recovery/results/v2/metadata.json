@@ -1,0 +1,59 @@
+{
+  "format": "feasibility-pilot-v2",
+  "exploratory": true,
+  "seeds": 20,
+  "matches_locked_seed_count": true,
+  "rows": 216000,
+  "git_head_at_run": "b4b2abeed8ba86785d08ecd20e185d09acc74993",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "progression_gate_passed": false,
+  "primary_mean_deltas": {
+    "cumulative_shortfall": -1.4006142128212333,
+    "post_restoration_shortfall": -0.6000087316994064,
+    "stall_s_per_user": -10.974255832718253,
+    "worst_user_quality": -0.03374655161198174,
+    "impaired_restoration_shortfall": -0.046814033994686574,
+    "mean_quality": 0.017115445510517892
+  },
+  "source_sha256": {
+    "feasibility_recovery/core.py": "a985fe4b745fec8455818e59e900a06840c3fba4c7f748fd9044e11c8bcd41e1",
+    "feasibility_recovery/run.py": "a1e53472660a96f80cfc02d4884bb6eb5a6fddabf196c41da52c9903334f8ca6",
+    "feasibility_recovery/PROTOCOL.md": "aa4b3cf78234d41fece93a4e9406f4b19e27ef158e21c5f2c751a67c89df004c",
+    "recovery_pilot/core.py": "c23a429c1f41d2544022b0e9c2dfec800a833f00a7b36415b61f360fe5465fc5",
+    "recovery_pilot/run.py": "41ed956d141cdb0c7ede1e79bed63c00976d13a107942fd5ea03dc8f13179191",
+    "live_testbed/playback_clock.py": "3ed17a22b7a9d27898230460be47f79a10ccb6a696517d6f3269cd3b25952298"
+  },
+  "input_sha256": {
+    "calibration_quality.csv": "6754c803d7bdb7c95bb6bac27361b8a2850e7aa8331833f1cf055e4fc2c54e1b",
+    "heldout_quality.csv": "98ffb431172b2d325f8fc53e3f182ee80ca441e0821e7e049e18f25915d97a9a",
+    "metadata.json": "b4a96dd2c29e70808dda41e6e7afffd74bd7599b2ff80db42d5b206056985343",
+    "segment_sizes.csv": "087ad8c107bc4b4866eecf48c96e33957aeefa334e7f22129d26cb8ab0efc06b",
+    "sender_quality.csv": "ab711038d8d8977e05ac7cf7a01e826c9d575fa67184bc342d6329226e76ee1f",
+    "split.json": "605fdf5e49c8e7526e1cee501b34b3dff0b662eab356eb96c50a5d1fc7808581"
+  },
+  "result_sha256": {
+    "action_disagreements.csv": "d7ce74fbb59fd09bbc5b266b697590e7a65ce2b2f593dff7633f97a44c64e531",
+    "calibration.json": "4d1b56b5ea729764431a7306a0ff531878aca556f0d869041d7615c2fece8048",
+    "campaign_plan.json": "244a76f181fd5b00a49389314bd99fbb62e662a055be6aeb6634e3e5e04d66d1",
+    "heldout_panel_coverage.json": "0bed93f2883e92f46906fa667b529189cec021cb464c9a83633fd73e4743445b",
+    "measurements.csv.gz": "0d42318055cd8f6ad41e197be7a720bb452ba59288e68d2a2da2126a599b445f",
+    "paired_diagnostics.csv": "5f0cafbb4b3eff18ff185e39060c1a05b5383c7d7cc9a236627a3e2fe00bef0f",
+    "REPORT.md": "a99b56221cded48ab383bfce3f5fd0de1435649af47a1d635b5e5fc5a0773c6a",
+    "seed_metrics.csv": "8ae22c6e6709b708949eb10f0c7008c2d375d4adbde9af203ceb4b5ab9ac0290"
+  },
+  "runtime_injected_into_simulated_clock": false,
+  "new_participants": false,
+  "limitations": [
+    "three new scenes, same dataset/participant pool",
+    "looped six segments",
+    "synthetic ceiling and capacity traces",
+    "fluid transport, no player deployment",
+    "no head movement predictor",
+    "sender full-sphere prediction",
+    "exact score/byte ties break by enumeration order",
+    "no conditional/shift guarantee",
+    "no theoretical novelty claim"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "scientific_rows_replayed": 216000,
+  "episodes": 480,
+  "maximum_clock_residual_s": 1.4210854715202004e-14,
+  "joint_feasibility_witnesses_checked": 43200,
+  "progression_gate_passed": false,
+  "calibration_panels": 9,
+  "heldout_panels": 19,
+  "source_data_result_hashes_verified": true,
+  "runtime_replayed": false,
+  "diagnostics_hashes_verified": true,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "audit_source_sha256": "b8aae93e0896dffc58aa6391ad2bf2722028f62c4cd4a2f33ea06d6f3d93da0f",
+  "preparation_source_verification": {
+    "feasibility_recovery/prepare.py": "byte_exact",
+    "feasibility_recovery/core.py": "byte_exact",
+    "multimedia_testbed/prepare_qoevave.py": "byte_exact"
+  }
+}
