@@ -2,6 +2,11 @@
 
 ## Artifact layers
 
+Post-audit experiments are versioned separately: [corrected recovery v1](recovery_pilot/README.md)
+and [fresh-content feasibility-aware v2](feasibility_recovery/README.md). The
+first failed its performance screen; historical files below are not silently
+recomputed with the repaired clock or new controller.
+
 | Layer | Entry point | Evidence |
 |---|---|---|
 | Dependency-light feasibility model | `prototype.py` | `results.csv` |
