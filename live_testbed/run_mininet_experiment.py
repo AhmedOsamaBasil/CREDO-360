@@ -4,19 +4,17 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import os
 import shlex
 import signal
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
-from mininet.link import TCLink
-from mininet.log import setLogLevel
-from mininet.net import Mininet
-from mininet.node import OVSBridge
 
 from portable_qoe import (
     PortableEnsemble,
@@ -24,6 +22,7 @@ from portable_qoe import (
     conformal_radius,
     select_action,
 )
+from playback_clock import advance_idle, advance_round
 
 LADDER_BPS = [45373, 88482, 252988, 368912, 987061, 3792491]
 SEGMENT_DURATION_S = 10.0
@@ -62,6 +61,9 @@ MEASUREMENT_FIELDS = [
     "capacity_slack_mbps",
     "bytes",
     "download_s",
+    "completion_since_boundary_s",
+    "decision_buffer_s",
+    "playback_clock_version",
     "ttfb_s",
     "throughput_mbps",
     "transfer_censored",
@@ -96,6 +98,12 @@ DEFAULT_CONTROLLERS = [
 ]
 CONTROLLER_CHOICES = DEFAULT_CONTROLLERS + ["resource_debt_ungated"]
 REGIMES = ("stable", "bursty", "shift")
+
+
+def observe_completion(process):
+    """Observe each process concurrently, not when an earlier user finishes."""
+    output, error = process.communicate(timeout=PROCESS_TIMEOUT_S)
+    return output, error, process.returncode, time.perf_counter()
 
 
 def make_capacity_profile(
@@ -232,8 +240,13 @@ def parse_curl_measurement(
 
 
 def main() -> None:
-    if os.geteuid() != 0:
+    if not hasattr(os, "geteuid") or os.geteuid() != 0:
         raise SystemExit("Run with sudo; Mininet requires root.")
+    from mininet.link import TCLink
+    from mininet.log import setLogLevel
+    from mininet.net import Mininet
+    from mininet.node import OVSBridge
+    setLogLevel("warning")
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--media-root", type=Path)
@@ -323,11 +336,27 @@ def main() -> None:
     )
     args.output.mkdir(parents=True, exist_ok=True)
     csv_path = args.output / "live_measurements.csv"
+    configuration_path = args.output / "run_configuration.json"
+    configuration = {
+        key: getattr(args, key) for key in (
+            "controllers", "users", "epochs", "warmup_epochs", "seed", "seeds",
+            "regimes", "fixed_order", "target_qoe", "debt_weight", "debt_decay",
+            "switch_weight", "impairment",
+        )
+    }
+    configuration.update(playback_clock_version=2,
+                         model_sha256=hashlib.sha256(args.model.read_bytes()).hexdigest())
+    if csv_path.exists() and not configuration_path.exists():
+        parser.error("Existing measurements lack a compatible run identity; choose a new directory.")
+    if configuration_path.exists() and json.loads(configuration_path.read_text()) != configuration:
+        parser.error("Run configuration differs; choose a new directory rather than mixing results.")
     expected_pair_rows = args.users * (args.warmup_epochs + args.epochs)
     completed_pairs: set[tuple[int, str]] = set()
     if args.resume and csv_path.exists():
         with csv_path.open(encoding="utf-8") as handle:
             existing_rows = list(csv.DictReader(handle))
+        if any(row.get("playback_clock_version") != "2" for row in existing_rows):
+            parser.error("Cannot mix historical and corrected playback clocks; choose a new output directory.")
         counts: dict[tuple[int, str], int] = {}
         for row in existing_rows:
             key = (int(row["seed"]), row["controller"])
@@ -351,7 +380,8 @@ def main() -> None:
         else:
             csv_path.unlink(missing_ok=True)
     elif csv_path.exists():
-        csv_path.unlink()
+        parser.error("Existing measurements will not be overwritten; choose a new output or explicitly resume a compatible run.")
+    configuration_path.write_text(json.dumps(configuration, indent=2), encoding="utf-8")
 
     total_epochs = args.warmup_epochs + args.epochs
     campaign_plan = []
@@ -464,11 +494,14 @@ def main() -> None:
                             rate_mbps=100.0,
                             delay_ms=6.0 + user * 3.0,
                         )
+                clock_boundary = time.perf_counter()
                 for run_epoch, (capacity, segment_number) in enumerate(
                     zip(capacity_profile, segments)
                 ):
                     set_shared_rate(server, server_interface, capacity)
                     decision_started = time.perf_counter()
+                    buffer_before = buffer_s.copy()
+                    decision_buffer = advance_idle(buffer_s, decision_started - clock_boundary).buffer_s
                     action, decision = select_action(
                         controller,
                         model,
@@ -476,7 +509,7 @@ def main() -> None:
                         ladder,
                         capacity,
                         throughput,
-                        buffer_s,
+                        decision_buffer,
                         previous,
                         latency,
                         debt,
@@ -487,36 +520,31 @@ def main() -> None:
                     decision_ms = 1000 * (
                         time.perf_counter() - decision_started
                     )
-                    processes = []
-                    started = time.perf_counter()
-                    for user, (client, rate) in enumerate(zip(clients, action)):
-                        ladder_index = int(np.abs(ladder - rate).argmin())
-                        bitrate = LADDER_BPS[ladder_index]
-                        url = (
-                            f"http://10.0.0.1:8000/bunny_{bitrate}bps/"
-                            f"BigBuckBunny_10s{segment_number}.m4s"
-                        )
-                        processes.append(
-                            (user, rate, url, download_one(client, url))
-                        )
-                    measurements = []
-                    for user, rate, url, process in processes:
-                        output, error = process.communicate(
-                            timeout=PROCESS_TIMEOUT_S
-                        )
-                        try:
-                            measurement = parse_curl_measurement(
-                                output,
-                                error,
-                                process.returncode,
-                                allow_censoring=(user == impaired_user),
+                    measurements, completion_offsets = [], []
+                    with ThreadPoolExecutor(max_workers=args.users) as executor:
+                        processes = []
+                        for user, (client, rate) in enumerate(zip(clients, action)):
+                            ladder_index = int(np.abs(ladder - rate).argmin())
+                            bitrate = LADDER_BPS[ladder_index]
+                            url = (
+                                f"http://10.0.0.1:8000/bunny_{bitrate}bps/"
+                                f"BigBuckBunny_10s{segment_number}.m4s"
                             )
-                        except RuntimeError as failure:
-                            raise RuntimeError(
-                                f"{failure} for c{user + 1}: {url}"
-                            ) from failure
-                        measurements.append(measurement)
-                    wall_s = time.perf_counter() - started
+                            process = download_one(client, url)
+                            processes.append((user, url, executor.submit(observe_completion, process)))
+                        for user, url, future in processes:
+                            output, error, returncode, completed_at = future.result()
+                            try:
+                                measurement = parse_curl_measurement(
+                                    output, error, returncode,
+                                    allow_censoring=(user == impaired_user),
+                                )
+                            except RuntimeError as failure:
+                                raise RuntimeError(f"{failure} for c{user + 1}: {url}") from failure
+                            measurements.append(measurement)
+                            completion_offsets.append(completed_at - clock_boundary)
+                    next_boundary = time.perf_counter()
+                    wall_s = next_boundary - clock_boundary
                     size_bytes = np.array([m[0] for m in measurements])
                     download_s = np.array([m[1] for m in measurements])
                     ttfb_s = np.array([m[2] for m in measurements])
@@ -532,19 +560,15 @@ def main() -> None:
                         / np.maximum(download_s, 1e-6)
                         / 1e6
                     )
-                    stall_s = np.maximum(download_s - buffer_s, 0)
-                    buffer_before = buffer_s.copy()
-                    buffer_s = np.clip(
-                        np.maximum(buffer_s - download_s, 0)
-                        + SEGMENT_DURATION_S * (~transfer_censored),
-                        0,
-                        30,
-                    )
+                    clock = advance_round(buffer_before, np.asarray(completion_offsets),
+                                          wall_s, SEGMENT_DURATION_S, ~transfer_censored)
+                    stall_s, buffer_s = clock.stall_s, clock.buffer_s
+                    clock_boundary = next_boundary
                     actual_features = build_features(
                         template,
                         action,
                         throughput,
-                        buffer_before,
+                        decision_buffer,
                         previous,
                         ttfb_s,
                     )
@@ -599,6 +623,9 @@ def main() -> None:
                                 ],
                                 "bytes": int(size_bytes[user]),
                                 "download_s": download_s[user],
+                                "completion_since_boundary_s": completion_offsets[user],
+                                "decision_buffer_s": decision_buffer[user],
+                                "playback_clock_version": 2,
                                 "ttfb_s": ttfb_s[user],
                                 "throughput_mbps": throughput[user],
                                 "transfer_censored": int(
@@ -672,6 +699,8 @@ def main() -> None:
         os.system("mn -c >/dev/null 2>&1")
 
     metadata = {
+        "playback_clock_version": 2,
+        "playback_clock": "Observed concurrent completion timestamps; all setup, decision, synchronization and inter-round elapsed time is debited; no buffer truncation.",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "media_root_name": media.name,
         "model_name": args.model.name,
@@ -722,5 +751,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    setLogLevel("warning")
     main()

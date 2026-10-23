@@ -139,5 +139,13 @@ and existing Git history; this preference does not authorize rewriting either.
 - 2026-10-23: author approved technical corrections, development/testing of a
   recovery mechanism, a pilot, and GitHub commits before manuscript changes.
 - Working branch: `research/recovery-pilot`, based on fetched `origin/main`.
-- Implementation/pilot not yet completed. Overleaf remains unchanged.
-- Keep a detailed protocol/result handoff in `recovery_pilot/` as it is built.
+- Locked protocol and history commit: `4169be8`. The pre-run mathematical review
+  corrected the vacuous joint quality/gain error bound from 4 to 6; this is
+  documented in `recovery_pilot/PROTOCOL.md`, before outcome inspection.
+- Implemented objective-panel calibration, direct shortfall-gain recovery,
+  exact allocation, corrected playback clock, output/resume safeguards and
+  matched ablations. Full portable regression: 50 tests plus 12 subtests pass
+  on Windows. Linux pytest is not currently installed in either WSL distro.
+- Pilot execution/results are next. Do not infer success from unit-test passes.
+  Overleaf and its acknowledgment remain unchanged.
+- Detailed protocol and reproducibility entry point: `recovery_pilot/`.

@@ -53,14 +53,14 @@ def test_analysis_commands_consume_both_frozen_conditions():
     assert len(commands) == 2
     analysis = commands[0]
     assert (
-        "capacity_only=results/journal_gate_capacity_30seed/live_measurements.csv"
+        f"capacity_only={Path('results') / 'journal_gate_capacity_30seed' / 'live_measurements.csv'}"
         in analysis
     )
     assert (
-        "non_actionable=results/journal_gate_nonactionable_30seed/live_measurements.csv"
+        f"non_actionable={Path('results') / 'journal_gate_nonactionable_30seed' / 'live_measurements.csv'}"
         in analysis
     )
-    assert commands[1][-1] == "results/journal_gate_analysis/gate_primary_outcomes.png"
+    assert commands[1][-1] == str(Path("results") / "journal_gate_analysis" / "gate_primary_outcomes.png")
 
 
 def test_transfer_watchdog_covers_largest_segment_at_impaired_ceiling():
@@ -103,6 +103,7 @@ def test_unimpaired_timeout_remains_an_infrastructure_failure():
 
 
 def test_campaign_retries_failed_subprocess_and_completes(tmp_path, monkeypatch):
+    monkeypatch.setattr(campaign.os, "geteuid", lambda: 0, raising=False)
     experiment_attempts = {"non_actionable": 0, "capacity_only": 0}
     completed_pairs = {"non_actionable": 0, "capacity_only": 0}
 

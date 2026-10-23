@@ -32,7 +32,8 @@ entire six-content/six-segment catalogue of (i) absolute quality prediction
 error and (ii) the range across actions of H(prediction)-H(realization).
 The latter simultaneously bounds every ordered action-pair shortfall-reduction
 prediction error. Use rank ceil((n+1)*0.9), not a percentile interpolation.
-If too few independent calibration units exist, use the known trivial bound 4
+If too few independent calibration units exist, use the known trivial joint
+bound 6 (quality error <=4; ordered shortfall-gain error <=2*(4-1)=6)
 and explicitly flag it. Nine calibration IDs give the maximum observed score.
 
 This gives a joint catalogue-wide quality/gain envelope under exchangeability
@@ -86,6 +87,10 @@ Test unique-optimum permutation invariance; document tie indeterminacy.
   independently recorded minutes or new HMD traces.
 - A common seeded bursty capacity schedule is shared across policies. Decisions
   see the previous capacity; true current capacity determines transfer duration.
+  The schedule is 60 Normal(3.0,0.3) Mb/s samples clipped to [1,4.5], with
+  rounds whose index modulo 8 is 5--7 multiplied by 0.4. Initial buffers are
+  4 seconds. Measured controller runtime is reported separately, not injected
+  into deterministic replay time.
 - Four scenarios: capacity-only; known representation ceiling; one-round-delayed
   ceiling observation; prediction shift. All policies receive identical causal
   information in a scenario.
@@ -136,3 +141,7 @@ Run unit/regression tests, publish code and all pilot results with source hashes
 environment and protocol identity, and verify the remote commit. Preserve the
 old studies with prominent limitations. Update AGENTS.md with actual outcomes.
 Leave the manuscript acknowledgment unchanged.
+
+Pre-execution implementation correction: the vacuous joint error bound is 6,
+not 4, because a difference between two shortfall gains can span [-3,3]. This
+was found by mathematical/unit-test review before any pilot outcome was run.

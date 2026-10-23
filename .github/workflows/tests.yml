@@ -16,10 +16,12 @@ jobs:
       - name: Install CPU test dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install numpy pandas scipy scikit-learn PyYAML pytest
+          python -m pip install numpy pandas scipy scikit-learn matplotlib PyYAML pytest
           python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
       - name: Replay and calibration tests
         run: python -m pytest testbed/tests -q
       - name: Portable-model tests
         run: python live_testbed/test_portable.py
+      - name: Objective recovery, timing and regression tests
+        run: python -m pytest recovery_pilot live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
 

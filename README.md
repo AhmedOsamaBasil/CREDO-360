@@ -1,5 +1,15 @@
 # CREDO-360
 
+> **Technical correction in progress (October 2026).** The historical studies
+> below remain available, but legacy subjective residuals do not validate
+> objective-quality coverage, the original gate can be action-equivalent to
+> ordinary quality debt, and synchronized playback timing required correction.
+> Do not treat those results as validation of a distinct calibrated recovery
+> mechanism. See [`recovery_pilot/`](recovery_pilot/README.md) for the corrected
+> objective-target pilot, fixed protocol, tests and explicit progression gate.
+> Historical result files are unchanged; new software refuses to overwrite or
+> mix them with corrected runs.
+
 **Open testbed for coverage-calibrated viewport-quality deprivation recovery
 in fair multi-user immersive streaming.**
 

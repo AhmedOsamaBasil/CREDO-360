@@ -17,6 +17,7 @@ from portable_qoe import (  # noqa: E402
     conformal_radius,
     select_action,
 )
+from playback_clock import advance_round  # noqa: E402
 
 CONTROLLERS = [
     "mean_nash",
@@ -45,6 +46,7 @@ FIELDS = [
     "allocated_mbps",
     "segment_bytes",
     "download_s",
+    "round_duration_s",
     "throughput_mbps",
     "buffer_before_s",
     "buffer_after_s",
@@ -134,7 +136,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("multimedia_testbed/results/generalization_v2_30seed"),
+        default=Path("multimedia_testbed/results/legacy_transfer_clock_v3"),
     )
     parser.add_argument("--seed", type=int, default=20260760)
     parser.add_argument("--seeds", type=int, default=30)
@@ -144,7 +146,15 @@ def main() -> None:
     parser.add_argument("--debt-decay", type=float, default=0.90)
     parser.add_argument("--switch-weight", type=float, default=0.08)
     parser.add_argument("--aci-gamma", type=float, default=0.02)
+    parser.add_argument(
+        "--allow-legacy-subjective-transfer", action="store_true",
+        help="Explicitly run the diagnostic legacy model, whose residuals do not calibrate objective PSNR. Prefer python -m recovery_pilot.run.",
+    )
     args = parser.parse_args()
+    if not args.allow_legacy_subjective_transfer:
+        parser.error("Legacy subjective residuals do not calibrate objective quality. Use python -m recovery_pilot.run, or explicitly opt into this legacy diagnostic.")
+    if args.output.exists() and any(args.output.iterdir()):
+        parser.error("Output is nonempty; frozen results must not be overwritten.")
 
     quality_rows = read_rows(args.artifacts / "viewport_quality.csv")
     size_rows = read_rows(args.artifacts / "segment_sizes.csv")
@@ -266,12 +276,8 @@ def main() -> None:
                 )
                 throughput = 8.0 * segment_bytes / np.maximum(download_s, 1e-9) / 1e6
                 buffer_before = buffer_s.copy()
-                stall = np.maximum(download_s - buffer_s, 0.0)
-                buffer_s = np.clip(
-                    np.maximum(buffer_s - download_s, 0.0) + 10.0,
-                    0.0,
-                    30.0,
-                )
+                clock = advance_round(buffer_s, download_s, float(download_s.max()))
+                stall, buffer_s = clock.stall_s, clock.buffer_s
                 scores = [
                     quality[(content, subject, epoch, int(ladder_index))]
                     for (content, subject), ladder_index in zip(
@@ -320,6 +326,7 @@ def main() -> None:
                             "allocated_mbps": action[user],
                             "segment_bytes": int(segment_bytes[user]),
                             "download_s": download_s[user],
+                            "round_duration_s": clock.elapsed_s,
                             "throughput_mbps": throughput[user],
                             "buffer_before_s": buffer_before[user],
                             "buffer_after_s": buffer_s[user],
@@ -347,7 +354,9 @@ def main() -> None:
         json.dumps(plans, indent=2), encoding="utf-8"
     )
     metadata = {
-        "format": "credo360-multimedia-generalization-v2",
+        "format": "credo360-legacy-subjective-transfer-clock-v3",
+        "calibration_warning": "Subjective residuals are not calibrated for the objective target. No objective coverage guarantee.",
+        "playback_clock": "Common synchronized clock, including waiting after own completion; no buffer truncation.",
         "seeds": args.seeds,
         "first_seed": args.seed,
         "users": args.users,
