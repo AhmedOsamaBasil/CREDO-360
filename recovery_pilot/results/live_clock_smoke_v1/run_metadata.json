@@ -1,0 +1,35 @@
+{
+  "playback_clock_version": 2,
+  "playback_clock": "Observed concurrent completion timestamps; all setup, decision, synchronization and inter-round elapsed time is debited; no buffer truncation.",
+  "created_utc": "2026-10-23T12:37:13.643903+00:00",
+  "media_root_name": "Segments",
+  "model_name": "qoe_ensemble.json",
+  "portable_max_abs_error": 2.404843928438538e-07,
+  "controllers": [
+    "conformal_nash"
+  ],
+  "users": 2,
+  "epochs": 3,
+  "warmup_epochs": 0,
+  "first_seed": 20261023,
+  "seeds": 1,
+  "regimes": [
+    "stable"
+  ],
+  "impairment": "capacity_only",
+  "impaired_client_selection": null,
+  "impaired_service_ceiling_mbps": null,
+  "impaired_access_delay_ms": null,
+  "counterbalanced_order": true,
+  "campaign_plan": "campaign_plan.json",
+  "segment_duration_s": 10.0,
+  "max_new_pairs_per_invocation": 0,
+  "transfer_deadline_s": 426,
+  "transfer_censoring": "curl exit 28 is a right-censored observation only for the predeclared impaired client; download_s is the censoring deadline, stall is a lower bound, and no segment is added to its buffer",
+  "target_operational_qoe": 4.0,
+  "debt_weight": 1.0,
+  "debt_decay": 0.9,
+  "switch_weight": 0.08,
+  "shared_bottleneck": "server-s1 egress TBF",
+  "qoe_semantics": "model-estimated operational QoE from measured transport features; not a new subjective human score"
+}

@@ -1,0 +1,6 @@
+# Keep frozen result bytes intact, including CSV line endings and compressed data.
+recovery_pilot/results/** -text
+# The pilot records these source bytes; make their checkout form platform-stable.
+recovery_pilot/*.py text eol=lf
+recovery_pilot/PROTOCOL.md text eol=lf
+live_testbed/playback_clock.py text eol=lf

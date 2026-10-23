@@ -1,0 +1,80 @@
+{
+  "cross_platform_passed": true,
+  "replicated_seed": 202610230,
+  "replicated_rows": 9600,
+  "max_scientific_field_difference": 0.0,
+  "runtime_excluded_from_comparison": true,
+  "replica_metadata": {
+    "format": "recovery-pilot-v1",
+    "exploratory": true,
+    "matches_locked_seed_count": false,
+    "seeds": 1,
+    "users": 5,
+    "rounds": 60,
+    "rows": 9600,
+    "controllers": [
+      "quality_nash",
+      "bounded_nash",
+      "quality_debt",
+      "bounded_quality_debt",
+      "uncertified_recovery",
+      "certified_recovery",
+      "memoryless_recovery",
+      "max_min"
+    ],
+    "scenarios": [
+      "capacity_only",
+      "known_ceiling",
+      "delayed_ceiling",
+      "prediction_shift"
+    ],
+    "git_head_at_run": "26b744b7d25001d7ee04ee204e12bcc429532826",
+    "source_sha256": {
+      "recovery_pilot/run.py": "41ed956d141cdb0c7ede1e79bed63c00976d13a107942fd5ea03dc8f13179191",
+      "recovery_pilot/core.py": "c23a429c1f41d2544022b0e9c2dfec800a833f00a7b36415b61f360fe5465fc5",
+      "recovery_pilot/PROTOCOL.md": "cf8420038aa5272a3e6294b412a84f75a08bb9c0bc216e9d23ee23839a24b504",
+      "live_testbed/playback_clock.py": "3ed17a22b7a9d27898230460be47f79a10ccb6a696517d6f3269cd3b25952298"
+    },
+    "input_sha256": {
+      "viewport_quality.csv": "bb00b3ef267aaa14dc2ec6f142b19a9741e8903c2c384e6b08624314901cc332",
+      "segment_sizes.csv": "9a71a9ff3d0a4faf8612729aeba057eed9f3302d976f13591718a725b40143e0",
+      "subject_split.csv": "1231a32182108466673b7dce15bcd862efd6db83d1604cded44cce3a4128898a",
+      "metadata.json": "13a0b81fbc5aa3cb6f18adc6e6fd877e2cf592ffc2b29292134c10e5050be079"
+    },
+    "result_sha256": {
+      "action_disagreements.csv": "34294fe959e2a5363ce7bcf11502d2b1ac9b39e2e94a05900091fbcb5ad6559c",
+      "campaign_plan.json": "9c7a8581541b4dd5098cd1b6dbe1f58e4bcd9ea2492f6f0705b36cbcafe152ff",
+      "measurements.csv.gz": "40f3984015c4c0d1c9e374d7c9874cd69eccab897e356ea78a3dcf426206b1bf",
+      "paired_diagnostics.csv": "e554fe7feab59d09aceb47ba5bbd055cef317e87c2d904dd8a93eae6aa4f65e6",
+      "seed_metrics.csv": "44f0d0b41621fc3f4848b41acf90525959c712b54e6cf1e2faadbdebf3c1a6cd",
+      "split_and_calibration.json": "2ac3b647445d28319e20cae9a60fb353b00d0da7acdfeb8cf0f919eb9baf33f5"
+    },
+    "python": "3.14.4",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "progression_gate_passed": true,
+    "primary_mean_deltas": {
+      "cumulative_shortfall": -0.09068796853436467,
+      "post_restoration_shortfall": -0.09068796853436556,
+      "stall_s_per_user": -0.029351486851524555,
+      "worst_user_quality": -0.00510283856822058
+    },
+    "runtime_injected_into_simulated_clock": false,
+    "limitations": [
+      "known-content centroid predictor",
+      "nine held-out source-ID panels",
+      "looped six-segment catalogue",
+      "synthetic representation ceiling",
+      "fluid synchronized transport, not live player",
+      "no adaptive recalibration under shift",
+      "seed-bootstrap intervals condition on this dataset",
+      "no human perception or novelty claim"
+    ]
+  },
+  "live_clock_smoke_passed": true,
+  "live_rows": 6,
+  "live_max_clock_error_s": 0.0,
+  "live_max_post_completion_wait_s": 0.10853749900002185,
+  "live_measurements_sha256": "a5f6ed71dbc9579d4ce165ea22c54181d6c9dfc8c85eac8a439869a24b103850",
+  "limitations": "One-seed replication checks determinism, not efficacy. Two-client/three-round Big Buck Bunny Mininet smoke checks timing, not immersive recovery performance."
+}

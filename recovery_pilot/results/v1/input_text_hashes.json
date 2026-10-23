@@ -1,0 +1,18 @@
+{
+  "viewport_quality.csv": {
+    "original_raw_sha256": "bb00b3ef267aaa14dc2ec6f142b19a9741e8903c2c384e6b08624314901cc332",
+    "canonical_lf_sha256": "358027aa5d080f2e2a4ea31d96304f1508822186073c36fb8b9c1693eef6ed68"
+  },
+  "segment_sizes.csv": {
+    "original_raw_sha256": "9a71a9ff3d0a4faf8612729aeba057eed9f3302d976f13591718a725b40143e0",
+    "canonical_lf_sha256": "46f9981d3074eb0cb6c4ac7196a71db57205c96e6ae05f04bc8f271af06309fe"
+  },
+  "subject_split.csv": {
+    "original_raw_sha256": "1231a32182108466673b7dce15bcd862efd6db83d1604cded44cce3a4128898a",
+    "canonical_lf_sha256": "53221ffa55e08bbc55a90372a87cf80790e76410d8834db1e7de7df72bcc5f89"
+  },
+  "metadata.json": {
+    "original_raw_sha256": "13a0b81fbc5aa3cb6f18adc6e6fd877e2cf592ffc2b29292134c10e5050be079",
+    "canonical_lf_sha256": "13a0b81fbc5aa3cb6f18adc6e6fd877e2cf592ffc2b29292134c10e5050be079"
+  }
+}

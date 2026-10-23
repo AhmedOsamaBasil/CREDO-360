@@ -142,10 +142,35 @@ and existing Git history; this preference does not authorize rewriting either.
 - Locked protocol and history commit: `4169be8`. The pre-run mathematical review
   corrected the vacuous joint quality/gain error bound from 4 to 6; this is
   documented in `recovery_pilot/PROTOCOL.md`, before outcome inspection.
-- Implemented objective-panel calibration, direct shortfall-gain recovery,
-  exact allocation, corrected playback clock, output/resume safeguards and
-  matched ablations. Full portable regression: 50 tests plus 12 subtests pass
-  on Windows. Linux pytest is not currently installed in either WSL distro.
-- Pilot execution/results are next. Do not infer success from unit-test passes.
-  Overleaf and its acknowledgment remain unchanged.
-- Detailed protocol and reproducibility entry point: `recovery_pilot/`.
+- Software implementation commit: `26b744b`, pushed to the research branch.
+  Objective-panel calibration, direct shortfall-gain recovery, exact allocation,
+  corrected playback clock, output/resume safeguards and matched ablations.
+- Full Windows regression: 52 tests plus 12 subtests pass. Linux portable:
+  48 tests plus 12 subtests pass. Use `.external/venv/bin/python` in WSL Ubuntu;
+  bare system Python lacks pytest, and the Linux environment lacks PyTorch.
+  The four legacy PyTorch tests passed in Windows, not Linux.
+- Pilot v1 COMPLETE: 12 seeds, 4 scenarios, 8 policies, 60 rounds, 5 clients;
+  115,200 rows. Integrity audit passes with maximum clock residual ~1.4e-14 s.
+  Joint envelope radius 0.474135, 9/9 held-out panels covered; prediction-shift
+  selected quality coverage falls to ~74%. No arbitrary-shift guarantee.
+- Scientific progression criterion FAILED. Known-ceiling candidate minus
+  bounded-quality debt: cumulative shortfall +0.19636 index-rounds/user;
+  post-restoration shortfall -0.00847; stall +0.09215 s/user; worst-user mean
+  quality -0.00161. Do not present the new controller as superior or retune it
+  against the same held-out IDs. See `recovery_pilot/INTERPRETATION.md`.
+- Linux first-seed replication: 9,600 scientific rows identical to Windows,
+  excluding runtime. That single seed passes the screen; the full campaign
+  fails. Never select the single seed to reverse the conclusion.
+- Live-clock smoke: two clients, three rounds, six records using existing DASH
+  media and the legacy bounded-Nash controller. Exact stored time conservation;
+  max observed post-completion wait 0.10854 s. This is NOT live evaluation of
+  the new recovery controller or an immersive-player campaign.
+- Overleaf and its acknowledgment remain unchanged. Next research decision:
+  simpler debt trade-off study versus a separately evaluated feasibility-aware
+  recovery mechanism. Wider content/live/scalability/novelty checks remain open.
+- Detailed protocol, code, immutable outputs and reproducibility instructions:
+  `recovery_pilot/`. Preserve the failure as evidence, not something to hide.
+- Reproducibility packaging: new result bytes are preserved with `.gitattributes`.
+  Historical input CSVs can differ by Git's LF/CRLF checkout conversion; the
+  bound raw/canonical hashes in `input_text_hashes.json` permit only that change.
+  Hashed pilot source files use LF. CI verifies the saved artifact, not just tests.

@@ -10,15 +10,15 @@
 > Historical result files are unchanged; new software refuses to overwrite or
 > mix them with corrected runs.
 
-**Open testbed for coverage-calibrated viewport-quality deprivation recovery
-in fair multi-user immersive streaming.**
+**Open research testbed for objective viewport-quality fairness and
+deprivation recovery in multi-user immersive streaming.**
 
 This repository contains the prototype, CUDA replay experiment, statistical
 analysis, literature-review evidence, exported learned model, and live
 Mininet/DASH integration used by the CREDO-360 paper.
 
-> Research status: powered live-emulation and objective multimedia campaigns
-> complete. The manuscript is in preparation. The paper makes controller and
+> Research status: historical campaigns are preserved; post-audit corrections
+> and exploratory validation are underway. The paper makes controller and
 > objective viewport-quality claims, not new subjective MOS or human-QoE claims.
 
 ## Topic
@@ -35,7 +35,12 @@ The system combines:
    evidence of improving the user; and
 5. constrained multi-user bitrate allocation.
 
-## Mathematical seed
+## Historical mathematical seed
+
+The original expression below is retained for traceability. Its opportunity
+term is not a certified gain bound and can be action-equivalent to ordinary
+quality debt. The corrected candidate is described in `recovery_pilot/` and
+must be judged by that pilot's actual results, not this historical claim.
 
 For predicted lower QoE bound \(L_{i,t}(a)\), service-floor debt
 

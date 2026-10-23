@@ -1,0 +1,21 @@
+{
+  "controllers": [
+    "conformal_nash"
+  ],
+  "users": 2,
+  "epochs": 3,
+  "warmup_epochs": 0,
+  "seed": 20261023,
+  "seeds": 1,
+  "regimes": [
+    "stable"
+  ],
+  "fixed_order": false,
+  "target_qoe": 4.0,
+  "debt_weight": 1.0,
+  "debt_decay": 0.9,
+  "switch_weight": 0.08,
+  "impairment": "capacity_only",
+  "playback_clock_version": 2,
+  "model_sha256": "f28f3320cee852467a2ec7b829c273a1c5779e6ca350990b65c34688dd07a2dc"
+}

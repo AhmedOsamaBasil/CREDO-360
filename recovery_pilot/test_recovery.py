@@ -14,6 +14,23 @@ from recovery_pilot.core import (
     select_action, shortfall, subject_partition,
 )
 from recovery_pilot.run import longest_run, processor_sharing
+from recovery_pilot.audit_results import canonical_text_hash, verify_input_bytes
+
+
+def test_input_provenance_accepts_only_git_line_ending_changes():
+    import hashlib
+    original = b"a,b\r\n1,2\r\n"
+    expected = hashlib.sha256(original).hexdigest()
+    record = {"original_raw_sha256": expected, "canonical_lf_sha256": canonical_text_hash(original)}
+    assert verify_input_bytes(original, expected, record) == "byte_exact"
+    assert verify_input_bytes(b"a,b\n1,2\n", expected, record) == "git_line_endings_only"
+    with pytest.raises(AssertionError):
+        verify_input_bytes(b"a,b\n1,3\n", expected, record)
+
+
+def test_normalized_provenance_must_be_bound_to_original_hash():
+    with pytest.raises(AssertionError):
+        verify_input_bytes(b"a\n", "unrelated", {"original_raw_sha256": "different", "canonical_lf_sha256": canonical_text_hash(b"a\n")})
 
 
 def test_waiting_after_own_completion_can_cause_stall():

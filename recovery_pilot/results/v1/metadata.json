@@ -1,0 +1,67 @@
+{
+  "format": "recovery-pilot-v1",
+  "exploratory": true,
+  "matches_locked_seed_count": true,
+  "seeds": 12,
+  "users": 5,
+  "rounds": 60,
+  "rows": 115200,
+  "controllers": [
+    "quality_nash",
+    "bounded_nash",
+    "quality_debt",
+    "bounded_quality_debt",
+    "uncertified_recovery",
+    "certified_recovery",
+    "memoryless_recovery",
+    "max_min"
+  ],
+  "scenarios": [
+    "capacity_only",
+    "known_ceiling",
+    "delayed_ceiling",
+    "prediction_shift"
+  ],
+  "git_head_at_run": "26b744b7d25001d7ee04ee204e12bcc429532826",
+  "source_sha256": {
+    "recovery_pilot/run.py": "41ed956d141cdb0c7ede1e79bed63c00976d13a107942fd5ea03dc8f13179191",
+    "recovery_pilot/core.py": "c23a429c1f41d2544022b0e9c2dfec800a833f00a7b36415b61f360fe5465fc5",
+    "recovery_pilot/PROTOCOL.md": "cf8420038aa5272a3e6294b412a84f75a08bb9c0bc216e9d23ee23839a24b504",
+    "live_testbed/playback_clock.py": "3ed17a22b7a9d27898230460be47f79a10ccb6a696517d6f3269cd3b25952298"
+  },
+  "input_sha256": {
+    "viewport_quality.csv": "bb00b3ef267aaa14dc2ec6f142b19a9741e8903c2c384e6b08624314901cc332",
+    "segment_sizes.csv": "9a71a9ff3d0a4faf8612729aeba057eed9f3302d976f13591718a725b40143e0",
+    "subject_split.csv": "1231a32182108466673b7dce15bcd862efd6db83d1604cded44cce3a4128898a",
+    "metadata.json": "13a0b81fbc5aa3cb6f18adc6e6fd877e2cf592ffc2b29292134c10e5050be079"
+  },
+  "result_sha256": {
+    "action_disagreements.csv": "c62be800a714d070d84d08b122932c2f2b58a10166cca975c8554e4792fb1a7e",
+    "campaign_plan.json": "67d80cfe0a3c5a1519d2047fa5dc004567f93de05c3dae96b5444469a604e5c1",
+    "measurements.csv.gz": "1521110b5333f59ff14a906502aadf6961dbd9b1626db858ffa1ee28496c70d7",
+    "paired_diagnostics.csv": "ac0b4854a48fe419d63cc3d3979a4fb15c11987edb4d1a38b827b6c3f6412e7f",
+    "seed_metrics.csv": "200b2a897baa9ea258c32d4b32e1a4f38b9187d7d4a3de932046522e5df01fdd",
+    "split_and_calibration.json": "20e6f001418eb3a73a1d00f360f287fc0c8b103eb358e39f49c216650d942043"
+  },
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "progression_gate_passed": false,
+  "primary_mean_deltas": {
+    "cumulative_shortfall": 0.19636084486522934,
+    "post_restoration_shortfall": -0.00847014293296248,
+    "stall_s_per_user": 0.09214689557398777,
+    "worst_user_quality": -0.0016113764078769337
+  },
+  "runtime_injected_into_simulated_clock": false,
+  "limitations": [
+    "known-content centroid predictor",
+    "nine held-out source-ID panels",
+    "looped six-segment catalogue",
+    "synthetic representation ceiling",
+    "fluid synchronized transport, not live player",
+    "no adaptive recalibration under shift",
+    "seed-bootstrap intervals condition on this dataset",
+    "no human perception or novelty claim"
+  ]
+}

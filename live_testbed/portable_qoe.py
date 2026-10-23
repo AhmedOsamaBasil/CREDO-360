@@ -238,6 +238,9 @@ def select_action(
         raise ValueError("radius must be scalar or one value per user")
     lower = np.clip(mean - radius_array, 1.0, 5.0)
     reference = lower[0]
+    # Historical score, not a calibrated improvement bound. For lower>=reference
+    # this is only an action-independent shift of absolute quality-debt reward.
+    # The objective-target/direct-gain pilot is implemented in recovery_pilot/.
     recoverable = np.maximum(lower - reference[None, :], 0)
     normalized_debt = debt / (1.0 + debt.mean())
     switching = np.mean(
