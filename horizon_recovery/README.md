@@ -7,6 +7,11 @@ protocol were published before downloading the v3 inputs. See
 [development search](results/development_v1/selection.csv). Do not infer a
 successful holdout from the successful development screen.
 
+The completed fresh holdout **failed**. Read [INTERPRETATION.md](INTERPRETATION.md)
+and the [complete report](results/v3/REPORT.md): worst-user quality is essentially
+unchanged versus Nash and lower than the scaled memoryless control. Do not use
+this pilot to claim a validated recovery/fairness advantage.
+
 ## Technical distinction and limits
 
 The old instantaneous feasible lower target almost always left the recovery

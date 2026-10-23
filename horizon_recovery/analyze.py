@@ -84,7 +84,8 @@ def analyze(output):
         ax.set_yticks(range(4),[s.replace('_',' ') for s in SCENARIOS] if ax is axes[0] else [])
         ax.set_title(title)
         ax.grid(axis='x',alpha=.2)
-    axes[0].invert_yaxis()
+    for ax in axes:
+        ax.invert_yaxis()
     axes[-1].legend(loc='best',fontsize=8)
     fig.suptitle('Fresh-content paired-seed diagnostics; conditional 95% bootstrap intervals',fontsize=11)
     fig.tight_layout()

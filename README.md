@@ -26,6 +26,10 @@ joint-mixture service contract and signed-window recovery on exposed v2 data.
 Its complete six-configuration development search and stricter fresh-content
 protocol are frozen before evaluation. Comparisons include stateless Nash and
 a scale-matched memoryless control under a common per-round byte cap.
+The completed [v3 holdout](horizon_recovery/INTERPRETATION.md) also fails its
+screen: the development gain does not generalize, and the scale-matched
+memoryless baseline has higher worst-user quality. The full negative result is
+retained; implementation correctness is not evidence of scientific superiority.
 
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**

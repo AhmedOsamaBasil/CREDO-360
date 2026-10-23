@@ -1,0 +1,18 @@
+{
+  "post_hoc": true,
+  "changes_to_controller": false,
+  "rows": 12000,
+  "mean_target": 3.9963845939225004,
+  "quality_at_5_fraction": 0.19433333333333333,
+  "quality_below_4_fraction": 0.10258333333333333,
+  "positive_residual_fraction": 0.09583333333333334,
+  "mean_delivered_surplus": 0.5471652978375947,
+  "mean_new_deficit": 0.009385420009495079,
+  "minimum_seed_worst_user_quality": 4.187598562692607,
+  "source_sha256": "13721cecfe1ae96014bb7aa6eaaa23428cbe9f4cb4045dba87360163068c79cd",
+  "input_sha256": {
+    "measurements.csv.gz": "bfbf416c2203229f710fe148962a5477e81d2c366e10d2766f45f5daf449101a",
+    "seed_metrics.csv": "2f9db60292b29d6789c608c8e705a2b2e85ab01892b674f7cc8de61be2de24ed"
+  },
+  "interpretation_limit": "Associations diagnose limited activation; no isolated causal attribution to clipping or surplus banking."
+}

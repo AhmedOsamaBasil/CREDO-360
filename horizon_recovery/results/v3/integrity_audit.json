@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "scientific_rows_replayed": 240000,
+  "episodes": 400,
+  "joint_support_witnesses_checked": 12150,
+  "maximum_clock_residual_s": 2.842170943040401e-14,
+  "maximum_bytes_above_nash": 0.0,
+  "progression_gate_passed": false,
+  "source_data_results_verified": true,
+  "ledger_independently_checked": true,
+  "runtime_replayed": false,
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "audit_source_sha256": "db8ff0d2bad238a7b0046acfba2c07fd8083bffa69da11a42b47eabce6752e9b",
+  "source_verification": {
+    "horizon_recovery/core.py": "byte_exact",
+    "horizon_recovery/run.py": "byte_exact",
+    "horizon_recovery/evaluate.py": "byte_exact",
+    "horizon_recovery/PROTOCOL.md": "byte_exact",
+    "horizon_recovery/frozen_config.json": "byte_exact",
+    "recovery_pilot/core.py": "byte_exact",
+    "recovery_pilot/run.py": "byte_exact",
+    "feasibility_recovery/core.py": "byte_exact",
+    "feasibility_recovery/run.py": "byte_exact",
+    "live_testbed/playback_clock.py": "byte_exact",
+    "horizon_recovery/prepare.py": "byte_exact",
+    "multimedia_testbed/prepare_qoevave.py": "byte_exact"
+  }
+}

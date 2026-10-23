@@ -1,0 +1,99 @@
+{
+  "format": "horizon-v3",
+  "exploratory": true,
+  "seeds": 20,
+  "rows": 240000,
+  "config": {
+    "horizon": 24,
+    "strength": 8.0,
+    "development_screen_passed": true,
+    "development_data": "feasibility_recovery/data/v2",
+    "selection_rule": "DEVELOPMENT.md; no fresh labels accessed"
+  },
+  "progression_gate_passed": false,
+  "screen_details": {
+    "checks": {
+      "all_20_paired_seeds": true,
+      "active_state_above_5_percent": false,
+      "nash_worst_quality_ci_above_zero": false,
+      "nash_post_restoration_shortfall_reduced": true,
+      "nash_impaired_restoration_shortfall_reduced": true,
+      "nash_mean_quality_guard": true,
+      "nash_fixed_shortfall_guard": true,
+      "nash_stall_guard": true,
+      "nash_action_disagreement_above_1_percent": false,
+      "memoryless_scaled_worst_quality_ci_above_zero": false,
+      "memoryless_scaled_post_restoration_shortfall_reduced": true,
+      "memoryless_scaled_impaired_restoration_shortfall_reduced": true,
+      "memoryless_scaled_mean_quality_guard": true,
+      "memoryless_scaled_fixed_shortfall_guard": true,
+      "memoryless_scaled_stall_guard": true,
+      "memoryless_scaled_action_disagreement_above_1_percent": true
+    },
+    "known_ceiling_means": {
+      "window_recovery": {
+        "worst_user_quality": 4.33423435718133,
+        "post_restoration_shortfall": 0.24445836368664148,
+        "impaired_restoration_shortfall": 0.1822207256711767,
+        "mean_quality": 4.534164471750601,
+        "cumulative_shortfall": 1.5066682429211329,
+        "stall_s_per_user": 15.642783901634001,
+        "active_state_fraction": 0.011666666666666669
+      },
+      "nash": {
+        "worst_user_quality": 4.334549317289682,
+        "post_restoration_shortfall": 0.2993156954381315,
+        "impaired_restoration_shortfall": 0.23667584600018765,
+        "mean_quality": 4.534368719376737,
+        "cumulative_shortfall": 1.6120576257327202,
+        "stall_s_per_user": 15.790955740984558,
+        "active_state_fraction": 0.011666666666666669
+      },
+      "memoryless_scaled": {
+        "worst_user_quality": 4.341254408798299,
+        "post_restoration_shortfall": 0.254203615418754,
+        "impaired_restoration_shortfall": 0.20007127022706078,
+        "mean_quality": 4.5332140295428704,
+        "cumulative_shortfall": 1.516597197495108,
+        "stall_s_per_user": 15.269494408331019,
+        "active_state_fraction": 0.0955
+      }
+    }
+  },
+  "git_head_at_run": "2a3802df9f160d0ce613335fb2539923f3b926cd",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "source_sha256": {
+    "horizon_recovery/core.py": "bcafef71e1be9148a67372be027bab0293f59ffb330f6390affe05b50d1134d0",
+    "horizon_recovery/run.py": "494cc611552507fa403ab592c88b038ab6a81b2b6976e99990782a3a916eca23",
+    "horizon_recovery/evaluate.py": "bc0874074647680f5d3be3623564469d4d5cb9dfaa098d4210b7579878bff1a2",
+    "horizon_recovery/PROTOCOL.md": "30ac7d6e8c1f2538695e8b364bf25dba72dc16f58ebc0f4d3077dc98fed8db7f",
+    "horizon_recovery/frozen_config.json": "ee414f540a440611b6d475b926c2f6733e3d524aa5024cf8e682b531137db982",
+    "recovery_pilot/core.py": "c23a429c1f41d2544022b0e9c2dfec800a833f00a7b36415b61f360fe5465fc5",
+    "recovery_pilot/run.py": "41ed956d141cdb0c7ede1e79bed63c00976d13a107942fd5ea03dc8f13179191",
+    "feasibility_recovery/core.py": "a985fe4b745fec8455818e59e900a06840c3fba4c7f748fd9044e11c8bcd41e1",
+    "feasibility_recovery/run.py": "a1e53472660a96f80cfc02d4884bb6eb5a6fddabf196c41da52c9903334f8ca6",
+    "live_testbed/playback_clock.py": "3ed17a22b7a9d27898230460be47f79a10ccb6a696517d6f3269cd3b25952298"
+  },
+  "input_sha256": {
+    "calibration_quality.csv": "6d9caa28a2a52022b14080b6c418196eb3b0075574b6c32a72019b30233162e7",
+    "heldout_quality.csv": "5f3719cb9080f192c16f83353734420bb4d14d973ed94de741fec7e414fc40fe",
+    "metadata.json": "c3f98c5d93bde7aa774ad074553a63799549e06a67ea6fe3b6d4243f8b93ad53",
+    "segment_sizes.csv": "d0e6d9fe70d8f3dacb13f7a64d3ad733ef94f4799207307f68987cd2a23b6e6b",
+    "sender_quality.csv": "fd3c1e4b2c05ab7f3a86041ceaf8055848f433ad7072cc105e9a3f92fb3c0148",
+    "split.json": "b01646b5ef26599d99cb671a1efb466885a0d375476619b92ef425666a205c98"
+  },
+  "result_sha256": {
+    "action_disagreements.csv": "9910f836c29be0a4821596745141cc6dd114449b1b02577b7b7f855adb39b72a",
+    "calibration.json": "ce2cceaff644c02a5f31230b6c3cbba8452af95f3c2faf9bd4e6b62a5b2378b5",
+    "contracts.json": "4260778196f3da552e1dc2330ed2851a540a7806dc74627e9bef04b2fecc756c",
+    "measurements.csv.gz": "bfbf416c2203229f710fe148962a5477e81d2c366e10d2766f45f5daf449101a",
+    "paired_diagnostics.csv": "48fbf92a28181fb972167e9cf42766a801534ad41369fd1bae425215cdf95f3b",
+    "panel_coverage.json": "f6d1ee01bc812268b4daafadf6e4dadeb7838d9250b55ade6bbd2e384c2eb216",
+    "plans.json": "57f921128f6e1fe1d480d16d8ab0b1f60c6fe8c717a77569002a0b00551945a0",
+    "seed_metrics.csv": "2f9db60292b29d6789c608c8e705a2b2e85ab01892b674f7cc8de61be2de24ed"
+  },
+  "runtime_injected": false,
+  "new_participants": false
+}

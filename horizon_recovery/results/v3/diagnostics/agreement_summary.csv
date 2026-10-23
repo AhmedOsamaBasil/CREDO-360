@@ -1,0 +1,17 @@
+scenario,baseline,disagreements,comparisons,fraction
+capacity_only,nash,81,12000,0.00675
+capacity_only,memoryless_scaled,206,12000,0.017166666666666667
+capacity_only,memoryless_unscaled,14,12000,0.0011666666666666668
+capacity_only,fixed_window,0,12000,0.0
+known_ceiling,nash,71,12000,0.005916666666666666
+known_ceiling,memoryless_scaled,181,12000,0.015083333333333334
+known_ceiling,memoryless_unscaled,12,12000,0.001
+known_ceiling,fixed_window,2,12000,0.00016666666666666666
+delayed_ceiling,nash,71,12000,0.005916666666666666
+delayed_ceiling,memoryless_scaled,181,12000,0.015083333333333334
+delayed_ceiling,memoryless_unscaled,12,12000,0.001
+delayed_ceiling,fixed_window,4,12000,0.0003333333333333333
+prediction_shift,nash,53,12000,0.004416666666666667
+prediction_shift,memoryless_scaled,145,12000,0.012083333333333333
+prediction_shift,memoryless_unscaled,12,12000,0.001
+prediction_shift,fixed_window,0,12000,0.0
