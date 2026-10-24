@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "development_only": true,
+  "scientific_rows_replayed": 216000,
+  "episodes": 360,
+  "joint_support_witnesses_checked": 12120,
+  "maximum_clock_residual_s": 2.842170943040401e-14,
+  "maximum_bytes_above_nash": 0.0,
+  "independent_expiry_bank_and_suffix_checks": true,
+  "normalized_impairment_checks": true,
+  "source_data_result_hashes_verified": true,
+  "runtime_replayed": false,
+  "development_promising": {
+    "floor_bank": false,
+    "floor_nobank": false,
+    "fair_bank": false,
+    "fair_nobank": false
+  },
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "audit_source_sha256": "f3c54eddb4e0fe1402dbc5b5704f3f39e5b3f250eb6c844f8dbe8ac3d41c78fa",
+  "source_verification": {
+    "objective_diagnostics/core.py": "byte_exact",
+    "objective_diagnostics/run.py": "byte_exact",
+    "objective_diagnostics/PLAN.md": "byte_exact",
+    "horizon_recovery/core.py": "byte_exact",
+    "horizon_recovery/run.py": "byte_exact",
+    "recovery_pilot/core.py": "byte_exact",
+    "recovery_pilot/run.py": "byte_exact",
+    "feasibility_recovery/core.py": "byte_exact",
+    "feasibility_recovery/run.py": "byte_exact",
+    "live_testbed/playback_clock.py": "byte_exact"
+  }
+}

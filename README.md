@@ -31,6 +31,14 @@ screen: the development gain does not generalize, and the scale-matched
 memoryless baseline has higher worst-user quality. The full negative result is
 retained; implementation correctness is not evidence of scientific superiority.
 
+A subsequent [objective/window-accounting diagnosis](objective_diagnostics/README.md)
+uses only the now-exposed v2/v3 catalogues. It separates floor versus higher
+feasible targets, banking versus non-banking feedback, and stronger direct
+rolling-fairness controls. None of its four stateful variants passes the locked
+development screen. Higher targets activate the mechanism without establishing
+a general worst-user-quality benefit. All outcomes are retained, and no further
+fresh holdout was consumed; see the [interpretation](objective_diagnostics/INTERPRETATION.md).
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 
