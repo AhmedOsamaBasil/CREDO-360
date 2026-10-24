@@ -23,7 +23,12 @@ jobs:
       - name: Portable-model tests
         run: python live_testbed/test_portable.py
       - name: Objective recovery, timing and regression tests
-        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier reserve_recovery service_opportunity causal_playback live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
+        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier reserve_recovery service_opportunity causal_playback feedback_opportunity live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Viewport feedback client protocol tests
+        run: node feedback_opportunity/test_client.mjs
       - name: Verify published pilot artifact integrity
         run: python -m recovery_pilot.audit_results
       - name: Replay and verify the fresh-content feasibility artifact
@@ -72,4 +77,7 @@ jobs:
           python -m causal_playback.verify --live
           python -m causal_playback.audit_integration
           python -m causal_playback.diagnose --verify
+      - name: Replay remaining-opportunity and feedback-substitution audit
+        if: hashFiles('feedback_opportunity/results/audit_v1/metadata.json') != ''
+        run: python -m feedback_opportunity.verify
 
