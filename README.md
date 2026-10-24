@@ -47,6 +47,16 @@ preserves counterexamples where greedy recovery fails, including one where
 rolling Nash recovers more. These clarify the objective and its limits; they
 do not establish new scheduling theory or a validated streaming method.
 
+An [analytical allowance scheduler](allowance_scheduler/README.md) now decides
+when to spend that bounded compensation allowance under a declared finite set
+of possible future opportunities. Exact causal-policy mixtures reduce worst
+expected regret in constructed examples versus rolling Nash/max-min, with
+pathwise donor protections and verifiable primal/dual certificates. The same
+examples expose worse absolute recovery risk, failure under a wrong future
+model, and dependence on an exogenous future. This is not a fitted predictor,
+a new minimax principle or a successful empirical validation. No additional
+holdout data were used; all outcomes and limitations are reported.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 

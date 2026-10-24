@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "analytical_only": true,
+  "exact_source_result_report_checks": true,
+  "cases": 8,
+  "parameter_checks": 30,
+  "matrix_game_certificates": 256,
+  "causal_executions": 61,
+  "scientific_sha256": "42b478da594b5372ea119648af8b343c5057f01b87b6d04a8e87aa17d9c2a596",
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}

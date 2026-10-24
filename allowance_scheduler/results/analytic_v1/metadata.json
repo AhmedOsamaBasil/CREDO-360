@@ -1,0 +1,24 @@
+{
+  "analytical_only": true,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "source_sha256": {
+    "allowance_scheduler/__init__.py": "07d155b831db45bfd5a43be8b81e0f0a8caa76c96d206dcb36e6f13412bd261a",
+    "allowance_scheduler/cases.py": "d14f8150f431a80de668497dd65a16103cd6f8b4b83c22aaf3065ae2fb6dcf8d",
+    "allowance_scheduler/checks.py": "bef26a06451eed225eacc83ed1860b1783f0027c85ffb0eed1af99359cc746f6",
+    "allowance_scheduler/core.py": "a65826c40aacdd52713ba71e91013e808af4a69e9ca79a009a76d5ab54d4f175",
+    "allowance_scheduler/game.py": "dc8118f79f2358c16c166548d2bf865e883118dcd55c9f49547832c1ec7b297f",
+    "allowance_scheduler/README.md": "0d4ee2548d8fdddaaeef786ae8a009ab0da74c6aa92e1ac85bd4dd8b262336e3",
+    "allowance_scheduler/run_analysis.py": "be0a63cfc16e44a4398841f7454de4d457de1fb6c92714437d08db8a69921c6b",
+    "allowance_scheduler/test_scheduler.py": "d1ed4c21d141fcb919984f1b0f8bea757af65a1fab641a7bd85325e417920757",
+    "allowance_scheduler/THEORY.md": "f74b3661c851d90c0b35727f76deef58cdfedede0bb21881106d468dd61141a8",
+    "allowance_scheduler/verify.py": "4a0beb038272f74f8c69129bc5c3787f3d7ad5effb18d0dc578d35f56dc46b56",
+    "recovery_objective/core.py": "2431b5301e0f7146e06742c1d790caae658b56738134484308ba5e6222a191dd",
+    "recovery_objective/run_analysis.py": "a064a581e4f3ff7f4d8b3f2c14215673133afda7c2f2e1c96ca12ed173fd2cec"
+  },
+  "result_sha256": {
+    "REPORT.md": "cd81e83785fcb6c00ca47a1b7de3dbf0f426d3f34721cbc6427bcb40bfaaad46",
+    "results.json": "0ed798c705343a962422cbabe35cafaa58fff297f56027b98c917cf62f7dac4e"
+  },
+  "scientific_sha256": "42b478da594b5372ea119648af8b343c5057f01b87b6d04a8e87aa17d9c2a596"
+}

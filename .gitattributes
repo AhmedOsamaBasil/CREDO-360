@@ -20,3 +20,6 @@ objective_diagnostics/results/** -text whitespace=cr-at-eol
 recovery_objective/*.py text eol=lf
 recovery_objective/*.md text eol=lf
 recovery_objective/results/** -text whitespace=cr-at-eol
+allowance_scheduler/*.py text eol=lf
+allowance_scheduler/*.md text eol=lf
+allowance_scheduler/results/** -text whitespace=cr-at-eol
