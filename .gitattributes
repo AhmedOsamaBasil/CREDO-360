@@ -35,3 +35,7 @@ reserve_recovery/*.py text eol=lf
 reserve_recovery/*.md text eol=lf
 reserve_recovery/results/** -text whitespace=cr-at-eol
 reserve_recovery/results/**/*.svg -whitespace
+service_opportunity/*.py text eol=lf
+service_opportunity/*.md text eol=lf
+service_opportunity/results/** -text whitespace=cr-at-eol
+service_opportunity/results/**/*.svg -whitespace
