@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "scientific_sha256": "8b482cd668e9b5a964a8e571f2f2b635b1e2789988e9e08793158246942923b9",
+  "episodes": 168,
+  "episode_policy_runs": 3024,
+  "service_probes_audited": 15,
+  "progression": {
+    "passed": true,
+    "checks": {
+      "nominal_service": true,
+      "negative_service_detected": true,
+      "v2_unpaid_better_rolling_nash": true,
+      "v2_half_not_lower_rolling_nash": true,
+      "v2_unpaid_better_rolling_maxmin": true,
+      "v2_half_not_lower_rolling_maxmin": true,
+      "v2_unpaid_better_greedy_recovery": true,
+      "v2_half_not_lower_greedy_recovery": true,
+      "v2_unpaid_better_persistence_mpc": true,
+      "v2_half_not_lower_persistence_mpc": true,
+      "v2_oracle_gap": true,
+      "v3_unpaid_better_rolling_nash": true,
+      "v3_half_not_lower_rolling_nash": true,
+      "v3_unpaid_better_rolling_maxmin": true,
+      "v3_half_not_lower_rolling_maxmin": true,
+      "v3_unpaid_better_greedy_recovery": true,
+      "v3_half_not_lower_greedy_recovery": true,
+      "v3_unpaid_better_persistence_mpc": true,
+      "v3_half_not_lower_persistence_mpc": true,
+      "v3_oracle_gap": true
+    }
+  },
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

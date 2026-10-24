@@ -58,5 +58,9 @@ jobs:
           python -m reserve_recovery.check_catalogue
       - name: Verify controlled service evidence and exposed causal opportunity model
         if: hashFiles('service_opportunity/results/development_v1/metadata.json') != ''
-        run: python -m service_opportunity.verify
+        run: |
+          python -m service_opportunity.verify
+          python -m service_opportunity.check_oracle
+          python -m service_opportunity.ablation --verify
+          python -m service_opportunity.check_support
 

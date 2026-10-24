@@ -1,0 +1,3375 @@
+{
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.14",
+  "scope": "warm loaded input tables; forecast and exact optimizer only; not integrated network/player",
+  "decision_budget_seconds": 0.5,
+  "observed_budget_pass": true,
+  "decisions": 672,
+  "mean_seconds": 0.0006103803571888767,
+  "max_seconds": 0.0013097000010020565,
+  "p95_seconds": 0.0007428999997500796,
+  "timings": [
+    {
+      "episode": "v2:ParkFountains01:1:2",
+      "step": 0,
+      "seconds": 0.0005596000009973068
+    },
+    {
+      "episode": "v2:ParkFountains01:1:2",
+      "step": 1,
+      "seconds": 0.0006589000004169066
+    },
+    {
+      "episode": "v2:ParkFountains01:1:2",
+      "step": 2,
+      "seconds": 0.0007188000017777085
+    },
+    {
+      "episode": "v2:ParkFountains01:1:2",
+      "step": 3,
+      "seconds": 0.0007198000021162443
+    },
+    {
+      "episode": "v2:ParkFountains01:2:1",
+      "step": 0,
+      "seconds": 0.0005238999983703252
+    },
+    {
+      "episode": "v2:ParkFountains01:2:1",
+      "step": 1,
+      "seconds": 0.000543999998626532
+    },
+    {
+      "episode": "v2:ParkFountains01:2:1",
+      "step": 2,
+      "seconds": 0.0005850999987160321
+    },
+    {
+      "episode": "v2:ParkFountains01:2:1",
+      "step": 3,
+      "seconds": 0.0006804000004194677
+    },
+    {
+      "episode": "v2:ParkFountains01:3:4",
+      "step": 0,
+      "seconds": 0.0004910999996354803
+    },
+    {
+      "episode": "v2:ParkFountains01:3:4",
+      "step": 1,
+      "seconds": 0.000580299998546252
+    },
+    {
+      "episode": "v2:ParkFountains01:3:4",
+      "step": 2,
+      "seconds": 0.000629900001513306
+    },
+    {
+      "episode": "v2:ParkFountains01:3:4",
+      "step": 3,
+      "seconds": 0.0006890000004204921
+    },
+    {
+      "episode": "v2:ParkFountains01:4:3",
+      "step": 0,
+      "seconds": 0.00048489999971934594
+    },
+    {
+      "episode": "v2:ParkFountains01:4:3",
+      "step": 1,
+      "seconds": 0.0005372999985411298
+    },
+    {
+      "episode": "v2:ParkFountains01:4:3",
+      "step": 2,
+      "seconds": 0.0006068999973649625
+    },
+    {
+      "episode": "v2:ParkFountains01:4:3",
+      "step": 3,
+      "seconds": 0.0006806999990658369
+    },
+    {
+      "episode": "v2:ParkFountains01:5:6",
+      "step": 0,
+      "seconds": 0.0005224999986239709
+    },
+    {
+      "episode": "v2:ParkFountains01:5:6",
+      "step": 1,
+      "seconds": 0.0005644000011670869
+    },
+    {
+      "episode": "v2:ParkFountains01:5:6",
+      "step": 2,
+      "seconds": 0.0005927999991399702
+    },
+    {
+      "episode": "v2:ParkFountains01:5:6",
+      "step": 3,
+      "seconds": 0.0007092999985616188
+    },
+    {
+      "episode": "v2:ParkFountains01:6:5",
+      "step": 0,
+      "seconds": 0.0005320000018400606
+    },
+    {
+      "episode": "v2:ParkFountains01:6:5",
+      "step": 1,
+      "seconds": 0.0005529000009119045
+    },
+    {
+      "episode": "v2:ParkFountains01:6:5",
+      "step": 2,
+      "seconds": 0.0006133000024419744
+    },
+    {
+      "episode": "v2:ParkFountains01:6:5",
+      "step": 3,
+      "seconds": 0.0007095000000845175
+    },
+    {
+      "episode": "v2:ParkFountains01:7:8",
+      "step": 0,
+      "seconds": 0.0005375000000640284
+    },
+    {
+      "episode": "v2:ParkFountains01:7:8",
+      "step": 1,
+      "seconds": 0.0005763000008300878
+    },
+    {
+      "episode": "v2:ParkFountains01:7:8",
+      "step": 2,
+      "seconds": 0.0006197000002430286
+    },
+    {
+      "episode": "v2:ParkFountains01:7:8",
+      "step": 3,
+      "seconds": 0.0007942000011098571
+    },
+    {
+      "episode": "v2:ParkFountains01:8:7",
+      "step": 0,
+      "seconds": 0.0005364999997254927
+    },
+    {
+      "episode": "v2:ParkFountains01:8:7",
+      "step": 1,
+      "seconds": 0.0005996999971102923
+    },
+    {
+      "episode": "v2:ParkFountains01:8:7",
+      "step": 2,
+      "seconds": 0.0006424999992304947
+    },
+    {
+      "episode": "v2:ParkFountains01:8:7",
+      "step": 3,
+      "seconds": 0.000753100001020357
+    },
+    {
+      "episode": "v2:ParkFountains01:9:10",
+      "step": 0,
+      "seconds": 0.0005625999983749352
+    },
+    {
+      "episode": "v2:ParkFountains01:9:10",
+      "step": 1,
+      "seconds": 0.0006119999998190906
+    },
+    {
+      "episode": "v2:ParkFountains01:9:10",
+      "step": 2,
+      "seconds": 0.0006586000017705373
+    },
+    {
+      "episode": "v2:ParkFountains01:9:10",
+      "step": 3,
+      "seconds": 0.000721499996870989
+    },
+    {
+      "episode": "v2:ParkFountains01:10:9",
+      "step": 0,
+      "seconds": 0.0005134999992151279
+    },
+    {
+      "episode": "v2:ParkFountains01:10:9",
+      "step": 1,
+      "seconds": 0.0005655999993905425
+    },
+    {
+      "episode": "v2:ParkFountains01:10:9",
+      "step": 2,
+      "seconds": 0.000625100001343526
+    },
+    {
+      "episode": "v2:ParkFountains01:10:9",
+      "step": 3,
+      "seconds": 0.0006934000011824537
+    },
+    {
+      "episode": "v2:ParkFountains01:11:12",
+      "step": 0,
+      "seconds": 0.0005134000020916574
+    },
+    {
+      "episode": "v2:ParkFountains01:11:12",
+      "step": 1,
+      "seconds": 0.0006037999992258847
+    },
+    {
+      "episode": "v2:ParkFountains01:11:12",
+      "step": 2,
+      "seconds": 0.0006343000022752676
+    },
+    {
+      "episode": "v2:ParkFountains01:11:12",
+      "step": 3,
+      "seconds": 0.0006959999991522636
+    },
+    {
+      "episode": "v2:ParkFountains01:12:11",
+      "step": 0,
+      "seconds": 0.0005405999982031062
+    },
+    {
+      "episode": "v2:ParkFountains01:12:11",
+      "step": 1,
+      "seconds": 0.0005931999985477887
+    },
+    {
+      "episode": "v2:ParkFountains01:12:11",
+      "step": 2,
+      "seconds": 0.0006477000024460722
+    },
+    {
+      "episode": "v2:ParkFountains01:12:11",
+      "step": 3,
+      "seconds": 0.0007169000018620864
+    },
+    {
+      "episode": "v2:ParkFountains01:13:14",
+      "step": 0,
+      "seconds": 0.0005299000004015397
+    },
+    {
+      "episode": "v2:ParkFountains01:13:14",
+      "step": 1,
+      "seconds": 0.0005756999998993706
+    },
+    {
+      "episode": "v2:ParkFountains01:13:14",
+      "step": 2,
+      "seconds": 0.0006366999987221789
+    },
+    {
+      "episode": "v2:ParkFountains01:13:14",
+      "step": 3,
+      "seconds": 0.000931700000364799
+    },
+    {
+      "episode": "v2:ParkFountains01:14:13",
+      "step": 0,
+      "seconds": 0.0005540999991353601
+    },
+    {
+      "episode": "v2:ParkFountains01:14:13",
+      "step": 1,
+      "seconds": 0.0005820000005769543
+    },
+    {
+      "episode": "v2:ParkFountains01:14:13",
+      "step": 2,
+      "seconds": 0.0006405999993148725
+    },
+    {
+      "episode": "v2:ParkFountains01:14:13",
+      "step": 3,
+      "seconds": 0.0007096000008459669
+    },
+    {
+      "episode": "v2:ParkFountains01:15:16",
+      "step": 0,
+      "seconds": 0.0005095999986224342
+    },
+    {
+      "episode": "v2:ParkFountains01:15:16",
+      "step": 1,
+      "seconds": 0.0005395000007410999
+    },
+    {
+      "episode": "v2:ParkFountains01:15:16",
+      "step": 2,
+      "seconds": 0.0006186999999044929
+    },
+    {
+      "episode": "v2:ParkFountains01:15:16",
+      "step": 3,
+      "seconds": 0.0006647999980486929
+    },
+    {
+      "episode": "v2:ParkFountains01:16:15",
+      "step": 0,
+      "seconds": 0.0005233999982010573
+    },
+    {
+      "episode": "v2:ParkFountains01:16:15",
+      "step": 1,
+      "seconds": 0.0005724000002373941
+    },
+    {
+      "episode": "v2:ParkFountains01:16:15",
+      "step": 2,
+      "seconds": 0.0005984999988868367
+    },
+    {
+      "episode": "v2:ParkFountains01:16:15",
+      "step": 3,
+      "seconds": 0.0006642999978794251
+    },
+    {
+      "episode": "v2:ParkFountains01:17:18",
+      "step": 0,
+      "seconds": 0.0005065000004833564
+    },
+    {
+      "episode": "v2:ParkFountains01:17:18",
+      "step": 1,
+      "seconds": 0.0005520999984582886
+    },
+    {
+      "episode": "v2:ParkFountains01:17:18",
+      "step": 2,
+      "seconds": 0.0006120999969425611
+    },
+    {
+      "episode": "v2:ParkFountains01:17:18",
+      "step": 3,
+      "seconds": 0.0006643000015174039
+    },
+    {
+      "episode": "v2:ParkFountains01:18:17",
+      "step": 0,
+      "seconds": 0.0005139999993843958
+    },
+    {
+      "episode": "v2:ParkFountains01:18:17",
+      "step": 1,
+      "seconds": 0.0005829000001540408
+    },
+    {
+      "episode": "v2:ParkFountains01:18:17",
+      "step": 2,
+      "seconds": 0.0006171999993966892
+    },
+    {
+      "episode": "v2:ParkFountains01:18:17",
+      "step": 3,
+      "seconds": 0.0006844000017736107
+    },
+    {
+      "episode": "v2:ParkFountains01:19:20",
+      "step": 0,
+      "seconds": 0.0005032000008213799
+    },
+    {
+      "episode": "v2:ParkFountains01:19:20",
+      "step": 1,
+      "seconds": 0.0005816999982926063
+    },
+    {
+      "episode": "v2:ParkFountains01:19:20",
+      "step": 2,
+      "seconds": 0.0006030000004102476
+    },
+    {
+      "episode": "v2:ParkFountains01:19:20",
+      "step": 3,
+      "seconds": 0.0006696999989799224
+    },
+    {
+      "episode": "v2:ParkFountains01:20:19",
+      "step": 0,
+      "seconds": 0.0008949000002758112
+    },
+    {
+      "episode": "v2:ParkFountains01:20:19",
+      "step": 1,
+      "seconds": 0.0005681999973603524
+    },
+    {
+      "episode": "v2:ParkFountains01:20:19",
+      "step": 2,
+      "seconds": 0.0006322999979602173
+    },
+    {
+      "episode": "v2:ParkFountains01:20:19",
+      "step": 3,
+      "seconds": 0.0006553999992320314
+    },
+    {
+      "episode": "v2:ParkFountains01:21:22",
+      "step": 0,
+      "seconds": 0.0005110000020067673
+    },
+    {
+      "episode": "v2:ParkFountains01:21:22",
+      "step": 1,
+      "seconds": 0.0005574999995587859
+    },
+    {
+      "episode": "v2:ParkFountains01:21:22",
+      "step": 2,
+      "seconds": 0.0006127000015112571
+    },
+    {
+      "episode": "v2:ParkFountains01:21:22",
+      "step": 3,
+      "seconds": 0.0006587999996554572
+    },
+    {
+      "episode": "v2:ParkFountains01:22:21",
+      "step": 0,
+      "seconds": 0.00048380000225733966
+    },
+    {
+      "episode": "v2:ParkFountains01:22:21",
+      "step": 1,
+      "seconds": 0.0005548000008275267
+    },
+    {
+      "episode": "v2:ParkFountains01:22:21",
+      "step": 2,
+      "seconds": 0.0005835999982082285
+    },
+    {
+      "episode": "v2:ParkFountains01:22:21",
+      "step": 3,
+      "seconds": 0.0006560000001627486
+    },
+    {
+      "episode": "v2:ParkFountains01:23:24",
+      "step": 0,
+      "seconds": 0.0004879000007349532
+    },
+    {
+      "episode": "v2:ParkFountains01:23:24",
+      "step": 1,
+      "seconds": 0.0005411999991338234
+    },
+    {
+      "episode": "v2:ParkFountains01:23:24",
+      "step": 2,
+      "seconds": 0.0005860999990545679
+    },
+    {
+      "episode": "v2:ParkFountains01:23:24",
+      "step": 3,
+      "seconds": 0.0006575000006705523
+    },
+    {
+      "episode": "v2:ParkFountains01:24:23",
+      "step": 0,
+      "seconds": 0.00048740000056568533
+    },
+    {
+      "episode": "v2:ParkFountains01:24:23",
+      "step": 1,
+      "seconds": 0.0005423000002338085
+    },
+    {
+      "episode": "v2:ParkFountains01:24:23",
+      "step": 2,
+      "seconds": 0.0005866000028618146
+    },
+    {
+      "episode": "v2:ParkFountains01:24:23",
+      "step": 3,
+      "seconds": 0.0006646999972872436
+    },
+    {
+      "episode": "v2:ParkFountains01:25:26",
+      "step": 0,
+      "seconds": 0.000514900002599461
+    },
+    {
+      "episode": "v2:ParkFountains01:25:26",
+      "step": 1,
+      "seconds": 0.0005681000002368819
+    },
+    {
+      "episode": "v2:ParkFountains01:25:26",
+      "step": 2,
+      "seconds": 0.0006252999992284458
+    },
+    {
+      "episode": "v2:ParkFountains01:25:26",
+      "step": 3,
+      "seconds": 0.0006759000025340356
+    },
+    {
+      "episode": "v2:ParkFountains01:26:25",
+      "step": 0,
+      "seconds": 0.0005033000015828293
+    },
+    {
+      "episode": "v2:ParkFountains01:26:25",
+      "step": 1,
+      "seconds": 0.0006272999999055173
+    },
+    {
+      "episode": "v2:ParkFountains01:26:25",
+      "step": 2,
+      "seconds": 0.0006915000012668315
+    },
+    {
+      "episode": "v2:ParkFountains01:26:25",
+      "step": 3,
+      "seconds": 0.0007040000018605497
+    },
+    {
+      "episode": "v2:ParkFountains01:27:28",
+      "step": 0,
+      "seconds": 0.0005367000012483913
+    },
+    {
+      "episode": "v2:ParkFountains01:27:28",
+      "step": 1,
+      "seconds": 0.0006164000005810522
+    },
+    {
+      "episode": "v2:ParkFountains01:27:28",
+      "step": 2,
+      "seconds": 0.0006333000019367319
+    },
+    {
+      "episode": "v2:ParkFountains01:27:28",
+      "step": 3,
+      "seconds": 0.0006995000003371388
+    },
+    {
+      "episode": "v2:ParkFountains01:28:27",
+      "step": 0,
+      "seconds": 0.0005008000007364899
+    },
+    {
+      "episode": "v2:ParkFountains01:28:27",
+      "step": 1,
+      "seconds": 0.0005373999993025791
+    },
+    {
+      "episode": "v2:ParkFountains01:28:27",
+      "step": 2,
+      "seconds": 0.0005849000008311123
+    },
+    {
+      "episode": "v2:ParkFountains01:28:27",
+      "step": 3,
+      "seconds": 0.0006739000018569641
+    },
+    {
+      "episode": "v2:River01:1:2",
+      "step": 0,
+      "seconds": 0.0004890000018349383
+    },
+    {
+      "episode": "v2:River01:1:2",
+      "step": 1,
+      "seconds": 0.000530999997863546
+    },
+    {
+      "episode": "v2:River01:1:2",
+      "step": 2,
+      "seconds": 0.000602600001002429
+    },
+    {
+      "episode": "v2:River01:1:2",
+      "step": 3,
+      "seconds": 0.0007007999993220437
+    },
+    {
+      "episode": "v2:River01:2:1",
+      "step": 0,
+      "seconds": 0.000491300001158379
+    },
+    {
+      "episode": "v2:River01:2:1",
+      "step": 1,
+      "seconds": 0.0005547000000660773
+    },
+    {
+      "episode": "v2:River01:2:1",
+      "step": 2,
+      "seconds": 0.0006395999989763368
+    },
+    {
+      "episode": "v2:River01:2:1",
+      "step": 3,
+      "seconds": 0.0006799999973736703
+    },
+    {
+      "episode": "v2:River01:3:4",
+      "step": 0,
+      "seconds": 0.0004936000004818197
+    },
+    {
+      "episode": "v2:River01:3:4",
+      "step": 1,
+      "seconds": 0.0005745999987993855
+    },
+    {
+      "episode": "v2:River01:3:4",
+      "step": 2,
+      "seconds": 0.0006095999997342005
+    },
+    {
+      "episode": "v2:River01:3:4",
+      "step": 3,
+      "seconds": 0.000701400000252761
+    },
+    {
+      "episode": "v2:River01:4:3",
+      "step": 0,
+      "seconds": 0.0005062999989604577
+    },
+    {
+      "episode": "v2:River01:4:3",
+      "step": 1,
+      "seconds": 0.0005371000006562099
+    },
+    {
+      "episode": "v2:River01:4:3",
+      "step": 2,
+      "seconds": 0.0006045000009180512
+    },
+    {
+      "episode": "v2:River01:4:3",
+      "step": 3,
+      "seconds": 0.0010791000022436492
+    },
+    {
+      "episode": "v2:River01:5:6",
+      "step": 0,
+      "seconds": 0.000490999998874031
+    },
+    {
+      "episode": "v2:River01:5:6",
+      "step": 1,
+      "seconds": 0.0005454999991343357
+    },
+    {
+      "episode": "v2:River01:5:6",
+      "step": 2,
+      "seconds": 0.000638900000922149
+    },
+    {
+      "episode": "v2:River01:5:6",
+      "step": 3,
+      "seconds": 0.0006800000010116491
+    },
+    {
+      "episode": "v2:River01:6:5",
+      "step": 0,
+      "seconds": 0.0004833000020880718
+    },
+    {
+      "episode": "v2:River01:6:5",
+      "step": 1,
+      "seconds": 0.0005656000030285213
+    },
+    {
+      "episode": "v2:River01:6:5",
+      "step": 2,
+      "seconds": 0.0006334999998216517
+    },
+    {
+      "episode": "v2:River01:6:5",
+      "step": 3,
+      "seconds": 0.000687599997036159
+    },
+    {
+      "episode": "v2:River01:7:8",
+      "step": 0,
+      "seconds": 0.0005074000000604428
+    },
+    {
+      "episode": "v2:River01:7:8",
+      "step": 1,
+      "seconds": 0.0006337999984680209
+    },
+    {
+      "episode": "v2:River01:7:8",
+      "step": 2,
+      "seconds": 0.000647100001515355
+    },
+    {
+      "episode": "v2:River01:7:8",
+      "step": 3,
+      "seconds": 0.0006796000016038306
+    },
+    {
+      "episode": "v2:River01:8:7",
+      "step": 0,
+      "seconds": 0.0005057000016677193
+    },
+    {
+      "episode": "v2:River01:8:7",
+      "step": 1,
+      "seconds": 0.0005560999998124316
+    },
+    {
+      "episode": "v2:River01:8:7",
+      "step": 2,
+      "seconds": 0.0006223999989742879
+    },
+    {
+      "episode": "v2:River01:8:7",
+      "step": 3,
+      "seconds": 0.000711199998477241
+    },
+    {
+      "episode": "v2:River01:9:10",
+      "step": 0,
+      "seconds": 0.0004967000022588763
+    },
+    {
+      "episode": "v2:River01:9:10",
+      "step": 1,
+      "seconds": 0.0005744999980379362
+    },
+    {
+      "episode": "v2:River01:9:10",
+      "step": 2,
+      "seconds": 0.0006180999989737757
+    },
+    {
+      "episode": "v2:River01:9:10",
+      "step": 3,
+      "seconds": 0.0006837999972049147
+    },
+    {
+      "episode": "v2:River01:10:9",
+      "step": 0,
+      "seconds": 0.0005227000001468696
+    },
+    {
+      "episode": "v2:River01:10:9",
+      "step": 1,
+      "seconds": 0.0005711999983759597
+    },
+    {
+      "episode": "v2:River01:10:9",
+      "step": 2,
+      "seconds": 0.00066559999686433
+    },
+    {
+      "episode": "v2:River01:10:9",
+      "step": 3,
+      "seconds": 0.0007860000005166512
+    },
+    {
+      "episode": "v2:River01:11:12",
+      "step": 0,
+      "seconds": 0.0005818000026920345
+    },
+    {
+      "episode": "v2:River01:11:12",
+      "step": 1,
+      "seconds": 0.0006472999994002748
+    },
+    {
+      "episode": "v2:River01:11:12",
+      "step": 2,
+      "seconds": 0.0007078999988152646
+    },
+    {
+      "episode": "v2:River01:11:12",
+      "step": 3,
+      "seconds": 0.0007798000006005168
+    },
+    {
+      "episode": "v2:River01:12:11",
+      "step": 0,
+      "seconds": 0.0005292999994708225
+    },
+    {
+      "episode": "v2:River01:12:11",
+      "step": 1,
+      "seconds": 0.0005563000013353303
+    },
+    {
+      "episode": "v2:River01:12:11",
+      "step": 2,
+      "seconds": 0.0006510000021080486
+    },
+    {
+      "episode": "v2:River01:12:11",
+      "step": 3,
+      "seconds": 0.000713100002030842
+    },
+    {
+      "episode": "v2:River01:13:14",
+      "step": 0,
+      "seconds": 0.000505299998621922
+    },
+    {
+      "episode": "v2:River01:13:14",
+      "step": 1,
+      "seconds": 0.0006420000026992057
+    },
+    {
+      "episode": "v2:River01:13:14",
+      "step": 2,
+      "seconds": 0.0008108000001811888
+    },
+    {
+      "episode": "v2:River01:13:14",
+      "step": 3,
+      "seconds": 0.0007669000005989801
+    },
+    {
+      "episode": "v2:River01:14:13",
+      "step": 0,
+      "seconds": 0.0005337999973562546
+    },
+    {
+      "episode": "v2:River01:14:13",
+      "step": 1,
+      "seconds": 0.0006116999975347426
+    },
+    {
+      "episode": "v2:River01:14:13",
+      "step": 2,
+      "seconds": 0.0006610999989788979
+    },
+    {
+      "episode": "v2:River01:14:13",
+      "step": 3,
+      "seconds": 0.0007276999967871234
+    },
+    {
+      "episode": "v2:River01:15:16",
+      "step": 0,
+      "seconds": 0.0005353999986255076
+    },
+    {
+      "episode": "v2:River01:15:16",
+      "step": 1,
+      "seconds": 0.0006021999979566317
+    },
+    {
+      "episode": "v2:River01:15:16",
+      "step": 2,
+      "seconds": 0.0006432000009226613
+    },
+    {
+      "episode": "v2:River01:15:16",
+      "step": 3,
+      "seconds": 0.0007212000018625986
+    },
+    {
+      "episode": "v2:River01:16:15",
+      "step": 0,
+      "seconds": 0.000513300001330208
+    },
+    {
+      "episode": "v2:River01:16:15",
+      "step": 1,
+      "seconds": 0.0005706999982066918
+    },
+    {
+      "episode": "v2:River01:16:15",
+      "step": 2,
+      "seconds": 0.0006460000004153699
+    },
+    {
+      "episode": "v2:River01:16:15",
+      "step": 3,
+      "seconds": 0.0010539999966567848
+    },
+    {
+      "episode": "v2:River01:17:18",
+      "step": 0,
+      "seconds": 0.0006367000023601577
+    },
+    {
+      "episode": "v2:River01:17:18",
+      "step": 1,
+      "seconds": 0.0006657999983872287
+    },
+    {
+      "episode": "v2:River01:17:18",
+      "step": 2,
+      "seconds": 0.0012850999992224388
+    },
+    {
+      "episode": "v2:River01:17:18",
+      "step": 3,
+      "seconds": 0.0008629000003566034
+    },
+    {
+      "episode": "v2:River01:18:17",
+      "step": 0,
+      "seconds": 0.0005466000002343208
+    },
+    {
+      "episode": "v2:River01:18:17",
+      "step": 1,
+      "seconds": 0.0006166000021039508
+    },
+    {
+      "episode": "v2:River01:18:17",
+      "step": 2,
+      "seconds": 0.0006584999973711092
+    },
+    {
+      "episode": "v2:River01:18:17",
+      "step": 3,
+      "seconds": 0.00073079999856418
+    },
+    {
+      "episode": "v2:River01:19:20",
+      "step": 0,
+      "seconds": 0.0005264000028546434
+    },
+    {
+      "episode": "v2:River01:19:20",
+      "step": 1,
+      "seconds": 0.0005835999982082285
+    },
+    {
+      "episode": "v2:River01:19:20",
+      "step": 2,
+      "seconds": 0.0006434999995690305
+    },
+    {
+      "episode": "v2:River01:19:20",
+      "step": 3,
+      "seconds": 0.0007089999999152496
+    },
+    {
+      "episode": "v2:River01:20:19",
+      "step": 0,
+      "seconds": 0.0005247999979474116
+    },
+    {
+      "episode": "v2:River01:20:19",
+      "step": 1,
+      "seconds": 0.000597800000832649
+    },
+    {
+      "episode": "v2:River01:20:19",
+      "step": 2,
+      "seconds": 0.0006866000003356021
+    },
+    {
+      "episode": "v2:River01:20:19",
+      "step": 3,
+      "seconds": 0.0007093999993230682
+    },
+    {
+      "episode": "v2:River01:21:22",
+      "step": 0,
+      "seconds": 0.0005442000001494307
+    },
+    {
+      "episode": "v2:River01:21:22",
+      "step": 1,
+      "seconds": 0.0006157999996503349
+    },
+    {
+      "episode": "v2:River01:21:22",
+      "step": 2,
+      "seconds": 0.0006410999994841404
+    },
+    {
+      "episode": "v2:River01:21:22",
+      "step": 3,
+      "seconds": 0.0007259000012709294
+    },
+    {
+      "episode": "v2:River01:22:21",
+      "step": 0,
+      "seconds": 0.0005614999972749501
+    },
+    {
+      "episode": "v2:River01:22:21",
+      "step": 1,
+      "seconds": 0.0007790000017848797
+    },
+    {
+      "episode": "v2:River01:22:21",
+      "step": 2,
+      "seconds": 0.0006661000006715767
+    },
+    {
+      "episode": "v2:River01:22:21",
+      "step": 3,
+      "seconds": 0.000852699999086326
+    },
+    {
+      "episode": "v2:River01:23:24",
+      "step": 0,
+      "seconds": 0.0005721999987144955
+    },
+    {
+      "episode": "v2:River01:23:24",
+      "step": 1,
+      "seconds": 0.0007003999999142252
+    },
+    {
+      "episode": "v2:River01:23:24",
+      "step": 2,
+      "seconds": 0.0007585000021208543
+    },
+    {
+      "episode": "v2:River01:23:24",
+      "step": 3,
+      "seconds": 0.0007602000005135778
+    },
+    {
+      "episode": "v2:River01:24:23",
+      "step": 0,
+      "seconds": 0.0005515000011655502
+    },
+    {
+      "episode": "v2:River01:24:23",
+      "step": 1,
+      "seconds": 0.0006444999999075662
+    },
+    {
+      "episode": "v2:River01:24:23",
+      "step": 2,
+      "seconds": 0.0007072999978845473
+    },
+    {
+      "episode": "v2:River01:24:23",
+      "step": 3,
+      "seconds": 0.000776400000177091
+    },
+    {
+      "episode": "v2:River01:25:26",
+      "step": 0,
+      "seconds": 0.0005391000013332814
+    },
+    {
+      "episode": "v2:River01:25:26",
+      "step": 1,
+      "seconds": 0.0005866999999852851
+    },
+    {
+      "episode": "v2:River01:25:26",
+      "step": 2,
+      "seconds": 0.000667199998133583
+    },
+    {
+      "episode": "v2:River01:25:26",
+      "step": 3,
+      "seconds": 0.0007662999996682629
+    },
+    {
+      "episode": "v2:River01:26:25",
+      "step": 0,
+      "seconds": 0.0005248000015853904
+    },
+    {
+      "episode": "v2:River01:26:25",
+      "step": 1,
+      "seconds": 0.0005995999999868218
+    },
+    {
+      "episode": "v2:River01:26:25",
+      "step": 2,
+      "seconds": 0.0006862000009277835
+    },
+    {
+      "episode": "v2:River01:26:25",
+      "step": 3,
+      "seconds": 0.0007293000016943552
+    },
+    {
+      "episode": "v2:River01:27:28",
+      "step": 0,
+      "seconds": 0.0005095000014989637
+    },
+    {
+      "episode": "v2:River01:27:28",
+      "step": 1,
+      "seconds": 0.00061949999872013
+    },
+    {
+      "episode": "v2:River01:27:28",
+      "step": 2,
+      "seconds": 0.0006627000002481509
+    },
+    {
+      "episode": "v2:River01:27:28",
+      "step": 3,
+      "seconds": 0.0007814999989932403
+    },
+    {
+      "episode": "v2:River01:28:27",
+      "step": 0,
+      "seconds": 0.0005166000009921845
+    },
+    {
+      "episode": "v2:River01:28:27",
+      "step": 1,
+      "seconds": 0.0005898000017623417
+    },
+    {
+      "episode": "v2:River01:28:27",
+      "step": 2,
+      "seconds": 0.000650499998300802
+    },
+    {
+      "episode": "v2:River01:28:27",
+      "step": 3,
+      "seconds": 0.0007433999999193475
+    },
+    {
+      "episode": "v2:Train01:1:2",
+      "step": 0,
+      "seconds": 0.0005358000016713049
+    },
+    {
+      "episode": "v2:Train01:1:2",
+      "step": 1,
+      "seconds": 0.0005960999988019466
+    },
+    {
+      "episode": "v2:Train01:1:2",
+      "step": 2,
+      "seconds": 0.0006415999996534083
+    },
+    {
+      "episode": "v2:Train01:1:2",
+      "step": 3,
+      "seconds": 0.0006904000001668464
+    },
+    {
+      "episode": "v2:Train01:2:1",
+      "step": 0,
+      "seconds": 0.0005138999986229464
+    },
+    {
+      "episode": "v2:Train01:2:1",
+      "step": 1,
+      "seconds": 0.0005952999999863096
+    },
+    {
+      "episode": "v2:Train01:2:1",
+      "step": 2,
+      "seconds": 0.0006103999985498376
+    },
+    {
+      "episode": "v2:Train01:2:1",
+      "step": 3,
+      "seconds": 0.0007110999977157917
+    },
+    {
+      "episode": "v2:Train01:3:4",
+      "step": 0,
+      "seconds": 0.0005032000008213799
+    },
+    {
+      "episode": "v2:Train01:3:4",
+      "step": 1,
+      "seconds": 0.0005514000004041009
+    },
+    {
+      "episode": "v2:Train01:3:4",
+      "step": 2,
+      "seconds": 0.0006053999968571588
+    },
+    {
+      "episode": "v2:Train01:3:4",
+      "step": 3,
+      "seconds": 0.0006825999989814591
+    },
+    {
+      "episode": "v2:Train01:4:3",
+      "step": 0,
+      "seconds": 0.0005285000006551854
+    },
+    {
+      "episode": "v2:Train01:4:3",
+      "step": 1,
+      "seconds": 0.0005807999987155199
+    },
+    {
+      "episode": "v2:Train01:4:3",
+      "step": 2,
+      "seconds": 0.0006405999993148725
+    },
+    {
+      "episode": "v2:Train01:4:3",
+      "step": 3,
+      "seconds": 0.0007010000008449424
+    },
+    {
+      "episode": "v2:Train01:5:6",
+      "step": 0,
+      "seconds": 0.0005361000003176741
+    },
+    {
+      "episode": "v2:Train01:5:6",
+      "step": 1,
+      "seconds": 0.0006088000009185635
+    },
+    {
+      "episode": "v2:Train01:5:6",
+      "step": 2,
+      "seconds": 0.0006769999999960419
+    },
+    {
+      "episode": "v2:Train01:5:6",
+      "step": 3,
+      "seconds": 0.0007243000000016764
+    },
+    {
+      "episode": "v2:Train01:6:5",
+      "step": 0,
+      "seconds": 0.0005079999973531812
+    },
+    {
+      "episode": "v2:Train01:6:5",
+      "step": 1,
+      "seconds": 0.0006774000030418392
+    },
+    {
+      "episode": "v2:Train01:6:5",
+      "step": 2,
+      "seconds": 0.0006360000006679911
+    },
+    {
+      "episode": "v2:Train01:6:5",
+      "step": 3,
+      "seconds": 0.0006963000014366116
+    },
+    {
+      "episode": "v2:Train01:7:8",
+      "step": 0,
+      "seconds": 0.0005221999999776017
+    },
+    {
+      "episode": "v2:Train01:7:8",
+      "step": 1,
+      "seconds": 0.0005737000028602779
+    },
+    {
+      "episode": "v2:Train01:7:8",
+      "step": 2,
+      "seconds": 0.0006007999982102774
+    },
+    {
+      "episode": "v2:Train01:7:8",
+      "step": 3,
+      "seconds": 0.0008989999987534247
+    },
+    {
+      "episode": "v2:Train01:8:7",
+      "step": 0,
+      "seconds": 0.0006085999993956648
+    },
+    {
+      "episode": "v2:Train01:8:7",
+      "step": 1,
+      "seconds": 0.0006028999996487983
+    },
+    {
+      "episode": "v2:Train01:8:7",
+      "step": 2,
+      "seconds": 0.0006640999999945052
+    },
+    {
+      "episode": "v2:Train01:8:7",
+      "step": 3,
+      "seconds": 0.0007349000006797723
+    },
+    {
+      "episode": "v2:Train01:9:10",
+      "step": 0,
+      "seconds": 0.0004808000012417324
+    },
+    {
+      "episode": "v2:Train01:9:10",
+      "step": 1,
+      "seconds": 0.0005483999993884936
+    },
+    {
+      "episode": "v2:Train01:9:10",
+      "step": 2,
+      "seconds": 0.0006087000001571141
+    },
+    {
+      "episode": "v2:Train01:9:10",
+      "step": 3,
+      "seconds": 0.0006855000028735958
+    },
+    {
+      "episode": "v2:Train01:10:9",
+      "step": 0,
+      "seconds": 0.0004902000000583939
+    },
+    {
+      "episode": "v2:Train01:10:9",
+      "step": 1,
+      "seconds": 0.0005805000000691507
+    },
+    {
+      "episode": "v2:Train01:10:9",
+      "step": 2,
+      "seconds": 0.0006161999990581535
+    },
+    {
+      "episode": "v2:Train01:10:9",
+      "step": 3,
+      "seconds": 0.0013097000010020565
+    },
+    {
+      "episode": "v2:Train01:11:12",
+      "step": 0,
+      "seconds": 0.0006857000007585157
+    },
+    {
+      "episode": "v2:Train01:11:12",
+      "step": 1,
+      "seconds": 0.0005814999967697076
+    },
+    {
+      "episode": "v2:Train01:11:12",
+      "step": 2,
+      "seconds": 0.0006323000015981961
+    },
+    {
+      "episode": "v2:Train01:11:12",
+      "step": 3,
+      "seconds": 0.0007016000017756596
+    },
+    {
+      "episode": "v2:Train01:12:11",
+      "step": 0,
+      "seconds": 0.0004966999986208975
+    },
+    {
+      "episode": "v2:Train01:12:11",
+      "step": 1,
+      "seconds": 0.0008128000008582603
+    },
+    {
+      "episode": "v2:Train01:12:11",
+      "step": 2,
+      "seconds": 0.0006175000016810372
+    },
+    {
+      "episode": "v2:Train01:12:11",
+      "step": 3,
+      "seconds": 0.0007006999985605944
+    },
+    {
+      "episode": "v2:Train01:13:14",
+      "step": 0,
+      "seconds": 0.0005412000027718022
+    },
+    {
+      "episode": "v2:Train01:13:14",
+      "step": 1,
+      "seconds": 0.0005900000032852404
+    },
+    {
+      "episode": "v2:Train01:13:14",
+      "step": 2,
+      "seconds": 0.0006367999994836282
+    },
+    {
+      "episode": "v2:Train01:13:14",
+      "step": 3,
+      "seconds": 0.0007175999999162741
+    },
+    {
+      "episode": "v2:Train01:14:13",
+      "step": 0,
+      "seconds": 0.0005482000015035737
+    },
+    {
+      "episode": "v2:Train01:14:13",
+      "step": 1,
+      "seconds": 0.0005982000002404675
+    },
+    {
+      "episode": "v2:Train01:14:13",
+      "step": 2,
+      "seconds": 0.0006483000033767894
+    },
+    {
+      "episode": "v2:Train01:14:13",
+      "step": 3,
+      "seconds": 0.0007428999997500796
+    },
+    {
+      "episode": "v2:Train01:15:16",
+      "step": 0,
+      "seconds": 0.000527600001078099
+    },
+    {
+      "episode": "v2:Train01:15:16",
+      "step": 1,
+      "seconds": 0.0005724999973608647
+    },
+    {
+      "episode": "v2:Train01:15:16",
+      "step": 2,
+      "seconds": 0.0006673000025330111
+    },
+    {
+      "episode": "v2:Train01:15:16",
+      "step": 3,
+      "seconds": 0.0007154000013542827
+    },
+    {
+      "episode": "v2:Train01:16:15",
+      "step": 0,
+      "seconds": 0.00048329999845009297
+    },
+    {
+      "episode": "v2:Train01:16:15",
+      "step": 1,
+      "seconds": 0.0005926000012550503
+    },
+    {
+      "episode": "v2:Train01:16:15",
+      "step": 2,
+      "seconds": 0.000602299998718081
+    },
+    {
+      "episode": "v2:Train01:16:15",
+      "step": 3,
+      "seconds": 0.0006884000031277537
+    },
+    {
+      "episode": "v2:Train01:17:18",
+      "step": 0,
+      "seconds": 0.0005407000026025344
+    },
+    {
+      "episode": "v2:Train01:17:18",
+      "step": 1,
+      "seconds": 0.0005678000015905127
+    },
+    {
+      "episode": "v2:Train01:17:18",
+      "step": 2,
+      "seconds": 0.0006006000003253575
+    },
+    {
+      "episode": "v2:Train01:17:18",
+      "step": 3,
+      "seconds": 0.0007069000021147076
+    },
+    {
+      "episode": "v2:Train01:18:17",
+      "step": 0,
+      "seconds": 0.0005052000014984515
+    },
+    {
+      "episode": "v2:Train01:18:17",
+      "step": 1,
+      "seconds": 0.000556999999389518
+    },
+    {
+      "episode": "v2:Train01:18:17",
+      "step": 2,
+      "seconds": 0.0007329000000027008
+    },
+    {
+      "episode": "v2:Train01:18:17",
+      "step": 3,
+      "seconds": 0.0007048999977996573
+    },
+    {
+      "episode": "v2:Train01:19:20",
+      "step": 0,
+      "seconds": 0.00054190000082599
+    },
+    {
+      "episode": "v2:Train01:19:20",
+      "step": 1,
+      "seconds": 0.0005808000023534987
+    },
+    {
+      "episode": "v2:Train01:19:20",
+      "step": 2,
+      "seconds": 0.0006017999985488132
+    },
+    {
+      "episode": "v2:Train01:19:20",
+      "step": 3,
+      "seconds": 0.0006839000016043428
+    },
+    {
+      "episode": "v2:Train01:20:19",
+      "step": 0,
+      "seconds": 0.0005220999992161524
+    },
+    {
+      "episode": "v2:Train01:20:19",
+      "step": 1,
+      "seconds": 0.0006457000017690007
+    },
+    {
+      "episode": "v2:Train01:20:19",
+      "step": 2,
+      "seconds": 0.0006184000012581237
+    },
+    {
+      "episode": "v2:Train01:20:19",
+      "step": 3,
+      "seconds": 0.0007243000000016764
+    },
+    {
+      "episode": "v2:Train01:21:22",
+      "step": 0,
+      "seconds": 0.000532599999132799
+    },
+    {
+      "episode": "v2:Train01:21:22",
+      "step": 1,
+      "seconds": 0.0005677999979525339
+    },
+    {
+      "episode": "v2:Train01:21:22",
+      "step": 2,
+      "seconds": 0.000640199999907054
+    },
+    {
+      "episode": "v2:Train01:21:22",
+      "step": 3,
+      "seconds": 0.0006739000018569641
+    },
+    {
+      "episode": "v2:Train01:22:21",
+      "step": 0,
+      "seconds": 0.0005065000004833564
+    },
+    {
+      "episode": "v2:Train01:22:21",
+      "step": 1,
+      "seconds": 0.0005667000004905276
+    },
+    {
+      "episode": "v2:Train01:22:21",
+      "step": 2,
+      "seconds": 0.0006127999986347277
+    },
+    {
+      "episode": "v2:Train01:22:21",
+      "step": 3,
+      "seconds": 0.0006625999994867016
+    },
+    {
+      "episode": "v2:Train01:23:24",
+      "step": 0,
+      "seconds": 0.0005084000003989786
+    },
+    {
+      "episode": "v2:Train01:23:24",
+      "step": 1,
+      "seconds": 0.0005927000020164996
+    },
+    {
+      "episode": "v2:Train01:23:24",
+      "step": 2,
+      "seconds": 0.0006012999983795453
+    },
+    {
+      "episode": "v2:Train01:23:24",
+      "step": 3,
+      "seconds": 0.0006776999980502296
+    },
+    {
+      "episode": "v2:Train01:24:23",
+      "step": 0,
+      "seconds": 0.000523599999723956
+    },
+    {
+      "episode": "v2:Train01:24:23",
+      "step": 1,
+      "seconds": 0.0005788000016764272
+    },
+    {
+      "episode": "v2:Train01:24:23",
+      "step": 2,
+      "seconds": 0.000589600000239443
+    },
+    {
+      "episode": "v2:Train01:24:23",
+      "step": 3,
+      "seconds": 0.0007659000002604444
+    },
+    {
+      "episode": "v2:Train01:25:26",
+      "step": 0,
+      "seconds": 0.0005636000023514498
+    },
+    {
+      "episode": "v2:Train01:25:26",
+      "step": 1,
+      "seconds": 0.000587200000154553
+    },
+    {
+      "episode": "v2:Train01:25:26",
+      "step": 2,
+      "seconds": 0.0006274000006669667
+    },
+    {
+      "episode": "v2:Train01:25:26",
+      "step": 3,
+      "seconds": 0.0006863000016892329
+    },
+    {
+      "episode": "v2:Train01:26:25",
+      "step": 0,
+      "seconds": 0.0005178999999770895
+    },
+    {
+      "episode": "v2:Train01:26:25",
+      "step": 1,
+      "seconds": 0.0005836999989696778
+    },
+    {
+      "episode": "v2:Train01:26:25",
+      "step": 2,
+      "seconds": 0.0006207000005815644
+    },
+    {
+      "episode": "v2:Train01:26:25",
+      "step": 3,
+      "seconds": 0.0007171999968704768
+    },
+    {
+      "episode": "v2:Train01:27:28",
+      "step": 0,
+      "seconds": 0.0005020999997213949
+    },
+    {
+      "episode": "v2:Train01:27:28",
+      "step": 1,
+      "seconds": 0.0005985000025248155
+    },
+    {
+      "episode": "v2:Train01:27:28",
+      "step": 2,
+      "seconds": 0.0006339999999909196
+    },
+    {
+      "episode": "v2:Train01:27:28",
+      "step": 3,
+      "seconds": 0.000845300000946736
+    },
+    {
+      "episode": "v2:Train01:28:27",
+      "step": 0,
+      "seconds": 0.0005192999997234438
+    },
+    {
+      "episode": "v2:Train01:28:27",
+      "step": 1,
+      "seconds": 0.000598599999648286
+    },
+    {
+      "episode": "v2:Train01:28:27",
+      "step": 2,
+      "seconds": 0.000634899999568006
+    },
+    {
+      "episode": "v2:Train01:28:27",
+      "step": 3,
+      "seconds": 0.000715199999831384
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:1:2",
+      "step": 0,
+      "seconds": 0.0005797999983769841
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:1:2",
+      "step": 1,
+      "seconds": 0.000582200002099853
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:1:2",
+      "step": 2,
+      "seconds": 0.0006484000005002599
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:1:2",
+      "step": 3,
+      "seconds": 0.0006682000021100976
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:2:1",
+      "step": 0,
+      "seconds": 0.0005873999980394728
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:2:1",
+      "step": 1,
+      "seconds": 0.0006143999999039806
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:2:1",
+      "step": 2,
+      "seconds": 0.0006267999997362494
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:2:1",
+      "step": 3,
+      "seconds": 0.0006721999998262618
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:3:4",
+      "step": 0,
+      "seconds": 0.0007456000021193177
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:3:4",
+      "step": 1,
+      "seconds": 0.0005948999969405122
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:3:4",
+      "step": 2,
+      "seconds": 0.0006667000016022939
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:3:4",
+      "step": 3,
+      "seconds": 0.0007178000014391728
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:4:3",
+      "step": 0,
+      "seconds": 0.0005469999996421393
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:4:3",
+      "step": 1,
+      "seconds": 0.0005877999974472914
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:4:3",
+      "step": 2,
+      "seconds": 0.000670899997203378
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:4:3",
+      "step": 3,
+      "seconds": 0.0007234999975480605
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:5:6",
+      "step": 0,
+      "seconds": 0.0005916000009165145
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:5:6",
+      "step": 1,
+      "seconds": 0.0005951999992248602
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:5:6",
+      "step": 2,
+      "seconds": 0.0006518000009236857
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:5:6",
+      "step": 3,
+      "seconds": 0.0007015999981376808
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:6:5",
+      "step": 0,
+      "seconds": 0.0006118999990576413
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:6:5",
+      "step": 1,
+      "seconds": 0.0006108999987191055
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:6:5",
+      "step": 2,
+      "seconds": 0.0006609000010939781
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:6:5",
+      "step": 3,
+      "seconds": 0.0007235999983095098
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:7:8",
+      "step": 0,
+      "seconds": 0.000569200001336867
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:7:8",
+      "step": 1,
+      "seconds": 0.0005834000003233086
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:7:8",
+      "step": 2,
+      "seconds": 0.0006580000008398201
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:7:8",
+      "step": 3,
+      "seconds": 0.0006830999991507269
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:8:7",
+      "step": 0,
+      "seconds": 0.0005815000004076865
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:8:7",
+      "step": 1,
+      "seconds": 0.0006291999998211395
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:8:7",
+      "step": 2,
+      "seconds": 0.0006514999986393377
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:8:7",
+      "step": 3,
+      "seconds": 0.0006843000010121614
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:9:10",
+      "step": 0,
+      "seconds": 0.0006660000035481062
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:9:10",
+      "step": 1,
+      "seconds": 0.0006154000002425164
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:9:10",
+      "step": 2,
+      "seconds": 0.00065080000058515
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:9:10",
+      "step": 3,
+      "seconds": 0.0007069000021147076
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:10:9",
+      "step": 0,
+      "seconds": 0.0005682999981218018
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:10:9",
+      "step": 1,
+      "seconds": 0.0005936000015935861
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:10:9",
+      "step": 2,
+      "seconds": 0.0006447999985539354
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:10:9",
+      "step": 3,
+      "seconds": 0.0007006000014371239
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:11:12",
+      "step": 0,
+      "seconds": 0.0005665999997290783
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:11:12",
+      "step": 1,
+      "seconds": 0.0006070999988878611
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:11:12",
+      "step": 2,
+      "seconds": 0.0006431000001612119
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:11:12",
+      "step": 3,
+      "seconds": 0.0006872000012663193
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:12:11",
+      "step": 0,
+      "seconds": 0.0005286999985401053
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:12:11",
+      "step": 1,
+      "seconds": 0.0006004999995639082
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:12:11",
+      "step": 2,
+      "seconds": 0.0006256999986362644
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:12:11",
+      "step": 3,
+      "seconds": 0.0006762999983038753
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:13:14",
+      "step": 0,
+      "seconds": 0.0005756999998993706
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:13:14",
+      "step": 1,
+      "seconds": 0.0005635000015900005
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:13:14",
+      "step": 2,
+      "seconds": 0.0006243999996513594
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:13:14",
+      "step": 3,
+      "seconds": 0.0006811999992351048
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:14:13",
+      "step": 0,
+      "seconds": 0.0005189000003156252
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:14:13",
+      "step": 1,
+      "seconds": 0.0005637000031128991
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:14:13",
+      "step": 2,
+      "seconds": 0.0006276999993133359
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:14:13",
+      "step": 3,
+      "seconds": 0.000714700003300095
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:15:16",
+      "step": 0,
+      "seconds": 0.0007079999995767139
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:15:16",
+      "step": 1,
+      "seconds": 0.000603899999987334
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:15:16",
+      "step": 2,
+      "seconds": 0.0006500999988929834
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:15:16",
+      "step": 3,
+      "seconds": 0.0006795999979658518
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:16:15",
+      "step": 0,
+      "seconds": 0.000531300000147894
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:16:15",
+      "step": 1,
+      "seconds": 0.0006170000015117694
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:16:15",
+      "step": 2,
+      "seconds": 0.0005984999988868367
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:16:15",
+      "step": 3,
+      "seconds": 0.0006374000004143454
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:17:18",
+      "step": 0,
+      "seconds": 0.0005275000003166497
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:17:18",
+      "step": 1,
+      "seconds": 0.0005593999994744081
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:17:18",
+      "step": 2,
+      "seconds": 0.0005958000001555774
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:17:18",
+      "step": 3,
+      "seconds": 0.0006589999975403771
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:18:17",
+      "step": 0,
+      "seconds": 0.000521999998454703
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:18:17",
+      "step": 1,
+      "seconds": 0.0005477000013343059
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:18:17",
+      "step": 2,
+      "seconds": 0.0005825999978696927
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:18:17",
+      "step": 3,
+      "seconds": 0.0006807999998272862
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:19:20",
+      "step": 0,
+      "seconds": 0.0005444000016723294
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:19:20",
+      "step": 1,
+      "seconds": 0.0005686999975296203
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:19:20",
+      "step": 2,
+      "seconds": 0.0006291999998211395
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:19:20",
+      "step": 3,
+      "seconds": 0.000677799998811679
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:20:19",
+      "step": 0,
+      "seconds": 0.0005662000003212597
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:20:19",
+      "step": 1,
+      "seconds": 0.0005708999997295905
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:20:19",
+      "step": 2,
+      "seconds": 0.0006403000006685033
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:20:19",
+      "step": 3,
+      "seconds": 0.0006551999977091327
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:21:22",
+      "step": 0,
+      "seconds": 0.0005630999985442031
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:21:22",
+      "step": 1,
+      "seconds": 0.0005700000001525041
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:21:22",
+      "step": 2,
+      "seconds": 0.0007172000005084556
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:21:22",
+      "step": 3,
+      "seconds": 0.0006971999973757192
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:22:21",
+      "step": 0,
+      "seconds": 0.0005337000002327841
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:22:21",
+      "step": 1,
+      "seconds": 0.0005898999988858122
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:22:21",
+      "step": 2,
+      "seconds": 0.0006400999991456047
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:22:21",
+      "step": 3,
+      "seconds": 0.0007468999974662438
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:23:24",
+      "step": 0,
+      "seconds": 0.0005275999974401202
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:23:24",
+      "step": 1,
+      "seconds": 0.0006337999984680209
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:23:24",
+      "step": 2,
+      "seconds": 0.0006567000018549152
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:23:24",
+      "step": 3,
+      "seconds": 0.0006807000027038157
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:24:23",
+      "step": 0,
+      "seconds": 0.0005100999987917021
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:24:23",
+      "step": 1,
+      "seconds": 0.0006081000028643757
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:24:23",
+      "step": 2,
+      "seconds": 0.0006170999986352399
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:24:23",
+      "step": 3,
+      "seconds": 0.0006682000021100976
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:25:26",
+      "step": 0,
+      "seconds": 0.0005434000013337936
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:25:26",
+      "step": 1,
+      "seconds": 0.0005822999992233235
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:25:26",
+      "step": 2,
+      "seconds": 0.000631200000498211
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:25:26",
+      "step": 3,
+      "seconds": 0.0006486000020231586
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:26:25",
+      "step": 0,
+      "seconds": 0.0005458999985421542
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:26:25",
+      "step": 1,
+      "seconds": 0.0005830999980389606
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:26:25",
+      "step": 2,
+      "seconds": 0.0005973000006633811
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:26:25",
+      "step": 3,
+      "seconds": 0.0006490999985544477
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:27:28",
+      "step": 0,
+      "seconds": 0.0005440999993879814
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:27:28",
+      "step": 1,
+      "seconds": 0.000571600001421757
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:27:28",
+      "step": 2,
+      "seconds": 0.0006278000000747852
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:27:28",
+      "step": 3,
+      "seconds": 0.0009142999988398515
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:28:27",
+      "step": 0,
+      "seconds": 0.0005999999993946403
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:28:27",
+      "step": 1,
+      "seconds": 0.0006030000004102476
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:28:27",
+      "step": 2,
+      "seconds": 0.000601199997618096
+    },
+    {
+      "episode": "v3:BuskingUnderpass05:28:27",
+      "step": 3,
+      "seconds": 0.0006384000007528812
+    },
+    {
+      "episode": "v3:Cheerleading01:1:2",
+      "step": 0,
+      "seconds": 0.0005283000027702656
+    },
+    {
+      "episode": "v3:Cheerleading01:1:2",
+      "step": 1,
+      "seconds": 0.0005715000006603077
+    },
+    {
+      "episode": "v3:Cheerleading01:1:2",
+      "step": 2,
+      "seconds": 0.0005973000006633811
+    },
+    {
+      "episode": "v3:Cheerleading01:1:2",
+      "step": 3,
+      "seconds": 0.0006824000010965392
+    },
+    {
+      "episode": "v3:Cheerleading01:2:1",
+      "step": 0,
+      "seconds": 0.0004989999979443382
+    },
+    {
+      "episode": "v3:Cheerleading01:2:1",
+      "step": 1,
+      "seconds": 0.0005834999974467792
+    },
+    {
+      "episode": "v3:Cheerleading01:2:1",
+      "step": 2,
+      "seconds": 0.0006142000020190608
+    },
+    {
+      "episode": "v3:Cheerleading01:2:1",
+      "step": 3,
+      "seconds": 0.0006902999994053971
+    },
+    {
+      "episode": "v3:Cheerleading01:3:4",
+      "step": 0,
+      "seconds": 0.00044469999920693226
+    },
+    {
+      "episode": "v3:Cheerleading01:3:4",
+      "step": 1,
+      "seconds": 0.0005430000019259751
+    },
+    {
+      "episode": "v3:Cheerleading01:3:4",
+      "step": 2,
+      "seconds": 0.0005828000030305702
+    },
+    {
+      "episode": "v3:Cheerleading01:3:4",
+      "step": 3,
+      "seconds": 0.0006562999988091178
+    },
+    {
+      "episode": "v3:Cheerleading01:4:3",
+      "step": 0,
+      "seconds": 0.0004647999994631391
+    },
+    {
+      "episode": "v3:Cheerleading01:4:3",
+      "step": 1,
+      "seconds": 0.000552500001504086
+    },
+    {
+      "episode": "v3:Cheerleading01:4:3",
+      "step": 2,
+      "seconds": 0.0005965999989712145
+    },
+    {
+      "episode": "v3:Cheerleading01:4:3",
+      "step": 3,
+      "seconds": 0.0006797999994887505
+    },
+    {
+      "episode": "v3:Cheerleading01:5:6",
+      "step": 0,
+      "seconds": 0.00044859999979962595
+    },
+    {
+      "episode": "v3:Cheerleading01:5:6",
+      "step": 1,
+      "seconds": 0.0005791000003227964
+    },
+    {
+      "episode": "v3:Cheerleading01:5:6",
+      "step": 2,
+      "seconds": 0.0005879000018467195
+    },
+    {
+      "episode": "v3:Cheerleading01:5:6",
+      "step": 3,
+      "seconds": 0.0006689000001642853
+    },
+    {
+      "episode": "v3:Cheerleading01:6:5",
+      "step": 0,
+      "seconds": 0.00048299999980372377
+    },
+    {
+      "episode": "v3:Cheerleading01:6:5",
+      "step": 1,
+      "seconds": 0.00065080000058515
+    },
+    {
+      "episode": "v3:Cheerleading01:6:5",
+      "step": 2,
+      "seconds": 0.0005783000015071593
+    },
+    {
+      "episode": "v3:Cheerleading01:6:5",
+      "step": 3,
+      "seconds": 0.0006579000000783708
+    },
+    {
+      "episode": "v3:Cheerleading01:7:8",
+      "step": 0,
+      "seconds": 0.0004526999982772395
+    },
+    {
+      "episode": "v3:Cheerleading01:7:8",
+      "step": 1,
+      "seconds": 0.0005569000022660475
+    },
+    {
+      "episode": "v3:Cheerleading01:7:8",
+      "step": 2,
+      "seconds": 0.0006337000013445504
+    },
+    {
+      "episode": "v3:Cheerleading01:7:8",
+      "step": 3,
+      "seconds": 0.0007563999970443547
+    },
+    {
+      "episode": "v3:Cheerleading01:8:7",
+      "step": 0,
+      "seconds": 0.0004474000015761703
+    },
+    {
+      "episode": "v3:Cheerleading01:8:7",
+      "step": 1,
+      "seconds": 0.000543500002095243
+    },
+    {
+      "episode": "v3:Cheerleading01:8:7",
+      "step": 2,
+      "seconds": 0.000599899998633191
+    },
+    {
+      "episode": "v3:Cheerleading01:8:7",
+      "step": 3,
+      "seconds": 0.0006560000001627486
+    },
+    {
+      "episode": "v3:Cheerleading01:9:10",
+      "step": 0,
+      "seconds": 0.00044039999920642003
+    },
+    {
+      "episode": "v3:Cheerleading01:9:10",
+      "step": 1,
+      "seconds": 0.0005177000020921696
+    },
+    {
+      "episode": "v3:Cheerleading01:9:10",
+      "step": 2,
+      "seconds": 0.0005844000006618444
+    },
+    {
+      "episode": "v3:Cheerleading01:9:10",
+      "step": 3,
+      "seconds": 0.0006369000002450775
+    },
+    {
+      "episode": "v3:Cheerleading01:10:9",
+      "step": 0,
+      "seconds": 0.0004444999976840336
+    },
+    {
+      "episode": "v3:Cheerleading01:10:9",
+      "step": 1,
+      "seconds": 0.0005216999998083338
+    },
+    {
+      "episode": "v3:Cheerleading01:10:9",
+      "step": 2,
+      "seconds": 0.000585900001169648
+    },
+    {
+      "episode": "v3:Cheerleading01:10:9",
+      "step": 3,
+      "seconds": 0.0006372999996528961
+    },
+    {
+      "episode": "v3:Cheerleading01:11:12",
+      "step": 0,
+      "seconds": 0.0004459000010683667
+    },
+    {
+      "episode": "v3:Cheerleading01:11:12",
+      "step": 1,
+      "seconds": 0.0005748000003222842
+    },
+    {
+      "episode": "v3:Cheerleading01:11:12",
+      "step": 2,
+      "seconds": 0.000594599998294143
+    },
+    {
+      "episode": "v3:Cheerleading01:11:12",
+      "step": 3,
+      "seconds": 0.000670700002956437
+    },
+    {
+      "episode": "v3:Cheerleading01:12:11",
+      "step": 0,
+      "seconds": 0.00046720000318600796
+    },
+    {
+      "episode": "v3:Cheerleading01:12:11",
+      "step": 1,
+      "seconds": 0.0005923000026086811
+    },
+    {
+      "episode": "v3:Cheerleading01:12:11",
+      "step": 2,
+      "seconds": 0.0005796000004920643
+    },
+    {
+      "episode": "v3:Cheerleading01:12:11",
+      "step": 3,
+      "seconds": 0.0008186999984900467
+    },
+    {
+      "episode": "v3:Cheerleading01:13:14",
+      "step": 0,
+      "seconds": 0.0005044999998062849
+    },
+    {
+      "episode": "v3:Cheerleading01:13:14",
+      "step": 1,
+      "seconds": 0.0005563999984588008
+    },
+    {
+      "episode": "v3:Cheerleading01:13:14",
+      "step": 2,
+      "seconds": 0.0006353000026138034
+    },
+    {
+      "episode": "v3:Cheerleading01:13:14",
+      "step": 3,
+      "seconds": 0.0006966000000829808
+    },
+    {
+      "episode": "v3:Cheerleading01:14:13",
+      "step": 0,
+      "seconds": 0.00047280000217142515
+    },
+    {
+      "episode": "v3:Cheerleading01:14:13",
+      "step": 1,
+      "seconds": 0.0005736000020988286
+    },
+    {
+      "episode": "v3:Cheerleading01:14:13",
+      "step": 2,
+      "seconds": 0.0006549000027007423
+    },
+    {
+      "episode": "v3:Cheerleading01:14:13",
+      "step": 3,
+      "seconds": 0.0006663999993179459
+    },
+    {
+      "episode": "v3:Cheerleading01:15:16",
+      "step": 0,
+      "seconds": 0.00046410000140895136
+    },
+    {
+      "episode": "v3:Cheerleading01:15:16",
+      "step": 1,
+      "seconds": 0.000524899998708861
+    },
+    {
+      "episode": "v3:Cheerleading01:15:16",
+      "step": 2,
+      "seconds": 0.000582200002099853
+    },
+    {
+      "episode": "v3:Cheerleading01:15:16",
+      "step": 3,
+      "seconds": 0.0006887000017741229
+    },
+    {
+      "episode": "v3:Cheerleading01:16:15",
+      "step": 0,
+      "seconds": 0.0004441999990376644
+    },
+    {
+      "episode": "v3:Cheerleading01:16:15",
+      "step": 1,
+      "seconds": 0.0005320000018400606
+    },
+    {
+      "episode": "v3:Cheerleading01:16:15",
+      "step": 2,
+      "seconds": 0.0005673999985447153
+    },
+    {
+      "episode": "v3:Cheerleading01:16:15",
+      "step": 3,
+      "seconds": 0.0006628999981330708
+    },
+    {
+      "episode": "v3:Cheerleading01:17:18",
+      "step": 0,
+      "seconds": 0.0004415000003064051
+    },
+    {
+      "episode": "v3:Cheerleading01:17:18",
+      "step": 1,
+      "seconds": 0.0005823999999847729
+    },
+    {
+      "episode": "v3:Cheerleading01:17:18",
+      "step": 2,
+      "seconds": 0.0006433000016841106
+    },
+    {
+      "episode": "v3:Cheerleading01:17:18",
+      "step": 3,
+      "seconds": 0.0007117999994079582
+    },
+    {
+      "episode": "v3:Cheerleading01:18:17",
+      "step": 0,
+      "seconds": 0.0004607999981089961
+    },
+    {
+      "episode": "v3:Cheerleading01:18:17",
+      "step": 1,
+      "seconds": 0.0005912999986321665
+    },
+    {
+      "episode": "v3:Cheerleading01:18:17",
+      "step": 2,
+      "seconds": 0.0006260000009206124
+    },
+    {
+      "episode": "v3:Cheerleading01:18:17",
+      "step": 3,
+      "seconds": 0.000689199998305412
+    },
+    {
+      "episode": "v3:Cheerleading01:19:20",
+      "step": 0,
+      "seconds": 0.0005655999993905425
+    },
+    {
+      "episode": "v3:Cheerleading01:19:20",
+      "step": 1,
+      "seconds": 0.0006339999999909196
+    },
+    {
+      "episode": "v3:Cheerleading01:19:20",
+      "step": 2,
+      "seconds": 0.0006525999997393228
+    },
+    {
+      "episode": "v3:Cheerleading01:19:20",
+      "step": 3,
+      "seconds": 0.0007087000012688804
+    },
+    {
+      "episode": "v3:Cheerleading01:20:19",
+      "step": 0,
+      "seconds": 0.0004963000028510578
+    },
+    {
+      "episode": "v3:Cheerleading01:20:19",
+      "step": 1,
+      "seconds": 0.0006223999989742879
+    },
+    {
+      "episode": "v3:Cheerleading01:20:19",
+      "step": 2,
+      "seconds": 0.0006632000004174188
+    },
+    {
+      "episode": "v3:Cheerleading01:20:19",
+      "step": 3,
+      "seconds": 0.0007366999998339452
+    },
+    {
+      "episode": "v3:Cheerleading01:21:22",
+      "step": 0,
+      "seconds": 0.0005020999997213949
+    },
+    {
+      "episode": "v3:Cheerleading01:21:22",
+      "step": 1,
+      "seconds": 0.0006044000001566019
+    },
+    {
+      "episode": "v3:Cheerleading01:21:22",
+      "step": 2,
+      "seconds": 0.0006496999994851649
+    },
+    {
+      "episode": "v3:Cheerleading01:21:22",
+      "step": 3,
+      "seconds": 0.0007009000000834931
+    },
+    {
+      "episode": "v3:Cheerleading01:22:21",
+      "step": 0,
+      "seconds": 0.00046690000090165995
+    },
+    {
+      "episode": "v3:Cheerleading01:22:21",
+      "step": 1,
+      "seconds": 0.0006151999987196177
+    },
+    {
+      "episode": "v3:Cheerleading01:22:21",
+      "step": 2,
+      "seconds": 0.0006214999993972015
+    },
+    {
+      "episode": "v3:Cheerleading01:22:21",
+      "step": 3,
+      "seconds": 0.0006644000022788532
+    },
+    {
+      "episode": "v3:Cheerleading01:23:24",
+      "step": 0,
+      "seconds": 0.0004592000004777219
+    },
+    {
+      "episode": "v3:Cheerleading01:23:24",
+      "step": 1,
+      "seconds": 0.0005445999995572492
+    },
+    {
+      "episode": "v3:Cheerleading01:23:24",
+      "step": 2,
+      "seconds": 0.000596199999563396
+    },
+    {
+      "episode": "v3:Cheerleading01:23:24",
+      "step": 3,
+      "seconds": 0.0006673999996564817
+    },
+    {
+      "episode": "v3:Cheerleading01:24:23",
+      "step": 0,
+      "seconds": 0.0004606000002240762
+    },
+    {
+      "episode": "v3:Cheerleading01:24:23",
+      "step": 1,
+      "seconds": 0.0005320999989635311
+    },
+    {
+      "episode": "v3:Cheerleading01:24:23",
+      "step": 2,
+      "seconds": 0.0006122999984654598
+    },
+    {
+      "episode": "v3:Cheerleading01:24:23",
+      "step": 3,
+      "seconds": 0.0006695000010950025
+    },
+    {
+      "episode": "v3:Cheerleading01:25:26",
+      "step": 0,
+      "seconds": 0.0004953999996359926
+    },
+    {
+      "episode": "v3:Cheerleading01:25:26",
+      "step": 1,
+      "seconds": 0.0007236999990709592
+    },
+    {
+      "episode": "v3:Cheerleading01:25:26",
+      "step": 2,
+      "seconds": 0.0006054000004951376
+    },
+    {
+      "episode": "v3:Cheerleading01:25:26",
+      "step": 3,
+      "seconds": 0.000705099999322556
+    },
+    {
+      "episode": "v3:Cheerleading01:26:25",
+      "step": 0,
+      "seconds": 0.00044239999988349155
+    },
+    {
+      "episode": "v3:Cheerleading01:26:25",
+      "step": 1,
+      "seconds": 0.0005406999989645556
+    },
+    {
+      "episode": "v3:Cheerleading01:26:25",
+      "step": 2,
+      "seconds": 0.0005815000004076865
+    },
+    {
+      "episode": "v3:Cheerleading01:26:25",
+      "step": 3,
+      "seconds": 0.0006824000010965392
+    },
+    {
+      "episode": "v3:Cheerleading01:27:28",
+      "step": 0,
+      "seconds": 0.00044160000106785446
+    },
+    {
+      "episode": "v3:Cheerleading01:27:28",
+      "step": 1,
+      "seconds": 0.0005276999982015695
+    },
+    {
+      "episode": "v3:Cheerleading01:27:28",
+      "step": 2,
+      "seconds": 0.0005829999972775113
+    },
+    {
+      "episode": "v3:Cheerleading01:27:28",
+      "step": 3,
+      "seconds": 0.0006682999992335681
+    },
+    {
+      "episode": "v3:Cheerleading01:28:27",
+      "step": 0,
+      "seconds": 0.0004408999993756879
+    },
+    {
+      "episode": "v3:Cheerleading01:28:27",
+      "step": 1,
+      "seconds": 0.0005613000030280091
+    },
+    {
+      "episode": "v3:Cheerleading01:28:27",
+      "step": 2,
+      "seconds": 0.0006161999990581535
+    },
+    {
+      "episode": "v3:Cheerleading01:28:27",
+      "step": 3,
+      "seconds": 0.000662200000078883
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:1:2",
+      "step": 0,
+      "seconds": 0.0004853000027651433
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:1:2",
+      "step": 1,
+      "seconds": 0.0005376999979489483
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:1:2",
+      "step": 2,
+      "seconds": 0.0005855999988853
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:1:2",
+      "step": 3,
+      "seconds": 0.0006283000002440531
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:2:1",
+      "step": 0,
+      "seconds": 0.0005082999996375293
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:2:1",
+      "step": 1,
+      "seconds": 0.0005612999993900303
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:2:1",
+      "step": 2,
+      "seconds": 0.0005620999982056674
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:2:1",
+      "step": 3,
+      "seconds": 0.0006246000011742581
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:3:4",
+      "step": 0,
+      "seconds": 0.00047089999861782417
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:3:4",
+      "step": 1,
+      "seconds": 0.0005267000015010126
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:3:4",
+      "step": 2,
+      "seconds": 0.0005823000028613023
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:3:4",
+      "step": 3,
+      "seconds": 0.001195600001665298
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:4:3",
+      "step": 0,
+      "seconds": 0.0005214000011619646
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:4:3",
+      "step": 1,
+      "seconds": 0.0005582000012509525
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:4:3",
+      "step": 2,
+      "seconds": 0.0005920000003243331
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:4:3",
+      "step": 3,
+      "seconds": 0.0007057000002532732
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:5:6",
+      "step": 0,
+      "seconds": 0.00047360000098706223
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:5:6",
+      "step": 1,
+      "seconds": 0.0005500000006577466
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:5:6",
+      "step": 2,
+      "seconds": 0.000601499999902444
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:5:6",
+      "step": 3,
+      "seconds": 0.0006513000007544179
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:6:5",
+      "step": 0,
+      "seconds": 0.0004737999988719821
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:6:5",
+      "step": 1,
+      "seconds": 0.0005266999978630338
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:6:5",
+      "step": 2,
+      "seconds": 0.0005719000000681262
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:6:5",
+      "step": 3,
+      "seconds": 0.0006437000010919292
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:7:8",
+      "step": 0,
+      "seconds": 0.0004701000034401659
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:7:8",
+      "step": 1,
+      "seconds": 0.0005504000000655651
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:7:8",
+      "step": 2,
+      "seconds": 0.0005887999977858271
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:7:8",
+      "step": 3,
+      "seconds": 0.0006519000016851351
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:8:7",
+      "step": 0,
+      "seconds": 0.00047510000149486586
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:8:7",
+      "step": 1,
+      "seconds": 0.0005363999989640433
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:8:7",
+      "step": 2,
+      "seconds": 0.0005575000031967647
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:8:7",
+      "step": 3,
+      "seconds": 0.0006436000003304798
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:9:10",
+      "step": 0,
+      "seconds": 0.00048489999971934594
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:9:10",
+      "step": 1,
+      "seconds": 0.0005239999991317745
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:9:10",
+      "step": 2,
+      "seconds": 0.0005669999991368968
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:9:10",
+      "step": 3,
+      "seconds": 0.0006446000006690156
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:10:9",
+      "step": 0,
+      "seconds": 0.00047360000098706223
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:10:9",
+      "step": 1,
+      "seconds": 0.0005238999983703252
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:10:9",
+      "step": 2,
+      "seconds": 0.0011693999986164272
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:10:9",
+      "step": 3,
+      "seconds": 0.0006544000025314745
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:11:12",
+      "step": 0,
+      "seconds": 0.0005324000012478791
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:11:12",
+      "step": 1,
+      "seconds": 0.0005253999988781288
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:11:12",
+      "step": 2,
+      "seconds": 0.0005915000001550652
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:11:12",
+      "step": 3,
+      "seconds": 0.0006460000004153699
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:12:11",
+      "step": 0,
+      "seconds": 0.0004593999983626418
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:12:11",
+      "step": 1,
+      "seconds": 0.0005232000003161374
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:12:11",
+      "step": 2,
+      "seconds": 0.0005572999980358873
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:12:11",
+      "step": 3,
+      "seconds": 0.0006419999990612268
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:13:14",
+      "step": 0,
+      "seconds": 0.00045709999903920107
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:13:14",
+      "step": 1,
+      "seconds": 0.0005338000009942334
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:13:14",
+      "step": 2,
+      "seconds": 0.0005564000020967796
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:13:14",
+      "step": 3,
+      "seconds": 0.0006401000027835835
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:14:13",
+      "step": 0,
+      "seconds": 0.0004717999981949106
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:14:13",
+      "step": 1,
+      "seconds": 0.0005215999990468845
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:14:13",
+      "step": 2,
+      "seconds": 0.0005915000001550652
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:14:13",
+      "step": 3,
+      "seconds": 0.0006676999983028509
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:15:16",
+      "step": 0,
+      "seconds": 0.0005117000000609551
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:15:16",
+      "step": 1,
+      "seconds": 0.000520200002938509
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:15:16",
+      "step": 2,
+      "seconds": 0.0006228000020200852
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:15:16",
+      "step": 3,
+      "seconds": 0.0006570999976247549
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:16:15",
+      "step": 0,
+      "seconds": 0.0004985000014130492
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:16:15",
+      "step": 1,
+      "seconds": 0.000565199999982724
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:16:15",
+      "step": 2,
+      "seconds": 0.0005879999989701901
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:16:15",
+      "step": 3,
+      "seconds": 0.0008348000010300893
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:17:18",
+      "step": 0,
+      "seconds": 0.000487299999804236
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:17:18",
+      "step": 1,
+      "seconds": 0.0005775000026915222
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:17:18",
+      "step": 2,
+      "seconds": 0.0005883000012545381
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:17:18",
+      "step": 3,
+      "seconds": 0.0006387000030372292
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:18:17",
+      "step": 0,
+      "seconds": 0.0005063999997219071
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:18:17",
+      "step": 1,
+      "seconds": 0.0005897000010008924
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:18:17",
+      "step": 2,
+      "seconds": 0.0006226999976206571
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:18:17",
+      "step": 3,
+      "seconds": 0.0006797999994887505
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:19:20",
+      "step": 0,
+      "seconds": 0.0005358000016713049
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:19:20",
+      "step": 1,
+      "seconds": 0.0005626999991363846
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:19:20",
+      "step": 2,
+      "seconds": 0.000605500001256587
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:19:20",
+      "step": 3,
+      "seconds": 0.000674899998557521
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:20:19",
+      "step": 0,
+      "seconds": 0.0005248000015853904
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:20:19",
+      "step": 1,
+      "seconds": 0.0005588999993051402
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:20:19",
+      "step": 2,
+      "seconds": 0.000590899999224348
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:20:19",
+      "step": 3,
+      "seconds": 0.0006652999982179608
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:21:22",
+      "step": 0,
+      "seconds": 0.0005087000026833266
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:21:22",
+      "step": 1,
+      "seconds": 0.0005708999997295905
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:21:22",
+      "step": 2,
+      "seconds": 0.0005673999985447153
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:21:22",
+      "step": 3,
+      "seconds": 0.000634899999568006
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:22:21",
+      "step": 0,
+      "seconds": 0.0004960000005667098
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:22:21",
+      "step": 1,
+      "seconds": 0.0005294999973557424
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:22:21",
+      "step": 2,
+      "seconds": 0.0005803999993077014
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:22:21",
+      "step": 3,
+      "seconds": 0.0006350000003294554
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:23:24",
+      "step": 0,
+      "seconds": 0.0004976000018359628
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:23:24",
+      "step": 1,
+      "seconds": 0.0005363999989640433
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:23:24",
+      "step": 2,
+      "seconds": 0.0006813999971200246
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:23:24",
+      "step": 3,
+      "seconds": 0.0006485000012617093
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:24:23",
+      "step": 0,
+      "seconds": 0.0004804999989573844
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:24:23",
+      "step": 1,
+      "seconds": 0.0005509999973583035
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:24:23",
+      "step": 2,
+      "seconds": 0.0005874000016774517
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:24:23",
+      "step": 3,
+      "seconds": 0.0006934000011824537
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:25:26",
+      "step": 0,
+      "seconds": 0.000538699998287484
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:25:26",
+      "step": 1,
+      "seconds": 0.0005850000015925616
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:25:26",
+      "step": 2,
+      "seconds": 0.0005906000005779788
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:25:26",
+      "step": 3,
+      "seconds": 0.0006706999993184581
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:26:25",
+      "step": 0,
+      "seconds": 0.0005048999992141034
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:26:25",
+      "step": 1,
+      "seconds": 0.0005461000000650529
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:26:25",
+      "step": 2,
+      "seconds": 0.0005767999973613769
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:26:25",
+      "step": 3,
+      "seconds": 0.0006644999994023237
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:27:28",
+      "step": 0,
+      "seconds": 0.0004914999990432989
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:27:28",
+      "step": 1,
+      "seconds": 0.0005284999970172066
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:27:28",
+      "step": 2,
+      "seconds": 0.0006006000003253575
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:27:28",
+      "step": 3,
+      "seconds": 0.0006309999989753123
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:28:27",
+      "step": 0,
+      "seconds": 0.00047540000014123507
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:28:27",
+      "step": 1,
+      "seconds": 0.0005315000016707927
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:28:27",
+      "step": 2,
+      "seconds": 0.0006037000021024141
+    },
+    {
+      "episode": "v3:ConferenceParticipant02:28:27",
+      "step": 3,
+      "seconds": 0.0006930999988981057
+    }
+  ],
+  "script_sha256": "5dcefd731874920108e6ee5e70054dcb39c50e5bca1e595631f63612af930549",
+  "result_sha256": "147cfc11d754bc03b493fa48493679c791c159d9eef4a62e99365f3ebee496e9"
+}

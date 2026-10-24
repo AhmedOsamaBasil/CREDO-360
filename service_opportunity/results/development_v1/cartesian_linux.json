@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "unpruned_complete_paths": 404288,
+  "exact_queries": 504,
+  "episodes": 168,
+  "script_sha256": "3de477f4f51272a219d2626e1bd7132fb6b16f6a7e39e1e592b0993600c87baf",
+  "result_sha256": "147cfc11d754bc03b493fa48493679c791c159d9eef4a62e99365f3ebee496e9",
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}

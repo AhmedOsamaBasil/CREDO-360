@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "service_class_checks": 15,
+  "backlogged_competitor_checks": 9,
+  "timing_records_checked": 1344,
+  "figure_hashes_checked": 4,
+  "script_sha256": "25e20fde6aad6712ef767c70b9c35b7c04bf96ae1c9699777c304cb65306b736",
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}

@@ -85,6 +85,17 @@ establish real spare path capacity. Exact future-known gaps remain diagnostic,
 not online gains; [all findings and limitations](reserve_recovery/INTERPRETATION.md)
 are retained before any further holdout.
 
+A [controlled-service and causal-opportunity test](service_opportunity/README.md)
+now validates a managed byte-service configuration in isolated Linux TCP probes
+and compares a prefix-only forecast on the same exposed data. Its fixed
+development screen passes: half-repayment reaches92/168 versus90 for greedy
+and max-min and79 for rolling Nash at the primary reserve. The gain over greedy
+is small; quality tradeoffs,24/88 failed initial success forecasts, adverse
+content/budget cases and post-hoc controls are retained in the
+[interpretation](service_opportunity/INTERPRETATION.md). This is not field spare
+capacity, safe admission, independent confirmation or an integrated player.
+No additional holdout was consumed and no manuscript claim was updated.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 

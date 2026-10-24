@@ -1,0 +1,12 @@
+{
+  "script_sha256": "1cd9dacfa146fc21bffdfddc6c65a7fd57ac7cbca1a562b9e62a85485c3c4b91",
+  "primary_result_sha256": "147cfc11d754bc03b493fa48493679c791c159d9eef4a62e99365f3ebee496e9",
+  "posthoc_result_sha256": "6a4bf2d295dafde8719df6099ec292afae020564c76c8782d426cee0d24a0774",
+  "service_sha256": "35e900fb25bc324c08691496f9ec07fe6d1e699cf93f5e7fb638f330ef16fe8a",
+  "figure_sha256": {
+    "primary_comparison.png": "f17a4f7643bd7c0d09c56f1aad89e5b9d049f1c4c4ac3f7fd651c385b94c3d6e",
+    "primary_comparison.svg": "348caef4aaaa94105d7774b0b674e64b7a4662bdb98974dc108160e32d227af3",
+    "service_completion.png": "d2607b2bd42e48c854e100469b44abda429fce0575760b2869507c2c3287141c",
+    "service_completion.svg": "feb2c9b549fd930a8a9c67cc3a113ce91450e742d1315b6955485dd9188788ab"
+  }
+}

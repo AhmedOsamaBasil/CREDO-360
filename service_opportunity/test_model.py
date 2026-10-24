@@ -109,3 +109,56 @@ def test_exact_future_matches_oracle_first_objective(exposed):
 def test_order_invariance():
     ps=(period(400),period(700))
     assert optimize(ps,1000,100)==optimize(tuple(tuple(reversed(p)) for p in ps),1000,100)
+
+
+def test_mutating_actual_future_menus_preserves_observed_prefix(exposed):
+    rs,data=exposed; e,ps=data[0]; target=next(r for r in rs if r.key==e.key)
+    original=simulate(e,ps,target,pool(rs,target),F(1),'knn_mpc')
+    for n in (1,2,3):
+        future_quality=(((1000,2000,3000,4000,4500,5000),(2000,2500,3500,4000,4500,5000)),)*(4-n)
+        changed=replace(target,qualities=target.qualities[:n]+future_quality)
+        new_periods=ps[:n]+predicted_periods(future_quality,tuple(sizes(p) for p in ps[n:]))
+        altered=simulate(e,new_periods,changed,pool(rs,target),F(1),'knn_mpc')
+        for t in range(n):
+            for field in ('rungs','neighbors','predicted_qualities','planned_rungs'):
+                assert original['decisions'][t][field]==altered['decisions'][t][field]
+
+
+def service_fixture():
+    cases=[(rtt,bg,i,False) for rtt in (20,80) for bg in (False,True) for i in range(3)]
+    cases += [(80,True,i,True) for i in range(3)]
+    rows=[]
+    for rtt,bg,i,negative in cases:
+        duration=12.5 if negative else 8.5
+        rows.append({'rtt_ms':rtt,'background':bg,'repeat':i,'negative_control':negative,
+            'flows':[{'received':750000,'requested':750000,'completion_seconds':duration-.1}]*2,
+            'joint_completion_seconds':duration,'subprocess_wall_seconds':duration+.2,
+            'deadline_met':not negative,'foreground_rate_kbit':1000 if negative else 1500,
+            'background_received_bytes':500000 if bg else 0,
+            'tc_class_after':'class htb 1:10; class htb 1:20','tc_qdisc_after':'htb netem'})
+    return {'probes':rows}
+
+
+def test_service_validation_and_negative_control():
+    from service_opportunity.service import validate
+    result=validate(service_fixture())
+    assert result['nominal_pass_count']==12 and result['negative_miss_count']==3
+
+
+def test_service_rejects_background_contamination():
+    from service_opportunity.service import validate
+    data=service_fixture(); data['probes'][0]['background_received_bytes']=1
+    with pytest.raises(AssertionError): validate(data)
+
+
+def test_service_rejects_incomplete_receipt():
+    from service_opportunity.service import validate
+    data=service_fixture(); data['probes'][0]['flows']=[{'received':1,'requested':750000,'completion_seconds':8}]*2
+    with pytest.raises(AssertionError): validate(data)
+
+
+def test_subprocess_deadline_counts_setup():
+    from service_opportunity.service import validate
+    data=service_fixture(); data['probes'][0]['subprocess_wall_seconds']=10.1
+    data['probes'][0]['deadline_met']=False
+    assert not validate(data)['controlled_contract_pass']
