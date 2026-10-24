@@ -23,3 +23,6 @@ recovery_objective/results/** -text whitespace=cr-at-eol
 allowance_scheduler/*.py text eol=lf
 allowance_scheduler/*.md text eol=lf
 allowance_scheduler/results/** -text whitespace=cr-at-eol
+causal_compensation/*.py text eol=lf
+causal_compensation/*.md text eol=lf
+causal_compensation/results/** -text whitespace=cr-at-eol
