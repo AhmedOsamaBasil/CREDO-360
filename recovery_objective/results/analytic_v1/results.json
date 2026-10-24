@@ -1,0 +1,5458 @@
+{
+  "analytical_only": true,
+  "fresh_data_used": false,
+  "current_quality_known_exactly": true,
+  "offline_oracle_knows_future": true,
+  "arithmetic": "exact rational",
+  "cases": [
+    {
+      "definition": {
+        "name": "forgotten_event",
+        "purpose": "Finite-window averaging forgets an unresolved old event.",
+        "contract": {
+          "debt": [
+            "2",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "1"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "2"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "2"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1/2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "4",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "2"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1/2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "4",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "2"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1/2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "4",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "feasible_paths": 4
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "recent_event",
+        "purpose": "Rolling equalization can repay part of a recent loss but optimize a different endpoint.",
+        "contract": {
+          "debt": [
+            "2",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "1"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "2"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "2"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1/2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "4",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "2"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1/2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "4",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "2"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1/2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "4",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "feasible_paths": 4
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "zero_harm_allowance",
+        "purpose": "No compensation without slack or permitted donor loss on this frontier.",
+        "contract": {
+          "debt": [
+            "2",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "0"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "0"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "feasible_paths": 1
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "no_recipient_headroom",
+        "purpose": "Inability to deliver excess does not erase outstanding event loss.",
+        "contract": {
+          "debt": [
+            "2",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "1"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "2"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_other",
+                "quality": [
+                  "3",
+                  "4"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_other",
+                "quality": [
+                  "3",
+                  "4"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "3",
+            "4"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "3",
+            "4"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "3",
+            "4"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "3",
+            "4"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "3",
+            "4"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "3",
+            "4"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_other",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "feasible_paths": 4
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "shared_success_with_slack",
+        "purpose": "Both direct rolling rules and recovery can fully compensate; no exclusive advantage.",
+        "contract": {
+          "debt": [
+            "1",
+            "1"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "0"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "0"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_first",
+                "quality": [
+                  "4",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_second",
+                "quality": [
+                  "3",
+                  "4"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_first",
+                "quality": [
+                  "4",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_second",
+                "quality": [
+                  "3",
+                  "4"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "2",
+            "2"
+          ]
+        ],
+        "affected": [
+          true,
+          true
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "0",
+            "1"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "4",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3"
+              ],
+              "debt": [
+                "0",
+                "1"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3"
+              ],
+              "debt": [
+                "0",
+                "1"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "1"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "7/2",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "7/2",
+            "7/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3"
+              ],
+              "debt": [
+                "0",
+                "1"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "1"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "7/2",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "7/2",
+            "7/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3"
+              ],
+              "debt": [
+                "0",
+                "1"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "1"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "7/2",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "7/2",
+            "7/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3"
+              ],
+              "debt": [
+                "0",
+                "1"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "1"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "7/2",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "7/2",
+            "7/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3"
+              ],
+              "debt": [
+                "0",
+                "1"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "1"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "7/2",
+          "mean_post_quality": "7/2",
+          "post_means": [
+            "7/2",
+            "7/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3"
+              ],
+              "debt": [
+                "0",
+                "1"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "feasible_paths": 9
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "future_opportunity_trap",
+        "purpose": "Myopic normalized recovery loses to a known-future oracle and debt-weighted control.",
+        "contract": {
+          "debt": [
+            "2",
+            "1",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "0",
+            "1"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "0",
+            "2"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_first",
+                "quality": [
+                  "4",
+                  "3",
+                  "2"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_second",
+                "quality": [
+                  "3",
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "help_second",
+                "quality": [
+                  "3",
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "2",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "2",
+          "outstanding": [
+            "2",
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "4",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "2",
+          "outstanding": [
+            "2",
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "4",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "2",
+          "outstanding": [
+            "2",
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "4",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0",
+            "2"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "7/2",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4",
+                "2"
+              ],
+              "debt": [
+                "2",
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0",
+            "2"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "7/2",
+            "2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "help_first",
+              "quality": [
+                "4",
+                "3",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "help_second",
+              "quality": [
+                "3",
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "feasible_paths": 6
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "donor_budget_trap",
+        "purpose": "Spending a scarce donor budget early makes greedy recovery worse than rolling Nash.",
+        "contract": {
+          "debt": [
+            "2",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "1"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "1"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "later_compensation",
+                "quality": [
+                  "5",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "13/4",
+          "post_means": [
+            "4",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "later_compensation",
+              "quality": [
+                "5",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "2",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "13/4",
+          "post_means": [
+            "4",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "later_compensation",
+              "quality": [
+                "5",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "2",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "0",
+          "terminal_sum_fraction": "0",
+          "outstanding": [
+            "0",
+            "0"
+          ],
+          "delivered_compensation": [
+            "2",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": true,
+          "recovery_step": 2,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "13/4",
+          "post_means": [
+            "4",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "later_compensation",
+              "quality": [
+                "5",
+                "2"
+              ],
+              "debt": [
+                "0",
+                "0"
+              ],
+              "delivered_credit": [
+                "2",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "feasible_paths": 3
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "opportunity_disappears",
+        "purpose": "Same first step and budget, but waiting now loses the only compensation opportunity.",
+        "contract": {
+          "debt": [
+            "2",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "1"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "1"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "compensate",
+                "quality": [
+                  "4",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "3",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "3",
+                  "3"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "3",
+          "post_means": [
+            "3",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "1/2",
+          "terminal_sum_fraction": "1/2",
+          "outstanding": [
+            "1",
+            "0"
+          ],
+          "delivered_compensation": [
+            "1",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "1"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "1",
+          "worst_post_quality": "5/2",
+          "mean_post_quality": "3",
+          "post_means": [
+            "7/2",
+            "5/2"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "compensate",
+              "quality": [
+                "4",
+                "2"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "1",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "3",
+                "3"
+              ],
+              "debt": [
+                "1",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "feasible_paths": 2
+        }
+      }
+    },
+    {
+      "definition": {
+        "name": "quality_ceiling",
+        "purpose": "A reference already at maximum quality cannot be compensated by more quality.",
+        "contract": {
+          "debt": [
+            "2",
+            "0"
+          ],
+          "donor_step_allowance": [
+            "0",
+            "1"
+          ],
+          "donor_total_allowance": [
+            "0",
+            "2"
+          ],
+          "window": 24
+        },
+        "schedule": [
+          {
+            "reference": [
+              "5",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "5",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "wasteful_transfer",
+                "quality": [
+                  "5",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          },
+          {
+            "reference": [
+              "5",
+              "3"
+            ],
+            "actions": [
+              {
+                "name": "baseline",
+                "quality": [
+                  "5",
+                  "3"
+                ],
+                "resources": "1"
+              },
+              {
+                "name": "wasteful_transfer",
+                "quality": [
+                  "5",
+                  "2"
+                ],
+                "resources": "1"
+              }
+            ],
+            "resource_cap": "1"
+          }
+        ],
+        "history": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_reference": [
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "event_quality": [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        "affected": [
+          true,
+          false
+        ]
+      },
+      "results": {
+        "stateless_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "4",
+          "post_means": [
+            "5",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_nash": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "4",
+          "post_means": [
+            "5",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "rolling_maxmin": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "4",
+          "post_means": [
+            "5",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "max_weight": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "4",
+          "post_means": [
+            "5",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "greedy_recovery": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "4",
+          "post_means": [
+            "5",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "offline_oracle": {
+          "terminal_max_fraction": "1",
+          "terminal_sum_fraction": "1",
+          "outstanding": [
+            "2",
+            "0"
+          ],
+          "delivered_compensation": [
+            "0",
+            "0"
+          ],
+          "donor_spent": [
+            "0",
+            "0"
+          ],
+          "all_recovered": false,
+          "recovery_step": null,
+          "area_normalized_debt": "2",
+          "worst_post_quality": "3",
+          "mean_post_quality": "4",
+          "post_means": [
+            "5",
+            "3"
+          ],
+          "resources": "2",
+          "trace": [
+            {
+              "step": 1,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            },
+            {
+              "step": 2,
+              "action": "baseline",
+              "quality": [
+                "5",
+                "3"
+              ],
+              "debt": [
+                "2",
+                "0"
+              ],
+              "delivered_credit": [
+                "0",
+                "0"
+              ],
+              "donor_spent": [
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "feasible_paths": 4
+        }
+      }
+    }
+  ],
+  "finite_checks": {
+    "single_recipient": {
+      "cases": 480,
+      "exact_closed_form_and_oracle_agreement": true,
+      "scope": "one recipient, exogenous independent action sets, nonbinding total donor budget"
+    },
+    "multi_recipient": {
+      "cases": 24,
+      "exact_conservation_and_protection": true,
+      "policy_relationships": {
+        "stateless_nash": {
+          "strictly_above_terminal_oracle": 24,
+          "equal_terminal_oracle": 0
+        },
+        "rolling_nash": {
+          "strictly_above_terminal_oracle": 24,
+          "equal_terminal_oracle": 0
+        },
+        "rolling_maxmin": {
+          "strictly_above_terminal_oracle": 24,
+          "equal_terminal_oracle": 0
+        },
+        "max_weight": {
+          "strictly_above_terminal_oracle": 12,
+          "equal_terminal_oracle": 12
+        },
+        "greedy_recovery": {
+          "strictly_above_terminal_oracle": 12,
+          "equal_terminal_oracle": 12
+        }
+      },
+      "scope": "constructed two-step, two-recipient opportunity family; not a probability distribution"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "analytical_only": true,
+  "source_and_result_hashes": true,
+  "exact_scientific_replay": true,
+  "constructed_cases": 9,
+  "single_recipient_checks": 480,
+  "multi_recipient_checks": 24,
+  "scientific_sha256": "83836c7e3c71c083081da2c104d4d0550a7a05f434ec7a9f41da927827f323a1",
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}

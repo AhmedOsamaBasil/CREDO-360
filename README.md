@@ -39,6 +39,14 @@ development screen. Higher targets activate the mechanism without establishing
 a general worst-user-quality benefit. All outcomes are retained, and no further
 fresh holdout was consumed; see the [interpretation](objective_diagnostics/INTERPRETATION.md).
 
+The next step is an [exact analytical recovery objective](recovery_objective/README.md),
+not another empirical campaign. It defines event-local compensation under
+explicit limits on other users' service loss, proves a conditional repayment
+bound, and supplies exact comparisons against rolling Nash/max-min. It also
+preserves counterexamples where greedy recovery fails, including one where
+rolling Nash recovers more. These clarify the objective and its limits; they
+do not establish new scheduling theory or a validated streaming method.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 

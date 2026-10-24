@@ -1,0 +1,21 @@
+{
+  "analytical_only": true,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "source_sha256": {
+    "recovery_objective/__init__.py": "f1f61a57190746ed7b220ff791c9ff4253d42b3893711f200738b8f1a7df4a5e",
+    "recovery_objective/cases.py": "6626982e3aaec684e54d8f3a33b08c771d88fdf570b5fe61112f43b458954c33",
+    "recovery_objective/checks.py": "23ef2935604676460f33ba7be2c5cbb2dbb0665307141bd1676fef1d4630e310",
+    "recovery_objective/core.py": "2431b5301e0f7146e06742c1d790caae658b56738134484308ba5e6222a191dd",
+    "recovery_objective/README.md": "deecc44253a37881dc085cfc7b5b0be3570fe69dc1dff20f82d4ee465764e2c6",
+    "recovery_objective/run_analysis.py": "a064a581e4f3ff7f4d8b3f2c14215673133afda7c2f2e1c96ca12ed173fd2cec",
+    "recovery_objective/test_core.py": "36e764ab8bee73be81795365f6005e1e2198ef994fc852fbe12b27894298debf",
+    "recovery_objective/THEORY.md": "10e88eb8d3b8b3b56b4c93ddbbeecf7e9f68effc0d1c406b7049adc24ef9edb4",
+    "recovery_objective/verify.py": "52060e16f0bc0515c35cf2c1b88da5fba146c5ea373d0a23e13dc5acbcc16107"
+  },
+  "result_sha256": {
+    "REPORT.md": "fc99171caa1fe9cab95bd5a041fe0724c38d390c83152da2997125b02711cce9",
+    "results.json": "04ae95d42b977654336f504a53a66bf98d40e660bef9b58104f943aaad3a212f"
+  },
+  "scientific_sha256": "83836c7e3c71c083081da2c104d4d0550a7a05f434ec7a9f41da927827f323a1"
+}
