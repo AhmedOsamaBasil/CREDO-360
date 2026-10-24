@@ -44,3 +44,9 @@ causal_playback/*.md text eol=lf
 causal_playback/data/** -text whitespace=cr-at-eol
 causal_playback/results/** -text whitespace=cr-at-eol
 causal_playback/results/**/*.svg -whitespace
+feedback_opportunity/*.py text eol=lf
+feedback_opportunity/*.mjs text eol=lf
+feedback_opportunity/*.md text eol=lf
+feedback_opportunity/data/** -text whitespace=cr-at-eol
+feedback_opportunity/results/** -text whitespace=cr-at-eol
+feedback_opportunity/results/**/*.svg -whitespace

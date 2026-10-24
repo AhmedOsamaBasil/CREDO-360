@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {SegmentFeedback,viewportMask} from './client.mjs';
+const hash='00'.repeat(32);
+const c=new SegmentFeedback(hash,0,3,0);
+assert.throws(()=>c.finish(10));
+assert.throws(()=>c.sample(.5,.51,0,0));
+assert.throws(()=>c.sample(.5,.3,0,0));
+for(let i=0;i<10;i++) c.sample(i+.5,i+.49,0,0);
+assert.throws(()=>c.finish(9.99));
+const packet=c.finish(10); assert.equal(packet.length,140);
+assert.throws(()=>c.finish(10));
+assert.equal(new DataView(packet.buffer).getUint32(38),0);
+const observed=new SegmentFeedback(hash,0,3,0);
+for(let i=0;i<=1000;i++) observed.observe(i/100,0,0);
+assert.deepEqual(observed.finish(10),packet);
+assert.deepEqual(viewportMask(-180,0),viewportMask(180,0));
+assert.throws(()=>viewportMask(NaN,0));
+console.log('Client encoder: 11 assertions passed');
