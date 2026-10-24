@@ -1,0 +1,9 @@
+{
+  "renderer_sha256": "2e48f7ecb47e883d15beb27149fc46fe6d6d5098c288aabef37d0f99be285217",
+  "scientific_results_sha256": "4de21d310888d9b4968af6563edc95b65e7d362f57a552e382c76f1b2639ac45",
+  "matplotlib": "3.11.1",
+  "figure_sha256": {
+    "reserve_grid.png": "8ca514ac31a48722a3e12a063b00adf9a77200d89baee7245ad4eea33cde84be",
+    "reserve_grid.svg": "7502feb2797da4be40784953f110084e717871de8318a993556326f4ecb32907"
+  }
+}

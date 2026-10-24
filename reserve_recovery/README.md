@@ -7,6 +7,9 @@ ledger. No new holdout, network experiment or manuscript revision is involved.
 
 - [Fixed plan](PLAN.md)
 - [Contract, proofs, limitations and primary references](THEORY.md)
+- [Findings and interpretation](INTERPRETATION.md)
+- [Complete generated report](results/analysis_v1/REPORT.md)
+- [Reserve-grid figure](results/analysis_v1/figures/reserve_grid.png)
 
 Constructed causal tests compare an absolute-loss minimax plan with rolling
 Nash, rolling max-min and greedy recovery. An independent Bellman recursion
@@ -29,3 +32,10 @@ The runner refuses to overwrite an existing directory. No GPU, new media or
 external solver is required. Every analytical decision and budget comparison
 uses exact integer/rational arithmetic. Source/input/result hashes bind the
 artifact; full replay verifies every retained result, including failures.
+
+An additional independent exhaustive check of every catalogue budget query is
+available as `python -m reserve_recovery.check_catalogue`. It was added after
+the run to validate the frozen outputs, not to change the method. Omit the
+verifier's `--output` argument to verify the published snapshot. Optional figure
+generation requires Matplotlib; use a new output directory with
+`python -m reserve_recovery.plot --output work/reserve_figures`.

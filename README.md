@@ -76,6 +76,15 @@ The [interpretation](feasibility_frontier/INTERPRETATION.md) also explains why t
 zero-donor-loss four-action case needs no temporal optimizer. This is a future-
 known opportunity boundary, not a successful online controller or new holdout.
 
+A [limited cumulative reserve analysis](reserve_recovery/README.md) separates
+per-slot payload capacity from a non-refilling additional-byte entitlement.
+It audits absolute demand, proves conditional timing advantages and causal
+admission failures against rolling Nash/max-min, and checks the same exposed
+catalogue under fixed cumulative budgets. The existing traffic captures do not
+establish real spare path capacity. Exact future-known gaps remain diagnostic,
+not online gains; [all findings and limitations](reserve_recovery/INTERPRETATION.md)
+are retained before any further holdout.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 

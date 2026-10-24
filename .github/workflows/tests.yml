@@ -53,5 +53,7 @@ jobs:
           python -m feasibility_frontier.check_breakpoints
       - name: Verify limited recovery reserve and analytical causal comparisons
         if: hashFiles('reserve_recovery/results/analysis_v1/metadata.json') != ''
-        run: python -m reserve_recovery.verify
+        run: |
+          python -m reserve_recovery.verify
+          python -m reserve_recovery.check_catalogue
 

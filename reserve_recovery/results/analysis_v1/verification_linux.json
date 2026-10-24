@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "scientific_sha256": "f547b786ef5e9fd4514f42b64003ecd1b5f92ee7eb0c57d8fe57b2a38e51158f",
+  "source_input_result_hashes": true,
+  "episodes": 168,
+  "analytical_cases": 8,
+  "minimum_reserve_witnesses": 304,
+  "online_vs_oracle_checks": 10080,
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}
