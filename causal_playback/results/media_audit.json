@@ -1,0 +1,2171 @@
+{
+  "passed": true,
+  "posthoc_validation_only": true,
+  "segments": 216,
+  "sources": 36,
+  "manifest_sha256": "43e3f61a27a1a122683a2cb8909d1d7f50f04e38a21b1da0e5c6989c1dcf485a",
+  "auditor_sha256": "3601578fa2e18e65ee9bb30e7b7ea9c1c1bcdf7a6e5080d4e07c1def03f180ba",
+  "rows": [
+    {
+      "relative_path": "v2/ParkFountains01/r0/s0.mp4",
+      "scene": "ParkFountains01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 128752,
+      "container_overhead_bytes": 4592
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r0/s1.mp4",
+      "scene": "ParkFountains01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112015,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r0/s2.mp4",
+      "scene": "ParkFountains01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 113195,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r0/s3.mp4",
+      "scene": "ParkFountains01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 109737,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r0/s4.mp4",
+      "scene": "ParkFountains01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 111858,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r0/s5.mp4",
+      "scene": "ParkFountains01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 111751,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r1/s0.mp4",
+      "scene": "ParkFountains01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 217400,
+      "container_overhead_bytes": 4592
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r1/s1.mp4",
+      "scene": "ParkFountains01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 222763,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r1/s2.mp4",
+      "scene": "ParkFountains01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 223040,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r1/s3.mp4",
+      "scene": "ParkFountains01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 213298,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r1/s4.mp4",
+      "scene": "ParkFountains01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 215975,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r1/s5.mp4",
+      "scene": "ParkFountains01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 219143,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r2/s0.mp4",
+      "scene": "ParkFountains01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 224726,
+      "container_overhead_bytes": 4593
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r2/s1.mp4",
+      "scene": "ParkFountains01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 229293,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r2/s2.mp4",
+      "scene": "ParkFountains01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 260751,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r2/s3.mp4",
+      "scene": "ParkFountains01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 262555,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r2/s4.mp4",
+      "scene": "ParkFountains01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 259046,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r2/s5.mp4",
+      "scene": "ParkFountains01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 274793,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r3/s0.mp4",
+      "scene": "ParkFountains01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 230679,
+      "container_overhead_bytes": 4593
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r3/s1.mp4",
+      "scene": "ParkFountains01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 229231,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r3/s2.mp4",
+      "scene": "ParkFountains01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 260715,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r3/s3.mp4",
+      "scene": "ParkFountains01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 262555,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r3/s4.mp4",
+      "scene": "ParkFountains01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 259046,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r3/s5.mp4",
+      "scene": "ParkFountains01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 274793,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r4/s0.mp4",
+      "scene": "ParkFountains01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 1086762,
+      "container_overhead_bytes": 4610
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r4/s1.mp4",
+      "scene": "ParkFountains01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1144174,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r4/s2.mp4",
+      "scene": "ParkFountains01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1114058,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r4/s3.mp4",
+      "scene": "ParkFountains01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1138355,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r4/s4.mp4",
+      "scene": "ParkFountains01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1136312,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r4/s5.mp4",
+      "scene": "ParkFountains01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1175618,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r5/s0.mp4",
+      "scene": "ParkFountains01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 4458000,
+      "container_overhead_bytes": 4660
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r5/s1.mp4",
+      "scene": "ParkFountains01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4824285,
+      "container_overhead_bytes": 4636
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r5/s2.mp4",
+      "scene": "ParkFountains01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4693503,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r5/s3.mp4",
+      "scene": "ParkFountains01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4718809,
+      "container_overhead_bytes": 4636
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r5/s4.mp4",
+      "scene": "ParkFountains01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4881437,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v2/ParkFountains01/r5/s5.mp4",
+      "scene": "ParkFountains01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4566799,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v2/River01/r0/s0.mp4",
+      "scene": "River01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 130503,
+      "container_overhead_bytes": 4596
+    },
+    {
+      "relative_path": "v2/River01/r0/s1.mp4",
+      "scene": "River01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112379,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/River01/r0/s2.mp4",
+      "scene": "River01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 111327,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/River01/r0/s3.mp4",
+      "scene": "River01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112165,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/River01/r0/s4.mp4",
+      "scene": "River01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 111023,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/River01/r0/s5.mp4",
+      "scene": "River01",
+      "segment": 5,
+      "frames": 299,
+      "duration_seconds": 9.966667,
+      "start_seconds": 0.0,
+      "file_bytes": 111488,
+      "container_overhead_bytes": 4572
+    },
+    {
+      "relative_path": "v2/River01/r1/s0.mp4",
+      "scene": "River01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 236188,
+      "container_overhead_bytes": 4597
+    },
+    {
+      "relative_path": "v2/River01/r1/s1.mp4",
+      "scene": "River01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 222982,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r1/s2.mp4",
+      "scene": "River01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 215759,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r1/s3.mp4",
+      "scene": "River01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 222156,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r1/s4.mp4",
+      "scene": "River01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 213193,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r1/s5.mp4",
+      "scene": "River01",
+      "segment": 5,
+      "frames": 299,
+      "duration_seconds": 9.966667,
+      "start_seconds": 0.0,
+      "file_bytes": 225039,
+      "container_overhead_bytes": 4573
+    },
+    {
+      "relative_path": "v2/River01/r2/s0.mp4",
+      "scene": "River01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 277373,
+      "container_overhead_bytes": 4597
+    },
+    {
+      "relative_path": "v2/River01/r2/s1.mp4",
+      "scene": "River01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 303933,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r2/s2.mp4",
+      "scene": "River01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 274482,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r2/s3.mp4",
+      "scene": "River01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 276495,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r2/s4.mp4",
+      "scene": "River01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 311947,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/River01/r2/s5.mp4",
+      "scene": "River01",
+      "segment": 5,
+      "frames": 299,
+      "duration_seconds": 9.966667,
+      "start_seconds": 0.0,
+      "file_bytes": 322961,
+      "container_overhead_bytes": 4573
+    },
+    {
+      "relative_path": "v2/River01/r3/s0.mp4",
+      "scene": "River01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 278315,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v2/River01/r3/s1.mp4",
+      "scene": "River01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 303934,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/River01/r3/s2.mp4",
+      "scene": "River01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 274516,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/River01/r3/s3.mp4",
+      "scene": "River01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 276617,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/River01/r3/s4.mp4",
+      "scene": "River01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 311802,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/River01/r3/s5.mp4",
+      "scene": "River01",
+      "segment": 5,
+      "frames": 299,
+      "duration_seconds": 9.966667,
+      "start_seconds": 0.0,
+      "file_bytes": 322974,
+      "container_overhead_bytes": 4574
+    },
+    {
+      "relative_path": "v2/River01/r4/s0.mp4",
+      "scene": "River01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 1096568,
+      "container_overhead_bytes": 4614
+    },
+    {
+      "relative_path": "v2/River01/r4/s1.mp4",
+      "scene": "River01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1203833,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/River01/r4/s2.mp4",
+      "scene": "River01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1210828,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/River01/r4/s3.mp4",
+      "scene": "River01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1185285,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/River01/r4/s4.mp4",
+      "scene": "River01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1188168,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/River01/r4/s5.mp4",
+      "scene": "River01",
+      "segment": 5,
+      "frames": 299,
+      "duration_seconds": 9.966667,
+      "start_seconds": 0.0,
+      "file_bytes": 1235867,
+      "container_overhead_bytes": 4590
+    },
+    {
+      "relative_path": "v2/River01/r5/s0.mp4",
+      "scene": "River01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 4710637,
+      "container_overhead_bytes": 4615
+    },
+    {
+      "relative_path": "v2/River01/r5/s1.mp4",
+      "scene": "River01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4862081,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/River01/r5/s2.mp4",
+      "scene": "River01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4719606,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/River01/r5/s3.mp4",
+      "scene": "River01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4674639,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/River01/r5/s4.mp4",
+      "scene": "River01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4758952,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/River01/r5/s5.mp4",
+      "scene": "River01",
+      "segment": 5,
+      "frames": 299,
+      "duration_seconds": 9.966667,
+      "start_seconds": 0.0,
+      "file_bytes": 4929585,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/Train01/r0/s0.mp4",
+      "scene": "Train01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 127610,
+      "container_overhead_bytes": 4596
+    },
+    {
+      "relative_path": "v2/Train01/r0/s1.mp4",
+      "scene": "Train01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 113119,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/Train01/r0/s2.mp4",
+      "scene": "Train01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 113273,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/Train01/r0/s3.mp4",
+      "scene": "Train01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 109436,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/Train01/r0/s4.mp4",
+      "scene": "Train01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 110828,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/Train01/r0/s5.mp4",
+      "scene": "Train01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 113707,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v2/Train01/r1/s0.mp4",
+      "scene": "Train01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 216376,
+      "container_overhead_bytes": 4597
+    },
+    {
+      "relative_path": "v2/Train01/r1/s1.mp4",
+      "scene": "Train01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 235523,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r1/s2.mp4",
+      "scene": "Train01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 211941,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r1/s3.mp4",
+      "scene": "Train01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 224386,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r1/s4.mp4",
+      "scene": "Train01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 204891,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r1/s5.mp4",
+      "scene": "Train01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 238270,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r2/s0.mp4",
+      "scene": "Train01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 178630,
+      "container_overhead_bytes": 4597
+    },
+    {
+      "relative_path": "v2/Train01/r2/s1.mp4",
+      "scene": "Train01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 250590,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r2/s2.mp4",
+      "scene": "Train01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 256588,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r2/s3.mp4",
+      "scene": "Train01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 296404,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r2/s4.mp4",
+      "scene": "Train01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 242003,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r2/s5.mp4",
+      "scene": "Train01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 323723,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v2/Train01/r3/s0.mp4",
+      "scene": "Train01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 177082,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v2/Train01/r3/s1.mp4",
+      "scene": "Train01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 250654,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/Train01/r3/s2.mp4",
+      "scene": "Train01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 256589,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/Train01/r3/s3.mp4",
+      "scene": "Train01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 296405,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/Train01/r3/s4.mp4",
+      "scene": "Train01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 242004,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/Train01/r3/s5.mp4",
+      "scene": "Train01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 323112,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v2/Train01/r4/s0.mp4",
+      "scene": "Train01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 1064302,
+      "container_overhead_bytes": 4614
+    },
+    {
+      "relative_path": "v2/Train01/r4/s1.mp4",
+      "scene": "Train01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1484304,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/Train01/r4/s2.mp4",
+      "scene": "Train01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1158687,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/Train01/r4/s3.mp4",
+      "scene": "Train01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1092939,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/Train01/r4/s4.mp4",
+      "scene": "Train01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1100428,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/Train01/r4/s5.mp4",
+      "scene": "Train01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1230050,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v2/Train01/r5/s0.mp4",
+      "scene": "Train01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 4813520,
+      "container_overhead_bytes": 4663
+    },
+    {
+      "relative_path": "v2/Train01/r5/s1.mp4",
+      "scene": "Train01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 5097628,
+      "container_overhead_bytes": 4651
+    },
+    {
+      "relative_path": "v2/Train01/r5/s2.mp4",
+      "scene": "Train01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4792410,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/Train01/r5/s3.mp4",
+      "scene": "Train01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4697744,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/Train01/r5/s4.mp4",
+      "scene": "Train01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4730812,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v2/Train01/r5/s5.mp4",
+      "scene": "Train01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4819256,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r0/s0.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 126941,
+      "container_overhead_bytes": 4592
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r0/s1.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 109713,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r0/s2.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 116308,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r0/s3.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 109793,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r0/s4.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 110635,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r0/s5.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 113195,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r1/s0.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 216662,
+      "container_overhead_bytes": 4592
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r1/s1.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 218856,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r1/s2.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 222415,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r1/s3.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 224938,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r1/s4.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 209635,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r1/s5.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 219107,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r2/s0.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 164125,
+      "container_overhead_bytes": 4593
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r2/s1.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 196377,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r2/s2.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 224670,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r2/s3.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 263182,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r2/s4.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 317163,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r2/s5.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 326903,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r3/s0.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 163597,
+      "container_overhead_bytes": 4593
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r3/s1.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 196366,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r3/s2.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 224670,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r3/s3.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 263182,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r3/s4.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 310062,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r3/s5.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 324462,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r4/s0.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 1300755,
+      "container_overhead_bytes": 4610
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r4/s1.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1431756,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r4/s2.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1226246,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r4/s3.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1131837,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r4/s4.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1117125,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r4/s5.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1145705,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r5/s0.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 4753172,
+      "container_overhead_bytes": 4660
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r5/s1.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4765288,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r5/s2.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4824082,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r5/s3.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4700839,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r5/s4.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4715418,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v3/BuskingUnderpass05/r5/s5.mp4",
+      "scene": "BuskingUnderpass05",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4747262,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r0/s0.mp4",
+      "scene": "Cheerleading01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 129723,
+      "container_overhead_bytes": 4592
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r0/s1.mp4",
+      "scene": "Cheerleading01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 111158,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r0/s2.mp4",
+      "scene": "Cheerleading01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112917,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r0/s3.mp4",
+      "scene": "Cheerleading01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 110880,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r0/s4.mp4",
+      "scene": "Cheerleading01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112027,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r0/s5.mp4",
+      "scene": "Cheerleading01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112476,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r1/s0.mp4",
+      "scene": "Cheerleading01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 226023,
+      "container_overhead_bytes": 4592
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r1/s1.mp4",
+      "scene": "Cheerleading01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 219834,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r1/s2.mp4",
+      "scene": "Cheerleading01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 225297,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r1/s3.mp4",
+      "scene": "Cheerleading01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 211140,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r1/s4.mp4",
+      "scene": "Cheerleading01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 228639,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r1/s5.mp4",
+      "scene": "Cheerleading01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 229961,
+      "container_overhead_bytes": 4580
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r2/s0.mp4",
+      "scene": "Cheerleading01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 226907,
+      "container_overhead_bytes": 4593
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r2/s1.mp4",
+      "scene": "Cheerleading01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 266977,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r2/s2.mp4",
+      "scene": "Cheerleading01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 322629,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r2/s3.mp4",
+      "scene": "Cheerleading01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 282833,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r2/s4.mp4",
+      "scene": "Cheerleading01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 303257,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r2/s5.mp4",
+      "scene": "Cheerleading01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 318533,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r3/s0.mp4",
+      "scene": "Cheerleading01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 228306,
+      "container_overhead_bytes": 4593
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r3/s1.mp4",
+      "scene": "Cheerleading01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 266965,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r3/s2.mp4",
+      "scene": "Cheerleading01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 322455,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r3/s3.mp4",
+      "scene": "Cheerleading01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 282813,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r3/s4.mp4",
+      "scene": "Cheerleading01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 303257,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r3/s5.mp4",
+      "scene": "Cheerleading01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 318533,
+      "container_overhead_bytes": 4581
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r4/s0.mp4",
+      "scene": "Cheerleading01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 1209464,
+      "container_overhead_bytes": 4610
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r4/s1.mp4",
+      "scene": "Cheerleading01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1268911,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r4/s2.mp4",
+      "scene": "Cheerleading01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1255425,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r4/s3.mp4",
+      "scene": "Cheerleading01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1124494,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r4/s4.mp4",
+      "scene": "Cheerleading01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1172533,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r4/s5.mp4",
+      "scene": "Cheerleading01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1294939,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r5/s0.mp4",
+      "scene": "Cheerleading01",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 4795249,
+      "container_overhead_bytes": 4648
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r5/s1.mp4",
+      "scene": "Cheerleading01",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4771843,
+      "container_overhead_bytes": 4648
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r5/s2.mp4",
+      "scene": "Cheerleading01",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4777682,
+      "container_overhead_bytes": 4636
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r5/s3.mp4",
+      "scene": "Cheerleading01",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4818731,
+      "container_overhead_bytes": 4628
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r5/s4.mp4",
+      "scene": "Cheerleading01",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4764012,
+      "container_overhead_bytes": 4600
+    },
+    {
+      "relative_path": "v3/Cheerleading01/r5/s5.mp4",
+      "scene": "Cheerleading01",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4929884,
+      "container_overhead_bytes": 4628
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r0/s0.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 129571,
+      "container_overhead_bytes": 4596
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r0/s1.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112083,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r0/s2.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112577,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r0/s3.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 109369,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r0/s4.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 112366,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r0/s5.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 110790,
+      "container_overhead_bytes": 4584
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r1/s0.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 215567,
+      "container_overhead_bytes": 4597
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r1/s1.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 219479,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r1/s2.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 218808,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r1/s3.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 219156,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r1/s4.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 219162,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r1/s5.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 219207,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r2/s0.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 181394,
+      "container_overhead_bytes": 4597
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r2/s1.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 228429,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r2/s2.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 239356,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r2/s3.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 241862,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r2/s4.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 242522,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r2/s5.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 263540,
+      "container_overhead_bytes": 4585
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r3/s0.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 180959,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r3/s1.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 228424,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r3/s2.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 239357,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r3/s3.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 241863,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r3/s4.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 242523,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r3/s5.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 264343,
+      "container_overhead_bytes": 4586
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r4/s0.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 995771,
+      "container_overhead_bytes": 4598
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r4/s1.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1247075,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r4/s2.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1177208,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r4/s3.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1092089,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r4/s4.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1154384,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r4/s5.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 1151146,
+      "container_overhead_bytes": 4602
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r5/s0.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 0,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.1,
+      "file_bytes": 4847291,
+      "container_overhead_bytes": 4663
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r5/s1.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 1,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 5108461,
+      "container_overhead_bytes": 4667
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r5/s2.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 2,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4679321,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r5/s3.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 3,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4753075,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r5/s4.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 4,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4912760,
+      "container_overhead_bytes": 4603
+    },
+    {
+      "relative_path": "v3/ConferenceParticipant02/r5/s5.mp4",
+      "scene": "ConferenceParticipant02",
+      "segment": 5,
+      "frames": 300,
+      "duration_seconds": 10.0,
+      "start_seconds": 0.0,
+      "file_bytes": 4521880,
+      "container_overhead_bytes": 4603
+    }
+  ],
+  "finding": "River01 final segment has 299/30 seconds; all others have 10 seconds. Frozen clock uses nominal 10 seconds."
+}

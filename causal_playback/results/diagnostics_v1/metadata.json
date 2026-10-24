@@ -1,0 +1,18 @@
+{
+  "script_sha256": "33b1d114c61484ef5296218c178ed916cb635adae550ab93475564925528e84f",
+  "input_sha256": {
+    "causal_playback/results/replay_v1/results.json.gz": "c677c9e6161a7593c9f39b1e1060ee4729d581075fc18b6952e3822df1a26e13",
+    "causal_playback/results/live_v1/results.json": "d8ad1b6700d4c7b8f27b2724e6ac9175a086f5392fa3584820de558e10ff0b97",
+    "causal_playback/results/replay_v1/metadata.json": "d5cae0fdffe263d3017afdaa90098f9404c4fdd905ff9bf2554f244338b8631f",
+    "causal_playback/results/live_v1/metadata.json": "8870037dd55f26fc5a5a9bb4313f325bb486124037ad7781211009444eaa2c76"
+  },
+  "result_sha256": {
+    "diagnostics.json": "9901154523cf379958faabdb095e45f7eaa66266aeabc468c9f6c1d4c8fdf5c0",
+    "exposed_recovery.png": "df0c30a386bca42587fbf7bd5ebab781966ccf8b9abccf57fd92974649a925ff",
+    "exposed_recovery.svg": "8845b4e2c73aa594e50cd8579f475ee0369cb0dd3b1e6527739e2230c371cbd7",
+    "live_playback.png": "b4b0441603d72ea40e816bcec7df278a5a17ee41b928f44c1d194f99b70cd2b9",
+    "live_playback.svg": "83f61d6df3d6db1184d17977322ecb7999da97024d4cb421a25cf285173fefe5",
+    "REPORT.md": "75caeb26f1e5681b5f5d27e4340a1b32d7e48e1d1893a1bf775fe3e79e78f702"
+  },
+  "scientific_sha256": "bc52a7d2eb9e26d920c092a4039fafb48efa81e20aa149fb853ca69cbc209407"
+}

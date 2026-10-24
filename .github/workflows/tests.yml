@@ -68,5 +68,8 @@ jobs:
         run: python -m causal_playback.verify
       - name: Replay measured segment receipts and delayed feedback
         if: hashFiles('causal_playback/results/live_v1/metadata.json') != ''
-        run: python -m causal_playback.verify --live
+        run: |
+          python -m causal_playback.verify --live
+          python -m causal_playback.audit_integration
+          python -m causal_playback.diagnose --verify
 

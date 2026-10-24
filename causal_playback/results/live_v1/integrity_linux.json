@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "episodes": 30,
+  "verified_receipts": 240,
+  "nominal_rounds": 96,
+  "stress_rounds": 24,
+  "nominal_deadline_misses": 0,
+  "stress_deadline_misses": 12,
+  "scientific_sha256": "c01e4c65ded2f9f3583f351f674cec16e819b0c371c8256278e74123fbacc9c0",
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}

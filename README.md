@@ -96,6 +96,16 @@ content/budget cases and post-hoc controls are retained in the
 capacity, safe admission, independent confirmation or an integrated player.
 No additional holdout was consumed and no manuscript claim was updated.
 
+A subsequent [causal-quality and selected-transfer integration](causal_playback/README.md)
+replaces perfect current viewport quality with completed-feedback-only estimates
+and transfers actual selected MP4 files with playback-clock accounting. All240
+file receipts verify and96/96 nominal rounds meet the timing deadline; reduced
+service misses12/24 stress deadlines. However, the full1,176-run exposed replay
+**fails** its practical progression screen: recovery is not better than greedy,
+and quality tradeoffs remain. [Findings and limitations](causal_playback/INTERPRETATION.md)
+separate this engineering validation from scientific superiority. No new
+holdout or manuscript update was made.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 

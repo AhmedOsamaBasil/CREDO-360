@@ -1,0 +1,182 @@
+[
+  {
+    "index": 0,
+    "key": "v3:BuskingUnderpass05:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 1,
+    "key": "v3:BuskingUnderpass05:1:2",
+    "policy": "greedy_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 2,
+    "key": "v3:BuskingUnderpass05:1:2",
+    "policy": "rolling_nash",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 3,
+    "key": "v3:BuskingUnderpass05:1:2",
+    "policy": "rolling_maxmin",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 4,
+    "key": "v3:Cheerleading01:1:2",
+    "policy": "greedy_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 5,
+    "key": "v3:Cheerleading01:1:2",
+    "policy": "rolling_nash",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 6,
+    "key": "v3:Cheerleading01:1:2",
+    "policy": "rolling_maxmin",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 7,
+    "key": "v3:Cheerleading01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 8,
+    "key": "v3:ConferenceParticipant02:1:2",
+    "policy": "rolling_nash",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 9,
+    "key": "v3:ConferenceParticipant02:1:2",
+    "policy": "rolling_maxmin",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 10,
+    "key": "v3:ConferenceParticipant02:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 11,
+    "key": "v3:ConferenceParticipant02:1:2",
+    "policy": "greedy_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 12,
+    "key": "v2:ParkFountains01:1:2",
+    "policy": "rolling_maxmin",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 13,
+    "key": "v2:ParkFountains01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 14,
+    "key": "v2:ParkFountains01:1:2",
+    "policy": "greedy_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 15,
+    "key": "v2:ParkFountains01:1:2",
+    "policy": "rolling_nash",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 16,
+    "key": "v2:River01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 17,
+    "key": "v2:River01:1:2",
+    "policy": "greedy_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 18,
+    "key": "v2:River01:1:2",
+    "policy": "rolling_nash",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 19,
+    "key": "v2:River01:1:2",
+    "policy": "rolling_maxmin",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 20,
+    "key": "v2:Train01:1:2",
+    "policy": "greedy_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 21,
+    "key": "v2:Train01:1:2",
+    "policy": "rolling_nash",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 22,
+    "key": "v2:Train01:1:2",
+    "policy": "rolling_maxmin",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 23,
+    "key": "v2:Train01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 1500
+  },
+  {
+    "index": 24,
+    "key": "v3:BuskingUnderpass05:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 750
+  },
+  {
+    "index": 25,
+    "key": "v3:Cheerleading01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 750
+  },
+  {
+    "index": 26,
+    "key": "v3:ConferenceParticipant02:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 750
+  },
+  {
+    "index": 27,
+    "key": "v2:ParkFountains01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 750
+  },
+  {
+    "index": 28,
+    "key": "v2:River01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 750
+  },
+  {
+    "index": 29,
+    "key": "v2:Train01:1:2",
+    "policy": "knn_recovery",
+    "rate_kbit": 750
+  }
+]
