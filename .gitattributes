@@ -39,3 +39,8 @@ service_opportunity/*.py text eol=lf
 service_opportunity/*.md text eol=lf
 service_opportunity/results/** -text whitespace=cr-at-eol
 service_opportunity/results/**/*.svg -whitespace
+causal_playback/*.py text eol=lf
+causal_playback/*.md text eol=lf
+causal_playback/data/** -text whitespace=cr-at-eol
+causal_playback/results/** -text whitespace=cr-at-eol
+causal_playback/results/**/*.svg -whitespace

@@ -23,7 +23,7 @@ jobs:
       - name: Portable-model tests
         run: python live_testbed/test_portable.py
       - name: Objective recovery, timing and regression tests
-        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier reserve_recovery service_opportunity live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
+        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier reserve_recovery service_opportunity causal_playback live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
       - name: Verify published pilot artifact integrity
         run: python -m recovery_pilot.audit_results
       - name: Replay and verify the fresh-content feasibility artifact
@@ -63,4 +63,10 @@ jobs:
           python -m service_opportunity.check_oracle
           python -m service_opportunity.ablation --verify
           python -m service_opportunity.check_support
+      - name: Verify causal current-quality and measured playback integration
+        if: hashFiles('causal_playback/results/replay_v1/metadata.json') != ''
+        run: python -m causal_playback.verify
+      - name: Replay measured segment receipts and delayed feedback
+        if: hashFiles('causal_playback/results/live_v1/metadata.json') != ''
+        run: python -m causal_playback.verify --live
 
