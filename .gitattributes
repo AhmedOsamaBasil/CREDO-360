@@ -29,3 +29,5 @@ causal_compensation/results/** -text whitespace=cr-at-eol
 feasibility_frontier/*.py text eol=lf
 feasibility_frontier/*.md text eol=lf
 feasibility_frontier/results/** -text whitespace=cr-at-eol
+# Preserve whitespace emitted inside generated SVG path coordinates.
+feasibility_frontier/results/**/*.svg -whitespace

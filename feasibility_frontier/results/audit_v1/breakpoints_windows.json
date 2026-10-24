@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "post_run_additional_validation": true,
+  "method_or_target_changed": false,
+  "episodes": 168,
+  "frontier_points": 6815,
+  "independent_dp_checks": 18135,
+  "endpoint_feasibility": true,
+  "minimum_harm_at_endpoint": true,
+  "minimum_resource_for_endpoint_harm": true,
+  "script_sha256": "6504140aadd8d87ef098d5ce1d575c9e2b1d6d60b4db3092e3d4f90d1cee2275",
+  "results_sha256": "703227bbd12b0f4510decb69b2f0fef919b49f14dcd79c306fb7c4a5549e02fc",
+  "metadata_sha256": "fc4f91b00187005fc642721bb120d115e65ae16ce31d69b4a16168a5ee97e509",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

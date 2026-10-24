@@ -1,0 +1,9 @@
+{
+  "renderer_sha256": "1735dff223853ea6c122bcedd10172044e4f503e9656129b216f876a3aef2da5",
+  "scientific_results_sha256": "703227bbd12b0f4510decb69b2f0fef919b49f14dcd79c306fb7c4a5549e02fc",
+  "matplotlib": "3.11.1",
+  "figure_sha256": {
+    "feasibility_frontier.png": "df04912126749f587aebc3f222466d5a09d28e8a10d7d6f35c10d32ab3003424",
+    "feasibility_frontier.svg": "0d7deaa506020ca37bb0f56724cde3e8fd1e166965406f41a1bea85549fa7a1e"
+  }
+}

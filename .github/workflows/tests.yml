@@ -48,5 +48,7 @@ jobs:
         run: python -m causal_compensation.diagnose
       - name: Verify exposed-data feasibility frontier and independent dynamic programming
         if: hashFiles('feasibility_frontier/results/audit_v1/metadata.json') != ''
-        run: python -m feasibility_frontier.verify
+        run: |
+          python -m feasibility_frontier.verify
+          python -m feasibility_frontier.check_breakpoints
 

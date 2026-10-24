@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "episodes": 168,
+  "witnesses": 6815,
+  "independent_dp_checks": 7056,
+  "monotonicity": true,
+  "unrestricted_matches_prior": true,
+  "unrestricted_feasible": 157,
+  "source_input_result_hashes": true,
+  "scientific_sha256": "1378353ca5e0d0d3db0ad4d194f8454aedb612ab5f0db4ed83b66bb9b1f3ae2c",
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}

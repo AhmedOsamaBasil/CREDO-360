@@ -66,6 +66,16 @@ are no episodes with two competing positive compensation opportunities. The
 verification from this negative feasibility finding. All outcomes, conditional
 certificates and the separately labeled headroom diagnosis are retained.
 
+An [exact feasibility-frontier audit](feasibility_frontier/README.md) now identifies
+the resource and donor allowances needed for half-repayment in those same exposed
+episodes. No episode is feasible at <=2x peak byte allowance, even without donor
+protection. At 3x with zero donor loss and up to four recovery actions, 147/168 are
+feasible; eleven remain impossible at any allowance. Exact rational frontiers,
+integral witnesses and independent dynamic-programming checks are published.
+The [interpretation](feasibility_frontier/INTERPRETATION.md) also explains why the
+zero-donor-loss four-action case needs no temporal optimizer. This is a future-
+known opportunity boundary, not a successful online controller or new holdout.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 
