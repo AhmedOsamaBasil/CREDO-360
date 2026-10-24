@@ -43,4 +43,7 @@ jobs:
       - name: Replay bounded-loss development on exposed data
         if: hashFiles('causal_compensation/results/development_v1/metadata.json') != ''
         run: python -m causal_compensation.verify
+      - name: Verify the separately labeled opportunity diagnosis
+        if: hashFiles('causal_compensation/results/development_v1/posthoc_metadata.json') != ''
+        run: python -m causal_compensation.diagnose
 

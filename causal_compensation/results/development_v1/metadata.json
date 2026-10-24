@@ -1,0 +1,30 @@
+{
+  "exposed_development_only": true,
+  "python": "3.12.14",
+  "source_sha256": {
+    "causal_compensation/__init__.py": "50df951d61ce073979a12b7257e6176856323b7c613ac5078a77b883b522b9b8",
+    "causal_compensation/core.py": "7077e038c84099f815c3bf6914aba685c3c66953b51a70ed6d9b07dbc633cdca",
+    "causal_compensation/data.py": "209a6cb0012e024eea294c128bdd78bab7b3c72bb8462a3815b5d658a54f410f",
+    "causal_compensation/model.py": "e969eccbe400e6cf1cc145912e2f8ef0fecb7b0b91a942d45424fb5a8be56999",
+    "causal_compensation/PLAN.md": "284bf4b719191e928f41c58245bff3aa9f5dcfee1acd41d01619daf65bb17d65",
+    "causal_compensation/replay.py": "c29b6d15c424c90929b7fa1fbca48586102ea60e6c77a9d1bd97e683ae863fd9",
+    "causal_compensation/run.py": "a914dc1684575b3fb69e8e58085aaca2e5f23f0a5e0f1703f1783b6afa9d3a43",
+    "causal_compensation/test_core.py": "01f07970e686f16b422b61770b0089d428fa5d74f3fb38b489831c7728f8bd74",
+    "causal_compensation/test_replay.py": "4f1fc371abeff5fd75d74e5d34b7cb04e49e44fade76ad97a0075617b88ae0ef",
+    "causal_compensation/THEORY.md": "fb76a42c976a18a284f0b5b5991232c15e95a1013c3a8718f75dd72b5edf4a3a",
+    "causal_compensation/verify.py": "95e1f9ea05f5230d4547f3f5b849bb9553a065eee876818b945098586b871154"
+  },
+  "input_sha256": {
+    "feasibility_recovery/data/v2/calibration_quality.csv": "6754c803d7bdb7c95bb6bac27361b8a2850e7aa8331833f1cf055e4fc2c54e1b",
+    "feasibility_recovery/data/v2/heldout_quality.csv": "98ffb431172b2d325f8fc53e3f182ee80ca441e0821e7e049e18f25915d97a9a",
+    "feasibility_recovery/data/v2/segment_sizes.csv": "087ad8c107bc4b4866eecf48c96e33957aeefa334e7f22129d26cb8ab0efc06b",
+    "horizon_recovery/data/v3/calibration_quality.csv": "6d9caa28a2a52022b14080b6c418196eb3b0075574b6c32a72019b30233162e7",
+    "horizon_recovery/data/v3/heldout_quality.csv": "5f3719cb9080f192c16f83353734420bb4d14d973ed94de741fec7e414fc40fe",
+    "horizon_recovery/data/v3/segment_sizes.csv": "d0e6d9fe70d8f3dacb13f7a64d3ad733ef94f4799207307f68987cd2a23b6e6b"
+  },
+  "result_sha256": {
+    "REPORT.md": "556e0def13c5685b3ef9c256d59ca3d8dc7a080c005cefc4d6873fb7c092011b",
+    "results.json": "87e5b9f46e66435dc536323876530bd52e6357850cff9004fced36e01bf3c7f8"
+  },
+  "scientific_sha256": "74965a6cd969334dc66e8f91094b432578c38533abb7f85e291a492adc605017"
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "exposed_development_only": true,
+  "episodes": 168,
+  "source_input_result_hashes": true,
+  "all_outcomes_and_certificates_recomputed": true,
+  "scientific_sha256": "74965a6cd969334dc66e8f91094b432578c38533abb7f85e291a492adc605017",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

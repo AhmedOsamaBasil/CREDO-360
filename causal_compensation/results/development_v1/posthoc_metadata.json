@@ -1,0 +1,15 @@
+{
+  "posthoc": true,
+  "used_for_tuning": false,
+  "script_sha256": "a03864fff1d6f050afd2d2b1bee11a2717c2f636c3080d92ba099287776e9f98",
+  "base_result_sha256": "87e5b9f46e66435dc536323876530bd52e6357850cff9004fced36e01bf3c7f8",
+  "result_sha256": "a557812579d8eb21f9022304fa24bbf135c2cec726ab9e061fba39f7f7ee81f3",
+  "input_sha256": {
+    "feasibility_recovery/data/v2/calibration_quality.csv": "6754c803d7bdb7c95bb6bac27361b8a2850e7aa8331833f1cf055e4fc2c54e1b",
+    "feasibility_recovery/data/v2/heldout_quality.csv": "98ffb431172b2d325f8fc53e3f182ee80ca441e0821e7e049e18f25915d97a9a",
+    "feasibility_recovery/data/v2/segment_sizes.csv": "087ad8c107bc4b4866eecf48c96e33957aeefa334e7f22129d26cb8ab0efc06b",
+    "horizon_recovery/data/v3/calibration_quality.csv": "6d9caa28a2a52022b14080b6c418196eb3b0075574b6c32a72019b30233162e7",
+    "horizon_recovery/data/v3/heldout_quality.csv": "5f3719cb9080f192c16f83353734420bb4d14d973ed94de741fec7e414fc40fe",
+    "horizon_recovery/data/v3/segment_sizes.csv": "d0e6d9fe70d8f3dacb13f7a64d3ad733ef94f4799207307f68987cd2a23b6e6b"
+  }
+}

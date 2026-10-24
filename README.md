@@ -57,6 +57,15 @@ model, and dependence on an exogenous future. This is not a fitted predictor,
 a new minimax principle or a successful empirical validation. No additional
 holdout data were used; all outcomes and limitations are reported.
 
+The subsequent [absolute-loss and causal-opportunity development](causal_compensation/README.md)
+adds pathwise loss-cap filtering and an exposed-data nearest-neighbor forecast,
+tested against rolling Nash and max-min. Its frozen 168-episode screen fails:
+no episode can satisfy half-repayment under the tested service menu, and there
+are no episodes with two competing positive compensation opportunities. The
+[interpretation](causal_compensation/INTERPRETATION.md) separates software
+verification from this negative feasibility finding. All outcomes, conditional
+certificates and the separately labeled headroom diagnosis are retained.
+
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 

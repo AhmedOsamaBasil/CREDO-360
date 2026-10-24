@@ -16,6 +16,9 @@ player or human-QoE validation.
   rational certificates, causal boundaries and infeasibility handling.
 - [Complete development report](results/development_v1/REPORT.md): all scenes,
   sensitivities, controls and failures after evaluation.
+- [Interpretation and feasibility diagnosis](INTERPRETATION.md): the completed
+  screen fails; no episode can satisfy the half-repayment request under the
+  tested menu, even with perfect future knowledge. No fresh test is justified.
 
 ## Reproduce
 
@@ -24,6 +27,7 @@ From the repository root, with Python 3.12+, NumPy, SciPy and pytest:
 ```bash
 python -m pytest causal_compensation -q
 python -m causal_compensation.verify
+python -m causal_compensation.diagnose
 # Regenerate only into a new directory; never overwrite the published batch:
 python -m causal_compensation.run --output work/causal_compensation_rebuild
 ```

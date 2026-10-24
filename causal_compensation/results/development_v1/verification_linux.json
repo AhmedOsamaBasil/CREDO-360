@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "exposed_development_only": true,
+  "episodes": 168,
+  "source_input_result_hashes": true,
+  "all_outcomes_and_certificates_recomputed": true,
+  "scientific_sha256": "74965a6cd969334dc66e8f91094b432578c38533abb7f85e291a492adc605017",
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}
