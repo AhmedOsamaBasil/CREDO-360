@@ -26,3 +26,6 @@ allowance_scheduler/results/** -text whitespace=cr-at-eol
 causal_compensation/*.py text eol=lf
 causal_compensation/*.md text eol=lf
 causal_compensation/results/** -text whitespace=cr-at-eol
+feasibility_frontier/*.py text eol=lf
+feasibility_frontier/*.md text eol=lf
+feasibility_frontier/results/** -text whitespace=cr-at-eol
