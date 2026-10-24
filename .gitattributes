@@ -14,3 +14,6 @@ horizon_recovery/*.md text eol=lf
 horizon_recovery/*.json text eol=lf
 horizon_recovery/data/** -text whitespace=cr-at-eol
 horizon_recovery/results/** -text whitespace=cr-at-eol
+objective_diagnostics/*.py text eol=lf
+objective_diagnostics/*.md text eol=lf
+objective_diagnostics/results/** -text whitespace=cr-at-eol
