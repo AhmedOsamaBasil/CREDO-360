@@ -23,7 +23,7 @@ jobs:
       - name: Portable-model tests
         run: python live_testbed/test_portable.py
       - name: Objective recovery, timing and regression tests
-        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
+        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier reserve_recovery live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
       - name: Verify published pilot artifact integrity
         run: python -m recovery_pilot.audit_results
       - name: Replay and verify the fresh-content feasibility artifact
@@ -51,4 +51,7 @@ jobs:
         run: |
           python -m feasibility_frontier.verify
           python -m feasibility_frontier.check_breakpoints
+      - name: Verify limited recovery reserve and analytical causal comparisons
+        if: hashFiles('reserve_recovery/results/analysis_v1/metadata.json') != ''
+        run: python -m reserve_recovery.verify
 

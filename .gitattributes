@@ -31,3 +31,7 @@ feasibility_frontier/*.md text eol=lf
 feasibility_frontier/results/** -text whitespace=cr-at-eol
 # Preserve whitespace emitted inside generated SVG path coordinates.
 feasibility_frontier/results/**/*.svg -whitespace
+reserve_recovery/*.py text eol=lf
+reserve_recovery/*.md text eol=lf
+reserve_recovery/results/** -text whitespace=cr-at-eol
+reserve_recovery/results/**/*.svg -whitespace
