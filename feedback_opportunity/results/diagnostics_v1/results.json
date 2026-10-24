@@ -1,0 +1,9607 @@
+{
+  "posthoc_diagnostic": true,
+  "frozen_summary_type_error_corrected": true,
+  "corrected_action_disagreements": {
+    "knn_recovery": 0,
+    "greedy_recovery": 0,
+    "cost_greedy": 0,
+    "rolling_nash": 0,
+    "rolling_maxmin": 0,
+    "persistence_mpc": 0,
+    "unconditional_mpc": 0
+  },
+  "decisions_per_policy": 672,
+  "wire_feedback": {
+    "messages": 1008,
+    "values": 6048,
+    "payload_bytes": 141120,
+    "response_body_bytes": 429340,
+    "median_roundtrip_ms": 14.976549999119015,
+    "max_roundtrip_ms": 28.58330000162823,
+    "median_reconstruction_ms": 0.5716500018024817,
+    "max_reconstruction_ms": 1.8141999971703626,
+    "mae_db": 0.0006082160653306672,
+    "max_error_db": 0.20221287232273255,
+    "mae_index": 8.366402116402117e-05,
+    "max_error_index": 0.017,
+    "exact_index_values": 5968,
+    "error_units_histogram": {
+      "0": 5968,
+      "1": 12,
+      "2": 5,
+      "3": 13,
+      "4": 5,
+      "5": 6,
+      "6": 6,
+      "7": 7,
+      "8": 1,
+      "9": 3,
+      "10": 3,
+      "11": 6,
+      "12": 4,
+      "13": 3,
+      "14": 2,
+      "15": 2,
+      "17": 2
+    },
+    "sender_maps_compressed_bytes": 409700,
+    "sender_maps_float32_bytes": 622080
+  },
+  "opportunity_summary": {
+    "BuskingUnderpass05": [
+      {
+        "benchmark": "structural",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.04708294751397717,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.5531130378380982
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.04708294751397717,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.5531130378380982
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.031423980605843636,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.5687720047462317
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.6001959853520753
+      }
+    ],
+    "Cheerleading01": [
+      {
+        "benchmark": "structural",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.34307101497458015
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.34307101497458015
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": -0.011187409646471287,
+        "half_repaid": 27,
+        "mean_unpaid_feasible": 0.35425842462105145
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.34307101497458015
+      }
+    ],
+    "ConferenceParticipant02": [
+      {
+        "benchmark": "structural",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.02857130859349841,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.6855899295316377
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.02857130859349841,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.6855899295316377
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.010107371619431125,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.7040538665057049
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 1.4476808153339262e-05,
+        "half_repaid": 0,
+        "mean_unpaid_feasible": 0.7141467613169827
+      }
+    ],
+    "ParkFountains01": [
+      {
+        "benchmark": "structural",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.0
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.0
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": -0.006463878326996198,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.006463878326996198
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.0
+      }
+    ],
+    "River01": [
+      {
+        "benchmark": "structural",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.0
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.0
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": -0.010335370063528637,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.010335370063528637
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.0
+      }
+    ],
+    "Train01": [
+      {
+        "benchmark": "structural",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.06921900691745628,
+        "half_repaid": 12,
+        "mean_unpaid_feasible": 0.4881898744883661
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.06921900691745628,
+        "half_repaid": 12,
+        "mean_unpaid_feasible": 0.4881898744883661
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.06921900691745628,
+        "half_repaid": 12,
+        "mean_unpaid_feasible": 0.4881898744883661
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 28,
+        "feasible_episodes": 28,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 6,
+        "mean_unpaid_feasible": 0.5574088814058223
+      }
+    ],
+    "all": [
+      {
+        "benchmark": "structural",
+        "episodes": 168,
+        "feasible_episodes": 168,
+        "gap_vs_saved_cost_greedy_feasible": 0.024145543837488643,
+        "half_repaid": 96,
+        "mean_unpaid_feasible": 0.34499397613878036
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 168,
+        "feasible_episodes": 168,
+        "gap_vs_saved_cost_greedy_feasible": 0.024145543837488643,
+        "half_repaid": 96,
+        "mean_unpaid_feasible": 0.34499397613878036
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 168,
+        "feasible_episodes": 168,
+        "gap_vs_saved_cost_greedy_feasible": 0.013793950184289153,
+        "half_repaid": 95,
+        "mean_unpaid_feasible": 0.35534556979197984
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 168,
+        "feasible_episodes": 168,
+        "gap_vs_saved_cost_greedy_feasible": 2.4128013588898768e-06,
+        "half_repaid": 90,
+        "mean_unpaid_feasible": 0.3691371071749101
+      }
+    ],
+    "v2": [
+      {
+        "benchmark": "structural",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 0.023073002305818758,
+        "half_repaid": 68,
+        "mean_unpaid_feasible": 0.16272995816278868
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 0.023073002305818758,
+        "half_repaid": 68,
+        "mean_unpaid_feasible": 0.16272995816278868
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 0.01747325284231048,
+        "half_repaid": 68,
+        "mean_unpaid_feasible": 0.16832970762629698
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 0.0,
+        "half_repaid": 62,
+        "mean_unpaid_feasible": 0.18580296046860745
+      }
+    ],
+    "v3": [
+      {
+        "benchmark": "structural",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 0.025218085369158528,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.5272579941147719
+      },
+      {
+        "benchmark": "strict",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 0.025218085369158528,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.5272579941147719
+      },
+      {
+        "benchmark": "quality_guard",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 0.010114647526267825,
+        "half_repaid": 27,
+        "mean_unpaid_feasible": 0.5423614319576626
+      },
+      {
+        "benchmark": "exact_current_greedy",
+        "episodes": 84,
+        "feasible_episodes": 84,
+        "gap_vs_saved_cost_greedy_feasible": 4.8256027177797536e-06,
+        "half_repaid": 28,
+        "mean_unpaid_feasible": 0.5524712538812128
+      }
+    ]
+  },
+  "feedback_summary": [
+    {
+      "action_disagreements_vs_ideal_feedback": 0,
+      "credit_estimation_mae_units": 0.16071428571428573,
+      "donor_floor_violations": 1,
+      "episodes": 168,
+      "half_repaid": 90,
+      "loss_estimation_mae_units": 0.02976190476190476,
+      "mean_quality": 4.158495535714286,
+      "mean_stall_seconds": 6.98295369047619,
+      "policy": "knn_recovery",
+      "recipient_floor_violations": 1,
+      "unpaid_fraction": 0.37124544670511095,
+      "worst_quality": 3.9970580357142858
+    },
+    {
+      "action_disagreements_vs_ideal_feedback": 0,
+      "credit_estimation_mae_units": 0.16071428571428573,
+      "donor_floor_violations": 2,
+      "episodes": 168,
+      "half_repaid": 90,
+      "loss_estimation_mae_units": 0.02976190476190476,
+      "mean_quality": 4.164433779761905,
+      "mean_stall_seconds": 7.053773293650793,
+      "policy": "greedy_recovery",
+      "recipient_floor_violations": 2,
+      "unpaid_fraction": 0.37094085143426625,
+      "worst_quality": 4.005209821428571
+    },
+    {
+      "action_disagreements_vs_ideal_feedback": 0,
+      "credit_estimation_mae_units": 0.16071428571428573,
+      "donor_floor_violations": 0,
+      "episodes": 168,
+      "half_repaid": 90,
+      "loss_estimation_mae_units": 0.02976190476190476,
+      "mean_quality": 4.1617782738095235,
+      "mean_stall_seconds": 6.974816349206349,
+      "policy": "cost_greedy",
+      "recipient_floor_violations": 1,
+      "unpaid_fraction": 0.369139519976269,
+      "worst_quality": 3.9971815476190478
+    },
+    {
+      "action_disagreements_vs_ideal_feedback": 0,
+      "credit_estimation_mae_units": 0.09523809523809523,
+      "donor_floor_violations": 2,
+      "episodes": 168,
+      "half_repaid": 89,
+      "loss_estimation_mae_units": 0.02976190476190476,
+      "mean_quality": 4.164352678571428,
+      "mean_stall_seconds": 7.3232880753968255,
+      "policy": "rolling_nash",
+      "recipient_floor_violations": 2,
+      "unpaid_fraction": 0.3935963903499894,
+      "worst_quality": 4.023102678571429
+    },
+    {
+      "action_disagreements_vs_ideal_feedback": 0,
+      "credit_estimation_mae_units": 0.16071428571428573,
+      "donor_floor_violations": 2,
+      "episodes": 168,
+      "half_repaid": 90,
+      "loss_estimation_mae_units": 0.02976190476190476,
+      "mean_quality": 4.164717261904762,
+      "mean_stall_seconds": 7.232022638888889,
+      "policy": "rolling_maxmin",
+      "recipient_floor_violations": 2,
+      "unpaid_fraction": 0.3762291827609392,
+      "worst_quality": 4.0210952380952385
+    },
+    {
+      "action_disagreements_vs_ideal_feedback": 0,
+      "credit_estimation_mae_units": 0.16071428571428573,
+      "donor_floor_violations": 1,
+      "episodes": 168,
+      "half_repaid": 90,
+      "loss_estimation_mae_units": 0.02976190476190476,
+      "mean_quality": 4.157674851190476,
+      "mean_stall_seconds": 6.97595992063492,
+      "policy": "persistence_mpc",
+      "recipient_floor_violations": 1,
+      "unpaid_fraction": 0.3718535689352405,
+      "worst_quality": 3.9969002976190477
+    },
+    {
+      "action_disagreements_vs_ideal_feedback": 0,
+      "credit_estimation_mae_units": 0.05357142857142857,
+      "donor_floor_violations": 1,
+      "episodes": 168,
+      "half_repaid": 90,
+      "loss_estimation_mae_units": 0.02976190476190476,
+      "mean_quality": 4.157664434523809,
+      "mean_stall_seconds": 6.986572142857142,
+      "policy": "unconditional_mpc",
+      "recipient_floor_violations": 1,
+      "unpaid_fraction": 0.3733808776499367,
+      "worst_quality": 3.996642857142857
+    }
+  ],
+  "opportunity_loss_summary": [
+    {
+      "policy": "knn_recovery",
+      "episodes_with_avoidable_loss": 69,
+      "mean_lost_fraction_by_decision": [
+        0.005538459702900584,
+        0.018742591700951005,
+        0.001968006361120139,
+        2.412801358889725e-06
+      ]
+    },
+    {
+      "policy": "cost_greedy",
+      "episodes_with_avoidable_loss": 65,
+      "mean_lost_fraction_by_decision": [
+        0.0030084428817864378,
+        0.021134688154343315,
+        0.0,
+        2.412801358889725e-06
+      ]
+    },
+    {
+      "policy": "rolling_nash",
+      "episodes_with_avoidable_loss": 77,
+      "mean_lost_fraction_by_decision": [
+        0.011986062966747453,
+        0.03465901663997482,
+        0.0019549218031278746,
+        2.412801358889725e-06
+      ]
+    }
+  ],
+  "opportunity_loss_rows": [
+    {
+      "key": "v2:ParkFountains01:1:2",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:1:2",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:1:2",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:2:1",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:2:1",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:2:1",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:3:4",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:3:4",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:3:4",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:4:3",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:4:3",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:4:3",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:5:6",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:5:6",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:5:6",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:6:5",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:6:5",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:6:5",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:7:8",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:7:8",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:7:8",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:8:7",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:8:7",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:8:7",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:9:10",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:9:10",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:9:10",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:10:9",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:10:9",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:10:9",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:11:12",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:11:12",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:11:12",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:12:11",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:12:11",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:12:11",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:13:14",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:13:14",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:13:14",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:14:13",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:14:13",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:14:13",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:15:16",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:15:16",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:15:16",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:16:15",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:16:15",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:16:15",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:17:18",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:17:18",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:17:18",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:18:17",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:18:17",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:18:17",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:19:20",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:19:20",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:19:20",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        248,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.18859315589353612,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:20:19",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:20:19",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:20:19",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:21:22",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:21:22",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:21:22",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:22:21",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:22:21",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:22:21",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:23:24",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:23:24",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:23:24",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:24:23",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:24:23",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:24:23",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:25:26",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:25:26",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:25:26",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:26:25",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:26:25",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:26:25",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:27:28",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:27:28",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:27:28",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:28:27",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:28:27",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:ParkFountains01:28:27",
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:1:2",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:1:2",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:1:2",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:2:1",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:2:1",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:2:1",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:3:4",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:3:4",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:3:4",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        223,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.20383912248628885,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:4:3",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:4:3",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:4:3",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:5:6",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:5:6",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:5:6",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:6:5",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:6:5",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:6:5",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:7:8",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:7:8",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:7:8",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:8:7",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:8:7",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:8:7",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:9:10",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:9:10",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:9:10",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        73,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06728110599078341,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:10:9",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:10:9",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:10:9",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:11:12",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:11:12",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:11:12",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        10,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.010070493454179255,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:12:11",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:12:11",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:12:11",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:13:14",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:13:14",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:13:14",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:14:13",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        41,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.042842215256008356,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:14:13",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:14:13",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:15:16",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:15:16",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:15:16",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:16:15",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:16:15",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:16:15",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        46,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.04299065420560748,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:17:18",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:17:18",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:17:18",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:18:17",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:18:17",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:18:17",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        250,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.249500998003992,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:19:20",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:19:20",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:19:20",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:20:19",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:20:19",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:20:19",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        275,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.2925531914893617,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:21:22",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:21:22",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:21:22",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        144,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.13623462630085148,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:22:21",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:22:21",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:22:21",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:23:24",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:23:24",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:23:24",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:24:23",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:24:23",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:24:23",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:25:26",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:25:26",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:25:26",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:26:25",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:26:25",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:26:25",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:27:28",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:27:28",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:27:28",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:28:27",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:28:27",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:River01:28:27",
+      "cohort": "v2",
+      "scene": "River01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:1:2",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        38,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.020031628887717447,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:1:2",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        38,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.020031628887717447,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:1:2",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        38,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.020031628887717447,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:2:1",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        10,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.004847309743092583,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:2:1",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        10,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.004847309743092583,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:2:1",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        10,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.004847309743092583,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:3:4",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.009095502779181405,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:3:4",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.009095502779181405,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:3:4",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.009095502779181405,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:4:3",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        196,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09612555174104953,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:4:3",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        196,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09612555174104953,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:4:3",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        196,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09612555174104953,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:5:6",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        324,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.15413891531874405,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:5:6",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        324,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.15413891531874405,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:5:6",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        324,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.15413891531874405,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:6:5",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        316,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1614716402657128,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:6:5",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        316,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1614716402657128,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:6:5",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        316,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1614716402657128,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:7:8",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        283,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.14213962832747362,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:7:8",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        283,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.14213962832747362,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:7:8",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        283,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.14213962832747362,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:8:7",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        135,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.06790744466800805,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:8:7",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        135,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.06790744466800805,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:8:7",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        135,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.06790744466800805,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:9:10",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        188,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09367214748380667,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:9:10",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        188,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09367214748380667,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:9:10",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        188,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09367214748380667,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:10:9",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        228,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.12031662269129288,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:10:9",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        228,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.12031662269129288,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:10:9",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        228,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.12031662269129288,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:11:12",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        162,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0744485294117647,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:11:12",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        162,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0744485294117647,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:11:12",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        162,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0744485294117647,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:12:11",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        194,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09040074557315937,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:12:11",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        194,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09040074557315937,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:12:11",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        194,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09040074557315937,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:13:14",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        350,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.17352503718393653,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:13:14",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        350,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.17352503718393653,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:13:14",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        350,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.17352503718393653,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:14:13",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        42,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.01837270341207349,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:14:13",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        42,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.01837270341207349,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:14:13",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        42,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.01837270341207349,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:15:16",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        263,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.11836183618361837,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:15:16",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        263,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.11836183618361837,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:15:16",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        263,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.11836183618361837,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:16:15",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        125,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.05674080798910577,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:16:15",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        125,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.05674080798910577,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:16:15",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        125,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.05674080798910577,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:17:18",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        213,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09815668202764977,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:17:18",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        213,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09815668202764977,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:17:18",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        213,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09815668202764977,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:18:17",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        28,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.013151714419915453,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:18:17",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        28,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.013151714419915453,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:18:17",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        28,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.013151714419915453,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:19:20",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        53,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0265,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:19:20",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        53,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0265,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:19:20",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        53,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0265,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:20:19",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:20:19",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:20:19",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:21:22",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        67,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.030316742081447964,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:21:22",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        67,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.030316742081447964,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:21:22",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        67,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.030316742081447964,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:22:21",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:22:21",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:22:21",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:23:24",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        243,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.12512873326467558,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:23:24",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        243,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.12512873326467558,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:23:24",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        243,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.12512873326467558,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:24:23",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:24:23",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:24:23",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:25:26",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        145,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0699132111861138,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:25:26",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        145,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0699132111861138,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:25:26",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        145,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0699132111861138,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:26:25",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        220,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.10246856078248719,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:26:25",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        220,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.10246856078248719,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:26:25",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        220,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.10246856078248719,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:27:28",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        5,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.00229147571035747,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:27:28",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        5,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.00229147571035747,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:27:28",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        5,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.00229147571035747,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:28:27",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        146,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06860902255639098,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:28:27",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        146,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06860902255639098,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v2:Train01:28:27",
+      "cohort": "v2",
+      "scene": "Train01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        146,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06860902255639098,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:1:2",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        16,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.007820136852394917,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:1:2",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        176,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.08602150537634409,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:1:2",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        176,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.08602150537634409,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:2:1",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:2:1",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:2:1",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:3:4",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        239,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1139723414401526,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:3:4",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        239,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1139723414401526,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:3:4",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        239,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1139723414401526,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:4:3",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:4:3",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        164,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0762081784386617,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:4:3",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        164,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0762081784386617,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:5:6",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:5:6",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        273,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.14057672502574664,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:5:6",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        273,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.14057672502574664,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:6:5",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        82,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.04045387271830291,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:6:5",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        227,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.11198815984213123,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:6:5",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        227,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.11198815984213123,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:7:8",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        86,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.04312938816449348,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:7:8",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        86,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.04312938816449348,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:7:8",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        86,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.04312938816449348,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:8:7",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        53,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.02776322682032478,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:8:7",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:8:7",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        413,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.21634363541121004,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:9:10",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        192,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09533267130089375,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:9:10",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        192,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09533267130089375,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:9:10",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        192,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09533267130089375,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:10:9",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:10:9",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        61,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.031837160751565764,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:10:9",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        61,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.031837160751565764,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:11:12",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:11:12",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        143,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.07185929648241206,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:11:12",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        143,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.07185929648241206,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:12:11",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:12:11",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        58,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.031385281385281384,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:12:11",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        58,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.031385281385281384,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:13:14",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:13:14",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        130,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06656426011264721,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:13:14",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        130,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06656426011264721,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:14:13",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        143,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.07386363636363637,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:14:13",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:14:13",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        430,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.22210743801652894,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:15:16",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        198,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09753694581280788,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:15:16",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:15:16",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:16:15",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:16:15",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:16:15",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:17:18",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008806262230919765,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:17:18",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008806262230919765,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:17:18",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008806262230919765,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:18:17",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        203,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1009950248756219,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:18:17",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        203,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1009950248756219,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:18:17",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        203,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1009950248756219,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:19:20",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        71,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.035553329994992486,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:19:20",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:19:20",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:20:19",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        198,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09895052473763119,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:20:19",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        198,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09895052473763119,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:20:19",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        198,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09895052473763119,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:21:22",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        68,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.03341523341523341,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:21:22",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:21:22",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:22:21",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        29,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.014173998044965786,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:22:21",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:22:21",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:23:24",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        199,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09422348484848485,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:23:24",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        199,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09422348484848485,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:23:24",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        199,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.09422348484848485,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:24:23",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        137,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06682926829268293,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:24:23",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        137,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06682926829268293,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:24:23",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        137,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06682926829268293,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:25:26",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        133,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.07104700854700854,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:25:26",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        133,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.07104700854700854,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:25:26",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        450,
+        133,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.2403846153846154,
+        0.07104700854700854,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:26:25",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        119,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.05926294820717132,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:26:25",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:26:25",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:27:28",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        18,
+        17,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008595988538681949,
+        0.008118433619866285,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:27:28",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008595988538681949,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:27:28",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008595988538681949,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:28:27",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:28:27",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:BuskingUnderpass05:28:27",
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:1:2",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:1:2",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:1:2",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:2:1",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:2:1",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:2:1",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:3:4",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:3:4",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:3:4",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:4:3",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:4:3",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:4:3",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:5:6",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:5:6",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:5:6",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:6:5",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:6:5",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:6:5",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:7:8",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:7:8",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:7:8",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:8:7",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:8:7",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:8:7",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:9:10",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:9:10",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:9:10",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:10:9",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:10:9",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:10:9",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:11:12",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:11:12",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:11:12",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:12:11",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:12:11",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:12:11",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:13:14",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:13:14",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:13:14",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:14:13",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:14:13",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:14:13",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:15:16",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:15:16",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:15:16",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:16:15",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:16:15",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:16:15",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:17:18",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:17:18",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:17:18",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:18:17",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:18:17",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:18:17",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:19:20",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:19:20",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:19:20",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:20:19",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:20:19",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:20:19",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:21:22",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:21:22",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:21:22",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:22:21",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:22:21",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:22:21",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:23:24",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:23:24",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:23:24",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        714,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.32842686292548295,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:24:23",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:24:23",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:24:23",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:25:26",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:25:26",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:25:26",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:26:25",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:26:25",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:26:25",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:27:28",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:27:28",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:27:28",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:28:27",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:28:27",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:Cheerleading01:28:27",
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:1:2",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        70,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.028641571194762683,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:1:2",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        60,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.024549918166939442,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:1:2",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        60,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.024549918166939442,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:2:1",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        51,
+        0,
+        0,
+        1
+      ],
+      "lost_recoverable_fraction": [
+        0.020672882042967168,
+        0.0,
+        0.0,
+        0.00040535062829347385
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:2:1",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.00040535062829347385
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:2:1",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        321,
+        0,
+        1
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.1301175516822051,
+        0.0,
+        0.00040535062829347385
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:3:4",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:3:4",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        57,
+        32,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.024379811804961505,
+        0.013686911890504704,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:3:4",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        57,
+        314,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.024379811804961505,
+        0.1343028229255774,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:4:3",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        68,
+        76,
+        14,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.029035012809564473,
+        0.032450896669513236,
+        0.005977796754910333,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:4:3",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        90,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.03842869342442357,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:4:3",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        90,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.03842869342442357,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:5:6",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        21,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008695652173913044,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:5:6",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        21,
+        63,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008695652173913044,
+        0.02608695652173913,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:5:6",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        21,
+        63,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.008695652173913044,
+        0.02608695652173913,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:6:5",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        104,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.04478897502153316,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:6:5",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:6:5",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:7:8",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        8,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0032948929159802307,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:7:8",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        33,
+        169,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.013591433278418451,
+        0.06960461285008238,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:7:8",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        33,
+        169,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.013591433278418451,
+        0.06960461285008238,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:8:7",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:8:7",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        88,
+        33,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.03849518810148731,
+        0.014435695538057743,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:8:7",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        88,
+        33,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.03849518810148731,
+        0.014435695538057743,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:9:10",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        57,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0241423125794155,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:9:10",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        96,
+        142,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.04066073697585769,
+        0.060144006776789494,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:9:10",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        96,
+        142,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.04066073697585769,
+        0.060144006776789494,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:10:9",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:10:9",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        53,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.022514868309260833,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:10:9",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        53,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.022514868309260833,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:11:12",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        12,
+        100,
+        101,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.005044136191677175,
+        0.042034468263976464,
+        0.042454812946616224,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:11:12",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        12,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.005044136191677175,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:11:12",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        12,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.005044136191677175,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:12:11",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        75,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.03249566724436742,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:12:11",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        16,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.006932409012131715,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:12:11",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        322,
+        522,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.13951473136915077,
+        0.22616984402079723,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:13:14",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        46,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.01913477537437604,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:13:14",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        43,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.01788685524126456,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:13:14",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        43,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.01788685524126456,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:14:13",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        49,
+        33,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.020967051775780916,
+        0.014120667522464698,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:14:13",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        29,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.012409071459135643,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:14:13",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        274,
+        254,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.11724433033804023,
+        0.10868635002139496,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:15:16",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        320,
+        0,
+        33,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.13479359730412804,
+        0.0,
+        0.013900589721988205,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:15:16",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:15:16",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:16:15",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        14,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0060527453523562475,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:16:15",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        29,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.012537829658452227,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:16:15",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        29,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.012537829658452227,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:17:18",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        1,
+        7,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.00042753313381787086,
+        0.002992731936725096,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:17:18",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        84,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.03591278324070116,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:17:18",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        84,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.03591278324070116,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:18:17",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        92,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.04013961605584642,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:18:17",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        201,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.08769633507853403,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:18:17",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        384,
+        441,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.16753926701570682,
+        0.19240837696335078,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:19:20",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        158,
+        32,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.06991150442477877,
+        0.01415929203539823,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:19:20",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:19:20",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:20:19",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        145,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.06382042253521127,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:20:19",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        69,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.030369718309859156,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:20:19",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        358,
+        442,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.15757042253521128,
+        0.19454225352112675,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:21:22",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        64,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.027292110874200425,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:21:22",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        76,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.032409381663113,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:21:22",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        76,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.032409381663113,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:22:21",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        313,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.13508847647820457,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:22:21",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:22:21",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:23:24",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        22,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.009499136442141624,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:23:24",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:23:24",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:24:23",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:24:23",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        76,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.03370288248337029,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:24:23",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        76,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.03370288248337029,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:25:26",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        372,
+        278,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.16301489921121823,
+        0.12182296231375986,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:25:26",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:25:26",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        650,
+        476,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.2848378615249781,
+        0.2085889570552147,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:26:25",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        53,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.022874406560207165,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:26:25",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        99,
+        69,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.04272766508416055,
+        0.029779887785930083,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:26:25",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        99,
+        69,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.04272766508416055,
+        0.029779887785930083,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:27:28",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        0,
+        0,
+        25,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.0,
+        0.010766580534022395,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:27:28",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        0,
+        44,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.018949181739879414,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:27:28",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        0,
+        44,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.0,
+        0.018949181739879414,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:28:27",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "knn_recovery",
+      "lost_recoverable_units": [
+        90,
+        191,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.03795866722901729,
+        0.08055672711935892,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:28:27",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "cost_greedy",
+      "lost_recoverable_units": [
+        90,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.03795866722901729,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "key": "v3:ConferenceParticipant02:28:27",
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "policy": "rolling_nash",
+      "lost_recoverable_units": [
+        90,
+        0,
+        0,
+        0
+      ],
+      "lost_recoverable_fraction": [
+        0.03795866722901729,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "practical_screen": {
+    "checks": {
+      "v2_donor_floor": false,
+      "v2_half_count_cost_greedy": true,
+      "v2_half_count_greedy_recovery": true,
+      "v2_half_count_persistence_mpc": true,
+      "v2_half_count_rolling_maxmin": true,
+      "v2_half_count_rolling_nash": true,
+      "v2_half_count_unconditional_mpc": true,
+      "v2_practical_gain_cost_greedy": false,
+      "v2_practical_gain_greedy_recovery": false,
+      "v2_practical_gain_persistence_mpc": false,
+      "v2_practical_gain_rolling_maxmin": true,
+      "v2_practical_gain_rolling_nash": true,
+      "v2_practical_gain_unconditional_mpc": false,
+      "v2_quality_guard_cost_greedy": true,
+      "v2_quality_guard_greedy_recovery": true,
+      "v2_quality_guard_persistence_mpc": true,
+      "v2_quality_guard_rolling_maxmin": false,
+      "v2_quality_guard_rolling_nash": false,
+      "v2_quality_guard_unconditional_mpc": true,
+      "v3_donor_floor": true,
+      "v3_half_count_cost_greedy": true,
+      "v3_half_count_greedy_recovery": true,
+      "v3_half_count_persistence_mpc": true,
+      "v3_half_count_rolling_maxmin": true,
+      "v3_half_count_rolling_nash": true,
+      "v3_half_count_unconditional_mpc": true,
+      "v3_practical_gain_cost_greedy": false,
+      "v3_practical_gain_greedy_recovery": false,
+      "v3_practical_gain_persistence_mpc": false,
+      "v3_practical_gain_rolling_maxmin": false,
+      "v3_practical_gain_rolling_nash": true,
+      "v3_practical_gain_unconditional_mpc": false,
+      "v3_quality_guard_cost_greedy": true,
+      "v3_quality_guard_greedy_recovery": true,
+      "v3_quality_guard_persistence_mpc": true,
+      "v3_quality_guard_rolling_maxmin": true,
+      "v3_quality_guard_rolling_nash": true,
+      "v3_quality_guard_unconditional_mpc": true
+    },
+    "passed": false
+  }
+}

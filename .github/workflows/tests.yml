@@ -79,5 +79,7 @@ jobs:
           python -m causal_playback.diagnose --verify
       - name: Replay remaining-opportunity and feedback-substitution audit
         if: hashFiles('feedback_opportunity/results/audit_v1/metadata.json') != ''
-        run: python -m feedback_opportunity.verify
+        run: |
+          python -m feedback_opportunity.verify
+          python -m feedback_opportunity.diagnose --verify
 

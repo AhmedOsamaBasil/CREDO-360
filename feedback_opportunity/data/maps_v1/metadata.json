@@ -1,0 +1,155 @@
+{
+  "exposed_only": true,
+  "sources": [
+    {
+      "cohort": "v2",
+      "scene": "ParkFountains01",
+      "map_file": "ParkFountains01.npz",
+      "descriptor": "3cf6dff2ed7de191821f23bd7247dfd14ef8a8eba9e023fbe8a9805d9b1c5674",
+      "map_shape": [
+        6,
+        60,
+        72
+      ],
+      "map_bytes": 68026,
+      "source_sha256": "ae2db6210a27bd79cd999bd1f5d0cd5da5401227ea7fdd34c9cc3ac96a3aaf70",
+      "rendition_sha256": [
+        "d0b32ecc798d2b6cebd97c94389f1b17f22467a0fc7f677c963719f01150c362",
+        "bacee5e62148f95f5bad2445d70eeb06c02d41fbc935c7fab09fb0cd0d1e1ee0",
+        "4d62e75c1fe6044a465073bbb9923d03a227ff42dfb05064bebbe3d176c042d8",
+        "46865491dad3b6425471dd15f74db4efc89c2a3532a9ff56ac3147988c2c1e1d",
+        "7590fe1c8bff3e6f3cdb4467b0626cd3690c537b18598af86a1b4e349d54be03",
+        "5ec30cbe0c28e97fd8a51f46c32875259c92455a1c8a0aba58e8d2fffccc8afe"
+      ],
+      "trace_sha256": "2e3a9fef7bf022b540d649cc2cf4a0efac61fa3f726e706ebe08cd11b75194d9",
+      "preparation_seconds": 56.16456833000001
+    },
+    {
+      "cohort": "v2",
+      "scene": "River01",
+      "map_file": "River01.npz",
+      "descriptor": "9f05d1874d0e3fb12b9a1c6b73fc6f0f42ec8eee69452924809716c8a8a6caf2",
+      "map_shape": [
+        6,
+        60,
+        72
+      ],
+      "map_bytes": 73201,
+      "source_sha256": "572ed8e97bcbfb211d5c534f6355af964fe45c438cc27bc4955ad5ae0c9b0a55",
+      "rendition_sha256": [
+        "0b03812b2989b73f8cbb8a5c9e39fd4d8334eb81a2e3890798a703cde25a522f",
+        "16ac30bae7c664fbc7690d5818d52a1cf51775217db35e82de7f6c4c6c59a898",
+        "796840d6d0c037bc936e12e47fc5ab75227e61911151fe016aa6842d280a0fa5",
+        "a06b47b9ce68b6af7ec72dd9a87529490a2e56257c3254d8f691d0cc6cb02796",
+        "824b6497c51b883e3768f804d94f6a7e8ffd85ab07dee5251b84d74c965abb58",
+        "b2b7cec144f84091ccbb8590b5fb247b61977d0cfc04ffb0bad590ce5bdcd410"
+      ],
+      "trace_sha256": "286f238f2d008919d15b80ce28213f03fd9c07882f8207f07c0f85f3c82adead",
+      "preparation_seconds": 55.30567797900001
+    },
+    {
+      "cohort": "v2",
+      "scene": "Train01",
+      "map_file": "Train01.npz",
+      "descriptor": "14dd03fd4ad2c32a504d5636f9a17b78a13b0f7817825b16e22bef3bcd4f1e66",
+      "map_shape": [
+        6,
+        60,
+        72
+      ],
+      "map_bytes": 65914,
+      "source_sha256": "d58c08073f71718e9182e0965023e2afb2adec84388ba64c602eb426ad01daa3",
+      "rendition_sha256": [
+        "712253aa3b4b15b6d17c9b9347346b59b9378aad382c99559f55a4a3f1b75535",
+        "08d9edec11f52e91be6f9d354f05f6c16537fc6a4825357094f1aaff88f12a33",
+        "b8bad6ef97ad8189f5df5d53df22ccad598711d4c6e2593b8c883dcc9180c6bd",
+        "7366f93a52c12758ef3366fc6a985ecfe8dd667246fd128be4e8120038c62175",
+        "642889c3edca87e2953cfeab09b3cc92b003b046c2df2d56df82acd0a4cf6d4e",
+        "43e43fcaa1498f1d7080bad3bda572c29162275fa2583745cdb6ed1f16bc3918"
+      ],
+      "trace_sha256": "bca87a6a21309f8f633281649adba4e75dfd9598bb4b853b9ad673da305fd23f",
+      "preparation_seconds": 57.54055767599999
+    },
+    {
+      "cohort": "v3",
+      "scene": "BuskingUnderpass05",
+      "map_file": "BuskingUnderpass05.npz",
+      "descriptor": "64472ff368bd241e11cee13f37109dceb33ba1e60df96873a334fa8c11050851",
+      "map_shape": [
+        6,
+        60,
+        72
+      ],
+      "map_bytes": 69256,
+      "source_sha256": "09a9023e2b66a969330567abaf8f7bbc2b24fe5a2d0978153eae4a676ec24676",
+      "rendition_sha256": [
+        "347b5714bdcd3c03d2506fa7eba9b2f21fa6534a82272c7dac87e28d454e76fd",
+        "b87293b6f7fafadba2d10e4bd503f964941c3e25af635eb37cab7f0793e1ed87",
+        "8e85b7102d27ea3e210221ab2d81a357feae4be59c91496bf321b74c05c28ae1",
+        "f0eb99540e7dc80804ed30cffa7e2e7b8dbf6f0db3cb38a2e611eafda897aa4b",
+        "c276fd9336c9d9cf9f689c57a78415bd309d0b495758b1ea4a2998ffaedf7d38",
+        "fd681e949e6e1aabe1345a1e9ac1d91eb488db564dd468dac6ae90c007561444"
+      ],
+      "trace_sha256": "83b07a95846536ab0ce87ad00388961a96ee682ad6f8b9d1431a4468ea68cc50",
+      "preparation_seconds": 59.99692170399999
+    },
+    {
+      "cohort": "v3",
+      "scene": "Cheerleading01",
+      "map_file": "Cheerleading01.npz",
+      "descriptor": "e6bb75f07214d9966017cf35ed00ea2317eecd5b3cbe23ddd5200f55d419415b",
+      "map_shape": [
+        6,
+        60,
+        72
+      ],
+      "map_bytes": 67590,
+      "source_sha256": "1f2b5e790aedda7fc78edaeba5d1fc9225846d8d6234b66a26dbd21a2f15a0f7",
+      "rendition_sha256": [
+        "9e7f80d2d66b1c3de83d7cf698dc428d511f3d616959786f15bea8e4c0b909c0",
+        "3d961499a3fce3e79aefe22f07606de7eaec7bde6f33877f90a6da8b9b77d41c",
+        "9a45e9cb84613e39fe58e49a08180da61ddd1b5af7262f72c064f376b8f02610",
+        "d3be99d2558642240e94410c385c1f18967cacd777f58af601be2fb2262028e3",
+        "cc8b88cade3bde0e7f564d2c7d95de70728c64a9bc875230eec406645a52c5f5",
+        "b570337626cda9bf4ae311a9b5261cb98b07d77002ee95067f969a9ffc78542e"
+      ],
+      "trace_sha256": "4d843f8aa8ee279342028b54ef5efbf95debda1f415ce161d5354178d69ada24",
+      "preparation_seconds": 66.02901655200003
+    },
+    {
+      "cohort": "v3",
+      "scene": "ConferenceParticipant02",
+      "map_file": "ConferenceParticipant02.npz",
+      "descriptor": "beefe169c8296612de7e2439c618e81ddcf725a3c10edce29f99f7ff0b158759",
+      "map_shape": [
+        6,
+        60,
+        72
+      ],
+      "map_bytes": 65713,
+      "source_sha256": "23c29b90a868b2804807e85e501a1a50265fa34aacab4d0f906623323f4f7017",
+      "rendition_sha256": [
+        "617de240e9d0695ebc79575aa59560bbad1d69e6829e66883ef50bf6284d84a6",
+        "135ee06f9e9287d8195a5ee7af43ff8e7f6e92ee1df68e4b9bb78e7a5207bd3d",
+        "80232e6ecdd3f53c8a5f4e1c7c98ebd9b07fcec3ae458d0e7412d997b9a9f9ac",
+        "89c053eb2619d08194f868da142895a2b619fa54bfb4af02e08b24beaf153a10",
+        "41862c3615f1ad2e894a11ed4708d38247e5892e82dab220186ffd68fe8bcf30",
+        "3a3ba90df95c3fd43a80da7921757973925f6a901d571b529f98a5ce21038c40"
+      ],
+      "trace_sha256": "142c9e1eb99b9f199a9ea8f62344dc293b221c0efc33fb07bf7a3ce276912b57",
+      "preparation_seconds": 58.967422903
+    }
+  ],
+  "script_sha256": "bf6b3ae3b6ced22f993c26e65dfc44f04dcfcd4f1da6207ef05c9540416585fa",
+  "analysis_source_sha256": "15de40e114e81305c7ae0cc57bbc09d558d1961858656b826916397e893517ec",
+  "private_events_sha256": "aed6518cc20a780b1a31ad413e1e4f3c87b4fe97f0c6eb763db4b728703010c6",
+  "files_sha256": {
+    "BuskingUnderpass05.npz": "64472ff368bd241e11cee13f37109dceb33ba1e60df96873a334fa8c11050851",
+    "Cheerleading01.npz": "e6bb75f07214d9966017cf35ed00ea2317eecd5b3cbe23ddd5200f55d419415b",
+    "ConferenceParticipant02.npz": "beefe169c8296612de7e2439c618e81ddcf725a3c10edce29f99f7ff0b158759",
+    "old_sampling_parity.json": "ad935aed1d66ce1876707157e3aa92a8053ce4c611a96bf76301d635c20f1eee",
+    "ParkFountains01.npz": "3cf6dff2ed7de191821f23bd7247dfd14ef8a8eba9e023fbe8a9805d9b1c5674",
+    "River01.npz": "9f05d1874d0e3fb12b9a1c6b73fc6f0f42ec8eee69452924809716c8a8a6caf2",
+    "Train01.npz": "14dd03fd4ad2c32a504d5636f9a17b78a13b0f7817825b16e22bef3bcd4f1e66"
+  }
+}

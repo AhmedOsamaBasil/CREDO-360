@@ -4,6 +4,7 @@ recovery_pilot/results/** -text whitespace=cr-at-eol
 recovery_pilot/*.py text eol=lf
 recovery_pilot/PROTOCOL.md text eol=lf
 live_testbed/playback_clock.py text eol=lf
+multimedia_testbed/prepare_qoevave.py text eol=lf
 feasibility_recovery/*.py text eol=lf
 feasibility_recovery/*.md text eol=lf
 feasibility_recovery/manifest.json text eol=lf

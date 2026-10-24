@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "private_packets_checked": 1008,
+  "public_feedback_messages": 1008,
+  "quality_values": 6048,
+  "old_sampling_max_error_db": 0.0,
+  "causal_feedback_mae_db": 0.0006082160653306672,
+  "causal_feedback_max_error_db": 0.20221287232273255,
+  "causal_feedback_mae_units": 0.08366402116402116,
+  "causal_feedback_max_error_units": 17,
+  "enumerated_paths": 473088,
+  "feedback_episode_runs": 1176,
+  "scientific_sha256": "510e3b7faa5f08e0d2077911b5e57655badeef3709b8599dab18416e3d2c1fe7",
+  "practical_screen_passed": false,
+  "python": "3.14.4",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+}

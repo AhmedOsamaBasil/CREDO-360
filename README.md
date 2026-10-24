@@ -109,6 +109,16 @@ holdout or manuscript update was made.
 **Open research testbed for objective viewport-quality fairness and
 deprivation recovery in multi-user immersive streaming.**
 
+The [remaining-opportunity and feedback audit](feedback_opportunity/README.md)
+now enumerates473,088 complete paths and replaces hidden completed-quality
+labels with a JavaScript/Python sender-map telemetry prototype. All1,008
+messages verify; the feedback-integrated policies choose the same4,704 actions
+as before. Future knowledge raises half-repayment only from90 to96/168 cases
+(95 with a quality guard). The recovery screen remains failed. See the
+[findings](feedback_opportunity/INTERPRETATION.md) for the remaining early-decision
+opportunities, corrected reporting and deployment limitations. No new holdout
+or manuscript claim was added.
+
 This repository contains the prototype, CUDA replay experiment, statistical
 analysis, literature-review evidence, exported learned model, and live
 Mininet/DASH integration used by the CREDO-360 paper.

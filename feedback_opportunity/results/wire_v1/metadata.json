@@ -1,0 +1,14 @@
+{
+  "transport": "actual loopback HTTP, not HMD or WAN",
+  "raw_packets_published": false,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "packet_file_sha256": "b744c88cb0a2709a22c86e86f92fdc8c4bbefa1791a6b13ca77807430700407a",
+  "source_sha256": {
+    "feedback_opportunity/wire.py": "b0875a6b4d322429304f1c61e21e75fad55fe1be1dc20b8da03e8c7313788144",
+    "feedback_opportunity/feedback.py": "611be04c631c1db9d12ff961c542a24ffdabdad9e1387a5d0363a7f0c3b929c8",
+    "feedback_opportunity/client.mjs": "8b8c811646b8dd008ac2a11564408c58ebef8d7b83d38bd8eea0403f4dbce0f6"
+  },
+  "map_metadata_sha256": "b159dcdc1b3c2fd12d30d989c4f6386b38c1085a891a5607ef276c08d4a84cdd",
+  "results_sha256": "0a0aefa12854d2b003976c5db0b4e0fd8969384e46f3982a2dc737f364dc0bb4"
+}

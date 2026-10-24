@@ -1,0 +1,15 @@
+{
+  "script_sha256": "40c5b4361972e1dd4fede7983a8e2f02e01eb8817e3e33acd676c4d9e4281991",
+  "input_sha256": {
+    "feedback_opportunity/results/audit_v1/results.json.gz": "5de579c70b156f1670c01115a254ef618bc505a3fbd86a32082e826b3a475acb",
+    "feedback_opportunity/results/wire_v1/results.json": "0a0aefa12854d2b003976c5db0b4e0fd8969384e46f3982a2dc737f364dc0bb4",
+    "causal_playback/results/replay_v1/results.json.gz": "c677c9e6161a7593c9f39b1e1060ee4729d581075fc18b6952e3822df1a26e13",
+    "feedback_opportunity/data/maps_v1/metadata.json": "b159dcdc1b3c2fd12d30d989c4f6386b38c1085a891a5607ef276c08d4a84cdd"
+  },
+  "result_sha256": {
+    "opportunity_feedback.png": "0e16d0e3d5d61d1bdaba3620f6902285f496efa463629e9496d1abdd98f9d451",
+    "opportunity_feedback.svg": "486c742f1c476c9cf98b7857bb10c069ece4ad11b2088edcdb3e8b2d9303d0fd",
+    "REPORT.md": "1480a27365b52d71144c0661fc6ef3773b43ac537a6ed40668ba36dfe1ca7e2f",
+    "results.json": "2fd927307026fe6295a187eb30f25758fb60a941eb63ca55d215c33dffd8590f"
+  }
+}
