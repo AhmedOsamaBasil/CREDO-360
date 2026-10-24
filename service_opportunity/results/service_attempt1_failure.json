@@ -1,0 +1,12 @@
+{
+  "status": "invalid_measurement_attempt",
+  "implementation_commit": "a9751b3",
+  "failure": "Final background_received_bytes audit asserted before raw observations were saved.",
+  "preserved_console_completion_seconds_rounded": [8.386, 8.378, 8.386, 8.378, 8.378, 8.377, 8.499, 8.498, 8.498, 8.499, 8.505, 8.500, 12.677, 12.665, 12.678],
+  "raw_per_flow_and_counter_observations_available": false,
+  "failed_probe_identity_available": false,
+  "suspected_cause": "Terminating a background process can leave queued data in an orphan TCP socket; the receiver and counters were reused across probes.",
+  "correction": "Abortive background socket close and fresh receiver per probe. Preserve raw output before final validation.",
+  "scientific_contract_changed": false,
+  "included_as_validated_service_evidence": false
+}

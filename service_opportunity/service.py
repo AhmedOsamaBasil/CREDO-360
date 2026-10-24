@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import platform
 import socket
+import struct
 import subprocess
 import sys
 import threading
@@ -60,6 +61,10 @@ def server():
 def send(port,n):
     begin=time.perf_counter()
     with socket.create_connection((ADDRESS,port),timeout=25) as c:
+        if port==9203:
+            # Abort queued background data on process shutdown: a graceful
+            # close can leave an orphan TCP sender active in the next probe.
+            c.setsockopt(socket.SOL_SOCKET,socket.SO_LINGER,struct.pack('ii',1,0))
         c.settimeout(25); c.sendall(f'{n}\n'.encode())
         chunk=b'R'*65536; remaining=n
         while remaining:
@@ -135,11 +140,12 @@ def measure(output):
             inside(ns,['ip','link','set','lo','up'])
             inside(ns,['ethtool','-K',dev,'tso','off','gso','off','gro','off'])
             inside(ns,['ethtool','-k',dev])
-        s=worker(dst,'server')
-        if s.stdout.readline().strip()!='ready': raise RuntimeError('server failed')
         cases=[(rtt,bg,i,False) for rtt in (20,80) for bg in (False,True) for i in range(3)]
         cases += [(80,True,i,True) for i in range(3)]
         for index,(rtt,bg,repeat,negative) in enumerate(cases):
+            # Fresh receiver processes isolate per-probe counters/connections.
+            s=worker(dst,'server')
+            if s.stdout.readline().strip()!='ready': raise RuntimeError('server failed')
             if index:
                 tc(['qdisc','del','dev',left,'root'])
                 inside(dst,['tc','qdisc','del','dev',right,'root'])
@@ -170,6 +176,7 @@ def measure(output):
                  'tc_class_after':tc(['-s','class','show','dev',left]),
                  'tc_qdisc_after':tc(['-s','qdisc','show','dev',left])}
             rows.append(row)
+            s.terminate(); s.communicate(timeout=5)
             print(f"Probe {index+1}/15: {payload['joint_completion_seconds']:.3f}s, deadline={row['deadline_met']}",flush=True)
     finally:
         for p in processes:
@@ -181,9 +188,15 @@ def measure(output):
     data={'platform':platform.platform(),'python':platform.python_version(),
           'payload_bytes_per_slot':CAPACITY,'deadline_seconds':DEADLINE,'probes':rows,'commands':commands,
           'scope':'isolated controlled reservation; not field capacity or a video-player trial'}
-    data['validation']=validate(data)
     output.parent.mkdir(parents=True,exist_ok=True)
     with output.open('x') as f: json.dump(data,f,indent=2); f.write('\n')
+    # Preserve raw observations even if the final integrity check fails.
+    try: data['validation']=validate(data)
+    except Exception as error:
+        data['validation_error']=repr(error)
+        output.write_text(json.dumps(data,indent=2)+'\n')
+        raise
+    output.write_text(json.dumps(data,indent=2)+'\n')
     print(json.dumps(data['validation'],indent=2))
 
 
