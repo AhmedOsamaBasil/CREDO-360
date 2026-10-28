@@ -108,6 +108,11 @@ jobs:
       - name: Replay exposed geometric admission
         if: hashFiles('geometric_admission/results/exposed_v1/metadata.json') != ''
         run: python -m geometric_admission.run --verify
+      - name: Verify geometric fixed-plan diagnostics
+        if: hashFiles('geometric_admission/results/diagnostics_v1/metadata.json') != ''
+        run: |
+          python -m geometric_admission.diagnose --verify
+          python -m unittest geometric_admission.test_validation -v
       - name: Verify exposed feasibility admission outcomes
         if: hashFiles('admission_contract/results/exposed_v1/metadata.json') != ''
         run: python -m admission_contract.run --verify

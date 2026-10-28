@@ -1,6 +1,13 @@
 # CREDO-360
 
-The latest [feasibility-based admission study](admission_contract/README.md)
+The latest [complete geometric viewport bounds](geometric_admission/README.md)
+enumerate all216 masks of the existing angular-window metric. Certified
+impossibility rises from112 to134 episodes, but positive admission remains zero.
+A separate fixed-plan worst-case diagnostic explains why tighter geometry alone
+does not establish a universal recovery promise. No fresh holdout or physical
+HMD validation is claimed.
+
+The preceding [feasibility-based admission study](admission_contract/README.md)
 keeps the quality/deadline contract fixed. Sender-side certificates reject112
 exposed episodes as impossible and abstain on56, with no positive admissions.
 Point planning admits28 and fulfills27 in replay, but matches cost-greedy exactly
