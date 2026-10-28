@@ -91,4 +91,9 @@ jobs:
         run: |
           python -m unittest measurement_assessment.test_synthesize -v
           python -m measurement_assessment.synthesize
+      - name: Test metric and service-contract sensitivity
+        run: python -m unittest metric_contract.test_core -v
+      - name: Replay the complete exposed metric and contract sensitivity
+        if: hashFiles('metric_contract/results/sensitivity_v1/metadata.json') != ''
+        run: python -m metric_contract.run --verify
 
