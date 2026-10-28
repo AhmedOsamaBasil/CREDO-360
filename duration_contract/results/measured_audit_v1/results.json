@@ -1,0 +1,1309 @@
+{
+  "scope": "measured decode/hash and software pacing; scripted arrivals; not rendering/HMD/network",
+  "rows": [
+    {
+      "index": 0,
+      "key": "v3:BuskingUnderpass05:1:2",
+      "scene": "BuskingUnderpass05",
+      "policy": "prefix_mpc",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 50180600858,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9874090216,
+          "pacing_late_ns": 306510642,
+          "startup_ns": 9874174046,
+          "later_delay_ns": 306426812
+        },
+        {
+          "finish_ns": 44633079370,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4329149942,
+          "pacing_late_ns": 303929428,
+          "startup_ns": 3215191537,
+          "later_delay_ns": 1417887833
+        }
+      ],
+      "loss_micro_mse_ticks": 107980414500000,
+      "segment_gain_micro_mse_ticks": [
+        7082787000000,
+        7245472500000,
+        162409500000,
+        0
+      ],
+      "deadline_credit": 14328259500000,
+      "eventual_credit": 14490669000000,
+      "deadline_unpaid": 0.867306867024,
+      "eventual_unpaid": 0.8658028026,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 107980414500000,
+        "segment_gain_micro_mse_ticks": [
+          7082787000000,
+          7245472500000,
+          162409500000,
+          0
+        ],
+        "deadline_credit": 14490669000000,
+        "eventual_credit": 14490669000000,
+        "deadline_unpaid": 0.8658028026,
+        "eventual_unpaid": 0.8658028026,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.406840114,
+      "mean_added_finish_vs_ideal_seconds": 0.2611001139999942,
+      "mean_startup_seconds": 6.5446827915,
+      "mean_later_delay_seconds": 0.8621573225,
+      "max_frame_pacing_late_ms": 1.099486,
+      "p95_frame_pacing_late_ms": 0.443304,
+      "recipient_completed_segments_by_deadline": 2
+    },
+    {
+      "index": 1,
+      "key": "v3:BuskingUnderpass05:1:2",
+      "scene": "BuskingUnderpass05",
+      "policy": "prefix_cost_greedy",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 50180147719,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9873157076,
+          "pacing_late_ns": 306990643,
+          "startup_ns": 9873270898,
+          "later_delay_ns": 306876821
+        },
+        {
+          "finish_ns": 44632622386,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4325154244,
+          "pacing_late_ns": 307468142,
+          "startup_ns": 3213424058,
+          "later_delay_ns": 1419198328
+        }
+      ],
+      "loss_micro_mse_ticks": 107980414500000,
+      "segment_gain_micro_mse_ticks": [
+        7082787000000,
+        7245472500000,
+        162409500000,
+        0
+      ],
+      "deadline_credit": 14328259500000,
+      "eventual_credit": 14490669000000,
+      "deadline_unpaid": 0.867306867024,
+      "eventual_unpaid": 0.8658028026,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 107980414500000,
+        "segment_gain_micro_mse_ticks": [
+          7082787000000,
+          7245472500000,
+          162409500000,
+          0
+        ],
+        "deadline_credit": 14490669000000,
+        "eventual_credit": 14490669000000,
+        "deadline_unpaid": 0.8658028026,
+        "eventual_unpaid": 0.8658028026,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.4063850525,
+      "mean_added_finish_vs_ideal_seconds": 0.2606450524999957,
+      "mean_startup_seconds": 6.543347478,
+      "mean_later_delay_seconds": 0.8630375745,
+      "max_frame_pacing_late_ms": 1.472531,
+      "p95_frame_pacing_late_ms": 0.449224,
+      "recipient_completed_segments_by_deadline": 2
+    },
+    {
+      "index": 2,
+      "key": "v3:BuskingUnderpass05:1:2",
+      "scene": "BuskingUnderpass05",
+      "policy": "baseline",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 44660558579,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4370705527,
+          "pacing_late_ns": 289853052,
+          "startup_ns": 3187240007,
+          "later_delay_ns": 1473318572
+        },
+        {
+          "finish_ns": 44660641874,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4377697165,
+          "pacing_late_ns": 282944709,
+          "startup_ns": 3186577544,
+          "later_delay_ns": 1474064330
+        }
+      ],
+      "loss_micro_mse_ticks": 107980414500000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 0,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 1.0,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 107980414500000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "deadline_credit": 0,
+        "eventual_credit": 0,
+        "deadline_unpaid": 1.0,
+        "eventual_unpaid": 1.0,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 44.6606002265,
+      "mean_added_finish_vs_ideal_seconds": 0.17189355983333598,
+      "mean_startup_seconds": 3.1869087755,
+      "mean_later_delay_seconds": 1.473691451,
+      "max_frame_pacing_late_ms": 3.428208,
+      "p95_frame_pacing_late_ms": 0.409367,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 3,
+      "key": "v3:Cheerleading01:1:2",
+      "scene": "Cheerleading01",
+      "policy": "prefix_cost_greedy",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 50184053362,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9897053061,
+          "pacing_late_ns": 287000301,
+          "startup_ns": 4487100232,
+          "later_delay_ns": 5696953130
+        },
+        {
+          "finish_ns": 44773361476,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4489257029,
+          "pacing_late_ns": 284104447,
+          "startup_ns": 4489395183,
+          "later_delay_ns": 283966293
+        }
+      ],
+      "loss_micro_mse_ticks": 177438829500000,
+      "segment_gain_micro_mse_ticks": [
+        48354000000,
+        10028260500000,
+        10420885500000,
+        0
+      ],
+      "deadline_credit": 10076614500000,
+      "eventual_credit": 20497500000000,
+      "deadline_unpaid": 0.943210769997,
+      "eventual_unpaid": 0.884481316419,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 177438829500000,
+        "segment_gain_micro_mse_ticks": [
+          48354000000,
+          10028260500000,
+          10420885500000,
+          0
+        ],
+        "deadline_credit": 20497500000000,
+        "eventual_credit": 20497500000000,
+        "deadline_unpaid": 0.884481316419,
+        "eventual_unpaid": 0.884481316419,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.478707419,
+      "mean_added_finish_vs_ideal_seconds": 0.27912741900000526,
+      "mean_startup_seconds": 4.4882477075,
+      "mean_later_delay_seconds": 2.9904597115,
+      "max_frame_pacing_late_ms": 1.41939,
+      "p95_frame_pacing_late_ms": 0.394367,
+      "recipient_completed_segments_by_deadline": 2
+    },
+    {
+      "index": 4,
+      "key": "v3:Cheerleading01:1:2",
+      "scene": "Cheerleading01",
+      "policy": "baseline",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 44794810929,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4496082188,
+          "pacing_late_ns": 298728741,
+          "startup_ns": 4496243603,
+          "later_delay_ns": 298567326
+        },
+        {
+          "finish_ns": 44794378640,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4496323572,
+          "pacing_late_ns": 298055068,
+          "startup_ns": 4496405765,
+          "later_delay_ns": 297972875
+        }
+      ],
+      "loss_micro_mse_ticks": 177438829500000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 0,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 1.0,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 177438829500000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "deadline_credit": 0,
+        "eventual_credit": 0,
+        "deadline_unpaid": 1.0,
+        "eventual_unpaid": 1.0,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 44.7945947845,
+      "mean_added_finish_vs_ideal_seconds": 0.36287478450000066,
+      "mean_startup_seconds": 4.496324684,
+      "mean_later_delay_seconds": 0.2982701005,
+      "max_frame_pacing_late_ms": 1.371726,
+      "p95_frame_pacing_late_ms": 0.469629,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 5,
+      "key": "v3:Cheerleading01:1:2",
+      "scene": "Cheerleading01",
+      "policy": "prefix_mpc",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 50179720096,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9897064401,
+          "pacing_late_ns": 282655695,
+          "startup_ns": 4488851008,
+          "later_delay_ns": 5690869088
+        },
+        {
+          "finish_ns": 44772829456,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4488532673,
+          "pacing_late_ns": 284296783,
+          "startup_ns": 4488662282,
+          "later_delay_ns": 284167174
+        }
+      ],
+      "loss_micro_mse_ticks": 177438829500000,
+      "segment_gain_micro_mse_ticks": [
+        48354000000,
+        10028260500000,
+        10420885500000,
+        0
+      ],
+      "deadline_credit": 10076614500000,
+      "eventual_credit": 20497500000000,
+      "deadline_unpaid": 0.943210769997,
+      "eventual_unpaid": 0.884481316419,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 177438829500000,
+        "segment_gain_micro_mse_ticks": [
+          48354000000,
+          10028260500000,
+          10420885500000,
+          0
+        ],
+        "deadline_credit": 20497500000000,
+        "eventual_credit": 20497500000000,
+        "deadline_unpaid": 0.884481316419,
+        "eventual_unpaid": 0.884481316419,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.476274776,
+      "mean_added_finish_vs_ideal_seconds": 0.27669477599999937,
+      "mean_startup_seconds": 4.488756645,
+      "mean_later_delay_seconds": 2.987518131,
+      "max_frame_pacing_late_ms": 1.224979,
+      "p95_frame_pacing_late_ms": 0.422638,
+      "recipient_completed_segments_by_deadline": 2
+    },
+    {
+      "index": 6,
+      "key": "v3:ConferenceParticipant02:1:2",
+      "scene": "ConferenceParticipant02",
+      "policy": "baseline",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 43781137555,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3487854583,
+          "pacing_late_ns": 293282972,
+          "startup_ns": 3383567486,
+          "later_delay_ns": 397570069
+        },
+        {
+          "finish_ns": 43780054213,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3484300834,
+          "pacing_late_ns": 295753379,
+          "startup_ns": 3382466135,
+          "later_delay_ns": 397588078
+        }
+      ],
+      "loss_micro_mse_ticks": 138814419000000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 0,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 1.0,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 138814419000000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "deadline_credit": 0,
+        "eventual_credit": 0,
+        "deadline_unpaid": 1.0,
+        "eventual_unpaid": 1.0,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 43.780595884,
+      "mean_added_finish_vs_ideal_seconds": 0.13672921733333254,
+      "mean_startup_seconds": 3.3830168105,
+      "mean_later_delay_seconds": 0.3975790735,
+      "max_frame_pacing_late_ms": 1.083424,
+      "p95_frame_pacing_late_ms": 0.43689,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 7,
+      "key": "v3:ConferenceParticipant02:1:2",
+      "scene": "ConferenceParticipant02",
+      "policy": "prefix_mpc",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 49714574946,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9427010626,
+          "pacing_late_ns": 287564320,
+          "startup_ns": 3409593222,
+          "later_delay_ns": 6304981724
+        },
+        {
+          "finish_ns": 43771991282,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3485535047,
+          "pacing_late_ns": 286456235,
+          "startup_ns": 3407271306,
+          "later_delay_ns": 364719976
+        }
+      ],
+      "loss_micro_mse_ticks": 138814419000000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        7097188500000,
+        0,
+        7039690500000
+      ],
+      "deadline_credit": 7097188500000,
+      "eventual_credit": 14136879000000,
+      "deadline_unpaid": 0.94887282927,
+      "eventual_unpaid": 0.898159866231,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 138814419000000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          7097188500000,
+          0,
+          7039690500000
+        ],
+        "deadline_credit": 7097188500000,
+        "eventual_credit": 14136879000000,
+        "deadline_unpaid": 0.94887282927,
+        "eventual_unpaid": 0.898159866231,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 46.743283114,
+      "mean_added_finish_vs_ideal_seconds": 0.14072978066666764,
+      "mean_startup_seconds": 3.408432264,
+      "mean_later_delay_seconds": 3.33485085,
+      "max_frame_pacing_late_ms": 1.161209,
+      "p95_frame_pacing_late_ms": 0.412356,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 8,
+      "key": "v3:ConferenceParticipant02:1:2",
+      "scene": "ConferenceParticipant02",
+      "policy": "prefix_cost_greedy",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 49936123993,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9643774398,
+          "pacing_late_ns": 292349595,
+          "startup_ns": 9643954033,
+          "later_delay_ns": 292169960
+        },
+        {
+          "finish_ns": 43779163686,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3488295796,
+          "pacing_late_ns": 290867890,
+          "startup_ns": 3382249000,
+          "later_delay_ns": 396914686
+        }
+      ],
+      "loss_micro_mse_ticks": 138814419000000,
+      "segment_gain_micro_mse_ticks": [
+        6854839500000,
+        7097188500000,
+        0,
+        0
+      ],
+      "deadline_credit": 13952028000000,
+      "eventual_credit": 13952028000000,
+      "deadline_unpaid": 0.899491507435,
+      "eventual_unpaid": 0.899491507435,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 138814419000000,
+        "segment_gain_micro_mse_ticks": [
+          6854839500000,
+          7097188500000,
+          0,
+          0
+        ],
+        "deadline_credit": 13952028000000,
+        "eventual_credit": 13952028000000,
+        "deadline_unpaid": 0.899491507435,
+        "eventual_unpaid": 0.899491507435,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 46.8576438395,
+      "mean_added_finish_vs_ideal_seconds": 0.24883050616666935,
+      "mean_startup_seconds": 6.5131015165,
+      "mean_later_delay_seconds": 0.344542323,
+      "max_frame_pacing_late_ms": 0.891424,
+      "p95_frame_pacing_late_ms": 0.411577,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 9,
+      "key": "v2:ParkFountains01:1:2",
+      "scene": "ParkFountains01",
+      "policy": "prefix_mpc",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 49781461557,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9478431441,
+          "pacing_late_ns": 303030116,
+          "startup_ns": 9374115148,
+          "later_delay_ns": 407346409
+        },
+        {
+          "finish_ns": 43968255446,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3667891083,
+          "pacing_late_ns": 300364363,
+          "startup_ns": 3668029183,
+          "later_delay_ns": 300226263
+        }
+      ],
+      "loss_micro_mse_ticks": 174090424500000,
+      "segment_gain_micro_mse_ticks": [
+        28662693000000,
+        31346700000000,
+        0,
+        0
+      ],
+      "deadline_credit": 60009393000000,
+      "eventual_credit": 60009393000000,
+      "deadline_unpaid": 0.655297566352,
+      "eventual_unpaid": 0.655297566352,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 174090424500000,
+        "segment_gain_micro_mse_ticks": [
+          28662693000000,
+          31346700000000,
+          0,
+          0
+        ],
+        "deadline_credit": 60009393000000,
+        "eventual_credit": 60009393000000,
+        "deadline_unpaid": 0.655297566352,
+        "eventual_unpaid": 0.655297566352,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 46.8748585015,
+      "mean_added_finish_vs_ideal_seconds": 0.24320516816666782,
+      "mean_startup_seconds": 6.5210721655,
+      "mean_later_delay_seconds": 0.353786336,
+      "max_frame_pacing_late_ms": 5.51803,
+      "p95_frame_pacing_late_ms": 0.433289,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 10,
+      "key": "v2:ParkFountains01:1:2",
+      "scene": "ParkFountains01",
+      "policy": "prefix_cost_greedy",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 49770315595,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9471294706,
+          "pacing_late_ns": 299020889,
+          "startup_ns": 9370324318,
+          "later_delay_ns": 399991277
+        },
+        {
+          "finish_ns": 43954292636,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3671412419,
+          "pacing_late_ns": 282880217,
+          "startup_ns": 3671522770,
+          "later_delay_ns": 282769866
+        }
+      ],
+      "loss_micro_mse_ticks": 174090424500000,
+      "segment_gain_micro_mse_ticks": [
+        28662693000000,
+        31346700000000,
+        0,
+        0
+      ],
+      "deadline_credit": 60009393000000,
+      "eventual_credit": 60009393000000,
+      "deadline_unpaid": 0.655297566352,
+      "eventual_unpaid": 0.655297566352,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 174090424500000,
+        "segment_gain_micro_mse_ticks": [
+          28662693000000,
+          31346700000000,
+          0,
+          0
+        ],
+        "deadline_credit": 60009393000000,
+        "eventual_credit": 60009393000000,
+        "deadline_unpaid": 0.655297566352,
+        "eventual_unpaid": 0.655297566352,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 46.862304115499995,
+      "mean_added_finish_vs_ideal_seconds": 0.2306507821666628,
+      "mean_startup_seconds": 6.520923544,
+      "mean_later_delay_seconds": 0.3413805715,
+      "max_frame_pacing_late_ms": 0.999573,
+      "p95_frame_pacing_late_ms": 0.43754,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 11,
+      "key": "v2:ParkFountains01:1:2",
+      "scene": "ParkFountains01",
+      "policy": "baseline",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 43965602680,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3672743649,
+          "pacing_late_ns": 292859031,
+          "startup_ns": 3672824589,
+          "later_delay_ns": 292778091
+        },
+        {
+          "finish_ns": 43965103064,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3672039991,
+          "pacing_late_ns": 293063073,
+          "startup_ns": 3672130318,
+          "later_delay_ns": 292972746
+        }
+      ],
+      "loss_micro_mse_ticks": 174090424500000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 0,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 1.0,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 174090424500000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "deadline_credit": 0,
+        "eventual_credit": 0,
+        "deadline_unpaid": 1.0,
+        "eventual_unpaid": 1.0,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 43.965352872,
+      "mean_added_finish_vs_ideal_seconds": 0.1714462053333321,
+      "mean_startup_seconds": 3.6724774535,
+      "mean_later_delay_seconds": 0.2928754185,
+      "max_frame_pacing_late_ms": 1.036532,
+      "p95_frame_pacing_late_ms": 0.476245,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 12,
+      "key": "v2:River01:1:2",
+      "scene": "River01",
+      "policy": "prefix_cost_greedy",
+      "negative_control": false,
+      "frames_checked": 2398,
+      "player_stats": [
+        {
+          "finish_ns": 50366974323,
+          "media_ns": 39966666667,
+          "decoder_wait_ns": 10111879759,
+          "pacing_late_ns": 288427897,
+          "startup_ns": 10112220984,
+          "later_delay_ns": 288086672
+        },
+        {
+          "finish_ns": 44569579099,
+          "media_ns": 39966666667,
+          "decoder_wait_ns": 4309585587,
+          "pacing_late_ns": 293326845,
+          "startup_ns": 3854323678,
+          "later_delay_ns": 748588754
+        }
+      ],
+      "loss_micro_mse_ticks": 384545244000000,
+      "segment_gain_micro_mse_ticks": [
+        164736181500000,
+        0,
+        0,
+        0
+      ],
+      "deadline_credit": 164736181500000,
+      "eventual_credit": 164736181500000,
+      "deadline_unpaid": 0.5716078041,
+      "eventual_unpaid": 0.5716078041,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 384545244000000,
+        "segment_gain_micro_mse_ticks": [
+          164736181500000,
+          0,
+          0,
+          0
+        ],
+        "deadline_credit": 164736181500000,
+        "eventual_credit": 164736181500000,
+        "deadline_unpaid": 0.5716078041,
+        "eventual_unpaid": 0.5716078041,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.468276711,
+      "mean_added_finish_vs_ideal_seconds": 0.2514700443333382,
+      "mean_startup_seconds": 6.983272331,
+      "mean_later_delay_seconds": 0.518337713,
+      "max_frame_pacing_late_ms": 2.3679,
+      "p95_frame_pacing_late_ms": 0.401594,
+      "recipient_completed_segments_by_deadline": 2
+    },
+    {
+      "index": 13,
+      "key": "v2:River01:1:2",
+      "scene": "River01",
+      "policy": "baseline",
+      "negative_control": false,
+      "frames_checked": 2398,
+      "player_stats": [
+        {
+          "finish_ns": 44538326771,
+          "media_ns": 39966666667,
+          "decoder_wait_ns": 4284170555,
+          "pacing_late_ns": 287489549,
+          "startup_ns": 3864736608,
+          "later_delay_ns": 706923496
+        },
+        {
+          "finish_ns": 44538808566,
+          "media_ns": 39966666667,
+          "decoder_wait_ns": 4286829944,
+          "pacing_late_ns": 285311955,
+          "startup_ns": 3868371461,
+          "later_delay_ns": 703770438
+        }
+      ],
+      "loss_micro_mse_ticks": 384545244000000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 0,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 1.0,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 384545244000000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "deadline_credit": 0,
+        "eventual_credit": 0,
+        "deadline_unpaid": 1.0,
+        "eventual_unpaid": 1.0,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 44.5385676685,
+      "mean_added_finish_vs_ideal_seconds": 0.13575433516666635,
+      "mean_startup_seconds": 3.8665540345,
+      "mean_later_delay_seconds": 0.705346967,
+      "max_frame_pacing_late_ms": 1.418526,
+      "p95_frame_pacing_late_ms": 0.404563,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 14,
+      "key": "v2:River01:1:2",
+      "scene": "River01",
+      "policy": "prefix_mpc",
+      "negative_control": false,
+      "frames_checked": 2398,
+      "player_stats": [
+        {
+          "finish_ns": 50158303244,
+          "media_ns": 39966666667,
+          "decoder_wait_ns": 9902061767,
+          "pacing_late_ns": 289574810,
+          "startup_ns": 3852842604,
+          "later_delay_ns": 6338793973
+        },
+        {
+          "finish_ns": 44525589112,
+          "media_ns": 39966666667,
+          "decoder_wait_ns": 4281122886,
+          "pacing_late_ns": 277799559,
+          "startup_ns": 3855655981,
+          "later_delay_ns": 703266464
+        }
+      ],
+      "loss_micro_mse_ticks": 384545244000000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        146479725000000,
+        0,
+        0
+      ],
+      "deadline_credit": 146479725000000,
+      "eventual_credit": 146479725000000,
+      "deadline_unpaid": 0.619083248888,
+      "eventual_unpaid": 0.619083248888,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 384545244000000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          146479725000000,
+          0,
+          0
+        ],
+        "deadline_credit": 146479725000000,
+        "eventual_credit": 146479725000000,
+        "deadline_unpaid": 0.619083248888,
+        "eventual_unpaid": 0.619083248888,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.341946178,
+      "mean_added_finish_vs_ideal_seconds": 0.21960617799999937,
+      "mean_startup_seconds": 3.8542492925,
+      "mean_later_delay_seconds": 3.5210302185,
+      "max_frame_pacing_late_ms": 5.056306,
+      "p95_frame_pacing_late_ms": 0.39767,
+      "recipient_completed_segments_by_deadline": 2
+    },
+    {
+      "index": 15,
+      "key": "v2:Train01:1:2",
+      "scene": "Train01",
+      "policy": "baseline",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 44571688264,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4296856453,
+          "pacing_late_ns": 274831811,
+          "startup_ns": 3612763084,
+          "later_delay_ns": 958925180
+        },
+        {
+          "finish_ns": 44571472721,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4301151916,
+          "pacing_late_ns": 270320805,
+          "startup_ns": 3613377056,
+          "later_delay_ns": 958095665
+        }
+      ],
+      "loss_micro_mse_ticks": 104132469000000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 0,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 1.0,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 104132469000000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "deadline_credit": 0,
+        "eventual_credit": 0,
+        "deadline_unpaid": 1.0,
+        "eventual_unpaid": 1.0,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 44.571580492500004,
+      "mean_added_finish_vs_ideal_seconds": 0.12527382583333946,
+      "mean_startup_seconds": 3.61307007,
+      "mean_later_delay_seconds": 0.9585104225,
+      "max_frame_pacing_late_ms": 0.942014,
+      "p95_frame_pacing_late_ms": 0.403795,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 16,
+      "key": "v2:Train01:1:2",
+      "scene": "Train01",
+      "policy": "prefix_mpc",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 49686413895,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9386204114,
+          "pacing_late_ns": 300209781,
+          "startup_ns": 3613595938,
+          "later_delay_ns": 6072817957
+        },
+        {
+          "finish_ns": 44575067656,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4262723203,
+          "pacing_late_ns": 312344453,
+          "startup_ns": 3613146944,
+          "later_delay_ns": 961920712
+        }
+      ],
+      "loss_micro_mse_ticks": 104132469000000,
+      "segment_gain_micro_mse_ticks": [
+        0,
+        11147658000000,
+        8537409000000,
+        9330000000
+      ],
+      "deadline_credit": 19685067000000,
+      "eventual_credit": 19694397000000,
+      "deadline_unpaid": 0.810961295847,
+      "eventual_unpaid": 0.810871698433,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 104132469000000,
+        "segment_gain_micro_mse_ticks": [
+          0,
+          11147658000000,
+          8537409000000,
+          9330000000
+        ],
+        "deadline_credit": 19685067000000,
+        "eventual_credit": 19694397000000,
+        "deadline_unpaid": 0.810961295847,
+        "eventual_unpaid": 0.810871698433,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.1307407755,
+      "mean_added_finish_vs_ideal_seconds": 0.21348077550000255,
+      "mean_startup_seconds": 3.613371441,
+      "mean_later_delay_seconds": 3.5173693345,
+      "max_frame_pacing_late_ms": 12.49572,
+      "p95_frame_pacing_late_ms": 0.413317,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 17,
+      "key": "v2:Train01:1:2",
+      "scene": "Train01",
+      "policy": "prefix_cost_greedy",
+      "negative_control": false,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 49943339038,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 9641233209,
+          "pacing_late_ns": 302105829,
+          "startup_ns": 9641346157,
+          "later_delay_ns": 301992881
+        },
+        {
+          "finish_ns": 44598218193,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 4297926175,
+          "pacing_late_ns": 300292018,
+          "startup_ns": 3623420919,
+          "later_delay_ns": 974797274
+        }
+      ],
+      "loss_micro_mse_ticks": 104132469000000,
+      "segment_gain_micro_mse_ticks": [
+        13747621500000,
+        11147658000000,
+        0,
+        9330000000
+      ],
+      "deadline_credit": 24895279500000,
+      "eventual_credit": 24904609500000,
+      "deadline_unpaid": 0.760926829652,
+      "eventual_unpaid": 0.760837232237,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 104132469000000,
+        "segment_gain_micro_mse_ticks": [
+          13747621500000,
+          11147658000000,
+          0,
+          9330000000
+        ],
+        "deadline_credit": 24895279500000,
+        "eventual_credit": 24904609500000,
+        "deadline_unpaid": 0.760926829652,
+        "eventual_unpaid": 0.760837232237,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 47.2707786155,
+      "mean_added_finish_vs_ideal_seconds": 0.26707861549999734,
+      "mean_startup_seconds": 6.632383538,
+      "mean_later_delay_seconds": 0.6383950775,
+      "max_frame_pacing_late_ms": 3.45094,
+      "p95_frame_pacing_late_ms": 0.431487,
+      "recipient_completed_segments_by_deadline": 3
+    },
+    {
+      "index": 18,
+      "key": "v2:ParkFountains01:1:2",
+      "scene": "ParkFountains01",
+      "policy": "prefix_mpc",
+      "negative_control": true,
+      "frames_checked": 2400,
+      "player_stats": [
+        {
+          "finish_ns": 89790900852,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 49463633102,
+          "pacing_late_ns": 327267750,
+          "startup_ns": 49370006389,
+          "later_delay_ns": 420894463
+        },
+        {
+          "finish_ns": 43999974196,
+          "media_ns": 40000000000,
+          "decoder_wait_ns": 3666999136,
+          "pacing_late_ns": 332975060,
+          "startup_ns": 3667132454,
+          "later_delay_ns": 332841742
+        }
+      ],
+      "loss_micro_mse_ticks": 174090424500000,
+      "segment_gain_micro_mse_ticks": [
+        28662693000000,
+        31346700000000,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 60009393000000,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 0.655297566352,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0,
+      "ideal_account": {
+        "loss_micro_mse_ticks": 174090424500000,
+        "segment_gain_micro_mse_ticks": [
+          28662693000000,
+          31346700000000,
+          0,
+          0
+        ],
+        "deadline_credit": 0,
+        "eventual_credit": 60009393000000,
+        "deadline_unpaid": 1.0,
+        "eventual_unpaid": 0.655297566352,
+        "half_by_deadline": false,
+        "protected_half_by_deadline": false,
+        "recipient_floor_violations": 0,
+        "donor_floor_violations": 0
+      },
+      "mean_finish_seconds": 66.89543752399999,
+      "mean_added_finish_vs_ideal_seconds": 0.26378419066665515,
+      "mean_startup_seconds": 26.5185694215,
+      "mean_later_delay_seconds": 0.3768681025,
+      "max_frame_pacing_late_ms": 0.716121,
+      "p95_frame_pacing_late_ms": 0.415805,
+      "recipient_completed_segments_by_deadline": 0
+    }
+  ],
+  "summary": [
+    {
+      "policy": "prefix_mpc",
+      "sessions": 6,
+      "half": 0,
+      "protected_half": 0,
+      "deadline_unpaid": 0.807455429563,
+      "mean_finish_seconds": 47.16232390983333,
+      "mean_added_finish_vs_ideal_seconds": 0.22580279872222184,
+      "mean_startup_seconds": 4.73842743325,
+      "mean_later_delay_seconds": 2.4294520320833333
+    },
+    {
+      "policy": "prefix_cost_greedy",
+      "sessions": 6,
+      "half": 0,
+      "protected_half": 0,
+      "deadline_unpaid": 0.7829735574266666,
+      "mean_finish_seconds": 47.224015958833334,
+      "mean_added_finish_vs_ideal_seconds": 0.2563004032777781,
+      "mean_startup_seconds": 6.280212685833334,
+      "mean_later_delay_seconds": 0.9493588285
+    },
+    {
+      "policy": "baseline",
+      "sessions": 6,
+      "half": 0,
+      "protected_half": 0,
+      "deadline_unpaid": 1.0,
+      "mean_finish_seconds": 44.385215321333334,
+      "mean_added_finish_vs_ideal_seconds": 0.18399532133333452,
+      "mean_startup_seconds": 3.703058638,
+      "mean_later_delay_seconds": 0.6877122388333333
+    }
+  ],
+  "sessions": 19,
+  "frames_checked": 45594,
+  "raw_sha256": {
+    "session_00.json.gz": "4ed8c36069a58b465440fd44322cbaefe88cf2fa10fced27e59912262d83741d",
+    "session_01.json.gz": "886dab7a38e17f2cc932d999a2f389644ed04df10408ea71703b156868bae7e9",
+    "session_02.json.gz": "6f631476201a38510ce2691fdd8fa02518e0ebdbc711544fdccd34b3cfdef1e7",
+    "session_03.json.gz": "4f7d151405ecdc2c2fb82d9cd50bac455c6ef15278bdb007d1f936dfb52eab00",
+    "session_04.json.gz": "3b6ded27ba95c50f1d5759ea6323bde03fe742dc33d951d28292048d8ae69e6f",
+    "session_05.json.gz": "7ce5547e6db76338aad11f6068570ee1e2d0c7a5311866f6fa40414e3dff76f0",
+    "session_06.json.gz": "ef1c668043c80553fe05b121cb80ea40e550ffa9e24cd1add75a7667b9f72fd4",
+    "session_07.json.gz": "376c8d9706016c9c4df19b8d7c8678fd7947dd6256d0b4c0856e520845241643",
+    "session_08.json.gz": "72c32e5bab23aa83af9aa983b4e96ff54d0bbf29bb7ffbc475754b9e1c245a8a",
+    "session_09.json.gz": "c497902cebe2c8ad7062f04483d77235fa33c93d56cfff3a2b0868ada0d9be42",
+    "session_10.json.gz": "5598e7dbb6318084db61908e753cb782a5d2a44965ad9f8bdaf0285bb78d0113",
+    "session_11.json.gz": "5003cef8eee426addd5e3b2b2460cd71386bb4e9d028a84c5d3742f09b4c0fc7",
+    "session_12.json.gz": "7a2e2d03c352080065b7aee46a0d4558dd1533bbf1ee64504b7c5b2e8ba09555",
+    "session_13.json.gz": "e15b4ce84d81088eeee0798199fd7b5251e18193cdf8429d9205f964d64eb26b",
+    "session_14.json.gz": "773cbc96f248ef78ddd86e7c79b74b28ba5383fbe10ece628b4c5ef971f94f04",
+    "session_15.json.gz": "c24bce988dbb014fc6915cb6af4e7edf143571277f64bfab51f625491dea7843",
+    "session_16.json.gz": "fa04ce5c7017e108c55c541fa68e73236d1902d5064fffc456dd21518d712eae",
+    "session_17.json.gz": "0a3c6bae66520774168618c19c114ee3c6d2858b45b70ed8b5811808592c7aea",
+    "session_18.json.gz": "bfade6716990bebee7421082d7591c24a2c6901dab54a8ebb6f9cffc28909433"
+  },
+  "source_sha256": {
+    "duration_contract/__init__.py": "886da5e16a6e6ca64907b7ee6c67c6b45e07e3cb831323ce81980ff2e5aedc87",
+    "duration_contract/core.py": "f08f6129a92dd65812372d7fbd8c911cfa0749b9c4d5e545866e502c758b86b7",
+    "duration_contract/prepare.py": "ce3c17ac7ca5bab67d8d61d8fe8fbf6efc05cc8fbe7fa2a586c187d1a421a0b1",
+    "duration_contract/run.py": "5ed9f6fa10f654dbe063bb1539e3bb79dcb9a66bec3761d306ef5a4cef5daa8e",
+    "duration_contract/paced.py": "6114d7e7474e7bb8b88484b71d09dec6efb7166b598c0eae96cfa7a79add1c50",
+    "duration_contract/audit.py": "8503a1a831d4bdc2e3bea53539b2420efd35fc637531560d32f727d4b46ed4bc",
+    "duration_contract/test_core.py": "107b5ff42906f9dba869a9c234f646fbeef82acb1ff72415af9305e01d3270fb",
+    "duration_contract/PLAN.md": "d617e9b17860e0ef6af5fc558a89ec74845f43eb82f0af454f7efadc580582da"
+  },
+  "negative_control_pass": true
+}

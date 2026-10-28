@@ -1,0 +1,101 @@
+{
+  "posthoc": true,
+  "controller_retuned": false,
+  "replay_resource_paths": 3024,
+  "fixed_actual_nominal_pairs": 1512,
+  "actual_nominal_changed": {
+    "deadline_credit": 0,
+    "eventual_credit": 0,
+    "half_by_deadline": 0,
+    "protected_half_by_deadline": 0,
+    "deadline_unpaid": 0,
+    "eventual_unpaid": 0,
+    "worst_eventual_psnr_db": 252
+  },
+  "actual_finish_reduced_users": 504,
+  "maximum_finish_reduction_seconds": 0.03333333333333333,
+  "decoded_streams": 152,
+  "unique_decoded_files": 43,
+  "repeated_streams_checked": 109,
+  "measured_vs_ideal_changed": {
+    "deadline_credit": 4,
+    "half_by_deadline": 0,
+    "protected_half_by_deadline": 0
+  },
+  "nominal_players": 36,
+  "mean_pacing_lateness_seconds": 0.29255736230555557,
+  "max_player_pacing_lateness_seconds": 0.312344453,
+  "max_frame_pacing_lateness_ms": 12.49572,
+  "negative_control": {
+    "index": 18,
+    "key": "v2:ParkFountains01:1:2",
+    "scene": "ParkFountains01",
+    "policy": "prefix_mpc",
+    "negative_control": true,
+    "frames_checked": 2400,
+    "player_stats": [
+      {
+        "finish_ns": 89790900852,
+        "media_ns": 40000000000,
+        "decoder_wait_ns": 49463633102,
+        "pacing_late_ns": 327267750,
+        "startup_ns": 49370006389,
+        "later_delay_ns": 420894463
+      },
+      {
+        "finish_ns": 43999974196,
+        "media_ns": 40000000000,
+        "decoder_wait_ns": 3666999136,
+        "pacing_late_ns": 332975060,
+        "startup_ns": 3667132454,
+        "later_delay_ns": 332841742
+      }
+    ],
+    "loss_micro_mse_ticks": 174090424500000,
+    "segment_gain_micro_mse_ticks": [
+      28662693000000,
+      31346700000000,
+      0,
+      0
+    ],
+    "deadline_credit": 0,
+    "eventual_credit": 60009393000000,
+    "deadline_unpaid": 1.0,
+    "eventual_unpaid": 0.655297566352,
+    "half_by_deadline": false,
+    "protected_half_by_deadline": false,
+    "recipient_floor_violations": 0,
+    "donor_floor_violations": 0,
+    "ideal_account": {
+      "loss_micro_mse_ticks": 174090424500000,
+      "segment_gain_micro_mse_ticks": [
+        28662693000000,
+        31346700000000,
+        0,
+        0
+      ],
+      "deadline_credit": 0,
+      "eventual_credit": 60009393000000,
+      "deadline_unpaid": 1.0,
+      "eventual_unpaid": 0.655297566352,
+      "half_by_deadline": false,
+      "protected_half_by_deadline": false,
+      "recipient_floor_violations": 0,
+      "donor_floor_violations": 0
+    },
+    "mean_finish_seconds": 66.89543752399999,
+    "mean_added_finish_vs_ideal_seconds": 0.26378419066665515,
+    "mean_startup_seconds": 26.5185694215,
+    "mean_later_delay_seconds": 0.3768681025,
+    "max_frame_pacing_late_ms": 0.716121,
+    "p95_frame_pacing_late_ms": 0.415805,
+    "recipient_completed_segments_by_deadline": 0
+  },
+  "source_sha256": {
+    "duration_contract/diagnose.py": "b036106e31048cfc8902feb237e6237f26600a8f2f54588015db8df4e4c0dc8d",
+    "duration_contract/test_validation.py": "cf79f6591fe92f97f324e9e113a463823ac702ce3ab259fc89df827fa82965da"
+  },
+  "replay_sha256": "2b50fe7c78832a0fd0a1c838500d697e4fc1b1bbb9fc18fe8b1e40d3d554dd0f",
+  "measured_sha256": "8bc19ce91dde21af134785cbf27c56123e7824efd9b399cd9652b781d16e62c3",
+  "media_sha256": "2df6138696d37dfe6bc0d6d940762d76bafc2bfcab469468eaadbd996b677d2b"
+}

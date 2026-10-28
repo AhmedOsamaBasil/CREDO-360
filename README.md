@@ -1,6 +1,13 @@
 # CREDO-360
 
-Latest [metric and service-contract sensitivity](metric_contract/README.md)
+The [engineering quality/deadline contract and actual-duration study](duration_contract/README.md)
+defines completed-segment distortion-seconds by40s with both-user quality floors.
+Actual MP4 durations leave the failed recovery findings unchanged: protected
+target attainment is1/168 for the primary controller and10/168 for cost-greedy;
+the strict future-known bound is27/168. Software decode-and-PTS pacing uses
+scripted arrivals, not new network measurements or physical display/HMD playback.
+
+The preceding [metric and service-contract sensitivity](metric_contract/README.md)
 uses exposed data only. Exact bounds and fixed-path rescoring show substantial
 metric dependence and ranking reversals; common-floor and deadline checks are
 published. This is a diagnostic result, not a new successful recovery controller.

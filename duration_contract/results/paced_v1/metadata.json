@@ -1,0 +1,150 @@
+{
+  "source_sha256": {
+    "duration_contract/__init__.py": "886da5e16a6e6ca64907b7ee6c67c6b45e07e3cb831323ce81980ff2e5aedc87",
+    "duration_contract/core.py": "f08f6129a92dd65812372d7fbd8c911cfa0749b9c4d5e545866e502c758b86b7",
+    "duration_contract/prepare.py": "ce3c17ac7ca5bab67d8d61d8fe8fbf6efc05cc8fbe7fa2a586c187d1a421a0b1",
+    "duration_contract/run.py": "5ed9f6fa10f654dbe063bb1539e3bb79dcb9a66bec3761d306ef5a4cef5daa8e",
+    "duration_contract/paced.py": "6114d7e7474e7bb8b88484b71d09dec6efb7166b598c0eae96cfa7a79add1c50",
+    "duration_contract/audit.py": "8503a1a831d4bdc2e3bea53539b2420efd35fc637531560d32f727d4b46ed4bc",
+    "duration_contract/test_core.py": "107b5ff42906f9dba869a9c234f646fbeef82acb1ff72415af9305e01d3270fb",
+    "duration_contract/PLAN.md": "d617e9b17860e0ef6af5fc558a89ec74845f43eb82f0af454f7efadc580582da"
+  },
+  "input_sha256": {
+    "feasibility_recovery/data/v2/calibration_quality.csv": "1f55ff987ec96d1b3c03a072123b2fdcf6139f49484d8ed61be44443d9a75890",
+    "feasibility_recovery/data/v2/heldout_quality.csv": "8c46163cea2d07df1d3a0fd2763427cace2df9cd68d0f071f03aee9ac7733f8f",
+    "horizon_recovery/data/v3/calibration_quality.csv": "02393f8de93e9131d99d65ce55c8a7e510d0c7e17398a63c287a2dd4acc3277e",
+    "horizon_recovery/data/v3/heldout_quality.csv": "07e223d31072241d5444ee70c9a8e1481f6a2a25f8df4079b4f47c1f49f90f5d",
+    "causal_playback/data/media_manifest.json": "43e3f61a27a1a122683a2cb8909d1d7f50f04e38a21b1da0e5c6989c1dcf485a",
+    "early_commitment/results/development_v1/results.json.gz": "c95eabd81611417038d3deea38d25e4a5276609f619d9cf19b7d0e2de342a264",
+    "feedback_opportunity/results/audit_v1/results.json.gz": "5de579c70b156f1670c01115a254ef618bc505a3fbd86a32082e826b3a475acb"
+  },
+  "dependency_sha256": {
+    "metric_contract/core.py": "8752ac14a8fbd175ed21a8a9f8fea190a0aa2170c2b3f4bb63609c107efc362d",
+    "metric_contract/data.py": "638852b969c0625be2ab70913752e094c781c795f311e29bc2a84fa32ad7c36d",
+    "metric_contract/run.py": "e663928cd9995fd2d982a7d42ac46457ed7de3b571703d879cfb8a35e149a04a"
+  },
+  "media_audit_sha256": "2df6138696d37dfe6bc0d6d940762d76bafc2bfcab469468eaadbd996b677d2b",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4",
+  "ffmpeg": "ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers",
+  "max_concurrent_sessions": 2,
+  "logical_cpu_count": 16,
+  "decoder_threads_per_file": 1,
+  "raw_encoder_threads_per_file": 1,
+  "schedule": [
+    {
+      "index": 0,
+      "key": "v3:BuskingUnderpass05:1:2",
+      "policy": "prefix_mpc",
+      "negative": false
+    },
+    {
+      "index": 1,
+      "key": "v3:BuskingUnderpass05:1:2",
+      "policy": "prefix_cost_greedy",
+      "negative": false
+    },
+    {
+      "index": 2,
+      "key": "v3:BuskingUnderpass05:1:2",
+      "policy": "baseline",
+      "negative": false
+    },
+    {
+      "index": 3,
+      "key": "v3:Cheerleading01:1:2",
+      "policy": "prefix_cost_greedy",
+      "negative": false
+    },
+    {
+      "index": 4,
+      "key": "v3:Cheerleading01:1:2",
+      "policy": "baseline",
+      "negative": false
+    },
+    {
+      "index": 5,
+      "key": "v3:Cheerleading01:1:2",
+      "policy": "prefix_mpc",
+      "negative": false
+    },
+    {
+      "index": 6,
+      "key": "v3:ConferenceParticipant02:1:2",
+      "policy": "baseline",
+      "negative": false
+    },
+    {
+      "index": 7,
+      "key": "v3:ConferenceParticipant02:1:2",
+      "policy": "prefix_mpc",
+      "negative": false
+    },
+    {
+      "index": 8,
+      "key": "v3:ConferenceParticipant02:1:2",
+      "policy": "prefix_cost_greedy",
+      "negative": false
+    },
+    {
+      "index": 9,
+      "key": "v2:ParkFountains01:1:2",
+      "policy": "prefix_mpc",
+      "negative": false
+    },
+    {
+      "index": 10,
+      "key": "v2:ParkFountains01:1:2",
+      "policy": "prefix_cost_greedy",
+      "negative": false
+    },
+    {
+      "index": 11,
+      "key": "v2:ParkFountains01:1:2",
+      "policy": "baseline",
+      "negative": false
+    },
+    {
+      "index": 12,
+      "key": "v2:River01:1:2",
+      "policy": "prefix_cost_greedy",
+      "negative": false
+    },
+    {
+      "index": 13,
+      "key": "v2:River01:1:2",
+      "policy": "baseline",
+      "negative": false
+    },
+    {
+      "index": 14,
+      "key": "v2:River01:1:2",
+      "policy": "prefix_mpc",
+      "negative": false
+    },
+    {
+      "index": 15,
+      "key": "v2:Train01:1:2",
+      "policy": "baseline",
+      "negative": false
+    },
+    {
+      "index": 16,
+      "key": "v2:Train01:1:2",
+      "policy": "prefix_mpc",
+      "negative": false
+    },
+    {
+      "index": 17,
+      "key": "v2:Train01:1:2",
+      "policy": "prefix_cost_greedy",
+      "negative": false
+    },
+    {
+      "index": 18,
+      "key": "v2:ParkFountains01:1:2",
+      "policy": "prefix_mpc",
+      "negative": true
+    }
+  ]
+}

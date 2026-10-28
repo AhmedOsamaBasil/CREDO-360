@@ -106,4 +106,9 @@ jobs:
         run: |
           python -m duration_contract.run --verify
           python -m duration_contract.audit --verify
+      - name: Verify duration resource and frame-consistency diagnostics
+        if: hashFiles('duration_contract/results/diagnostics_v1/metadata.json') != ''
+        run: |
+          python -m duration_contract.diagnose --verify
+          python -m unittest duration_contract.test_validation -v
 

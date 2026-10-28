@@ -8,5 +8,9 @@ No replay artifact was produced and the real-time timing stage had not started.
 The secondary PSNR axes were corrected and an explicit four-dimensional fixture
 was added. The distortion account, deadline, resource constraints, actual-duration
 clock, policy paths and measurement plan were unchanged. The correction is
-published before restarting the full replay/timing stages. Initial commit
+published as `66495ee` before restarting the full replay/timing stages. Initial commit
 history and the already valid media audit are retained; no result is overwritten.
+
+Post-batch `diagnose.py` and `test_validation.py` independently check byte
+accounting, actual/nominal behavior identity and repeated-file frame consistency.
+They do not modify the frozen methods, selections, contract or measured records.
