@@ -1,5 +1,11 @@
 # CREDO-360
 
+Current [feasibility/measurement contribution assessment](measurement_assessment/README.md)
+binds claims to frozen evidence and distinguishes measured transfers from
+simulated playback. It proposes robustness and validation gates, not another
+controller result or a submission-ready paper. No new experiment was run for
+this synthesis; the historical novelty draft is not the current conclusion.
+
 Latest exposed-data study: [early commitments and causal viewport-prefix
 planning](early_commitment/README.md). All1,512 runs and cross-platform audits
 are published. Earlier displayed samples improve the completed-only planning

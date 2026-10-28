@@ -1,0 +1,530 @@
+{
+  "analysis_type": "posthoc descriptive synthesis of frozen artifacts; no new experiment",
+  "assessment_date": "2026-10-28",
+  "completed_feedback_loopback": {
+    "error_units_histogram": {
+      "0": 5968,
+      "1": 12,
+      "10": 3,
+      "11": 6,
+      "12": 4,
+      "13": 3,
+      "14": 2,
+      "15": 2,
+      "17": 2,
+      "2": 5,
+      "3": 13,
+      "4": 5,
+      "5": 6,
+      "6": 6,
+      "7": 7,
+      "8": 1,
+      "9": 3
+    },
+    "exact_index_values": 5968,
+    "mae_db": 0.0006082160653306672,
+    "mae_index": 8.366402116402117e-05,
+    "max_error_db": 0.20221287232273255,
+    "max_error_index": 0.017,
+    "max_reconstruction_ms": 1.8141999971703626,
+    "max_roundtrip_ms": 28.58330000162823,
+    "median_reconstruction_ms": 0.5716500018024817,
+    "median_roundtrip_ms": 14.976549999119015,
+    "messages": 1008,
+    "payload_bytes": 141120,
+    "response_body_bytes": 429340,
+    "sender_maps_compressed_bytes": 409700,
+    "sender_maps_float32_bytes": 622080,
+    "values": 6048
+  },
+  "controlled_service": {
+    "controlled_contract_pass": true,
+    "field_available_capacity_validated": false,
+    "negative_control_detected": true,
+    "negative_min_seconds": 12.665654203999992,
+    "negative_miss_count": 3,
+    "nominal_max_seconds": 8.506160811,
+    "nominal_min_seconds": 8.378695141999998,
+    "nominal_pass_count": 12
+  },
+  "feedback_action_disagreements": {
+    "cost_greedy": 0,
+    "greedy_recovery": 0,
+    "knn_recovery": 0,
+    "persistence_mpc": 0,
+    "rolling_maxmin": 0,
+    "rolling_nash": 0,
+    "unconditional_mpc": 0
+  },
+  "finite_payload_reserve": {
+    "field_available_capacity_identified": false,
+    "rho1_peak3_and4": [
+      {
+        "half_repaid": 82,
+        "mean_worst_quality": 4.05816369047619,
+        "peak": "3",
+        "policy": "rolling_nash",
+        "reserve_fraction": "1"
+      },
+      {
+        "half_repaid": 90,
+        "mean_worst_quality": 4.02021130952381,
+        "peak": "3",
+        "policy": "rolling_maxmin",
+        "reserve_fraction": "1"
+      },
+      {
+        "half_repaid": 90,
+        "mean_worst_quality": 4.005072916666666,
+        "peak": "3",
+        "policy": "greedy_recovery",
+        "reserve_fraction": "1"
+      },
+      {
+        "half_repaid": 97,
+        "mean_worst_quality": 3.999308035714286,
+        "peak": "3",
+        "policy": "offline",
+        "reserve_fraction": "1"
+      },
+      {
+        "half_repaid": 60,
+        "mean_worst_quality": 4.07503125,
+        "peak": "4",
+        "policy": "rolling_nash",
+        "reserve_fraction": "1"
+      },
+      {
+        "half_repaid": 62,
+        "mean_worst_quality": 4.042257440476191,
+        "peak": "4",
+        "policy": "rolling_maxmin",
+        "reserve_fraction": "1"
+      },
+      {
+        "half_repaid": 62,
+        "mean_worst_quality": 4.027119047619047,
+        "peak": "4",
+        "policy": "greedy_recovery",
+        "reserve_fraction": "1"
+      },
+      {
+        "half_repaid": 97,
+        "mean_worst_quality": 3.9995059523809524,
+        "peak": "4",
+        "policy": "offline",
+        "reserve_fraction": "1"
+      }
+    ]
+  },
+  "fixed_file_cap_offline_opportunity": [
+    {
+      "benchmark": "structural",
+      "episodes": 168,
+      "feasible_episodes": 168,
+      "gap_vs_saved_cost_greedy_feasible": 0.024145543837488643,
+      "half_repaid": 96,
+      "mean_unpaid_feasible": 0.34499397613878036
+    },
+    {
+      "benchmark": "strict",
+      "episodes": 168,
+      "feasible_episodes": 168,
+      "gap_vs_saved_cost_greedy_feasible": 0.024145543837488643,
+      "half_repaid": 96,
+      "mean_unpaid_feasible": 0.34499397613878036
+    },
+    {
+      "benchmark": "quality_guard",
+      "episodes": 168,
+      "feasible_episodes": 168,
+      "gap_vs_saved_cost_greedy_feasible": 0.013793950184289153,
+      "half_repaid": 95,
+      "mean_unpaid_feasible": 0.35534556979197984
+    },
+    {
+      "benchmark": "exact_current_greedy",
+      "episodes": 168,
+      "feasible_episodes": 168,
+      "gap_vs_saved_cost_greedy_feasible": 2.4128013588898768e-06,
+      "half_repaid": 90,
+      "mean_unpaid_feasible": 0.3691371071749101
+    }
+  ],
+  "interpretation": {
+    "field_deployment_validated": false,
+    "human_qoe_validated": false,
+    "resubmission_ready_by_reframing_alone": false,
+    "superior_recovery_controller_established": false
+  },
+  "relative_payload_frontier_no_cumulative_reserve": {
+    "largest_half_count_at_2x_across_all_donor_slices": 0,
+    "no_donor_loss": {
+      "counts_by_multiplier": {
+        "1": 0,
+        "11/10": 0,
+        "2": 0,
+        "3": 147,
+        "3/2": 0,
+        "4": 157,
+        "5/4": 0
+      },
+      "coverage_thresholds": {
+        "1": null,
+        "1/2": "227599/85390",
+        "3/4": "234348/84001",
+        "9/10": "480579/146726"
+      },
+      "feasible_at_any_resource": 157,
+      "infeasible": 11,
+      "max_actions": 4,
+      "maximum_multiplier": "480579/146726",
+      "median_multiplier": "227599/85390",
+      "minimum_multiplier": "771987/319138",
+      "p90_multiplier": "1407377/469542",
+      "step_harm_units": 0,
+      "total_harm_units": 0
+    },
+    "scope": "Future-known four-segment encoded-payload contract; not measured path capacity."
+  },
+  "sampling": {
+    "early_policy_runs": 1512,
+    "independence_warning": "Directed pairs share people and content; runs are not independent participants.",
+    "reused_episode_keys": 168,
+    "reused_participant_identifiers": 28,
+    "scenes": [
+      "BuskingUnderpass05",
+      "Cheerleading01",
+      "ConferenceParticipant02",
+      "ParkFountains01",
+      "River01",
+      "Train01"
+    ]
+  },
+  "selected_transfer_receipts": {
+    "nominal": {
+      "deadline_misses": 0,
+      "decisions": 96,
+      "episodes": 24,
+      "maximum_receipt_latency_seconds": 8.675168756999994
+    },
+    "stress": {
+      "deadline_misses": 12,
+      "decisions": 24,
+      "episodes": 6,
+      "maximum_receipt_latency_seconds": 17.066030236000074
+    }
+  },
+  "simulated_prefix_playback": {
+    "cells": {
+      "all": {
+        "completed_mpc@0.08s": {
+          "current_mae": 0.11456175595238095,
+          "donor_floor_violations": 0,
+          "episodes": 168,
+          "half_repaid": 92,
+          "mean_stall_seconds": 6.969764880952381,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.3804112586400784,
+          "worst_quality": 3.9980550595238094
+        },
+        "prefix_cost_greedy@0.08s": {
+          "current_mae": 0.11161160714285714,
+          "donor_floor_violations": 0,
+          "episodes": 168,
+          "half_repaid": 90,
+          "mean_stall_seconds": 6.978107698412699,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.36918515745028396,
+          "worst_quality": 3.9971770833333333
+        },
+        "prefix_greedy@0.08s": {
+          "current_mae": 0.11028943452380953,
+          "donor_floor_violations": 2,
+          "episodes": 168,
+          "half_repaid": 90,
+          "mean_stall_seconds": 7.069960952380953,
+          "recipient_floor_violations": 2,
+          "unpaid_fraction": 0.37169025193049376,
+          "worst_quality": 4.007241071428571
+        },
+        "prefix_maxmin@0.08s": {
+          "current_mae": 0.11003943452380953,
+          "donor_floor_violations": 2,
+          "episodes": 168,
+          "half_repaid": 90,
+          "mean_stall_seconds": 7.183459662698413,
+          "recipient_floor_violations": 2,
+          "unpaid_fraction": 0.3781675653588329,
+          "worst_quality": 4.017619047619047
+        },
+        "prefix_mpc@0.08s": {
+          "current_mae": 0.1063764880952381,
+          "donor_floor_violations": 0,
+          "episodes": 168,
+          "half_repaid": 92,
+          "mean_stall_seconds": 6.968973611111111,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.37597420400175496,
+          "worst_quality": 3.998657738095238
+        },
+        "prefix_mpc@0.5s": {
+          "current_mae": 0.10979017857142857,
+          "donor_floor_violations": 0,
+          "episodes": 168,
+          "half_repaid": 92,
+          "mean_stall_seconds": 6.969326388888889,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.3756031296555986,
+          "worst_quality": 3.998657738095238
+        },
+        "prefix_nash@0.08s": {
+          "current_mae": 0.11136830357142857,
+          "donor_floor_violations": 2,
+          "episodes": 168,
+          "half_repaid": 68,
+          "mean_stall_seconds": 8.046196051587302,
+          "recipient_floor_violations": 2,
+          "unpaid_fraction": 0.5210721240362776,
+          "worst_quality": 4.0566949404761905
+        },
+        "slack_mpc@0.08s": {
+          "current_mae": 0.11456175595238095,
+          "donor_floor_violations": 0,
+          "episodes": 168,
+          "half_repaid": 92,
+          "mean_stall_seconds": 6.969764880952381,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.3804112586400784,
+          "worst_quality": 3.9980550595238094
+        },
+        "wait_mpc@0.08s": {
+          "current_mae": 0.10082142857142858,
+          "donor_floor_violations": 1,
+          "episodes": 168,
+          "half_repaid": 92,
+          "mean_stall_seconds": 16.220006746031743,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.3754304529466435,
+          "worst_quality": 3.998657738095238
+        }
+      },
+      "v2": {
+        "completed_mpc@0.08s": {
+          "current_mae": 0.12356845238095238,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 64,
+          "mean_stall_seconds": 6.964578095238095,
+          "recipient_floor_violations": 0,
+          "unpaid_fraction": 0.19792464026437848,
+          "worst_quality": 3.529297619047619
+        },
+        "prefix_cost_greedy@0.08s": {
+          "current_mae": 0.12390178571428571,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 62,
+          "mean_stall_seconds": 6.971490476190476,
+          "recipient_floor_violations": 0,
+          "unpaid_fraction": 0.18587715976135463,
+          "worst_quality": 3.5264375
+        },
+        "prefix_greedy@0.08s": {
+          "current_mae": 0.12132589285714286,
+          "donor_floor_violations": 1,
+          "episodes": 84,
+          "half_repaid": 62,
+          "mean_stall_seconds": 7.155404126984126,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.19090442437705699,
+          "worst_quality": 3.545592261904762
+        },
+        "prefix_maxmin@0.08s": {
+          "current_mae": 0.12082589285714286,
+          "donor_floor_violations": 1,
+          "episodes": 84,
+          "half_repaid": 62,
+          "mean_stall_seconds": 7.382401547619047,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.2038590512337353,
+          "worst_quality": 3.566348214285714
+        },
+        "prefix_mpc@0.08s": {
+          "current_mae": 0.11667708333333333,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 64,
+          "mean_stall_seconds": 6.96229,
+          "recipient_floor_violations": 0,
+          "unpaid_fraction": 0.19147369872026146,
+          "worst_quality": 3.529297619047619
+        },
+        "prefix_mpc@0.5s": {
+          "current_mae": 0.11814285714285715,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 64,
+          "mean_stall_seconds": 6.96229,
+          "recipient_floor_violations": 0,
+          "unpaid_fraction": 0.1914678510238648,
+          "worst_quality": 3.529297619047619
+        },
+        "prefix_nash@0.08s": {
+          "current_mae": 0.12111011904761905,
+          "donor_floor_violations": 1,
+          "episodes": 84,
+          "half_repaid": 57,
+          "mean_stall_seconds": 8.011258531746032,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.34322578353262295,
+          "worst_quality": 3.5969910714285716
+        },
+        "slack_mpc@0.08s": {
+          "current_mae": 0.12356845238095238,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 64,
+          "mean_stall_seconds": 6.964578095238095,
+          "recipient_floor_violations": 0,
+          "unpaid_fraction": 0.19792464026437848,
+          "worst_quality": 3.529297619047619
+        },
+        "wait_mpc@0.08s": {
+          "current_mae": 0.11369940476190477,
+          "donor_floor_violations": 1,
+          "episodes": 84,
+          "half_repaid": 64,
+          "mean_stall_seconds": 16.0096546031746,
+          "recipient_floor_violations": 0,
+          "unpaid_fraction": 0.1928457967162043,
+          "worst_quality": 3.529297619047619
+        }
+      },
+      "v3": {
+        "completed_mpc@0.08s": {
+          "current_mae": 0.10555505952380952,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 6.974951666666667,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5628978770157783,
+          "worst_quality": 4.4668125
+        },
+        "prefix_cost_greedy@0.08s": {
+          "current_mae": 0.09932142857142857,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 6.984724920634921,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5524931551392133,
+          "worst_quality": 4.4679166666666665
+        },
+        "prefix_greedy@0.08s": {
+          "current_mae": 0.0992529761904762,
+          "donor_floor_violations": 1,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 6.9845177777777785,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5524760794839305,
+          "worst_quality": 4.468889880952381
+        },
+        "prefix_maxmin@0.08s": {
+          "current_mae": 0.0992529761904762,
+          "donor_floor_violations": 1,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 6.9845177777777785,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5524760794839305,
+          "worst_quality": 4.468889880952381
+        },
+        "prefix_mpc@0.08s": {
+          "current_mae": 0.09607589285714285,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 6.975657222222223,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5604747092832484,
+          "worst_quality": 4.468017857142857
+        },
+        "prefix_mpc@0.5s": {
+          "current_mae": 0.1014375,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 6.976362777777778,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5597384082873325,
+          "worst_quality": 4.468017857142857
+        },
+        "prefix_nash@0.08s": {
+          "current_mae": 0.1016264880952381,
+          "donor_floor_violations": 1,
+          "episodes": 84,
+          "half_repaid": 11,
+          "mean_stall_seconds": 8.081133571428573,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.6989184645399322,
+          "worst_quality": 4.5163988095238095
+        },
+        "slack_mpc@0.08s": {
+          "current_mae": 0.10555505952380952,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 6.974951666666667,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5628978770157783,
+          "worst_quality": 4.4668125
+        },
+        "wait_mpc@0.08s": {
+          "current_mae": 0.08794345238095239,
+          "donor_floor_violations": 0,
+          "episodes": 84,
+          "half_repaid": 28,
+          "mean_stall_seconds": 16.430358888888886,
+          "recipient_floor_violations": 1,
+          "unpaid_fraction": 0.5580151091770826,
+          "worst_quality": 4.468017857142857
+        }
+      }
+    },
+    "contrasts": {
+      "all": {
+        "unpaid_increase_vs_cost_greedy": 0.006789046551471001,
+        "unpaid_reduction_vs_completed": 0.0044370546383234455,
+        "wait_added_stall_vs_completed_seconds": 9.250241865079362,
+        "worst_quality_delta_vs_nash": -0.05803720238095256
+      },
+      "v2": {
+        "unpaid_increase_vs_cost_greedy": 0.005596538958906827,
+        "unpaid_reduction_vs_completed": 0.006450941544117017,
+        "wait_added_stall_vs_completed_seconds": 9.045076507936503,
+        "worst_quality_delta_vs_nash": -0.06769345238095248
+      },
+      "v3": {
+        "unpaid_increase_vs_cost_greedy": 0.007981554144035119,
+        "unpaid_reduction_vs_completed": 0.0024231677325299295,
+        "wait_added_stall_vs_completed_seconds": 9.45540722222222,
+        "worst_quality_delta_vs_nash": -0.048380952380952635
+      }
+    },
+    "frozen_screen_passed": false,
+    "scope": "simulated fluid; incremental telemetry not wire-tested"
+  },
+  "source_hash_definition": "SHA256 of decoded canonical JSON, not compressed file bytes",
+  "source_json_sha256": {
+    "causal_playback/results/diagnostics_v1/diagnostics.json": "bc52a7d2eb9e26d920c092a4039fafb48efa81e20aa149fb853ca69cbc209407",
+    "early_commitment/results/development_v1/results.json.gz": "9ebf798b46f0db9d9033bf5d129d1e107e238d2c61817bf65e763165aece44cf",
+    "feasibility_frontier/results/audit_v1/results.json.gz": "1378353ca5e0d0d3db0ad4d194f8454aedb612ab5f0db4ed83b66bb9b1f3ae2c",
+    "feedback_opportunity/results/audit_v1/results.json.gz": "510e3b7faa5f08e0d2077911b5e57655badeef3709b8599dab18416e3d2c1fe7",
+    "feedback_opportunity/results/diagnostics_v1/results.json": "6121f15f00d56fee60dc62831a09895db868ba6b634292a8a3b11004453c691d",
+    "reserve_recovery/results/analysis_v1/results.json.gz": "f547b786ef5e9fd4514f42b64003ecd1b5f92ee7eb0c57d8fe57b2a38e51158f",
+    "service_opportunity/results/service_v1.json": "d48909222f51909f3340b1c24c1aeeab589fedb5ebdeacfa7b258565ddbebd92"
+  }
+}
