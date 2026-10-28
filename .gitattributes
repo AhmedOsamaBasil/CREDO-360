@@ -51,3 +51,8 @@ feedback_opportunity/*.md text eol=lf
 feedback_opportunity/data/** -text whitespace=cr-at-eol
 feedback_opportunity/results/** -text whitespace=cr-at-eol
 feedback_opportunity/results/**/*.svg -whitespace
+early_commitment/*.py text eol=lf
+early_commitment/*.md text eol=lf
+early_commitment/data/** -text whitespace=cr-at-eol
+early_commitment/results/** -text whitespace=cr-at-eol
+early_commitment/results/**/*.svg -whitespace

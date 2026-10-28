@@ -23,7 +23,7 @@ jobs:
       - name: Portable-model tests
         run: python live_testbed/test_portable.py
       - name: Objective recovery, timing and regression tests
-        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier reserve_recovery service_opportunity causal_playback feedback_opportunity live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
+        run: python -m pytest recovery_pilot feasibility_recovery horizon_recovery objective_diagnostics recovery_objective allowance_scheduler causal_compensation feasibility_frontier reserve_recovery service_opportunity causal_playback feedback_opportunity early_commitment live_testbed/test_candidate_scaling.py live_testbed/test_gate_analysis.py live_testbed/test_journal_runner.py multimedia_testbed/test_generalization.py -q
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -82,4 +82,7 @@ jobs:
         run: |
           python -m feedback_opportunity.verify
           python -m feedback_opportunity.diagnose --verify
+      - name: Verify early-commitment and causal-prefix exposed study
+        if: hashFiles('early_commitment/results/development_v1/metadata.json') != ''
+        run: python -m early_commitment.verify
 
