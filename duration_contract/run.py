@@ -40,6 +40,12 @@ def schedule(record,policy):
     return [r["decision"]["rungs"] for r in saved["rounds"]],[[round(x*TICKS) for x in r["arrivals"]] for r in saved["rounds"]]
 
 
+def secondary_psnr(quality,durations,choices):
+    if quality.shape != (4,6,2,6):raise ValueError("Metric/segment/user/rung axes required")
+    return [sum(int(quality[2,t,u,pair[u]])*durations[t] for t,pair in zip(range(2,6),choices))
+            /sum(durations[2:])/1e6 for u in (0,1)]
+
+
 def scalar_bound(q,costs,durations,reserve):
     """Independent recursion; no vector path arrays or vector clock."""
     best={"deadline":0,"eventual":0}; costs_at_half={"deadline":None,"eventual":None}; count=0
@@ -93,7 +99,7 @@ def analysis():
                     for clock,name in (("deadline","deadline_unpaid"),("media","eventual_unpaid")):
                         if result[name]!=oldpaths[r["key"],policy,clock]["unpaid"]:raise ValueError("Historical MSE score mismatch")
                         parity+=1
-                means=[sum(int(r["quality"][2,t,pair[u]])*ds[t] for t,pair in zip(range(2,6),choices))/sum(ds[2:])/1e6 for u in (0,1)]
+                means=secondary_psnr(r["quality"],ds,choices)
                 rows.append({**base,"mode":mode,"policy":policy,"choices":choices,"arrivals":arrivals,
                     "durations":ds,"timing":timing,**result,
                     "mean_finish_seconds":sum(timing["finish_ticks"])/2/TICKS,

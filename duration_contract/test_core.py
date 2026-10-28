@@ -6,7 +6,7 @@ from duration_contract.core import (ticks,packet_timeline,playback,account,frame
 from duration_contract.run import scalar_bound
 from metric_contract.core import path_arrays
 from duration_contract.audit import audit_session
-from duration_contract.run import schedule
+from duration_contract.run import schedule,secondary_psnr
 
 
 def fixture():
@@ -140,6 +140,12 @@ class DurationTests(unittest.TestCase):
     def test_event_auditor_rejects_missing_frame(self):
         row,r,media=synthetic_session();row["frames"][0][1]["frame"]=0
         with self.assertRaises(ValueError):audit_session(row,r,media)
+
+    def test_secondary_psnr_keeps_user_and_rung_axes(self):
+        quality=np.zeros((4,6,2,6),dtype=np.int64)
+        quality[2,:,0,4]=40000000;quality[2,:,1,5]=50000000
+        self.assertEqual(secondary_psnr(quality,[SLOT]*6,[[4,5]]*4),[40.,50.])
+        with self.assertRaises(ValueError):secondary_psnr(quality[2],[SLOT]*6,[[4,5]]*4)
 
 
 if __name__=="__main__":unittest.main()
