@@ -69,3 +69,7 @@ admission_contract/*.py text eol=lf
 admission_contract/*.md text eol=lf
 admission_contract/results/** -text whitespace=cr-at-eol
 admission_contract/results/**/*.svg -whitespace
+geometric_admission/*.py text eol=lf
+geometric_admission/*.md text eol=lf
+geometric_admission/results/** -text whitespace=cr-at-eol
+geometric_admission/results/**/*.svg -whitespace

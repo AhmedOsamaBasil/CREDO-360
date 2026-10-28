@@ -103,6 +103,11 @@ jobs:
         run: python -m unittest duration_contract.test_core -v
       - name: Test feasibility-based admission certificates
         run: python -m unittest admission_contract.test_core -v
+      - name: Test exact geometric viewport bounds
+        run: python -m unittest geometric_admission.test_geometry -v
+      - name: Replay exposed geometric admission
+        if: hashFiles('geometric_admission/results/exposed_v1/metadata.json') != ''
+        run: python -m geometric_admission.run --verify
       - name: Verify exposed feasibility admission outcomes
         if: hashFiles('admission_contract/results/exposed_v1/metadata.json') != ''
         run: python -m admission_contract.run --verify
