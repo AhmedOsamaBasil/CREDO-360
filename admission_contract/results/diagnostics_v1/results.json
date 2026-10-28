@@ -1,0 +1,289 @@
+{
+  "posthoc": true,
+  "controller_changed": false,
+  "independent_score_resource_checks": 3024,
+  "same_point_greedy_admissions": 168,
+  "same_point_greedy_executed_paths": 168,
+  "admission_scenes": {
+    "River01": 28
+  },
+  "unique_admitted_paths": 1,
+  "admitted_path": [
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "false_promises": [
+    {
+      "key": "v2:River01:12:11",
+      "predicted_repayment": 0.6054334712532531,
+      "actual_repayment": 0.49851327363599995,
+      "offline_best_repayment": 0.49851327363608855,
+      "floor_losses": 0
+    }
+  ],
+  "rolling_nash_floor_event_count": 21,
+  "rolling_nash_max_floor_loss_db": 0.001754,
+  "rolling_nash_mean_floor_loss_db": 0.0007026190476190476,
+  "scenes": [
+    {
+      "scene": "BuskingUnderpass05",
+      "episodes": 28,
+      "oracle_feasible": 0,
+      "status_counts": {
+        "impossible": 28
+      },
+      "mean_safe_lower_repayment": 0.004323566873694575,
+      "mean_floor_relaxed_lower_repayment": 0.004323566873694575,
+      "mean_actual_offline_repayment": 0.14539903706966223,
+      "mean_optimistic_upper_repayment": 0.34361769100358935
+    },
+    {
+      "scene": "Cheerleading01",
+      "episodes": 28,
+      "oracle_feasible": 0,
+      "status_counts": {
+        "impossible": 28
+      },
+      "mean_safe_lower_repayment": 0.021849074278537745,
+      "mean_floor_relaxed_lower_repayment": 0.021849074278537745,
+      "mean_actual_offline_repayment": 0.06839650621049193,
+      "mean_optimistic_upper_repayment": 0.28716944515425186
+    },
+    {
+      "scene": "ConferenceParticipant02",
+      "episodes": 28,
+      "oracle_feasible": 0,
+      "status_counts": {
+        "impossible": 28
+      },
+      "mean_safe_lower_repayment": 0.0,
+      "mean_floor_relaxed_lower_repayment": 0.0,
+      "mean_actual_offline_repayment": 0.13111353145027396,
+      "mean_optimistic_upper_repayment": 0.3826386977545028
+    },
+    {
+      "scene": "ParkFountains01",
+      "episodes": 28,
+      "oracle_feasible": 0,
+      "status_counts": {
+        "abstain": 28
+      },
+      "mean_safe_lower_repayment": 0.020562307910618787,
+      "mean_floor_relaxed_lower_repayment": 0.020562307910618787,
+      "mean_actual_offline_repayment": 0.31730272922637015,
+      "mean_optimistic_upper_repayment": 0.6792193317102864
+    },
+    {
+      "scene": "River01",
+      "episodes": 28,
+      "oracle_feasible": 27,
+      "status_counts": {
+        "abstain": 28
+      },
+      "mean_safe_lower_repayment": 0.06914810245694848,
+      "mean_floor_relaxed_lower_repayment": 0.06914810245694848,
+      "mean_actual_offline_repayment": 0.7606530654804624,
+      "mean_optimistic_upper_repayment": 1.3531884065833015
+    },
+    {
+      "scene": "Train01",
+      "episodes": 28,
+      "oracle_feasible": 0,
+      "status_counts": {
+        "impossible": 28
+      },
+      "mean_safe_lower_repayment": 0.0054412005679576455,
+      "mean_floor_relaxed_lower_repayment": 0.0054412005679576455,
+      "mean_actual_offline_repayment": 0.1652345427438802,
+      "mean_optimistic_upper_repayment": 0.3664769995896204
+    }
+  ],
+  "policy_summary": [
+    {
+      "admitted": 0,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 0,
+      "false_promises": 0,
+      "feasible_capture": 0.0,
+      "floor_failure_admissions": 0,
+      "group": "all",
+      "mean_admitted_unpaid": null,
+      "method": "certified_planner",
+      "oracle_feasible": 27,
+      "precision": null,
+      "status_counts": {
+        "abstain": 56,
+        "impossible": 112
+      },
+      "success": 0
+    },
+    {
+      "admitted": 28,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 51663808,
+      "false_promises": 1,
+      "feasible_capture": 1.0,
+      "floor_failure_admissions": 0,
+      "group": "all",
+      "mean_admitted_unpaid": 0.24928354383942858,
+      "method": "cost_greedy",
+      "oracle_feasible": 27,
+      "precision": 0.9642857142857143,
+      "status_counts": {
+        "abstain": 140,
+        "admit": 28
+      },
+      "success": 27
+    },
+    {
+      "admitted": 0,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 0,
+      "false_promises": 0,
+      "feasible_capture": 0.0,
+      "floor_failure_admissions": 0,
+      "group": "all",
+      "mean_admitted_unpaid": null,
+      "method": "cost_greedy_certified",
+      "oracle_feasible": 27,
+      "precision": null,
+      "status_counts": {
+        "abstain": 168
+      },
+      "success": 0
+    },
+    {
+      "admitted": 17,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 31367754,
+      "false_promises": 13,
+      "feasible_capture": 0.14814814814814814,
+      "floor_failure_admissions": 13,
+      "group": "all",
+      "mean_admitted_unpaid": 0.27722120292164704,
+      "method": "maxmin",
+      "oracle_feasible": 27,
+      "precision": 0.23529411764705882,
+      "status_counts": {
+        "abstain": 151,
+        "admit": 17
+      },
+      "success": 4
+    },
+    {
+      "admitted": 0,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 0,
+      "false_promises": 0,
+      "feasible_capture": 0.0,
+      "floor_failure_admissions": 0,
+      "group": "all",
+      "mean_admitted_unpaid": null,
+      "method": "maxmin_certified",
+      "oracle_feasible": 27,
+      "precision": null,
+      "status_counts": {
+        "abstain": 168
+      },
+      "success": 0
+    },
+    {
+      "admitted": 28,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 51663808,
+      "false_promises": 1,
+      "feasible_capture": 1.0,
+      "floor_failure_admissions": 0,
+      "group": "all",
+      "mean_admitted_unpaid": 0.24928354383942858,
+      "method": "point_planner",
+      "oracle_feasible": 27,
+      "precision": 0.9642857142857143,
+      "status_counts": {
+        "abstain": 140,
+        "admit": 28
+      },
+      "success": 27
+    },
+    {
+      "admitted": 0,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 0,
+      "false_promises": 0,
+      "feasible_capture": 0.0,
+      "floor_failure_admissions": 0,
+      "group": "all",
+      "mean_admitted_unpaid": null,
+      "method": "point_planner_certified",
+      "oracle_feasible": 27,
+      "precision": null,
+      "status_counts": {
+        "abstain": 168
+      },
+      "success": 0
+    },
+    {
+      "admitted": 17,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 31367754,
+      "false_promises": 13,
+      "feasible_capture": 0.14814814814814814,
+      "floor_failure_admissions": 13,
+      "group": "all",
+      "mean_admitted_unpaid": 0.27722120292164704,
+      "method": "rolling_nash",
+      "oracle_feasible": 27,
+      "precision": 0.23529411764705882,
+      "status_counts": {
+        "abstain": 151,
+        "admit": 17
+      },
+      "success": 4
+    },
+    {
+      "admitted": 0,
+      "episodes": 168,
+      "eta": "half_second",
+      "extra_bytes": 0,
+      "false_promises": 0,
+      "feasible_capture": 0.0,
+      "floor_failure_admissions": 0,
+      "group": "all",
+      "mean_admitted_unpaid": null,
+      "method": "rolling_nash_certified",
+      "oracle_feasible": 27,
+      "precision": null,
+      "status_counts": {
+        "abstain": 168
+      },
+      "success": 0
+    }
+  ],
+  "source_sha256": {
+    "diagnose.py": "b1ca9252e26fad193cd3475c95d1065c2b9f70499cd5840e3a21d20894327ee7",
+    "test_validation.py": "5b7aace638320af7bdc8405132947d20b641438b24fd039412d29044d649b8ad"
+  },
+  "primary_result_sha256": "cf35578cdf26a3c9b4b36fdfa909f966434ab712982579ac31d0e1bcf4849162"
+}

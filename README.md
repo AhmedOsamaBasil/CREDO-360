@@ -1,5 +1,12 @@
 # CREDO-360
 
+The latest [feasibility-based admission study](admission_contract/README.md)
+keeps the quality/deadline contract fixed. Sender-side certificates reject112
+exposed episodes as impossible and abstain on56, with no positive admissions.
+Point planning admits28 and fulfills27 in replay, but matches cost-greedy exactly
+and succeeds only on one scene. This is a rejection/uncertainty diagnosis, not a
+reliable deployed admission mechanism or independent validation.
+
 The [engineering quality/deadline contract and actual-duration study](duration_contract/README.md)
 defines completed-segment distortion-seconds by40s with both-user quality floors.
 Actual MP4 durations leave the failed recovery findings unchanged: protected
