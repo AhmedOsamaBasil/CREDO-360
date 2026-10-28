@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "scientific_sha256": "9ebf798b46f0db9d9033bf5d129d1e107e238d2c61817bf65e763165aece44cf",
+  "episode_runs": 1512,
+  "decisions_audited": 6048,
+  "independent_cartesian_queries": 672,
+  "practical_screen_passed": false,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0"
+}

@@ -84,5 +84,7 @@ jobs:
           python -m feedback_opportunity.diagnose --verify
       - name: Verify early-commitment and causal-prefix exposed study
         if: hashFiles('early_commitment/results/development_v1/metadata.json') != ''
-        run: python -m early_commitment.verify
+        run: |
+          python -m early_commitment.verify
+          python -m early_commitment.diagnose --verify
 

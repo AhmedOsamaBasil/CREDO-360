@@ -1,0 +1,17 @@
+{
+  "source_sha256": {
+    "early_commitment/diagnose.py": "b7c726c61c9e18ae08040995729baf8aa497d71e3ec862ec11a731ce2924fe19",
+    "feedback_opportunity/frontier.py": "049bba8fcd97d21432c8f4cd69f9c4a69644c973ebd3b96f02e22e9ef794472e"
+  },
+  "input_sha256": {
+    "early_commitment/results/development_v1/results.json.gz": "c95eabd81611417038d3deea38d25e4a5276609f619d9cf19b7d0e2de342a264",
+    "early_commitment/data/prefix_v1/forecasts.json.gz": "ddaa13e8f6db5eaed2db6ef76b92fff2af079501ce072cdafe32b681791ca1af",
+    "feedback_opportunity/results/wire_v1/results.json": "0a0aefa12854d2b003976c5db0b4e0fd8969384e46f3982a2dc737f364dc0bb4"
+  },
+  "result_sha256": {
+    "early_commitment.png": "59b0460ffbcc378936904a20a8037852c7cf0a46193b522b52190ab5351fbfbc",
+    "early_commitment.svg": "42db6def347a571d7ec7c83a2e18141ba30c2828c30156719ba8e5c62e7984ef",
+    "REPORT.md": "5b1460b7ff3f2d7ec4547a5c929163d88baf14b795434faf2066a781dc4972d9",
+    "results.json": "bcfc3dd4a2743b2cca94c5a55f8d70506217f9dd7e8da030172bf482045aa914"
+  }
+}

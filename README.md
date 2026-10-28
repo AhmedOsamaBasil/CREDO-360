@@ -1,5 +1,13 @@
 # CREDO-360
 
+Latest exposed-data study: [early commitments and causal viewport-prefix
+planning](early_commitment/README.md). All1,512 runs and cross-platform audits
+are published. Earlier displayed samples improve the completed-only planning
+ablation, but the primary controller remains worse than cost-greedy on unpaid
+loss; waiting for complete reports substantially increases simulated stalls.
+The [predeclared screen fails](early_commitment/INTERPRETATION.md). No new
+holdout, physical-HMD validation or successful novel-controller claim follows.
+
 > **Technical correction in progress (October 2026).** The historical studies
 > below remain available, but legacy subjective residuals do not validate
 > objective-quality coverage, the original gate can be action-equivalent to
