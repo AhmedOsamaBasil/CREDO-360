@@ -101,6 +101,11 @@ jobs:
           python -m unittest metric_contract.test_validation -v
       - name: Test actual-duration quality and timing contract
         run: python -m unittest duration_contract.test_core -v
+      - name: Test feasibility-based admission certificates
+        run: python -m unittest admission_contract.test_core -v
+      - name: Verify exposed feasibility admission outcomes
+        if: hashFiles('admission_contract/results/exposed_v1/metadata.json') != ''
+        run: python -m admission_contract.run --verify
       - name: Verify actual-duration replay and measured frame timing
         if: hashFiles('duration_contract/results/measured_audit_v1/metadata.json') != ''
         run: |

@@ -65,3 +65,7 @@ duration_contract/*.md text eol=lf
 duration_contract/data/** -text whitespace=cr-at-eol
 duration_contract/results/** -text whitespace=cr-at-eol
 duration_contract/results/**/*.svg -whitespace
+admission_contract/*.py text eol=lf
+admission_contract/*.md text eol=lf
+admission_contract/results/** -text whitespace=cr-at-eol
+admission_contract/results/**/*.svg -whitespace
