@@ -60,3 +60,8 @@ metric_contract/*.py text eol=lf
 metric_contract/*.md text eol=lf
 metric_contract/results/** -text whitespace=cr-at-eol
 metric_contract/results/**/*.svg -whitespace
+duration_contract/*.py text eol=lf
+duration_contract/*.md text eol=lf
+duration_contract/data/** -text whitespace=cr-at-eol
+duration_contract/results/** -text whitespace=cr-at-eol
+duration_contract/results/**/*.svg -whitespace

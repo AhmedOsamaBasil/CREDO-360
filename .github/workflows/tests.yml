@@ -99,4 +99,11 @@ jobs:
           python -m metric_contract.run --verify
           python -m metric_contract.diagnose --verify
           python -m unittest metric_contract.test_validation -v
+      - name: Test actual-duration quality and timing contract
+        run: python -m unittest duration_contract.test_core -v
+      - name: Verify actual-duration replay and measured frame timing
+        if: hashFiles('duration_contract/results/measured_audit_v1/metadata.json') != ''
+        run: |
+          python -m duration_contract.run --verify
+          python -m duration_contract.audit --verify
 
