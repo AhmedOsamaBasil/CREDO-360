@@ -1,5 +1,10 @@
 # CREDO-360
 
+Latest [metric and service-contract sensitivity](metric_contract/README.md)
+uses exposed data only. Exact bounds and fixed-path rescoring show substantial
+metric dependence and ranking reversals; common-floor and deadline checks are
+published. This is a diagnostic result, not a new successful recovery controller.
+
 Current [feasibility/measurement contribution assessment](measurement_assessment/README.md)
 binds claims to frozen evidence and distinguishes measured transfers from
 simulated playback. It proposes robustness and validation gates, not another

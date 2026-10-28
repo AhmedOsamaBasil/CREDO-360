@@ -1,0 +1,14 @@
+{
+  "input_sha256": {
+    "metric_contract/results/sensitivity_v1/results.json.gz": "de64206e27705a82b48f22b068107e86caaf4d8a75fa130c8978c04c984ff50b",
+    "metric_contract/results/sensitivity_v1/metadata.json": "cb7870dc2e07b18227545462c97ac1f674c2a50b840a0222c3c094246a6758f1"
+  },
+  "script_sha256": "3fb7926139dbcfe9029cc12f4fec19a77a63a28d384231c2680d94d5290efde4",
+  "scientific_sha256": "2eb8384e4ce872614c715c151fbc2c6de11d40fe1f3c19ccd772b21f4c5a3eb3",
+  "figure_sha256": {
+    "metric_contract.png": "8001ff07caafce6b97966288c9007ad4b0af0a7184b770d4a1bd160bf174c22f",
+    "metric_contract.svg": "9e7f5e41881e49f99f7b93cc6e04591b198df697404522aec375f2191f4f66aa"
+  },
+  "predecessor_metadata_sha256": "dbd8782e5328ffa886b2eed67febb3271bee6963f1aacd1a5ef9639aff4f6e78",
+  "repair": "Portable POSIX input keys; scientific values and original metadata retained"
+}

@@ -95,5 +95,8 @@ jobs:
         run: python -m unittest metric_contract.test_core -v
       - name: Replay the complete exposed metric and contract sensitivity
         if: hashFiles('metric_contract/results/sensitivity_v1/metadata.json') != ''
-        run: python -m metric_contract.run --verify
+        run: |
+          python -m metric_contract.run --verify
+          python -m metric_contract.diagnose --verify
+          python -m unittest metric_contract.test_validation -v
 

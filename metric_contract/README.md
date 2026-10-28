@@ -22,6 +22,25 @@ new result directory and refuses to overwrite it. No private telemetry, media,
 network transfer or GPU is needed: the inputs are existing published scalar
 quality values, actual-file sizes and frozen paths.
 
-Results will be published after the frozen batch. Do not infer a favorable
-outcome from this implementation or its synthetic tests. Neither the bound nor
-the counterfactual rescoring is a deployable new recovery controller.
+## Completed results
+
+The [interpretation](INTERPRETATION.md) and [complete grid report](results/sensitivity_v1/REPORT.md)
+show material dependence on the accounting metric. Original-event half-repayment
+is feasible offline in 96/168 episodes with the rounded index, 96 with the fine
+index, 168 with PSNR and 28 with distortion reduction under the same resources.
+The difference persists with common floor admissibility. Fixed-policy rankings
+also reverse; no new successful controller or metric-independent claim follows.
+
+![Metric, ranking and deadline sensitivity](results/diagnostics_v1/metric_contract.png)
+
+The separately labeled post-hoc [diagnostics](results/diagnostics_v1/results.json)
+and SVG figure can be verified with:
+
+```console
+python -m metric_contract.diagnose --verify
+python -m unittest metric_contract.test_validation -v
+```
+
+All historical data and methods are unchanged. See [execution notes](MEASUREMENT_NOTES.md)
+for the reporting-only metadata failure and its correction. Neither the bound
+nor the counterfactual rescoring is a deployable new recovery controller.

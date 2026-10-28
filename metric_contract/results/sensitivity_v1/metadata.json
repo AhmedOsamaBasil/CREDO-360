@@ -1,0 +1,23 @@
+{
+  "source_sha256": {
+    "metric_contract/__init__.py": "b533a1214765317cd829e90974ac4df4409358b6ff756df22c4aedb8137269d9",
+    "metric_contract/core.py": "8752ac14a8fbd175ed21a8a9f8fea190a0aa2170c2b3f4bb63609c107efc362d",
+    "metric_contract/data.py": "638852b969c0625be2ab70913752e094c781c795f311e29bc2a84fa32ad7c36d",
+    "metric_contract/run.py": "e663928cd9995fd2d982a7d42ac46457ed7de3b571703d879cfb8a35e149a04a",
+    "metric_contract/check.py": "90defd40bcb11baea33a0791bc03b78b5eda9286b746b5afddcc710171a2af09",
+    "metric_contract/test_core.py": "fb5d32f5c20707e0f6cdbe4d3f8fc262e8dc1e1c7754aa1061af20d4fe8ba814",
+    "metric_contract/PLAN.md": "f408ba1a0f758e28a94ff50228e8a656a52b62015a741539525568b7505c794a"
+  },
+  "input_sha256": {
+    "feasibility_recovery/data/v2/calibration_quality.csv": "1f55ff987ec96d1b3c03a072123b2fdcf6139f49484d8ed61be44443d9a75890",
+    "feasibility_recovery/data/v2/heldout_quality.csv": "8c46163cea2d07df1d3a0fd2763427cace2df9cd68d0f071f03aee9ac7733f8f",
+    "horizon_recovery/data/v3/calibration_quality.csv": "02393f8de93e9131d99d65ce55c8a7e510d0c7e17398a63c287a2dd4acc3277e",
+    "horizon_recovery/data/v3/heldout_quality.csv": "07e223d31072241d5444ee70c9a8e1481f6a2a25f8df4079b4f47c1f49f90f5d",
+    "causal_playback/data/media_manifest.json": "43e3f61a27a1a122683a2cb8909d1d7f50f04e38a21b1da0e5c6989c1dcf485a",
+    "early_commitment/results/development_v1/results.json.gz": "c95eabd81611417038d3deea38d25e4a5276609f619d9cf19b7d0e2de342a264",
+    "feedback_opportunity/results/audit_v1/results.json.gz": "5de579c70b156f1670c01115a254ef618bc505a3fbd86a32082e826b3a475acb"
+  },
+  "hash_convention": "Raw bytes except text LF normalization; gzip bytes unchanged",
+  "scientific_sha256": "479f9d67fe6bee493728ef5889c65aae5292c2091b4c74b67aa23ad62b5d02fe",
+  "result_sha256": "de64206e27705a82b48f22b068107e86caaf4d8a75fa130c8978c04c984ff50b"
+}

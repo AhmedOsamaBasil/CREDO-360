@@ -56,3 +56,7 @@ early_commitment/*.md text eol=lf
 early_commitment/data/** -text whitespace=cr-at-eol
 early_commitment/results/** -text whitespace=cr-at-eol
 early_commitment/results/**/*.svg -whitespace
+metric_contract/*.py text eol=lf
+metric_contract/*.md text eol=lf
+metric_contract/results/** -text whitespace=cr-at-eol
+metric_contract/results/**/*.svg -whitespace
