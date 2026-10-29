@@ -91,6 +91,10 @@ jobs:
         run: |
           python -m unittest measurement_assessment.test_synthesize -v
           python -m measurement_assessment.synthesize
+      - name: Verify integrated feasibility evidence and scope checks
+        run: |
+          python -m unittest feasibility_synthesis.test_synthesis -v
+          python -m feasibility_synthesis.synthesize
       - name: Test metric and service-contract sensitivity
         run: python -m unittest metric_contract.test_core -v
       - name: Replay the complete exposed metric and contract sensitivity

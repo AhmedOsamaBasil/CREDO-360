@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "adaptive": "adaptive_audit/results/analytic_v1/results.json.gz",
+    "duration": "duration_contract/results/replay_v1/results.json.gz",
+    "geometry": "geometric_admission/results/exposed_v1/results.json.gz",
+    "metric": "metric_contract/results/sensitivity_v1/results.json.gz",
+    "paced": "duration_contract/results/measured_audit_v1/results.json",
+    "temporal": "temporal_viewport/results/exposed_v1/results.json.gz",
+    "temporal_diagnostic": "temporal_viewport/results/diagnostics_v1/results.json"
+  },
+  "scientific_sha256": "ae1d8148e76906edc0483eeb507f2f2859cd2eb5b9ce97923d807d55b4d3dd39",
+  "source_sha256": {
+    "__init__.py": "76d6dfead500e0edc65d418c334632617f4076d17185e766791dd6f4454d0d72",
+    "claims.py": "37450ddf048fb0db658576926c6af486255c2391725b88f5648af8cda1264257",
+    "synthesize.py": "4713ce6e6c264650ff1e4dd74640b0dace973981eb749f961e4384e898bd84c3",
+    "test_synthesis.py": "6a66d1d4c3e59034a2792b9b59518412929d4f39d52a3eeb13fa005244f0ec86"
+  }
+}

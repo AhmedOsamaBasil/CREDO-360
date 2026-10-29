@@ -82,3 +82,7 @@ temporal_viewport/*.md text eol=lf
 temporal_viewport/data/** -text whitespace=cr-at-eol
 temporal_viewport/results/** -text whitespace=cr-at-eol
 temporal_viewport/results/**/*.svg -whitespace
+feasibility_synthesis/*.py text eol=lf
+feasibility_synthesis/*.md text eol=lf
+feasibility_synthesis/*.bib text eol=lf
+feasibility_synthesis/results/** -text whitespace=cr-at-eol

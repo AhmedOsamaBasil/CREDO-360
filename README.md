@@ -1,5 +1,14 @@
 # CREDO-360
 
+The current [feasibility and measurement synthesis](feasibility_synthesis/README.md)
+reconciles the later audits without another experiment or a manuscript rewrite.
+It distinguishes 134 optimistic infeasibility cases, 27 recorded-trace feasible
+cases without a universal guarantee, and seven unresolved geometric cases with
+unfavorable recorded traces. The same 168 episodes are reused, not independent
+replications. A source-bound case inspector, claim-scope checks, paper blueprint
+and remaining validation requirements are provided; reframing alone does not
+establish journal readiness or a superior recovery controller.
+
 The latest [temporal viewport-model audit](temporal_viewport/README.md) tests
 whether an exposed-data speed envelope can narrow the uncertainty while the
 quality/resource/deadline contract remains fixed. All nine frozen models yield
