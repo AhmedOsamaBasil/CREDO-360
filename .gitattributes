@@ -88,7 +88,9 @@ feasibility_synthesis/*.bib text eol=lf
 feasibility_synthesis/results/** -text whitespace=cr-at-eol
 player_timing/*.py text eol=lf
 player_timing/*.md text eol=lf
+player_timing/*.bib text eol=lf
 player_timing/*.js text eol=lf
 player_timing/*.cjs text eol=lf
 player_timing/data/** -text whitespace=cr-at-eol
 player_timing/results/** -text whitespace=cr-at-eol
+player_timing/results/**/*.svg -whitespace

@@ -1,6 +1,16 @@
 # CREDO-360
 
-The current [feasibility and measurement synthesis](feasibility_synthesis/README.md)
+The latest [matched-path software-player timing study](player_timing/README.md)
+publishes 2,688 exposed replay cells and all 74 scheduled browser sessions.
+Two-second delivery reduces mean cold completion by about 6.6 seconds but does
+not increase protected half-repayment counts for these fixed paths. Measured
+near-deadline misses, callback omissions, strict floor failures and both stress
+controls are retained. This is a timing/feasibility diagnosis, not a new
+successful recovery controller or physical-HMD validation. The public artifact
+includes raw events, independent checks, figures and a full-text comparison with
+recent conformal and CVaR streaming methods; no fresh holdout was consumed.
+
+The preceding [feasibility and measurement synthesis](feasibility_synthesis/README.md)
 reconciles the later audits without another experiment or a manuscript rewrite.
 It distinguishes 134 optimistic infeasibility cases, 27 recorded-trace feasible
 cases without a universal guarantee, and seven unresolved geometric cases with
