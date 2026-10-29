@@ -1,5 +1,13 @@
 # CREDO-360
 
+The [external-source preflight](source_preflight/README.md) recommends validating
+Wu2017 next after the original Corbillon server returned HTTP410. It records
+two source-metadata files and successful HEAD checks for all18 effective
+stimulus links, including the authors' Video9 correction. Separate viewing
+conditions, unresolved file/geometry checks and reuse limits remain explicit.
+The tested intake tools do not open participant records or derive fresh
+outcomes; this is not a completed independent confirmation or adapter freeze.
+
 The [feasibility confirmation design](confirmation_protocol/README.md) fixes
 six evidence-scoped claims, the unchanged repayment contract, comparisons,
 sampling rules, endpoints and failure criteria before an external test.

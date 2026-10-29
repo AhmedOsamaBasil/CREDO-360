@@ -1,0 +1,153 @@
+{
+  "schema": "source-preflight-review-v1",
+  "checked_on": "2026-10-29",
+  "state": "blocked_before_outcomes",
+  "authorization": "Assess Wu as an alternative after the Corbillon source-access failure; no fresh outcomes authorized by source assessment alone.",
+  "corbillon": {
+    "doi": "10.1145/3083187.3083215",
+    "paper_url": "https://3dvar.com/Corbillon2017360.pdf",
+    "paper_sha256": "de49b1610dd99fa7d23aaeba1542be7146517ab425d6188bc811fe768cb52b97",
+    "source_repository": "https://github.com/xmar/360Degree_Head_Movement_Dataset",
+    "commit": "b3bc7f8ac14c8de7b0023d69b649d697d3920286",
+    "source_files": [
+      {
+        "path": "PythonInterface/README.rst",
+        "git_blob_sha1": "81a3dee4901d286237bbaebf1154f857148d4514"
+      },
+      {
+        "path": "PythonInterface/config.ini",
+        "git_blob_sha1": "c08228672d9733bcf613508ad13cf6c391c5d763"
+      },
+      {
+        "path": "PythonInterface/Helpers/TestManager.py",
+        "git_blob_sha1": "9358d57b55917d25625105fd247bc137c5e5b1ee"
+      },
+      {
+        "path": "src/Log.hpp",
+        "git_blob_sha1": "90b5b3bd97a786b0d07746a7f0305e85961a27c8"
+      },
+      {
+        "path": "src/LogWriter.cpp",
+        "git_blob_sha1": "1ef54135b5c864092d7ecda888b63e52fc8b5939"
+      },
+      {
+        "path": "src/Quaternion.hpp",
+        "git_blob_sha1": "e20cf8f38d7564fbce25b66739ae441430bab87b"
+      },
+      {
+        "path": "src/RenderManagerOpenGLHighPolyTest.cpp",
+        "git_blob_sha1": "cfe47a21c4466571f3a8662721b5d93c346a1bad"
+      },
+      {
+        "path": "src/MeshCubeEquiUV.cpp",
+        "git_blob_sha1": "094cbf716a19a47bc74d44882b87efc251bb4132"
+      },
+      {
+        "path": "PythonInterface/Helpers/Statistics.py",
+        "git_blob_sha1": "c4ce9437a0c6b4ca3493986342602cfa8832e7fd"
+      },
+      {
+        "path": "LibAvWrapper/src/VideoReader.cpp",
+        "git_blob_sha1": "f5dde302e1d3f520c26dbfd10bceb9a947f86092"
+      },
+      {
+        "path": "PythonInterface/ExportResults.py",
+        "git_blob_sha1": "a07538d0f54e92786ececd2cdb936c743973d222"
+      }
+    ],
+    "access_checks": [
+      {
+        "url": "http://dash.ipv6.enstb.fr/headMovements/",
+        "method": "HEAD",
+        "result": "410 Gone"
+      },
+      {
+        "url": "https://dash.ipv6.enstb.fr/headMovements/",
+        "method": "HEAD",
+        "result": "TLS internal-error alert; certificate verification not disabled"
+      },
+      {
+        "url": "http://dash.ipv6.enstb.fr/headMovements/archives/dataset.tar.gz",
+        "method": "HEAD",
+        "result": "410 Gone"
+      },
+      {
+        "url": "https://dash.ipv6.enstb.fr/headMovements/archives/dataset.tar.gz",
+        "method": "HEAD",
+        "result": "TLS internal-error alert; certificate verification not disabled"
+      }
+    ],
+    "repository_releases": 0,
+    "issues_checked": [
+      3,
+      5
+    ],
+    "verified_replacement_archive_found": false,
+    "limitations": [
+      "Current source checkout is not evidence of the exact acquisition binary.",
+      "Paper forward-axis description, Statistics.py reference vector and logger reference transform require explicit reconciliation; this does not establish an error in the original study.",
+      "Legacy testInfo.txt stimulus MD5 must be checked against exact original bytes; add SHA-256 and verify frame/PTS alignment.",
+      "Paper describes MIT software; separate dataset/video reuse terms were not located. No third-party code or raw assets are redistributed here.",
+      "Timing eligibility computed from the first log sample is only a candidate clock check, not confirmed media alignment."
+    ]
+  },
+  "clips": [
+    {
+      "id": "Diving-2OzlksZBTiA",
+      "label": "Diving",
+      "offset_seconds": 40
+    },
+    {
+      "id": "Rollercoaster-8lsB-P8nGSM",
+      "label": "Rollercoaster",
+      "offset_seconds": 65
+    },
+    {
+      "id": "Timelapse-CIw8R8thnm8",
+      "label": "Timelapse",
+      "offset_seconds": 0
+    },
+    {
+      "id": "Venise-s-AJRFQuAtE",
+      "label": "Venice",
+      "offset_seconds": 0
+    },
+    {
+      "id": "Paris-sJxiPiAaB4k",
+      "label": "Paris",
+      "offset_seconds": 0
+    }
+  ],
+  "wu": {
+    "doi": "10.1145/3083187.3083210",
+    "author_page": "https://wuchlei-thu.github.io/",
+    "paper_url": "https://www.dropbox.com/s/jlzhht8pqtwjd08/main.pdf?dl=1",
+    "paper_sha256": "01e692d27eb39dce123402e71f4ae00e94c5ddcfa3b8a4c1e2d658caaf307230",
+    "archive_url": "https://www.dropbox.com/s/aqk6sbwqw6jyqck/vr-dataset.zip?dl=1",
+    "correction_url": "https://www.dropbox.com/s/hp9rf9vs93in6zl/2-9-HeyVR.mp4?dl=1",
+    "archive_bytes": 181267353,
+    "central_directory_entries": 966,
+    "video_members": 0,
+    "readme_or_license_members": 0,
+    "conditions": [
+      {
+        "experiment": 1,
+        "label": "free_exploration",
+        "reported_clips": 9
+      },
+      {
+        "experiment": 2,
+        "label": "content_focused_with_announced_memory_test",
+        "reported_clips": 9
+      }
+    ],
+    "source_clock": "PlaybackTime is separate from wall-clock Timestamp; do not use wall time as media time.",
+    "source_geometry": "Paper equation gives forward vector from quaternion in xyzw order; texture seam starts at +X. Full adapter and landmark/axis checks pending.",
+    "reuse_review": "Author page requests citation for dataset use. No explicit archive license was found in the directory; do not infer permission to redistribute third-party videos or participant files.",
+    "status": "Metadata-only assessment complete: two videoMeta.csv files read by bounded ranges, all18 corrected stimulus HEAD checks returned200; paired media bodies, trace eligibility and source adapter remain unverified."
+  },
+  "fresh_quality_or_recovery_outcomes": 0,
+  "participant_trace_members_opened": 0,
+  "source_adapter_frozen": false,
+  "manuscript_changed": false
+}

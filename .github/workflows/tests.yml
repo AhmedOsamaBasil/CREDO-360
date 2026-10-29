@@ -118,6 +118,10 @@ jobs:
           python -m confirmation_protocol.register --verify
       - name: Test metric and service-contract sensitivity
         run: python -m unittest metric_contract.test_core -v
+      - name: Verify external-source metadata preflight without network access
+        run: |
+          python -m unittest source_preflight.test_intake source_preflight.test_wu_probe source_preflight.test_audit -v
+          python -m source_preflight.audit --verify
       - name: Replay the complete exposed metric and contract sensitivity
         if: hashFiles('metric_contract/results/sensitivity_v1/metadata.json') != ''
         run: |
