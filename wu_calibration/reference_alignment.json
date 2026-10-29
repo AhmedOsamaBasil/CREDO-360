@@ -1,0 +1,12 @@
+{
+  "schema": "wu-author-renderer-reference-alignment-v1",
+  "stage": "reference-timestamp inspection before calibration pose comparisons",
+  "reason": "The pinned reference has1095 rows over0.055..361.036s; none has a decisecond key exactly equal to the five fixed targets. The author renderer retains its previous available bucket.",
+  "target_seconds_unchanged": [5, 10, 22, 40, 59.5],
+  "reference_selection": "For each fixed target choose the greatest stored decisecond key not exceeding int(target*10), exactly reproducing the renderer's held-reference behavior during sequential playback.",
+  "source_pose_comparison_time": "Use that selected reference row's recorded time, not an invented target-time label; retain both fixed target and actual reference time and lag.",
+  "no_interpolation_or_offset_search": true,
+  "geometry_gate_unchanged": true,
+  "calibration_pose_comparisons_inspected_before_this_amendment": false,
+  "confirmation_accessed": false
+}
