@@ -122,6 +122,10 @@ jobs:
         run: |
           python -m unittest source_preflight.test_intake source_preflight.test_wu_probe source_preflight.test_audit -v
           python -m source_preflight.audit --verify
+      - name: Verify Wu source acquisition and clock audit without private assets
+        run: |
+          python -m unittest wu_source.test_source wu_source.test_audit -v
+          python -m wu_source.audit --verify
       - name: Replay the complete exposed metric and contract sensitivity
         if: hashFiles('metric_contract/results/sensitivity_v1/metadata.json') != ''
         run: |

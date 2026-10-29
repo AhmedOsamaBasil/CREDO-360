@@ -1,5 +1,12 @@
 # CREDO-360
 
+The [Wu original-source audit](wu_source/README.md) acquires and hashes all18
+videos plus the trace archive privately. It accounts for864 trace files, but
+only94 pass the current strict playback-clock rule;16/18 videos pass the
+zero-start decode check. Texture direction remains unverified. These alignment
+issues block the source-adapter freeze: no new quality/recovery outcome is
+derived, and the original contract and frozen confirmation design are unchanged.
+
 The [external-source preflight](source_preflight/README.md) recommends validating
 Wu2017 next after the original Corbillon server returned HTTP410. It records
 two source-metadata files and successful HEAD checks for all18 effective

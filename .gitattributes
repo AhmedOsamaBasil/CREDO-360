@@ -102,3 +102,6 @@ source_preflight/*.py text eol=lf
 source_preflight/*.md text eol=lf
 source_preflight/*.json text eol=lf
 source_preflight/results/** -text whitespace=cr-at-eol
+wu_source/*.py text eol=lf
+wu_source/*.md text eol=lf
+wu_source/results/** -text whitespace=cr-at-eol
