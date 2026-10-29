@@ -1,0 +1,40 @@
+{
+  "schema": "wu-two-clip-calibration-amendment-v1",
+  "parent_commit": "5d7fc7bb3169268c65a72fa2680e00cc21bdaf83",
+  "parent_design_registration_sha256": "c40d455824ee689d8b2adc356526026ba6a18aed763bb42de3f1b5cfc69d9487",
+  "parent_source_report_sha256": "f42bac62750b48c77e72e4cb6af6fb996a501acd8a693e8c6d50a4a2f002e976",
+  "calibration_clips": ["e1v02", "e2v04"],
+  "confirmation_clips": ["e1v01", "e1v03", "e1v04", "e1v05", "e1v06", "e1v07", "e1v08", "e1v09", "e2v01", "e2v02", "e2v03", "e2v05", "e2v06", "e2v07", "e2v08", "e2v09"],
+  "selection_basis": "The two clips illustrated with projected participant directions in the original paper, one per condition; not recovery outcomes.",
+  "conditions_separate": true,
+  "identity_disjoint": false,
+  "service_contract_changed": false,
+  "quality_or_recovery_outcomes_allowed": false,
+  "confirmation_pose_access_allowed": false,
+  "geometry_reference": {
+    "site_commit": "6ea44d0e2193679cd00d6f02850f3f9cd16ffbd1",
+    "path": "video/video_3.csv",
+    "git_blob_sha1": "65349d06cf9b511b82c3c8d19083ed76f88161ae",
+    "bytes": 1624253,
+    "clip": "e2v04",
+    "renderer_path": "js/my_plot.js",
+    "renderer_blob_sha1": "45fd0e42d491e12cd60563d6ef0d8a2c4652d655",
+    "targets_seconds": [5, 10, 22, 40, 59.5],
+    "wrap_sign_candidates": [-1, 1],
+    "normalization": "Unit-normalize only finite nonzero quaternions whose norm differs from one by at most0.01; retain the norm error. No other pose repair.",
+    "comparison": "Both signs; first and last admissible ascending crossings in original record order; unordered spherical minimum-sum matching to author-rendered projected coordinates, with counts and unmatched records explicit.",
+    "evidence_gate": "All fixed targets available with48 points; one sign has median angular error<=0.5deg and95th percentile<=2deg under at least one prespecified crossing rule, while the other sign has median error>=5deg under both rules. Otherwise retain unresolved mapping; no automatic outcome launch.",
+    "limitations": "A demo match is source-adapter reproduction, not independent human observation or validation of arbitrary timing repairs. Do not tune against confirmation clips."
+  },
+  "clock_diagnosis": {
+    "clips": ["e1v02", "e2v04"],
+    "source_ids": "all48 per clip, no filtering by gaze or recovery",
+    "window_seconds": [0, 60],
+    "targets_seconds": "0.5,1.5,...,59.5",
+    "age_limit_seconds": 0.1,
+    "methods": ["original strict clock audit", "ascending crossing multiplicity in original order", "first versus last admissible crossing sensitivity", "relative wall-clock monotonicity and playback backstep location"],
+    "production_repair_preapproved": false,
+    "no_silent_sorting_trimming_interpolation": true
+  },
+  "release_gate": "Freeze an evidenced source-specific adapter separately before any remaining-clip pose labels. Retain unresolved clock/media-origin cases; do not declare complete readiness merely because a sign matches."
+}
