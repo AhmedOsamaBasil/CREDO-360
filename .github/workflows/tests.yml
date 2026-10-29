@@ -107,6 +107,11 @@ jobs:
         run: python -m unittest geometric_admission.test_geometry -v
       - name: Test causal-policy feasibility and information-order games
         run: python -m unittest adaptive_audit.test_core adaptive_audit.test_validation -v
+      - name: Test temporal viewport geometry and scalar certificate optimization
+        run: python -m unittest temporal_viewport.test_core temporal_viewport.test_validation -v
+      - name: Replay exposed temporal viewport model audit
+        if: hashFiles('temporal_viewport/results/exposed_v1/metadata.json') != ''
+        run: python -m temporal_viewport.run --verify
       - name: Replay the analytical adaptive-policy upper bound
         if: hashFiles('adaptive_audit/results/analytic_v1/metadata.json') != ''
         run: python -m adaptive_audit.run --verify

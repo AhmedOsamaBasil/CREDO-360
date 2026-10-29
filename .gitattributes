@@ -77,3 +77,8 @@ adaptive_audit/*.py text eol=lf
 adaptive_audit/*.md text eol=lf
 adaptive_audit/results/** -text whitespace=cr-at-eol
 adaptive_audit/results/**/*.svg -whitespace
+temporal_viewport/*.py text eol=lf
+temporal_viewport/*.md text eol=lf
+temporal_viewport/data/** -text whitespace=cr-at-eol
+temporal_viewport/results/** -text whitespace=cr-at-eol
+temporal_viewport/results/**/*.svg -whitespace
