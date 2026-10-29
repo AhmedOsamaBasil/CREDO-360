@@ -9,6 +9,7 @@ import numpy as np
 from metric_contract.data import ROOT,load
 from metric_contract.run import canonical,sha
 from feedback_opportunity.feedback import mask,weights
+from multimedia_testbed.prepare_qoevave import load_traces
 
 OUT=ROOT/'player_timing/data/v1'
 MEDIA=ROOT/'.external/causal_playback_v1'
@@ -39,10 +40,11 @@ def one(item):
     start=packets[0]['pts']; keys=[(p['pts']-start)*unit for p in packets if 'K' in p['flags']]
     if keys != [0.,2.,4.,6.,8.]:raise ValueError(f'Not two-second keyframes: {keys}')
     target=CACHE/item['cohort']/item['scene']/f"r{item['rung']}"/f"s{item['segment']}"
-    target.mkdir(parents=True,exist_ok=False)
-    subprocess.run(['ffmpeg','-nostdin','-v','error','-n','-i',str(source),'-map','0:v:0','-c','copy',
-        '-f','segment','-segment_time','2','-reset_timestamps','1','-segment_format','mp4',
-        '-segment_format_options','movflags=+faststart',str(target/'c%d.mp4')],check=True)
+    if not target.exists():
+        target.mkdir(parents=True,exist_ok=False)
+        subprocess.run(['ffmpeg','-nostdin','-v','error','-n','-i',str(source),'-map','0:v:0','-c','copy',
+            '-f','segment','-segment_time','2','-reset_timestamps','1','-segment_format','mp4',
+            '-segment_format_options','movflags=+faststart',str(target/'c%d.mp4')],check=True)
     paths=sorted(target.glob('c*.mp4'))
     if len(paths)!=5:raise ValueError('Five valid children required')
     olddecoded=decoded(source); allpayload=[]; allframes=[]; children=[]
@@ -69,19 +71,24 @@ def one(item):
 
 def features(records):
     meta=json.loads((MAPS/'metadata.json').read_text())
-    if sha(EVENTS)!=meta['private_events_sha256']:raise ValueError('Private events changed')
-    events={r['key']:r for r in json.loads(EVENTS.read_text())}; maps={}
+    maps={}; traces={}; trace_hashes={}
     for s in meta['sources']:
         path=MAPS/s['map_file']
         if sha(path)!=s['descriptor']:raise ValueError('Map changed')
         maps[s['scene']]=np.load(path)['mse'].astype(float)
+        folder={'v2':'feasibility_v2','v3':'horizon_v3'}[s['cohort']]
+        archive=ROOT/'.external'/folder/'traces'/f"{s['scene']}.zip"
+        if sha(archive)!=s['trace_sha256']:raise ValueError('Trace archive changed')
+        traces[s['scene']]=load_traces(archive);trace_hashes[s['scene']]=sha(archive)
     out=[]; parity=[]
     for record in records:
         cohort,scene,sid,did=record['key'].split(':'); q=np.zeros((20,2,6),dtype=np.int64)
         for u,subject in enumerate((sid,did)):
             for parent in range(2,6):
-                sample=events[f'{cohort}:{scene}:{subject}:{parent}']['events']
-                ws=np.stack([weights(mask(e['yaw'],e['pitch'])) for e in sample])
+                trace=traces[scene][int(subject)]
+                indices=np.searchsorted(trace['time'],np.arange(parent*10,parent*10+10)+.5,side='left')
+                indices=np.clip(indices,0,len(trace['time'])-1)
+                ws=np.stack([weights(mask(float(trace['yaw'][i]),float(trace['pitch'][i]))) for i in indices])
                 mse=np.sum(maps[scene][:,parent*10:parent*10+10]*ws[None,:,:],axis=2)
                 psnr=10*np.log10(65025/np.maximum(mse.mean(axis=1),1e-12))
                 error=float(np.max(np.abs(psnr-record['quality'][2,parent,u]/1e6)))
@@ -91,16 +98,19 @@ def features(records):
                     q[(parent-2)*5+c,u]=np.rint(-mse[:,c*2:c*2+2].mean(axis=1)*1e6).astype(np.int64)
         out.append({'key':record['key'],'negative_micro_mse':q.tolist()})
     return {'rows':out,'maximum_parent_psnr_error_db':max(parity),
-            'parent_label_checks':len(parity),'private_events_sha256':sha(EVENTS),
+            'parent_label_checks':len(parity),'trace_archive_sha256':trace_hashes,
+            'sampling':'original first pose at/after sample, offline scoring only',
             'map_metadata_sha256':sha(MAPS/'metadata.json')}
 
 
 def main():
-    if OUT.exists() or CACHE.exists():raise FileExistsError('Preserve preparation attempts')
+    p=argparse.ArgumentParser(__doc__);p.add_argument('--resume-media',action='store_true');a=p.parse_args()
+    if (OUT/'derived.json.gz').exists():raise FileExistsError('Preserve derived results')
+    if (OUT.exists() or CACHE.exists()) and not a.resume_media:raise FileExistsError('Preserve preparation attempts; explicit read-only cache revalidation required')
     manifest=json.loads((ROOT/'causal_playback/data/media_manifest.json').read_text())
     items=[x for x in manifest['files'] if x['segment']>=2 and x['rung']>=2]
     if len(items)!=96:raise ValueError('96 exposed parent files required')
-    OUT.mkdir(parents=True)
+    OUT.mkdir(parents=True,exist_ok=a.resume_media)
     rows=[]
     with ThreadPoolExecutor(max_workers=4) as pool:
         for i,row in enumerate(pool.map(one,items),1):

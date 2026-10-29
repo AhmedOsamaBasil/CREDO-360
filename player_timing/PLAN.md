@@ -63,6 +63,14 @@ Per-second samples are not per-frame perceptual measurements; old acquisition
 poses indexed by media time are not newly measured stalled-viewer motion.
 All future quality stays in offline scoring, never in path selection or player.
 
+Preparation correction, before timing outcomes: use the original label sampler
+(first recorded pose at/after each half-second sample), not the earlier causal
+feedback cache (last pose at/before). The initial 96-file remux validated but
+the quality-parity assertion correctly rejected that cache. Revalidate cached
+files without rewriting them and derive scoring masks from the same hash-bound
+exposed trace archives. This is not a causal online quality estimator. No
+tolerance, quality target, path, measurement schedule or deadline is relaxed.
+
 Report timing-only, accounting-granularity, resource and floor effects separately.
 Do not generalize the old universal infeasibility theorem to changed contracts.
 
