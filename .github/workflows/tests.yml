@@ -126,6 +126,13 @@ jobs:
         run: |
           python -m unittest wu_source.test_source wu_source.test_audit -v
           python -m wu_source.audit --verify
+      - name: Verify guarded two-clip calibration and conservative adapter
+        if: hashFiles('wu_calibration/results/adapter_v1/metadata.json') != ''
+        run: |
+          python -m unittest wu_calibration.test_core wu_calibration.test_adapter wu_calibration.test_validation -v
+          python -m wu_calibration.run --verify
+          python -m wu_calibration.check_adapter --verify
+          python -m wu_calibration.replication --verify
       - name: Replay the complete exposed metric and contract sensitivity
         if: hashFiles('metric_contract/results/sensitivity_v1/metadata.json') != ''
         run: |

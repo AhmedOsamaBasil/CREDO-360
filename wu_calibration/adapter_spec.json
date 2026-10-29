@@ -1,0 +1,19 @@
+{
+  "schema": "wu-conservative-sampled-pose-adapter-v1",
+  "stage": "post-calibration method specification before reserved-clip pose access",
+  "calibration_report_sha256": "64d558aedc8af526030d5b0c46580ece3c5bf1e7525c7928ff53490df76b1c67",
+  "texture": {"wrap_sign": -1, "u": "(-atan2(z,x)/(2*pi)) modulo1", "v": "acos(y)/pi", "legacy_yaw_degrees": "360*u-180", "legacy_pitch_degrees": "90-180*v"},
+  "clock": {
+    "targets": "0.5,1.5,...,59.5 seconds in the unchanged source interval",
+    "age_limit_seconds": 0.1,
+    "rule": "Require exactly one ascending crossing in original row order for every target, counting ALL crossings before the age check; duplicates are retained. Require previous PlaybackTime<target<=current PlaybackTime, then current-target<=0.1s. First recorded PlaybackTime must be<=0.5s and the trace must reach60s. Return no pose series if any target is missing, stale or ambiguous. Even an out-of-age repeated crossing is ambiguous.",
+    "wall_clock": "Require finite nonnegative relative timestamps in nondecreasing original order; duplicate log timestamps allowed and reported.",
+    "repairs": "None: no sorting, prefix removal, interpolation, shifting, choosing first/last among repeated crossings, looping or stretching. A reversal that never crosses a required target is retained and reported, not silently deleted.",
+    "meaning": "Defines the uniquely bracketed recorded pose sample, not proof of the historical headset's displayed image or wall-time/media-time equivalence."
+  },
+  "quaternion": {"order": "xyzw", "maximum_norm_error": 0.01, "normalization": "Explicit unit normalization of selected valid samples; report maximum selected norm error; reject nonfinite, zero or out-of-tolerance values."},
+  "media": {"origin": "Keep original strict zero-start gate; unresolved nonzero presentation origins remain ineligible until separately evidenced. No per-file shift inferred from other clips.", "contract_changed": false},
+  "confirmation_pose_access_enabled_in_this_package": false,
+  "automatic_outcome_launch": false,
+  "limits": "Source adapter is conservatively specified and calibration-tested; full sixteen-clip source qualification remains unperformed. No perceptual, positive admission, population or controller-superiority claim."
+}

@@ -1,5 +1,13 @@
 # CREDO-360
 
+The [two-clip alignment calibration](wu_calibration/README.md) resolves Wu's
+texture direction against the author visualization (median error0.028deg versus
+22.2deg for the opposite sign). A conservative, independently checked adapter
+rejects ambiguous sample crossings:48 basketball traces qualify, while48 skiing
+traces are retained as ambiguous. Sixteen clips remain reserved for content
+confirmation; their poses and recovery outcomes have not been opened. This is
+source calibration, not a new recovery-performance result or manuscript update.
+
 The [Wu original-source audit](wu_source/README.md) acquires and hashes all18
 videos plus the trace archive privately. It accounts for864 trace files, but
 only94 pass the current strict playback-clock rule;16/18 videos pass the
