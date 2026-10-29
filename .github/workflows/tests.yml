@@ -110,6 +110,9 @@ jobs:
       - name: Replay the analytical adaptive-policy upper bound
         if: hashFiles('adaptive_audit/results/analytic_v1/metadata.json') != ''
         run: python -m adaptive_audit.run --verify
+      - name: Verify adaptive-bound presentation provenance
+        if: hashFiles('adaptive_audit/results/presentation_v1/metadata.json') != ''
+        run: python -m adaptive_audit.render --verify
       - name: Replay exposed geometric admission
         if: hashFiles('geometric_admission/results/exposed_v1/metadata.json') != ''
         run: python -m geometric_admission.run --verify

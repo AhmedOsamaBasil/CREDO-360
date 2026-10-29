@@ -1,6 +1,15 @@
 # CREDO-360
 
-The latest [complete geometric viewport bounds](geometric_admission/README.md)
+The latest [analytical adaptive-policy audit](adaptive_audit/README.md) closes
+the fixed-plan/adaptive distinction under the unchanged service contract.
+For deterministic whole-segment policies with unrestricted future sampled
+viewports, even a floor-relaxed upper bound falls below half repayment for
+all168 exposed episodes (largest bound32.16%). This is a conditional
+feasibility limit, not observed recovery performance or a claim that adaptive
+streaming cannot work with a justified temporal model. Small exact examples
+explicitly show when informative feedback can help.
+
+The preceding [complete geometric viewport bounds](geometric_admission/README.md)
 enumerate all216 masks of the existing angular-window metric. Certified
 impossibility rises from112 to134 episodes, but positive admission remains zero.
 A separate fixed-plan worst-case diagnostic explains why tighter geometry alone

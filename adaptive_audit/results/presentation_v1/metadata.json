@@ -1,0 +1,8 @@
+{
+  "summary_sha256": "b14103601283498d1afe2025106e9dfeb6044c020247e02bf84a0e8fc7039b67",
+  "renderer_sha256": "777f19ab05e269b2526cd70d707ef4acfd31ad2a86bb103dea74f2f795cf2dfb",
+  "figures": {
+    "adaptive_ceiling.png": "09ee40c865103349a90f023cf4b01cd89123c39cf0409d7a0c614cb1f9871338",
+    "adaptive_ceiling.svg": "c237860cfb792bce92123374e2206743fbf06c01f3b92efaeaab41c288ae8b9b"
+  }
+}

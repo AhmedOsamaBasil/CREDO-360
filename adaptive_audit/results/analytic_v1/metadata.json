@@ -1,0 +1,40 @@
+{
+  "source_sha256": {
+    "adaptive_audit/__init__.py": "3bbdcc48705d5fc2cc785dfb8401edcafb13006023fb0991a132eef270dd6d87",
+    "adaptive_audit/core.py": "051e7695bc74fbe8180839aa2cd4ff611bcc8375da712b9f16e28dbe4fdb314c",
+    "adaptive_audit/finite.py": "c80ef68fe14799a9bdd938004bcd407045fdfe85ee07d12e15da8c55b8ba2f76",
+    "adaptive_audit/run.py": "826092cde8dac94000d46dc4da363300745616f15138393b7ad62d44eaf7d8c6",
+    "adaptive_audit/test_core.py": "16d4d39d97bfdc81b6fb34849ff34d4d632c5fbf7d88f9c3ff70110911c1f6da",
+    "adaptive_audit/test_validation.py": "6bb2d681dc70cd6e5d84e24512292e76357ff028c9ab6a59ce496e9c65d9b513",
+    "adaptive_audit/PLAN.md": "bcec9085b5a091d130aab25d960921980bc96d16946601da68d97344ea77f6b5",
+    "adaptive_audit/THEORY.md": "afb61ce0b1933f86a0baaaf8ae5ef12df12f6d7ea5ecc86cfd6628d86e3d0eb5"
+  },
+  "dependency_sha256": {
+    "metric_contract/core.py": "8752ac14a8fbd175ed21a8a9f8fea190a0aa2170c2b3f4bb63609c107efc362d",
+    "metric_contract/run.py": "e663928cd9995fd2d982a7d42ac46457ed7de3b571703d879cfb8a35e149a04a",
+    "metric_contract/data.py": "638852b969c0625be2ab70913752e094c781c795f311e29bc2a84fa32ad7c36d",
+    "duration_contract/core.py": "f08f6129a92dd65812372d7fbd8c911cfa0749b9c4d5e545866e502c758b86b7",
+    "duration_contract/run.py": "5ed9f6fa10f654dbe063bb1539e3bb79dcb9a66bec3761d306ef5a4cef5daa8e",
+    "admission_contract/core.py": "85606bf61d583c80d741341be2d795aa64114b2f270fa30a780bd61ef9d008ae",
+    "admission_contract/diagnose.py": "b1ca9252e26fad193cd3475c95d1065c2b9f70499cd5840e3a21d20894327ee7",
+    "geometric_admission/geometry.py": "305a1456be01ea4ee9c23aec9b0f45676d07c17c4ff99e78e9604746393903ce",
+    "geometric_admission/diagnose.py": "0e24b98910d901cadf95de73efd722aabeaf6d5bcee3b5ae10f95e9dece803ff",
+    "feedback_opportunity/feedback.py": "611be04c631c1db9d12ff961c542a24ffdabdad9e1387a5d0363a7f0c3b929c8"
+  },
+  "input_sha256": {
+    "causal_playback/data/media_manifest.json": "43e3f61a27a1a122683a2cb8909d1d7f50f04e38a21b1da0e5c6989c1dcf485a",
+    "duration_contract/data/media_v1/timelines.json.gz": "2df6138696d37dfe6bc0d6d940762d76bafc2bfcab469468eaadbd996b677d2b",
+    "feedback_opportunity/data/maps_v1/metadata.json": "b159dcdc1b3c2fd12d30d989c4f6386b38c1085a891a5607ef276c08d4a84cdd",
+    "geometric_admission/results/exposed_v1/results.json.gz": "7737299a2dc0a5e6162feef955cabe5382070ebed8a439777686317579bda81c",
+    "geometric_admission/results/exposed_v1/metadata.json": "e40869c0e87bb75f3ee21ef193c1b3913fb11458ca14d2b6b9dd4a375096f7e6",
+    "geometric_admission/results/diagnostics_v1/results.json.gz": "e7623273419bd9d193b131392d41d9952d36b639a6305f2cb0dd114b73c635be",
+    "geometric_admission/results/diagnostics_v1/metadata.json": "2e37a72ca23e2142a49475b9cc57df323a3d4dd588ba37b60c7ae21c979803d4",
+    "feedback_opportunity/data/maps_v1/BuskingUnderpass05.npz": "64472ff368bd241e11cee13f37109dceb33ba1e60df96873a334fa8c11050851",
+    "feedback_opportunity/data/maps_v1/Cheerleading01.npz": "e6bb75f07214d9966017cf35ed00ea2317eecd5b3cbe23ddd5200f55d419415b",
+    "feedback_opportunity/data/maps_v1/ConferenceParticipant02.npz": "beefe169c8296612de7e2439c618e81ddcf725a3c10edce29f99f7ff0b158759",
+    "feedback_opportunity/data/maps_v1/ParkFountains01.npz": "3cf6dff2ed7de191821f23bd7247dfd14ef8a8eba9e023fbe8a9805d9b1c5674",
+    "feedback_opportunity/data/maps_v1/River01.npz": "9f05d1874d0e3fb12b9a1c6b73fc6f0f42ec8eee69452924809716c8a8a6caf2",
+    "feedback_opportunity/data/maps_v1/Train01.npz": "14dd03fd4ad2c32a504d5636f9a17b78a13b0f7817825b16e22bef3bcd4f1e66"
+  },
+  "scientific_sha256": "6d2c7bb49afe5737bd8222684d795cd04d8bd1ac62c87f8e4259c60e02dfa823"
+}

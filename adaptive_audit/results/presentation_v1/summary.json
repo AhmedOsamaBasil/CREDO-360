@@ -1,0 +1,42 @@
+{
+  "primary_sha256": "0626106e6ec5dc6bbdaf01274227cfe63369f80e05b579ccf260f6dc0672447b",
+  "post_outcome_presentation": true,
+  "scenes": [
+    {
+      "scene": "BuskingUnderpass05",
+      "episodes": 28,
+      "largest_upper_fraction": 0.027242606472640974,
+      "universal_promises_ruled_out": 28
+    },
+    {
+      "scene": "Cheerleading01",
+      "episodes": 28,
+      "largest_upper_fraction": 0.041596179682558965,
+      "universal_promises_ruled_out": 28
+    },
+    {
+      "scene": "ConferenceParticipant02",
+      "episodes": 28,
+      "largest_upper_fraction": 0.01066269220301102,
+      "universal_promises_ruled_out": 28
+    },
+    {
+      "scene": "ParkFountains01",
+      "episodes": 28,
+      "largest_upper_fraction": 0.20750594700768674,
+      "universal_promises_ruled_out": 28
+    },
+    {
+      "scene": "River01",
+      "episodes": 28,
+      "largest_upper_fraction": 0.32163619104154745,
+      "universal_promises_ruled_out": 28
+    },
+    {
+      "scene": "Train01",
+      "episodes": 28,
+      "largest_upper_fraction": 0.031285753547092364,
+      "universal_promises_ruled_out": 28
+    }
+  ]
+}
