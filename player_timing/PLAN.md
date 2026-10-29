@@ -29,6 +29,8 @@ Necessary fixes after a freeze require a recorded amendment and new version.
    correct PTS durations, and no non-keyframe start. Actual final duration stays
    299/30 seconds where present. If these conditions fail, report failure, not
    approximate quality by copying a ten-second label into every chunk.
+   Normalize each remuxed MP4 to first presentation timestamp zero, preserving
+   ordered payload and decoded pixels; verify container and browser durations.
 3. Retain each parent rung for all its children. This separates delivery and
    completion granularity from adaptation. The unchanged four-action feasible
    oracle is context only; it is NOT an optimum for the secondary configuration.
@@ -70,6 +72,15 @@ the quality-parity assertion correctly rejected that cache. Revalidate cached
 files without rewriting them and derive scoring masks from the same hash-bound
 exposed trace archives. This is not a causal online quality estimator. No
 tolerance, quality target, path, measurement schedule or deadline is relaxed.
+
+Before the full batch, the initial two-unit smoke exposed a nonzero MP4 origin:
+the first child started at0.1s and Chromium reported2.066667s for60frames, even
+though normalized packet span was2s. Preserve the v1 preparation/replay and
+smoke diagnostic. A v2 container-only normalization restores first PTS0 and
+two-second browser duration without changing encoded or decoded pixels. Rerun
+preparation in a new cache, recount actual container bytes, and freeze the
+corrected method before measuring. No full batch had started; this is a
+compatibility correction, not selection among competing scientific outcomes.
 
 Report timing-only, accounting-granularity, resource and floor effects separately.
 Do not generalize the old universal infeasibility theorem to changed contracts.

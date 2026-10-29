@@ -11,16 +11,16 @@ from metric_contract.run import canonical,sha
 from feedback_opportunity.feedback import mask,weights
 from multimedia_testbed.prepare_qoevave import load_traces
 
-OUT=ROOT/'player_timing/data/v1'
+OUT=ROOT/'player_timing/data/v2'
 MEDIA=ROOT/'.external/causal_playback_v1'
-CACHE=ROOT/'.external/player_timing_v1'
+CACHE=ROOT/'.external/player_timing_v2'
 EVENTS=ROOT/'.external/feedback_opportunity_v1/client_events.json'
 MAPS=ROOT/'feedback_opportunity/data/maps_v1'
 
 
 def probe(path):
     return json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','v:0',
-        '-show_packets','-show_streams','-show_data_hash','sha256','-show_entries',
+        '-show_packets','-show_streams','-show_format','-show_data_hash','sha256','-show_entries',
         'packet=pts,dts,duration,flags,size,data_hash:stream=time_base,width,height,r_frame_rate,codec_name',
         '-of','json',str(path)],text=True))
 
@@ -48,11 +48,17 @@ def one(item):
     paths=sorted(target.glob('c*.mp4'))
     if len(paths)!=5:raise ValueError('Five valid children required')
     olddecoded=decoded(source); allpayload=[]; allframes=[]; children=[]
-    for i,path in enumerate(paths):
+    for i,rawpath in enumerate(paths):
+        path=target/f'n{i}.mp4'
+        if not path.exists():
+            subprocess.run(['ffmpeg','-nostdin','-v','error','-n','-i',str(rawpath),'-map','0:v:0',
+                '-c','copy','-avoid_negative_ts','disabled','-movflags','+faststart',str(path)],check=True)
         p=probe(path); ps=sorted(p['packets'],key=lambda x:x['pts']); st=p['streams'][0]
         fields=('codec_name','width','height','r_frame_rate','time_base')
         if any(st[k]!=stream[k] for k in fields) or 'K' not in ps[0]['flags']:raise ValueError('Invalid independent child')
         origin=ps[0]['pts']; pts=[(r['pts']-origin)*unit for r in ps]; ds=[r['duration']*unit for r in ps]
+        if origin!=0 or abs(float(p['format']['duration'])-len(ps)/30)>.002:
+            raise ValueError('Nonzero/truncated browser media timeline')
         if any(abs(pts[j]-j/30)>1e-8 or abs(d-1/30)>1e-8 for j,d in enumerate(ds)):
             raise ValueError('Non-contiguous child PTS')
         payload=[r['data_hash'] for r in ps]; frames=decoded(path)

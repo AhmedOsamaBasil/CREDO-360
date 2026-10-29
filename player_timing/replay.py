@@ -14,8 +14,8 @@ from admission_contract.core import clocks
 from player_timing.core import receipt_schedule,queue,resources,scores
 import numpy as np
 
-DATA=ROOT/'player_timing/data/v1/derived.json.gz'
-OUT=ROOT/'player_timing/results/replay_v1'
+DATA=ROOT/'player_timing/data/v2/derived.json.gz'
+OUT=ROOT/'player_timing/results/replay_v2'
 POLICIES=('cost_greedy','rolling_nash','maxmin')
 METHOD=('PLAN.md','core.py','prepare.py','replay.py','player.js','service.cjs','measure.cjs','audit.py','test_core.py','test_service.cjs')
 
@@ -23,6 +23,9 @@ METHOD=('PLAN.md','core.py','prepare.py','replay.py','player.js','service.cjs','
 def provenance():
     paths=list(INPUTS)+['admission_contract/results/exposed_v1/results.json.gz',
         'duration_contract/data/media_v1/timelines.json.gz','feedback_opportunity/data/maps_v1/metadata.json']
+    paths+=['metric_contract/data.py','metric_contract/run.py','metric_contract/core.py',
+            'duration_contract/core.py','duration_contract/run.py','admission_contract/core.py',
+            'feedback_opportunity/feedback.py','multimedia_testbed/prepare_qoevave.py']
     return {'method_sha256':{p:sha(ROOT/'player_timing'/p) for p in METHOD},
             'input_sha256':{p:sha(ROOT/p) for p in paths},'derived_sha256':sha(DATA)}
 

@@ -10,8 +10,8 @@ from metric_contract.run import canonical,sha
 from player_timing.core import scores,tail_witness
 from player_timing.replay import provenance,OUT as REPLAY
 
-RAW=ROOT/'player_timing/results/browser_v1'
-OUT=ROOT/'player_timing/results/audit_v1'
+RAW=ROOT/'player_timing/results/browser_v2'
+OUT=ROOT/'player_timing/results/audit_v2'
 
 
 def audit_service(server):

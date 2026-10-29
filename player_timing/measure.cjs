@@ -8,7 +8,7 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
 
 async function session(browser,entry) {
   const files=entry.units.map(unit=>unit.files.map(f=>{
-    const base=f.cache==='split'?'.external/player_timing_v1':'.external/causal_playback_v1';
+    const base=f.cache==='split'?'.external/player_timing_v2':'.external/causal_playback_v1';
     const p=path.resolve(root,base,f.relative_path);const buffer=fs.readFileSync(p);
     if(hash(buffer)!==f.sha256 || buffer.length!==f.bytes) throw Error('Media preflight mismatch');
     return buffer;
@@ -56,14 +56,14 @@ async function session(browser,entry) {
 
 async function main() {
   const playwright=require(process.env.PLAYWRIGHT_MODULE||'playwright');
-  const schedulePath=path.join(root,'player_timing/results/replay_v1/schedule.json');
+  const schedulePath=path.join(root,'player_timing/results/replay_v2/schedule.json');
   let entries=JSON.parse(fs.readFileSync(schedulePath));
   const smoke=process.argv.includes('--smoke');
   if(smoke) entries=[{...entries[0],index:0,units:entries[0].units.slice(0,2),buffered:false}];
-  const out=path.join(root,smoke?'work/player_smoke_v1':'player_timing/results/browser_v1');
+  const out=path.join(root,smoke?'work/player_smoke_v2':'player_timing/results/browser_v2');
   fs.mkdirSync(out,{recursive:false});
   const meta={schedule_sha256:hash(fs.readFileSync(schedulePath)),smoke,headless:true,
-    method:JSON.parse(fs.readFileSync(path.join(root,'player_timing/results/replay_v1/metadata.json'))),
+    method:JSON.parse(fs.readFileSync(path.join(root,'player_timing/results/replay_v2/metadata.json'))),
     node:process.version,playwrightVersion:require(path.join(process.env.PLAYWRIGHT_MODULE||'playwright','package.json')).version,
     browserExecutableSha256:hash(fs.readFileSync(process.env.PLAYER_BROWSER)),
     measuredSessionIndices:entries.map(e=>e.index)};
