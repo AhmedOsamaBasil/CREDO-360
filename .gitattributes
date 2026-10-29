@@ -73,3 +73,6 @@ geometric_admission/*.py text eol=lf
 geometric_admission/*.md text eol=lf
 geometric_admission/results/** -text whitespace=cr-at-eol
 geometric_admission/results/**/*.svg -whitespace
+adaptive_audit/*.py text eol=lf
+adaptive_audit/*.md text eol=lf
+adaptive_audit/results/** -text whitespace=cr-at-eol

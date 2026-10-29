@@ -105,6 +105,11 @@ jobs:
         run: python -m unittest admission_contract.test_core -v
       - name: Test exact geometric viewport bounds
         run: python -m unittest geometric_admission.test_geometry -v
+      - name: Test causal-policy feasibility and information-order games
+        run: python -m unittest adaptive_audit.test_core adaptive_audit.test_validation -v
+      - name: Replay the analytical adaptive-policy upper bound
+        if: hashFiles('adaptive_audit/results/analytic_v1/metadata.json') != ''
+        run: python -m adaptive_audit.run --verify
       - name: Replay exposed geometric admission
         if: hashFiles('geometric_admission/results/exposed_v1/metadata.json') != ''
         run: python -m geometric_admission.run --verify
