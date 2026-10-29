@@ -95,6 +95,16 @@ jobs:
         run: |
           python -m unittest feasibility_synthesis.test_synthesis -v
           python -m feasibility_synthesis.synthesize
+      - name: Test matched-path browser timing and shared payload service
+        run: |
+          python -m unittest player_timing.test_core -v
+          node player_timing/test_service.cjs
+      - name: Replay exposed browser timing sensitivity
+        if: hashFiles('player_timing/results/replay_v1/metadata.json') != ''
+        run: python -m player_timing.replay --verify
+      - name: Audit recorded browser timing events
+        if: hashFiles('player_timing/results/audit_v1/metadata.json') != ''
+        run: python -m player_timing.audit --verify
       - name: Test metric and service-contract sensitivity
         run: python -m unittest metric_contract.test_core -v
       - name: Replay the complete exposed metric and contract sensitivity
