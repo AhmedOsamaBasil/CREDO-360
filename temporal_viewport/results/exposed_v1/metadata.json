@@ -1,0 +1,27 @@
+{
+  "prepared_features_sha256": "a1a8dc6c87d0319b665622cd3b766e1fb7d31f803884574013cd25381e6f3219",
+  "preparation_metadata_sha256": "0a5b471a0f2479f7d0e2940a13aac8e6ab615bf331c2831a3ba81db6ac67af85",
+  "source_sha256": {
+    "temporal_viewport/__init__.py": "e00708a352ce236415124779fc54b352471c760c16fe1d75b78f3e4e3beb2dfd",
+    "temporal_viewport/core.py": "ed48fb2284ca02b1261dc6b0aefe3ce626b6c42762bf96b687a2a391381bf052",
+    "temporal_viewport/prepare.py": "ea9a5da9d55547d8a1ead7af6e57036d1fc87f7763d08a4caa21e4fc3a8033e5",
+    "temporal_viewport/run.py": "56693a769c49f8a34394dde7207274d762d56a57139953cbed6395538f5b95b2",
+    "temporal_viewport/test_core.py": "d06054e28a1deee5f3d3fbbb288ad479a71fe59333bc20993f38fca59b052c48",
+    "temporal_viewport/test_validation.py": "023a671308dc962bab7f9c73648f211bb350729bd404a55618ba53a9704bd5d1",
+    "temporal_viewport/PLAN.md": "a6ab8b8364f37b07f2c9f14915fbd98bda9df76ffdd04bd467fa9fa63d8842b3",
+    "temporal_viewport/THEORY.md": "8411a2339a1602cb9d5203ecd2ceef3696a719a36f90a3ea214653f77cb3636d"
+  },
+  "dependency_sha256": {
+    "metric_contract/core.py": "8752ac14a8fbd175ed21a8a9f8fea190a0aa2170c2b3f4bb63609c107efc362d",
+    "metric_contract/run.py": "e663928cd9995fd2d982a7d42ac46457ed7de3b571703d879cfb8a35e149a04a",
+    "admission_contract/core.py": "85606bf61d583c80d741341be2d795aa64114b2f270fa30a780bd61ef9d008ae",
+    "duration_contract/core.py": "f08f6129a92dd65812372d7fbd8c911cfa0749b9c4d5e545866e502c758b86b7",
+    "adaptive_audit/run.py": "826092cde8dac94000d46dc4da363300745616f15138393b7ad62d44eaf7d8c6",
+    "geometric_admission/geometry.py": "305a1456be01ea4ee9c23aec9b0f45676d07c17c4ff99e78e9604746393903ce",
+    "feedback_opportunity/feedback.py": "611be04c631c1db9d12ff961c542a24ffdabdad9e1387a5d0363a7f0c3b929c8"
+  },
+  "map_metadata_sha256": "b159dcdc1b3c2fd12d30d989c4f6386b38c1085a891a5607ef276c08d4a84cdd",
+  "adaptive_artifact_sha256": "0626106e6ec5dc6bbdaf01274227cfe63369f80e05b579ccf260f6dc0672447b",
+  "geometric_artifact_sha256": "7737299a2dc0a5e6162feef955cabe5382070ebed8a439777686317579bda81c",
+  "scientific_sha256": "f66e7e92aa3aab21c7e5b93d9347dc671a9a2cf091504692dc167f0b85046fcc"
+}

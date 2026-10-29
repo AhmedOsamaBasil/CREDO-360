@@ -112,6 +112,9 @@ jobs:
       - name: Replay exposed temporal viewport model audit
         if: hashFiles('temporal_viewport/results/exposed_v1/metadata.json') != ''
         run: python -m temporal_viewport.run --verify
+      - name: Verify temporal-model saturation diagnostics and figure provenance
+        if: hashFiles('temporal_viewport/results/diagnostics_v1/metadata.json') != ''
+        run: python -m temporal_viewport.diagnose --verify
       - name: Replay the analytical adaptive-policy upper bound
         if: hashFiles('adaptive_audit/results/analytic_v1/metadata.json') != ''
         run: python -m adaptive_audit.run --verify

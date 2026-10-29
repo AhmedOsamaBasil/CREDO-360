@@ -1,6 +1,17 @@
 # CREDO-360
 
-The latest [analytical adaptive-policy audit](adaptive_audit/README.md) closes
+The latest [temporal viewport-model audit](temporal_viewport/README.md) tests
+whether an exposed-data speed envelope can narrow the uncertainty while the
+quality/resource/deadline contract remains fixed. All nine frozen models yield
+zero half-repayment certificates across 168 episodes under both timing settings.
+Scene-and-identity-excluded fitted bounds are consistent with 154/168 or164/168
+recorded pairs, but already allow all216 viewport masks before the assumed
+entry decision. This diagnoses the weakness of an entry-anchor speed cone;
+it does not prove impossibility for coupled motion models or adaptive policies.
+High-rate source derivation, public scalar-feature replay and adverse results
+are retained. No fresh holdout or new physical experiment was used.
+
+The preceding [analytical adaptive-policy audit](adaptive_audit/README.md) closes
 the fixed-plan/adaptive distinction under the unchanged service contract.
 For deterministic whole-segment policies with unrestricted future sampled
 viewports, even a floor-relaxed upper bound falls below half repayment for

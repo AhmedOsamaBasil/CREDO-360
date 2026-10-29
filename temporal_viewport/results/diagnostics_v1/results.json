@@ -1,0 +1,106 @@
+{
+  "posthoc": true,
+  "model_or_contract_changed": false,
+  "models": [
+    {
+      "model": "grid_5",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 1621,
+      "exact_geometric_lower_cells": 3751,
+      "minimum_full_family_seconds_after_anchor": 30.7976174,
+      "median_full_family_seconds_after_anchor": 32.9692523,
+      "maximum_full_family_seconds_after_anchor": 34.515485
+    },
+    {
+      "model": "grid_15",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4309,
+      "exact_geometric_lower_cells": 4489,
+      "minimum_full_family_seconds_after_anchor": 10.265872467,
+      "median_full_family_seconds_after_anchor": 10.989750767,
+      "maximum_full_family_seconds_after_anchor": 11.505161667
+    },
+    {
+      "model": "grid_30",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4480,
+      "exact_geometric_lower_cells": 4844,
+      "minimum_full_family_seconds_after_anchor": 5.132936233,
+      "median_full_family_seconds_after_anchor": 5.494875383,
+      "maximum_full_family_seconds_after_anchor": 5.752580833
+    },
+    {
+      "model": "grid_60",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4844,
+      "exact_geometric_lower_cells": 4844,
+      "minimum_full_family_seconds_after_anchor": 2.566468117,
+      "median_full_family_seconds_after_anchor": 2.747437692,
+      "maximum_full_family_seconds_after_anchor": 2.876290417
+    },
+    {
+      "model": "grid_90",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4844,
+      "exact_geometric_lower_cells": 4844,
+      "minimum_full_family_seconds_after_anchor": 1.710978744,
+      "median_full_family_seconds_after_anchor": 1.831625128,
+      "maximum_full_family_seconds_after_anchor": 1.917526944
+    },
+    {
+      "model": "grid_180",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4844,
+      "exact_geometric_lower_cells": 4844,
+      "minimum_full_family_seconds_after_anchor": 0.855489372,
+      "median_full_family_seconds_after_anchor": 0.915812564,
+      "maximum_full_family_seconds_after_anchor": 0.958763472
+    },
+    {
+      "model": "grid_360",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4844,
+      "exact_geometric_lower_cells": 4844,
+      "minimum_full_family_seconds_after_anchor": 0.427744686,
+      "median_full_family_seconds_after_anchor": 0.4579062815,
+      "maximum_full_family_seconds_after_anchor": 0.479381736
+    },
+    {
+      "model": "crossfit_p95",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4844,
+      "exact_geometric_lower_cells": 4844,
+      "minimum_full_family_seconds_after_anchor": 0.305280589,
+      "median_full_family_seconds_after_anchor": 0.3481756165,
+      "maximum_full_family_seconds_after_anchor": 0.42056769
+    },
+    {
+      "model": "crossfit_max",
+      "unique_user_tables": 168,
+      "timing_cells": 4844,
+      "all_ten_samples_full_family_cells": 4844,
+      "exact_geometric_lower_cells": 4844,
+      "minimum_full_family_seconds_after_anchor": 0.166010212,
+      "median_full_family_seconds_after_anchor": 0.1787181805,
+      "maximum_full_family_seconds_after_anchor": 0.294895992
+    }
+  ],
+  "median_high_rate_to_one_hz_max_ratio": 2.3487550588614843,
+  "maximum_ratio": 7.472675454404856,
+  "zero_one_hz_max_trajectories": 0,
+  "duplicates_removed": 0,
+  "sources": {
+    "features": "a1a8dc6c87d0319b665622cd3b766e1fb7d31f803884574013cd25381e6f3219",
+    "primary": "3cc99221a028036709b72f5a46cb138349b072cbb6052b985864df06ba01cff9",
+    "geometric": "7737299a2dc0a5e6162feef955cabe5382070ebed8a439777686317579bda81c",
+    "script": "17faf6c38014f29ef33da5342e4c95128b2f11aec18a28b15661216269e3c51b"
+  }
+}
