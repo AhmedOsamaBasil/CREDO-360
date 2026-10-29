@@ -1,0 +1,40 @@
+{
+  "schema": "metadata-only-catalogue-v1",
+  "checked_on": "2026-10-29",
+  "raw_media_or_pose_values_opened": false,
+  "qoevave": {
+    "source": "https://qoevave.github.io/database/docs/Saliency",
+    "scene_source": "https://qoevave.github.io/database/docs/Scenes",
+    "trace_linked_clips": ["Badminton05", "BuskingCity01", "BuskingUnderpass05", "Cheerleading01", "ConferenceCenter01", "ConferenceParticipant02", "ForestWalk02", "ForestWalk03", "Lake01", "ParkFountains01", "River01", "Skateboarding01", "Skateboarding05", "Train01"],
+    "exposure_manifests": ["multimedia_testbed/qoevave_manifest.json", "feasibility_recovery/manifest.json", "horizon_recovery/manifest.json"],
+    "family_rule": "strip trailing take number; conference centre and participant retain their distinct published scene names"
+  },
+  "external_candidates": [
+    {
+      "id": "corbillon2017",
+      "preference": 1,
+      "title": "360-Degree Video Head Movement Dataset",
+      "doi": "10.1145/3083187.3083215",
+      "primary_metadata": "https://graphsearch.epfl.ch/en/publication/4178a12f-0320-4467-9e8d-b461236714bd",
+      "original_dataset_page": "http://dash.ipv6.enstb.fr/headMovements/",
+      "reported_test_clips": 5,
+      "reported_subjects": 59,
+      "reported_test_window_seconds": 70,
+      "why_candidate": "original presentation window can contain the unchanged 20-second event and 40-second recovery interval",
+      "access_status": "institutional metadata located; original dataset page unavailable through current browser fetch; exact paired source media and traces not verified",
+      "approved_for_outcome_access": false
+    },
+    {
+      "id": "wu2017",
+      "preference": 2,
+      "title": "A Dataset for Exploring User Behaviors in VR Spherical Video Streaming",
+      "primary_metadata": "https://wuchlei-thu.github.io/",
+      "reported_clips": 18,
+      "reported_subjects": 48,
+      "reported_categories": 5,
+      "access_status": "author landing page and download links located; exact experiment subset, stimulus offsets, paired asset availability and reuse terms not verified",
+      "approved_for_outcome_access": false
+    }
+  ],
+  "selection_status": "no external source selected or downloaded; no silent fallback or mixture of experiment conditions"
+}

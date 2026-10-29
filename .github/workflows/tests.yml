@@ -111,6 +111,11 @@ jobs:
           python -m player_timing.diagnose --verify
           python -m player_timing.render --verify
           python -m player_timing.prior_art_check
+      - name: Verify confirmation design and metadata-only preflight
+        if: hashFiles('confirmation_protocol/results/design_v1/metadata.json') != ''
+        run: |
+          python -m unittest confirmation_protocol.test_protocol -v
+          python -m confirmation_protocol.register --verify
       - name: Test metric and service-contract sensitivity
         run: python -m unittest metric_contract.test_core -v
       - name: Replay the complete exposed metric and contract sensitivity

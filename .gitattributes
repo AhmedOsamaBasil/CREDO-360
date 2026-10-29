@@ -94,3 +94,7 @@ player_timing/*.cjs text eol=lf
 player_timing/data/** -text whitespace=cr-at-eol
 player_timing/results/** -text whitespace=cr-at-eol
 player_timing/results/**/*.svg -whitespace
+confirmation_protocol/*.py text eol=lf
+confirmation_protocol/*.md text eol=lf
+confirmation_protocol/*.json text eol=lf
+confirmation_protocol/results/** -text whitespace=cr-at-eol

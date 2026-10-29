@@ -1,5 +1,14 @@
 # CREDO-360
 
+The [feasibility confirmation design](confirmation_protocol/README.md) fixes
+six evidence-scoped claims, the unchanged repayment contract, comparisons,
+sampling rules, endpoints and failure criteria before an external test.
+Executable metadata/endpoint checks and a hash-bound registration keep source
+selection separate from outcome access. The current QoEVAVE catalogue has no
+unused scene family after the existing work; an external source and its
+media/trace adapter still require verification and a separate freeze. This
+package is a design and preflight artifact, not a completed fresh experiment.
+
 The latest [matched-path software-player timing study](player_timing/README.md)
 publishes 2,688 exposed replay cells and all 74 scheduled browser sessions.
 Two-second delivery reduces mean cold completion by about 6.6 seconds but does

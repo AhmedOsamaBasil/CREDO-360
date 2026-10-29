@@ -1,0 +1,55 @@
+{
+  "schema": "credo-feasibility-claims-v1",
+  "candidate_contribution": "Contract-specific feasibility, information limits and completion-accounting evidence for protected future distortion repayment, not a superior recovery controller.",
+  "claims": [
+    {
+      "id": "finite_contract",
+      "kind": "optimistic_rejection",
+      "statement": "An optimistic credit upper below the target rules out the specified finite-catalogue commitment.",
+      "qualifiers": ["fixed_contract", "floor_relaxed_upper", "finite_catalogue"],
+      "sources": ["geometric_admission/THEORY.md", "geometric_admission/results/exposed_v1/metadata.json"],
+      "external_test": "zero soundness violations and report rejection coverage, not a presumed old rejection rate"
+    },
+    {
+      "id": "information_order",
+      "kind": "universal_policy_limit",
+      "statement": "A per-policy action-conditioned counterexample can rule out a deterministic universal promise even when an observed future is feasible.",
+      "qualifiers": ["deterministic", "whole_segment_commitment", "unrestricted_sampled_futures", "per_policy_counterexample", "not_expected_randomized", "not_smooth_human_motion"],
+      "sources": ["adaptive_audit/THEORY.md", "adaptive_audit/results/analytic_v1/metadata.json"],
+      "external_test": "count observed-trace opportunities with a below-target conditional policy upper; do not confuse this with rejection of that observed trace"
+    },
+    {
+      "id": "known_trace",
+      "kind": "known_trace",
+      "statement": "A future-known finite oracle measures available opportunity, not an online promise.",
+      "qualifiers": ["future_known", "finite_catalogue", "not_online_admission"],
+      "sources": ["duration_contract/core.py", "feasibility_synthesis/results/synthesis_v1/metadata.json"],
+      "external_test": "scalar/vector optimum parity on the unchanged catalogue and explicit information-set separation"
+    },
+    {
+      "id": "temporal_failure",
+      "kind": "failed_temporal_certificate",
+      "statement": "Failed entry-cone certificates do not prove infeasibility under a coupled-motion model.",
+      "qualifiers": ["sufficient_lower_only", "not_coupled_impossibility", "empirical_speed_not_guarantee", "source_clock_only"],
+      "sources": ["temporal_viewport/THEORY.md", "temporal_viewport/results/exposed_v1/metadata.json"],
+      "external_test": "not a primary confirmation endpoint; no newly fitted speed bound or calibrated-risk claim"
+    },
+    {
+      "id": "completion_accounting",
+      "kind": "measured_completion",
+      "statement": "Measured software completion can change an idealized deadline credit decision for a fixed selected path.",
+      "qualifiers": ["fixed_selected_paths", "exposed_or_registered_source", "software_events_only", "separate_clock_domains", "not_physical_display", "not_human_qoe", "not_hard_execution_bound"],
+      "sources": ["player_timing/PLAN.md", "player_timing/results/audit_v2/metadata.json", "player_timing/results/diagnostics_v2/metadata.json"],
+      "external_test": "preselect paths and pairs; report all signed discrepancies and absences without selecting near-deadline cases"
+    },
+    {
+      "id": "shorter_delivery",
+      "kind": "matched_timing_sensitivity",
+      "statement": "Delivery-unit and charged-startup effects must be separated from changes in quality accounting or action policy.",
+      "qualifiers": ["fixed_parent_rungs", "original_and_secondary_accounts_separate", "shared_service_and_reserve", "not_short_action_optimality", "no_universal_theorem_transfer"],
+      "sources": ["player_timing/PLAN.md", "player_timing/results/replay_v2/metadata.json"],
+      "external_test": "retain both 10-second and 2-second outcomes, resource violations and unchanged target counts"
+    }
+  ],
+  "excluded_claims": ["first uncertainty-aware streaming controller", "new conformal or CVaR principle", "new robust-DP theorem", "universal adaptive-streaming impossibility", "human perceptual compensation", "controller superiority", "successful positive admission from zero admissions", "independent people inferred from repeated runs"]
+}
