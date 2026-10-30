@@ -153,6 +153,12 @@ jobs:
           python -m wu_pose.run --verify
           python -m wu_pose.run --verify --output wu_pose/results/linux_v1
           python -m wu_pose.replication --verify
+      - name: Verify frozen Wu media pipeline without running fresh media
+        if: hashFiles('wu_pipeline/registration.json') != ''
+        run: |
+          python -m unittest wu_pipeline.test_core wu_pipeline.test_validation -v
+          python -m wu_pipeline.spec
+          python -m wu_pipeline.synthetic --verify
       - name: Test feasibility-based admission certificates
         run: python -m unittest admission_contract.test_core -v
       - name: Test exact geometric viewport bounds

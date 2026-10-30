@@ -117,3 +117,7 @@ wu_pose/*.py text eol=lf
 wu_pose/*.md text eol=lf
 wu_pose/*.json text eol=lf
 wu_pose/results/** -text whitespace=cr-at-eol
+wu_pipeline/*.py text eol=lf
+wu_pipeline/*.md text eol=lf
+wu_pipeline/*.json text eol=lf
+wu_pipeline/results/** -text whitespace=cr-at-eol

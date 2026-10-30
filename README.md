@@ -1,5 +1,12 @@
 # CREDO-360
 
+The [Wu encoding/measurement pipeline freeze](wu_pipeline/README.md) binds the
+validated source roster, unchanged service contract, fixed NVENC ladder,
+transport-byte accounting and offline native-MSE measurement. Synthetic GPU
+checks pass, while a 29.97-to-30 fps sampling-phase discrepancy is explicitly
+retained and diagnosed. No Wu media was encoded and no fresh quality/recovery
+outcome was derived. Separate explicit activation is required after publication.
+
 The [qualified Wu pose adapter](wu_pose/README.md) validates all 452 eligible
 trace files and 27,120 selected quaternion samples against independent scalar
 geometry. All original candidate pairs remain usable; all earlier exclusions
