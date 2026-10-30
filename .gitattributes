@@ -109,3 +109,7 @@ wu_calibration/*.py text eol=lf
 wu_calibration/*.md text eol=lf
 wu_calibration/*.json text eol=lf
 wu_calibration/results/** -text whitespace=cr-at-eol
+wu_qualification/*.py text eol=lf
+wu_qualification/*.md text eol=lf
+wu_qualification/*.json text eol=lf
+wu_qualification/results/** -text whitespace=cr-at-eol
