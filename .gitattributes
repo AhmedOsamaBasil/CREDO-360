@@ -113,3 +113,7 @@ wu_qualification/*.py text eol=lf
 wu_qualification/*.md text eol=lf
 wu_qualification/*.json text eol=lf
 wu_qualification/results/** -text whitespace=cr-at-eol
+wu_pose/*.py text eol=lf
+wu_pose/*.md text eol=lf
+wu_pose/*.json text eol=lf
+wu_pose/results/** -text whitespace=cr-at-eol
