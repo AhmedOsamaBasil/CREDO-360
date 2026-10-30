@@ -146,6 +146,13 @@ jobs:
           python -m wu_qualification.run --verify
       - name: Test actual-duration quality and timing contract
         run: python -m unittest duration_contract.test_core -v
+      - name: Verify frozen qualified Wu sampled-pose adapter
+        if: hashFiles('wu_pose/results/validation_v1/metadata.json') != ''
+        run: |
+          python -m unittest wu_pose.test_core wu_pose.test_validation -v
+          python -m wu_pose.run --verify
+          python -m wu_pose.run --verify --output wu_pose/results/linux_v1
+          python -m wu_pose.replication --verify
       - name: Test feasibility-based admission certificates
         run: python -m unittest admission_contract.test_core -v
       - name: Test exact geometric viewport bounds

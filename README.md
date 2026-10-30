@@ -1,11 +1,19 @@
 # CREDO-360
 
+The [qualified Wu pose adapter](wu_pose/README.md) validates all 452 eligible
+trace files and 27,120 selected quaternion samples against independent scalar
+geometry. All original candidate pairs remain usable; all earlier exclusions
+remain unchanged. Windows/Linux agree on discrete results, with both reports
+retained for tiny floating-summary differences. This is a frozen source adapter,
+not a fresh viewport-quality, recovery or physical-display result.
+
 The [reserved Wu metadata qualification](wu_qualification/README.md) retains all
 16 registered clips and 768 source-ID files under the published clock/media
 rules. Ten clips qualify, five in each viewing condition, with 452 candidate
 directed pairs. Two nonzero media origins remain excluded without shifting;
-all clock failures are retained. Selected-pose validation is still pending:
-no new viewport-quality or recovery outcome has been derived. Repeated source
+all clock failures are retained. Selected-pose validation was pending at that
+stage and is completed above; no new viewport-quality or recovery outcome has
+been derived. Repeated source
 identities and recording-based selection limit later generalization claims.
 
 The [two-clip alignment calibration](wu_calibration/README.md) resolves Wu's
@@ -13,8 +21,8 @@ texture direction against the author visualization (median error0.028deg versus
 22.2deg for the opposite sign). A conservative, independently checked adapter
 rejects ambiguous sample crossings:48 basketball traces qualify, while48 skiing
 traces are retained as ambiguous. Sixteen clips remain reserved for content
-confirmation; their pose values have not been interpreted and no recovery
-outcomes have been derived. This is
+confirmation at that stage; their selected poses are now checked above, but
+no recovery outcomes have been derived. This is
 source calibration, not a new recovery-performance result or manuscript update.
 
 The preceding [Wu original-source audit](wu_source/README.md) acquires and hashes all18
