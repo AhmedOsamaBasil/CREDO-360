@@ -1,5 +1,11 @@
 # CREDO-360
 
+The [versioned Wu preparation v2](wu_pipeline_v2/README.md) integrates the
+tested output-frame bound and durable phase/stage evidence. Its exact original
+scientific plan, arithmetic, runtime and acceptance checks remain unchanged.
+The method is registered before a new real-source attempt; no successful
+quality/recovery result is claimed from registration alone.
+
 The [first Wu preparation endpoint audit](wu_boundary/README.md) preserves a
 failed first rendition: 1,801 frames were emitted where the frozen contract
 requires 1,800. No completed rendition, quality-label set or recovery result

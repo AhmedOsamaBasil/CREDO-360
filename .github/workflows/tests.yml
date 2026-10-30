@@ -168,6 +168,14 @@ jobs:
           python -m wu_boundary.run
       - name: Test exact geometric viewport bounds
         run: python -m unittest geometric_admission.test_geometry -v
+      - name: Verify versioned output-bounded Wu preparation
+        if: hashFiles('wu_pipeline_v2/registration.json') != ''
+        run: |
+          python -m unittest wu_pipeline_v2.test_v2 -v
+          python -m wu_pipeline_v2.spec
+      - name: Verify published Wu v2 attempt when available
+        if: hashFiles('wu_pipeline_v2/results/attempt_01/metadata.json') != ''
+        run: python -m wu_pipeline_v2.audit --output wu_pipeline_v2/results/attempt_01
       - name: Test causal-policy feasibility and information-order games
         run: python -m unittest adaptive_audit.test_core adaptive_audit.test_validation -v
       - name: Test temporal viewport geometry and scalar certificate optimization
