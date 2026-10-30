@@ -161,6 +161,11 @@ jobs:
           python -m wu_pipeline.synthetic --verify
       - name: Test feasibility-based admission certificates
         run: python -m unittest admission_contract.test_core -v
+      - name: Verify Wu endpoint failure and generated-only boundary tests
+        if: hashFiles('wu_boundary/results/synthetic_v1/metadata.json') != ''
+        run: |
+          python -m unittest wu_boundary.test_boundary -v
+          python -m wu_boundary.run
       - name: Test exact geometric viewport bounds
         run: python -m unittest geometric_admission.test_geometry -v
       - name: Test causal-policy feasibility and information-order games

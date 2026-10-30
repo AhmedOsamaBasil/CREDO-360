@@ -121,3 +121,6 @@ wu_pipeline/*.py text eol=lf
 wu_pipeline/*.md text eol=lf
 wu_pipeline/*.json text eol=lf
 wu_pipeline/results/** -text whitespace=cr-at-eol
+wu_boundary/*.py text eol=lf
+wu_boundary/*.md text eol=lf
+wu_boundary/results/** -text whitespace=cr-at-eol

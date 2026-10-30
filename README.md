@@ -1,11 +1,18 @@
 # CREDO-360
 
+The [first Wu preparation endpoint audit](wu_boundary/README.md) preserves a
+failed first rendition: 1,801 frames were emitted where the frozen contract
+requires 1,800. No completed rendition, quality-label set or recovery result
+was accepted. The original attempt and pipeline remain immutable; an explicit
+output-frame cap is tested separately on generated media only.
+
 The [Wu encoding/measurement pipeline freeze](wu_pipeline/README.md) binds the
 validated source roster, unchanged service contract, fixed NVENC ladder,
 transport-byte accounting and offline native-MSE measurement. Synthetic GPU
 checks pass, while a 29.97-to-30 fps sampling-phase discrepancy is explicitly
-retained and diagnosed. No Wu media was encoded and no fresh quality/recovery
-outcome was derived. Separate explicit activation is required after publication.
+retained and diagnosed. At that freeze no Wu media was encoded. The subsequently
+authorized first attempt failed as recorded above; no fresh quality/recovery
+outcome was derived. Do not treat a partial preparation as a confirmation.
 
 The [qualified Wu pose adapter](wu_pose/README.md) validates all 452 eligible
 trace files and 27,120 selected quaternion samples against independent scalar
