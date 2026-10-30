@@ -49,3 +49,19 @@ Subsequent independent pose reaggregation must be described separately.
 
 At this method-publication stage no v2 real-source outcome is claimed. Any
 later results are published in a separate commit after their actual audit.
+
+An auxiliary scalar replay was added after the preparation method was frozen,
+while the fixed encoding run was underway. It does not change or feed the
+runner. It uses the previously validated Hamilton-product projection and
+scalar angular-window weights, then compensated scalar summation, to check
+the complete exported label set. It preserves both numerical discrepancies
+and integer disagreements; no tolerance is fitted to fresh results. Invoke
+only after a complete audited export:
+
+```sh
+python -m wu_pipeline_v2.replay --export PUBLIC_AUDIT --archive PRIVATE_TRACE_ZIP \
+  --output NEW_REPLAY_DIRECTORY
+```
+
+This is independent scalar reaggregation of the same measurements and poses,
+not an independent cohort, new encoding experiment or recovery comparison.

@@ -173,6 +173,9 @@ jobs:
         run: |
           python -m unittest wu_pipeline_v2.test_v2 -v
           python -m wu_pipeline_v2.spec
+      - name: Test independent scalar Wu feature replay
+        if: hashFiles('wu_pipeline_v2/test_replay.py') != ''
+        run: python -m unittest wu_pipeline_v2.test_replay -v
       - name: Verify published Wu v2 attempt when available
         if: hashFiles('wu_pipeline_v2/results/attempt_01/metadata.json') != ''
         run: python -m wu_pipeline_v2.audit --output wu_pipeline_v2/results/attempt_01
