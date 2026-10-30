@@ -139,6 +139,11 @@ jobs:
           python -m metric_contract.run --verify
           python -m metric_contract.diagnose --verify
           python -m unittest metric_contract.test_validation -v
+      - name: Verify reserved Wu clock and media qualification
+        if: hashFiles('wu_qualification/results/metadata_v1/metadata.json') != ''
+        run: |
+          python -m unittest wu_qualification.test_core wu_qualification.test_validation -v
+          python -m wu_qualification.run --verify
       - name: Test actual-duration quality and timing contract
         run: python -m unittest duration_contract.test_core -v
       - name: Test feasibility-based admission certificates

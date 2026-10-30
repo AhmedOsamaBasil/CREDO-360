@@ -1,19 +1,28 @@
 # CREDO-360
 
+The [reserved Wu metadata qualification](wu_qualification/README.md) retains all
+16 registered clips and 768 source-ID files under the published clock/media
+rules. Ten clips qualify, five in each viewing condition, with 452 candidate
+directed pairs. Two nonzero media origins remain excluded without shifting;
+all clock failures are retained. Selected-pose validation is still pending:
+no new viewport-quality or recovery outcome has been derived. Repeated source
+identities and recording-based selection limit later generalization claims.
+
 The [two-clip alignment calibration](wu_calibration/README.md) resolves Wu's
 texture direction against the author visualization (median error0.028deg versus
 22.2deg for the opposite sign). A conservative, independently checked adapter
 rejects ambiguous sample crossings:48 basketball traces qualify, while48 skiing
 traces are retained as ambiguous. Sixteen clips remain reserved for content
-confirmation; their poses and recovery outcomes have not been opened. This is
+confirmation; their pose values have not been interpreted and no recovery
+outcomes have been derived. This is
 source calibration, not a new recovery-performance result or manuscript update.
 
-The [Wu original-source audit](wu_source/README.md) acquires and hashes all18
+The preceding [Wu original-source audit](wu_source/README.md) acquires and hashes all18
 videos plus the trace archive privately. It accounts for864 trace files, but
 only94 pass the current strict playback-clock rule;16/18 videos pass the
-zero-start decode check. Texture direction remains unverified. These alignment
-issues block the source-adapter freeze: no new quality/recovery outcome is
-derived, and the original contract and frozen confirmation design are unchanged.
+zero-start decode check. Texture direction was unresolved at that stage and is
+addressed by the later calibration above. No new quality/recovery outcome was
+derived; the original source report and service contract remain unchanged.
 
 The [external-source preflight](source_preflight/README.md) recommends validating
 Wu2017 next after the original Corbillon server returned HTTP410. It records
