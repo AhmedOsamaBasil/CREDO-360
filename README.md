@@ -1,10 +1,13 @@
 # CREDO-360
 
-The [versioned Wu preparation v2](wu_pipeline_v2/README.md) integrates the
-tested output-frame bound and durable phase/stage evidence. Its exact original
-scientific plan, arithmetic, runtime and acceptance checks remain unchanged.
-The method is registered before a new real-source attempt; no successful
-quality/recovery result is claimed from registration alone.
+The [completed Wu preparation v2](wu_pipeline_v2/RESULTS.md) publishes an
+audited offline artifact: 60 renditions, 360 parents, 800 children and 452 clip-trace
+label records across 10 eligible clips. All 16 registered clips and their original
+exclusions remain accounted for. Independent scalar replay has zero integer
+label disagreements on Windows and Linux. The sampling-phase caveat is retained.
+This establishes measurement preparation, not recovery feasibility, controller
+superiority or subjective QoE. The original plan and service contract remain
+unchanged; these derived labels are now exposed for later research.
 
 The [first Wu preparation endpoint audit](wu_boundary/README.md) preserves a
 failed first rendition: 1,801 frames were emitted where the frozen contract

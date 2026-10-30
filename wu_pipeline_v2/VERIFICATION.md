@@ -29,3 +29,13 @@ command: its exact generated-video evidence is preserved in wu_boundary.
 This does not establish success on all original Wu media/rungs. A new real
 attempt must still satisfy every original validation and retain any failure.
 No manuscript, acknowledgment or journal action is part of this registration.
+
+## Auxiliary replay verification
+
+The later independent scalar replay is an audit-only addition, published in
+c39ed46 while preparation was underway and before that checker was applied to
+fresh labels. Its13 generated-array/report-integrity tests plus2subtests pass
+on both platforms. With that addition, full regressions pass929tests plus89
+subtests on Windows and925plus89 on Linux. The frozen preparation registration
+and runner remain unchanged. Neither these tests nor preparation progress
+constitutes a recovery-performance result.

@@ -1,5 +1,11 @@
 # Wu preparation v2: registered output-frame bound
 
+The first v2 attempt is now complete. See [audited results](RESULTS.md): all
+60 renditions, 360 parents, 800 children and 452 trace-label records pass preparation;
+independent scalar replay has zero integer disagreements on both platforms.
+The documented phase differences and all six original exclusions remain.
+This is offline preparation, not a successful recovery-controller experiment.
+
 This version integrates the generated-video-tested `-frames:v 1800` output
 bound and durable early-stage evidence. All scientific inputs, arithmetic,
 eligibility rules and validation thresholds are inherited unchanged. The
@@ -47,8 +53,8 @@ the videos or rerun pose aggregation. The failed audit retains the stage
 sequence and file hashes without presenting partial data as confirmation.
 Subsequent independent pose reaggregation must be described separately.
 
-At this method-publication stage no v2 real-source outcome is claimed. Any
-later results are published in a separate commit after their actual audit.
+At the original method-publication stage no v2 real-source outcome was claimed.
+The completed results above are published in a separate commit after their audit.
 
 An auxiliary scalar replay was added after the preparation method was frozen,
 while the fixed encoding run was underway. It does not change or feed the
