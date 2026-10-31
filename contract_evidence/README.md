@@ -41,3 +41,9 @@ cell's mean and full minimum--maximum range, not a confidence interval. The
 two perturbation controls remain separate from the main figures and appear in
 the complete evidence tables. Rendering does not select a favorable trace or
 silently replace the original-parent metric with actual-chunk quality.
+
+The [related-methods comparison](LITERATURE.md) distinguishes this contract
+audit from prior compensation queues, quality-aware admission, network-assisted
+streaming, robust control and viewport prediction. It includes primary-source
+links and [bibliographic records](references.bib), without claiming reproduction
+or performance superiority over those systems.
