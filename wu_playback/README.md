@@ -9,6 +9,11 @@ Read [PROTOCOL.md](PROTOCOL.md). The original parent account is primary; the
 changed chunk granularity and transport overhead are reported separately.
 Raw videos/poses are not redistributed, and no personal browser is used.
 
+The fixed plan and generated-only evidence are described in
+[RESULTS.md](RESULTS.md), with validation in [VERIFICATION.md](VERIFICATION.md).
+The real Wu campaign has not yet run. Twelve two-second configurations retain
+container-overhead cap failures under the unchanged contract.
+
 ## Offline verification
 
 ```sh
