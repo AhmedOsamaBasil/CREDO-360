@@ -186,6 +186,17 @@ jobs:
           python -m wu_pipeline_v2.replay --export wu_pipeline_v2/results/attempt_01 --output wu_pipeline_v2/results/replay_linux_v1
       - name: Test causal-policy feasibility and information-order games
         run: python -m unittest adaptive_audit.test_core adaptive_audit.test_validation -v
+      - name: Verify Wu playback integration without starting browser measurements
+        if: hashFiles('wu_playback/registration.json') != ''
+        run: |
+          python -m wu_playback.spec
+          python -m unittest wu_playback.test_core wu_playback.test_audit wu_playback.test_validation -v
+          node wu_playback/test_runner.cjs
+          python -m wu_playback.synthetic_audit --output wu_playback/results/synthetic_01 --verify
+          python -m wu_playback.synthetic_audit --output wu_playback/results/synthetic_02 --verify
+      - name: Reproduce fixed Wu playback schedule when published
+        if: hashFiles('wu_playback/results/plan_v1/metadata.json') != ''
+        run: python -m wu_playback.build --verify
       - name: Test frozen Wu feasibility integration on synthetic inputs
         if: hashFiles('wu_feasibility/registration.json') != ''
         run: |

@@ -1,5 +1,12 @@
 # CREDO-360
 
+The [Wu playback integration](wu_playback/README.md) freezes the predeclared
+366-session measured-completion protocol without changing the contract or
+selecting pairs by outcome. Generated-only parent/chunk, cold/buffered browser
+checks pass after a separately retained localhost-permission failure. Exact
+integer parent/chunk credit and first-request timing are independently checked.
+This is integration/compatibility evidence, not completed Wu timing measurements.
+
 The [completed Wu feasibility evaluation](wu_feasibility/RESULTS.md) retains all
 16 registrations and evaluates 452 fixed pairs across ten eligible clips.
 Geometric bounds add 10/46 certified rejections in free/focused viewing, and
