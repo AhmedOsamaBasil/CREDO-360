@@ -24,6 +24,19 @@ After a complete result exists, reproduce every clip, bound, control and summary
 python -m wu_feasibility.run --verify
 ```
 
+The initial strict Linux replay of the Windows result stopped at `e1v05`:
+one maximum-mask witness ID differed (132 versus 84). That failure is retained;
+the registered evaluator is not edited. The post-freeze `replication.py`
+diagnostic can preserve an entire other-platform result and every exact
+difference. It does not apply a new tolerance or claim byte-identical replay.
+All original scalar extrema, endpoint and accounting checks are still run.
+
+```sh
+python -m unittest wu_feasibility.test_replication -v
+python -m wu_feasibility.replication --output wu_feasibility/results/replication_linux_v1
+python -m wu_feasibility.replication --verify-saved wu_feasibility/results/replication_linux_v1
+```
+
 Only a new nonexistent output directory can be evaluated. A failed attempt must
 be retained; verification is read-only. Conditional analytical completion does
 not replace the separately planned measured-playback stage. Preparation labels
