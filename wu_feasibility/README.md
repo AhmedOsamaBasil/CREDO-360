@@ -1,5 +1,8 @@
 # Wu fixed-contract feasibility evaluation
 
+The evaluation is complete. See [RESULTS.md](RESULTS.md) for all primary counts,
+their concentration by clip, limitations, and the retained platform discrepancy.
+
 Applies the predeclared feasibility design to the audited Wu v2 derived artifact.
 See [PROTOCOL.md](PROTOCOL.md) for information limits, unchanged contract,
 dispositions, numerical alignment and scope. No raw media or poses are needed.
@@ -36,6 +39,7 @@ python -m unittest wu_feasibility.test_replication -v
 python -m wu_feasibility.replication --output wu_feasibility/results/replication_linux_v1
 python -m wu_feasibility.replication --verify-saved wu_feasibility/results/replication_linux_v1
 python -m wu_feasibility.replication --audit
+python -m unittest wu_feasibility.test_artifact -v
 ```
 
 `--audit` is a disclosed post-freeze scientific-output comparison, not the
