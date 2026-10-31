@@ -128,3 +128,7 @@ wu_pipeline_v2/*.py text eol=lf
 wu_pipeline_v2/*.md text eol=lf
 wu_pipeline_v2/*.json text eol=lf
 wu_pipeline_v2/results/** -text whitespace=cr-at-eol
+wu_feasibility/*.py text eol=lf
+wu_feasibility/*.md text eol=lf
+wu_feasibility/*.json text eol=lf
+wu_feasibility/results/** -text whitespace=cr-at-eol

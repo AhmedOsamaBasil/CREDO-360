@@ -186,6 +186,14 @@ jobs:
           python -m wu_pipeline_v2.replay --export wu_pipeline_v2/results/attempt_01 --output wu_pipeline_v2/results/replay_linux_v1
       - name: Test causal-policy feasibility and information-order games
         run: python -m unittest adaptive_audit.test_core adaptive_audit.test_validation -v
+      - name: Test frozen Wu feasibility integration on synthetic inputs
+        if: hashFiles('wu_feasibility/registration.json') != ''
+        run: |
+          python -m unittest wu_feasibility.test_core -v
+          python -m wu_feasibility.spec
+      - name: Reproduce published Wu fixed-contract feasibility outcomes
+        if: hashFiles('wu_feasibility/results/attempt_01/metadata.json') != ''
+        run: python -m wu_feasibility.run --verify
       - name: Test temporal viewport geometry and scalar certificate optimization
         run: python -m unittest temporal_viewport.test_core temporal_viewport.test_validation -v
       - name: Replay exposed temporal viewport model audit

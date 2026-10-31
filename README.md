@@ -1,5 +1,11 @@
 # CREDO-360
 
+The [Wu feasibility integration](wu_feasibility/README.md) applies the predeclared
+fixed-contract design to the completed derived artifact. Its method is frozen
+before evaluating feasibility, with separate viewing conditions, causal entry
+inputs and independent scalar resource, clock and credit checks. It does not
+change the service contract, fit a controller or run the separate playback stage.
+
 The [completed Wu preparation v2](wu_pipeline_v2/RESULTS.md) publishes an
 audited offline artifact: 60 renditions, 360 parents, 800 children and 452 clip-trace
 label records across 10 eligible clips. All 16 registered clips and their original
