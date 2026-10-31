@@ -35,7 +35,17 @@ All original scalar extrema, endpoint and accounting checks are still run.
 python -m unittest wu_feasibility.test_replication -v
 python -m wu_feasibility.replication --output wu_feasibility/results/replication_linux_v1
 python -m wu_feasibility.replication --verify-saved wu_feasibility/results/replication_linux_v1
+python -m wu_feasibility.replication --audit
 ```
+
+`--audit` is a disclosed post-freeze scientific-output comparison, not the
+original exact replay. It recomputes all original checks and requires exact
+equality of every field except extremal mask witness IDs. Each recomputed
+witness still passes the original independent scalar-extremum check; no bound,
+integer reward, path, decision or summary may differ. Any ID differences are
+printed and `exact_replay_passed` remains false. This avoids treating an
+alternative numerical extremum witness as a changed scientific result without
+hiding the strict serialization discrepancy.
 
 Only a new nonexistent output directory can be evaluated. A failed attempt must
 be retained; verification is read-only. Conditional analytical completion does

@@ -79,12 +79,27 @@ def main():
     group.add_argument('--compare-clip')
     group.add_argument('--output', type=Path)
     group.add_argument('--verify-saved', type=Path)
+    group.add_argument('--audit', action='store_true')
     args = parser.parse_args()
     if args.verify_saved:
         print(json.dumps(verify_saved(args.verify_saved)))
         return
     frozen = verify(); verify_export(EXPORT)
     clips = json.loads((EXPORT/'manifest.json').read_text())['clips']; masks = family()
+    if args.audit:
+        generated = []; ds = []
+        for c in clips:
+            value = evaluate_clip(c, masks)
+            diff = differences(original(c['clip']), value)
+            if not witness_only(diff):
+                raise ValueError('Non-witness scientific output differs: '+c['clip'])
+            ds.extend(diff); generated.append(value)
+        if differences(json.loads((PRIMARY/'summary.json').read_text()), summarize(generated)):
+            raise ValueError('Scientific summary differs')
+        print(json.dumps({'exact_replay_passed': not ds, 'exact_differences': ds,
+                          'all_non_witness_fields_exact': True, 'scalar_extrema_rechecked': True,
+                          'post_freeze_scientific_audit': True}))
+        return
     if args.compare_clip:
         selected = next(c for c in clips if c['clip'] == args.compare_clip)
         result = evaluate_clip(selected, masks)
