@@ -44,6 +44,10 @@ cell's mean and full minimum--maximum range, not a confidence interval. The
 two perturbation controls remain separate from the main figures and appear in
 the complete evidence tables. Rendering does not select a favorable trace or
 silently replace the original-parent metric with actual-chunk quality.
+The buffered condition requires at least four seconds in complete delivery
+units for both users: one ten-second unit or two two-second units. It is not
+an exactly four-second initial buffer for the ten-second transport, and all
+startup wait is charged to the deadline.
 
 LaTeX exports contain source-bound table rows and numerical commands, without
 choosing which outcomes to report. They retain all registrations, both conditions,

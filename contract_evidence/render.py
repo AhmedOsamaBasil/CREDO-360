@@ -86,7 +86,7 @@ def render(data, output):
                      for row in data['timing_cells']])
     fig,ax=plt.subplots(figsize=(7.2,3.6));cmap=plt.get_cmap('RdBu').copy();cmap.set_bad('#999999')
     im=ax.imshow(np.ma.masked_invalid(values),vmin=-1,vmax=1,cmap=cmap,aspect='auto')
-    xticks=[f'{c["unit_seconds"]}s\n'+('4s buffer' if c['buffered'] else 'cold') for c in data['columns']]
+    xticks=[f'{c["unit_seconds"]}s\n'+('buffered' if c['buffered'] else 'cold') for c in data['columns']]
     ax.set_xticks(np.arange(12),xticks);ax.set_yticks(y,labels)
     for i,name in enumerate(('Cost-greedy','Rolling Nash','Max-min')):
         ax.text((i*4+1.5)/12+.5/12,1.02,name,transform=ax.transAxes,ha='center',fontsize=8)
