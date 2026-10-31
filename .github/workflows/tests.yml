@@ -200,6 +200,9 @@ jobs:
       - name: Test descriptive recovery-contract evidence assembly
         if: hashFiles('contract_evidence/test_assemble.py') != ''
         run: python -m unittest contract_evidence.test_assemble -v
+      - name: Test source-bound descriptive LaTeX exports
+        if: hashFiles('contract_evidence/test_latex_tables.py') != ''
+        run: python -m unittest contract_evidence.test_latex_tables -v
       - name: Reproduce fixed Wu playback schedule when published
         if: hashFiles('wu_playback/results/plan_v1/metadata.json') != ''
         run: python -m wu_playback.build --verify

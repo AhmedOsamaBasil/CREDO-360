@@ -18,6 +18,7 @@ Pure constructed-fixture checks (no real playback data required):
 
 ```sh
 python -m unittest contract_evidence.test_assemble -v
+python -m unittest contract_evidence.test_latex_tables -v
 ```
 
 Only after complete technical playback results have been exported and audited:
@@ -27,6 +28,8 @@ python -m contract_evidence.assemble --output contract_evidence/results/evidence
 python -m contract_evidence.assemble --output contract_evidence/results/evidence_v1 --verify
 python -m contract_evidence.render --evidence contract_evidence/results/evidence_v1 --output contract_evidence/results/figures_v1
 python -m contract_evidence.render --evidence contract_evidence/results/evidence_v1 --output contract_evidence/results/figures_v1 --verify
+python -m contract_evidence.latex_tables --evidence contract_evidence/results/evidence_v1 --output contract_evidence/results/tables_v1
+python -m contract_evidence.latex_tables --evidence contract_evidence/results/evidence_v1 --output contract_evidence/results/tables_v1 --verify
 ```
 
 The output records exact fractions and source hashes. Both feasibility conditions
@@ -41,6 +44,13 @@ cell's mean and full minimum--maximum range, not a confidence interval. The
 two perturbation controls remain separate from the main figures and appear in
 the complete evidence tables. Rendering does not select a favorable trace or
 silently replace the original-parent metric with actual-chunk quality.
+
+LaTeX exports contain source-bound table rows and numerical commands, without
+choosing which outcomes to report. They retain all registrations, both conditions,
+all controls and all planned timing cells. Missing macro estimates and undefined
+fulfillment rates appear as `--`, not zero. Every file identifies the exact
+evidence digest; decimal display uses half-even rounding without a binary64
+integer conversion. The exact rational values remain in the JSON artifact.
 
 The [related-methods comparison](LITERATURE.md) distinguishes this contract
 audit from prior compensation queues, quality-aware admission, network-assisted
