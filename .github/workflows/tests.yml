@@ -197,6 +197,9 @@ jobs:
       - name: Test complete-census playback reporting without measurements
         if: hashFiles('wu_playback/test_reporting.py') != ''
         run: python -m unittest wu_playback.test_reporting -v
+      - name: Test descriptive recovery-contract evidence assembly
+        if: hashFiles('contract_evidence/test_assemble.py') != ''
+        run: python -m unittest contract_evidence.test_assemble -v
       - name: Reproduce fixed Wu playback schedule when published
         if: hashFiles('wu_playback/results/plan_v1/metadata.json') != ''
         run: python -m wu_playback.build --verify
