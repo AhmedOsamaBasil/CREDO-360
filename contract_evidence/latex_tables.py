@@ -67,6 +67,28 @@ def tables(evidence):
                    if r['disposition']=='evaluated' else ['--']*6)
         values += ['Evaluated' if r['disposition']=='evaluated' else 'Metadata exclusion']
         output['feasibility_clip_rows.tex'].append(row(values))
+    bounds={r['clip']:r for r in evidence['policy_bounds_by_clip']}
+    if len(evidence['policy_bounds_by_clip'])!=16 or set(bounds)!={r['clip'] for r in f['clips']}:
+        raise ValueError('Every registered clip requires a bound disposition')
+    output['policy_bound_rows.tex']=[]
+    primary_bounds=[]
+    for clip in f['clips']:
+        source=bounds[clip['clip']]
+        if source['eligible'] != (clip['disposition']=='evaluated'):
+            raise ValueError('Bound eligibility differs from feasibility census')
+        if not source['eligible']:
+            output['policy_bound_rows.tex'].append(row([escape(clip['clip'])]+['--']*5))
+            continue
+        modes={r['execution_mode']:r for r in source['modes']}
+        primary=modes['conditional_half_second'];ideal=modes['ideal']
+        if primary['positive_debt_pairs']!=clip['denominator']:
+            raise ValueError('Bound denominator differs')
+        primary_bounds.append(primary)
+        output['policy_bound_rows.tex'].append(row([escape(clip['clip']),
+            primary['positive_debt_pairs'],primary['resource_paths'],
+            decimal(primary['maximum_upper_fraction'],4,100),
+            decimal(ideal['maximum_upper_fraction'],4,100),
+            primary['policy_upper_below_target']]))
     for mode, filename in (('conditional_half_second','control_conditional_rows.tex'),
                            ('ideal','control_ideal_rows.tex')):
         selected = {(r['condition'],r['method']):r for r in f['controls'] if r['mode']==mode}
@@ -116,7 +138,10 @@ def tables(evidence):
         'MainReserveFailuresAmongValid':t['main']['reserve_failures'],
         'MainTargetDiscordancesAmongValid':t['main']['protected_target_discordances'],
         'MainTailMissingAmongValid':t['main']['missing_tail_witnesses'],
-        'FeasibilitySoundnessViolations':f['soundness_violations']}
+        'FeasibilitySoundnessViolations':f['soundness_violations'],
+        'PolicyUpperBelowTarget':sum(r['policy_upper_below_target'] for r in primary_bounds)}
+    maxima=[Fraction(r['maximum_upper_fraction']) for r in primary_bounds if r['maximum_upper_fraction'] is not None]
+    numbers['PolicyUpperMaximumPercent']=decimal(max(maxima) if maxima else None,2,100)
     for c in CONDITIONS:
         r = condition[c]; prefix=names[c]
         for name, field in (('Pairs','denominator'),('Admissions','admit'),('Impossible','impossible'),

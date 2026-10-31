@@ -6,7 +6,7 @@ from fractions import Fraction
 from wu_feasibility.spec import digest
 from wu_playback.reporting import summarize
 from wu_playback.test_reporting import fixture as playback_fixture
-from .assemble import mean_ratio, feasibility_tables, timing_tables, CONDITIONS
+from .assemble import mean_ratio, feasibility_tables, timing_tables, policy_bound_tables, CONDITIONS
 from .render import figure_data
 
 
@@ -39,6 +39,42 @@ def feasibility_fixture():
 
 
 class AssemblyTests(unittest.TestCase):
+    @staticmethod
+    def bound_fixture():
+        modes=('conditional_half_second','ideal')
+        return [{'clip':'example','condition':CONDITIONS[0],'eligible':True,'resource_paths':10,
+            'contexts':[{'execution_mode':mode,'adaptive_bound':{'credit_upper':2,'bellman_states':15}} for mode in modes],
+            'pairs':[{'loss':loss,'modes':[{'execution_mode':mode,'adaptive_upper':2,
+                'known_max':known,'known_trace_feasible':2*known>=loss} for mode in modes]}
+                for loss,known in ((20,4),(40,25))]}]
+
+    def test_existing_policy_upper_ratios_and_gap(self):
+        result=policy_bound_tables(self.bound_fixture())[0]['modes'][0]
+        self.assertEqual(result['positive_debt_pairs'],2)
+        self.assertEqual(result['policy_upper_below_target'],2)
+        self.assertEqual(result['maximum_upper_fraction'],'1/10')
+        self.assertEqual(result['minimum_upper_fraction'],'1/20')
+        self.assertEqual(result['opportunity_promise_gaps'],1)
+
+    def test_target_equality_is_not_an_impossibility(self):
+        rows=self.bound_fixture();rows[0]['pairs'][0]['loss']=4
+        for mode in rows[0]['pairs'][0]['modes']:mode['known_trace_feasible']=True
+        result=policy_bound_tables(rows)[0]['modes'][0]
+        self.assertEqual(result['policy_upper_below_target'],1)
+        self.assertEqual(result['maximum_upper_fraction'],'1/2')
+
+    def test_policy_bound_context_disagreement_rejected(self):
+        rows=self.bound_fixture();rows[0]['pairs'][0]['modes'][0]['adaptive_upper']=3
+        with self.assertRaises(ValueError):policy_bound_tables(rows)
+
+    def test_bound_zero_debt_and_exclusion_are_not_success(self):
+        rows=self.bound_fixture();rows[0]['pairs'].append({'loss':0})
+        rows.append({'clip':'excluded','condition':CONDITIONS[0],'eligible':False})
+        result=policy_bound_tables(rows)
+        self.assertEqual(result[0]['modes'][0]['positive_debt_pairs'],2)
+        self.assertEqual(result[0]['modes'][0]['no_event_pairs'],1)
+        self.assertEqual(result[1]['modes'],[])
+
     def test_equal_clip_not_pooled(self):
         rows=[{'n':1,'d':2},{'n':0,'d':100}]
         self.assertEqual(mean_ratio(rows,'n','d'),'1/4')

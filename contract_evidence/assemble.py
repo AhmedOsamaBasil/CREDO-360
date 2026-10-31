@@ -7,6 +7,7 @@ Exact ratios are retained in JSON; floats are used only by the plotting layer.
 import argparse
 from collections import defaultdict
 from fractions import Fraction
+import gzip
 import json
 from pathlib import Path
 
@@ -139,19 +140,72 @@ def timing_tables(report, audit):
         'secondary_account': 'actual chunk quality; distinct contract, not a parent-policy theorem test'}
 
 
+def policy_bound_tables(records):
+    """Summarize existing per-pair upper bounds, not a new policy evaluation."""
+    output=[]
+    if len({r['clip'] for r in records}) != len(records):
+        raise ValueError('Duplicate bound source clip')
+    for record in records:
+        result={'clip':record['clip'],'condition':record['condition'],
+            'eligible':record['eligible'],'modes':[]}
+        if not record['eligible']:
+            output.append(result)
+            continue
+        contexts={r['execution_mode']:r for r in record['contexts']}
+        for mode in ('conditional_half_second','ideal'):
+            upper=contexts[mode]['adaptive_bound']['credit_upper']
+            ratios=[];known_feasible=0;gap=0;no_event=0
+            for pair in record['pairs']:
+                loss=pair['loss']
+                if loss < 0:raise ValueError('Negative initial loss')
+                if loss == 0:
+                    no_event+=1
+                    continue
+                m=next(r for r in pair['modes'] if r['execution_mode']==mode)
+                if m['adaptive_upper'] != upper or upper < 0:
+                    raise ValueError('Per-pair policy bound differs from clip context')
+                if m['known_trace_feasible'] != (2*m['known_max']>=loss):
+                    raise ValueError('Known-trace target census differs')
+                ratio=Fraction(upper,loss);ratios.append(ratio)
+                known_feasible+=m['known_trace_feasible']
+                gap+=m['known_trace_feasible'] and ratio<Fraction(1,2)
+            result['modes'].append({'execution_mode':mode,'positive_debt_pairs':len(ratios),
+                'no_event_pairs':no_event,'policy_upper_below_target':sum(r<Fraction(1,2) for r in ratios),
+                'minimum_upper_fraction':str(min(ratios)) if ratios else None,
+                'maximum_upper_fraction':str(max(ratios)) if ratios else None,
+                'known_trace_feasible':known_feasible,'opportunity_promise_gaps':gap,
+                'resource_paths':record['resource_paths'],
+                'bellman_states':contexts[mode]['adaptive_bound']['bellman_states']})
+        output.append(result)
+    return output
+
+
 def assemble(playback=PLAYBACK):
     """Require a fully audited public playback export, never private partial logs."""
     from wu_playback.reporting import verify_export
-    import gzip
     meta, report = verify_export(playback)
     audit = json.loads(gzip.decompress((playback/'audit.json.gz').read_bytes()))
     summary = json.loads(FEASIBILITY.read_text())
+    paths=[FEASIBILITY.parent/(r['clip']+'.json.gz') for r in summary['clips']]
+    records=[json.loads(gzip.decompress(p.read_bytes())) for p in paths]
+    bounds=policy_bound_tables(records)
+    for row, saved in zip(bounds,summary['clips']):
+        if row['clip']!=saved['clip'] or row['condition']!=saved['condition']:
+            raise ValueError('Bound source identity differs from summary')
+        if row['eligible']:
+            primary=next(r for r in row['modes'] if r['execution_mode']=='conditional_half_second')
+            if (primary['positive_debt_pairs']!=saved['primary_denominator'] or
+                primary['known_trace_feasible']!=saved['known_trace_feasible'] or
+                primary['opportunity_promise_gaps']!=saved['opportunity_promise_gaps']):
+                raise ValueError('Independent bound summary differs from original census')
     return {'schema':'recovery-contract-evidence-v1',
         'sources': {'feasibility_summary_sha256': file_hash(FEASIBILITY),
+            'feasibility_clip_sha256':{p.name:file_hash(p) for p in paths},
             'playback_export_sha256': file_hash(playback/'export_metadata.json'),
             'playback_report_sha256': meta['report_sha256'],
             'playback_audit_sha256': meta['audit_sha256']},
-        'feasibility':feasibility_tables(summary), 'timing':timing_tables(report,audit),
+        'feasibility':feasibility_tables(summary), 'policy_bounds_by_clip':bounds,
+        'timing':timing_tables(report,audit),
         'fresh_quality_holdout':False, 'new_measurements_created':False,
         'subjective_qoe_validated':False, 'positive_certified_service_established':False}
 

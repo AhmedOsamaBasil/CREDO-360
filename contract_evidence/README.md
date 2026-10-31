@@ -36,6 +36,10 @@ The output records exact fractions and source hashes. Both feasibility condition
 remain separate; pair-pooled counts and equal-clip macro fractions are explicitly
 distinguished. A zero positive-admission count is not evidence of useful positive
 certification or a 100% fulfillment rate.
+The existing per-pair causal-policy upper bounds are also summarized by clip,
+with both execution assumptions retained and exact ratios to each positive past
+debt. This is a post-freeze descriptive reduction of the published feasibility
+records, not another policy experiment or a new uncertainty model.
 
 The static figures retain every eligible clip and all 120 main timing cells.
 The signed credited-fraction heatmap uses the fixed range [-1,1]. Incomplete

@@ -18,9 +18,17 @@ def example(invalid=False):
         case['condition']=dict(zip(('a','b'),CONDITIONS))[case['condition']]
     if invalid:
         audit['rows'][0]={**plan['sessions'][0],'valid':False,'status':'failed'}
-    return {'schema':'recovery-contract-evidence-v1',
-        'feasibility':feasibility_tables(feasibility_fixture()),
-        'timing':timing_tables(summarize(audit,plan),audit)}
+    feasibility=feasibility_tables(feasibility_fixture())
+    bounds=[]
+    for r in feasibility['clips']:
+        modes=[]
+        if r['disposition']=='evaluated':
+            modes=[{'execution_mode':mode,'positive_debt_pairs':r['denominator'],
+                'resource_paths':10,'maximum_upper_fraction':'1/4',
+                'policy_upper_below_target':r['denominator']} for mode in ('conditional_half_second','ideal')]
+        bounds.append({'clip':r['clip'],'eligible':r['disposition']=='evaluated','modes':modes})
+    return {'schema':'recovery-contract-evidence-v1','feasibility':feasibility,
+        'policy_bounds_by_clip':bounds,'timing':timing_tables(summarize(audit,plan),audit)}
 
 
 class LatexTablesTests(unittest.TestCase):
@@ -42,8 +50,9 @@ class LatexTablesTests(unittest.TestCase):
 
     def test_full_table_census(self):
         result=tables(example())
-        self.assertEqual(len(result),7)
+        self.assertEqual(len(result),8)
         self.assertEqual(result['feasibility_clip_rows.tex'].count(r'\\'),16)
+        self.assertEqual(result['policy_bound_rows.tex'].count(r'\\'),16)
         self.assertEqual(result['timing_macro_rows.tex'].count(r'\\'),12)
         self.assertEqual(result['timing_control_rows.tex'].count(r'\\'),2)
 
@@ -60,6 +69,13 @@ class LatexTablesTests(unittest.TestCase):
 
     def test_missing_macro_rejected(self):
         evidence=example();evidence['timing']['equal_clip_macro'].pop()
+        with self.assertRaises(ValueError):tables(evidence)
+
+    def test_policy_bound_census_and_numeric_commands(self):
+        evidence=example();result=tables(evidence)
+        self.assertIn(r'\newcommand{\PolicyUpperBelowTarget}{452}',result['result_numbers.tex'])
+        self.assertIn(r'\newcommand{\PolicyUpperMaximumPercent}{25.00}',result['result_numbers.tex'])
+        evidence['policy_bounds_by_clip'].pop()
         with self.assertRaises(ValueError):tables(evidence)
 
     def test_reordered_session_census_rejected(self):
