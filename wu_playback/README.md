@@ -63,6 +63,19 @@ python -m wu_playback.audit --raw PRIVATE_ATTEMPT --output NEW_AUDIT.json.gz
 python -m wu_playback.audit --raw PRIVATE_ATTEMPT --output NEW_AUDIT.json.gz --verify
 ```
 
+The post-freeze `reporting.py` addition exports a complete batch and computes
+descriptive, clip-level reporting without changing the registered runner,
+schedule or event audit. It requires all 366 rows, retains failures, and leaves
+an equal-clip macro summary undefined if any required repetition is invalid.
+These reporting functions are tested on constructed fixtures before use on the
+real batch; they do not fit a policy or choose favorable observations.
+
+```sh
+python -m unittest wu_playback.test_reporting -v
+python -m wu_playback.reporting --raw PRIVATE_ATTEMPT --output NEW_PUBLIC_EXPORT
+python -m wu_playback.reporting --output NEW_PUBLIC_EXPORT --verify
+```
+
 All numerical decisions use the browser's first request and exact native integer
 credit. Existing scalar service/event checks are reused; ended, report-ready,
 callback-tail and old-epoch sensitivity accounts remain separate. No finite

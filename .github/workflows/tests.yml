@@ -194,6 +194,9 @@ jobs:
           node wu_playback/test_runner.cjs
           python -m wu_playback.synthetic_audit --output wu_playback/results/synthetic_01 --verify
           python -m wu_playback.synthetic_audit --output wu_playback/results/synthetic_02 --verify
+      - name: Test complete-census playback reporting without measurements
+        if: hashFiles('wu_playback/test_reporting.py') != ''
+        run: python -m unittest wu_playback.test_reporting -v
       - name: Reproduce fixed Wu playback schedule when published
         if: hashFiles('wu_playback/results/plan_v1/metadata.json') != ''
         run: python -m wu_playback.build --verify
