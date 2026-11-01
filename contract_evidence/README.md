@@ -1,5 +1,12 @@
 # Recovery-contract evidence presentation
 
+The completed evidence is in [`results/evidence_v1`](results/evidence_v1), with
+three figures in [`results/figures_v1`](results/figures_v1) and eight LaTeX
+fragments in [`results/tables_v1`](results/tables_v1). All 366 playback sessions
+are audited. Every main measured-minus-ideal credit difference is exactly zero;
+the full zero-valued heatmap is retained. Evidence SHA-256:
+`161c6bf22c20b6489a9641fa013bdac20a459b9134d406cb7e61712a2ee34f20`.
+
 This post-freeze layer assembles the complete published Wu feasibility and
 software-playback results for technical reporting. It does not change a source,
 contract, controller, measurement, registered endpoint or evaluation. All sixteen

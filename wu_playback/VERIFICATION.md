@@ -1,5 +1,40 @@
 # Verification record
 
+## Completed real campaign
+
+The registered campaign completed all 366 scheduled sessions with no automatic
+retries, runner failures or missing records. The unchanged audit accepts all
+366; the public export retains all raw technical event logs, including controls.
+Windows and WSL reproduce the entire saved audit and report exactly:
+`7e72913a8feb0ab14b4be725e50048ff658dd81d447fd4ab398fb2174c8e53a2`.
+WSL replays Windows measurements; it is not an independent Linux browser trial.
+
+The post-campaign full regression suite passes **1,044 tests plus 89 subtests
+on Windows**, and **1,040 plus 89 on Linux**. The four-test difference is the
+pre-existing Windows Torch set. Windows runner path/schema guards and shared
+service tests also pass. No measured outcome caused a registered-source edit.
+
+Combined evidence assembly, all eight LaTeX fragments, and saved figure-data
+and artifact-hash verification pass on both platforms. The three PDF figures
+were visually inspected and have embedded Arial fonts with no Type 3 fonts.
+Linux verifies saved figure data and file hashes, not an independent rendering.
+The original playback registration remains
+`4b9030e2e4d53966ef56e0601e9f873473dd862fb9645719b53ada1b8b25a2b6`.
+
+Verify without launching a browser:
+
+```sh
+python -m wu_playback.reporting --output wu_playback/results/measured_v1 --verify
+python -m contract_evidence.assemble --output contract_evidence/results/evidence_v1 --verify
+python -m contract_evidence.latex_tables --evidence contract_evidence/results/evidence_v1 --output contract_evidence/results/tables_v1 --verify
+python -m contract_evidence.render --evidence contract_evidence/results/evidence_v1 --output contract_evidence/results/figures_v1 --verify
+```
+
+Method CI 41231731950, plan CI 41232187180, reporting CI 41248140677 and
+presentation CI 41258677144 subsequently completed successfully. They validate
+software checks, not an independent repetition of measured outcomes. The
+following record preserves what had been checked before real measurement.
+
 ## Method-before-plan ordering
 
 The integration was frozen and published as
@@ -41,7 +76,7 @@ The exact prior feasibility CI run 41229809374 completed successfully. Method
 CI run 41231731950 was still in progress at the first post-push check; local
 tests are not a claim that a pending remote workflow has passed.
 
-## Scope of the evidence
+## Scope at the integration freeze
 
 The fixed first-pair roster, cyclic order, original quality/deadline/resource
 contract, separate parent/chunk accounts, exact large-integer arithmetic,

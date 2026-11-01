@@ -1,11 +1,13 @@
 # CREDO-360
 
-The [Wu playback integration](wu_playback/README.md) freezes the predeclared
-366-session measured-completion protocol without changing the contract or
-selecting pairs by outcome. Generated-only parent/chunk, cold/buffered browser
-checks pass after a separately retained localhost-permission failure. Exact
-integer parent/chunk credit and first-request timing are independently checked.
-This is integration/compatibility evidence, not completed Wu timing measurements.
+The [completed Wu playback campaign](wu_playback/RESULTS.md) retains all 366
+scheduled sessions without retries. All event audits pass, and all 360 main
+observations have exactly zero measured-minus-ideal original-parent recovery
+credit. There are 36 resource-protected target successes, all on one clip;
+the secondary child-level contract gives 24. These are ungated executions, not
+certified admissions or evidence of controller superiority. All 36 main cap
+failures remain. Raw technical logs, exact replay and the complete
+[source-bound figures/tables](contract_evidence/README.md) are published.
 
 The [completed Wu feasibility evaluation](wu_feasibility/RESULTS.md) retains all
 16 registrations and evaluates 452 fixed pairs across ten eligible clips.
@@ -16,7 +18,7 @@ information-limit findings, not a successful guaranteed-recovery controller.
 Both platform artifacts are retained: four maximum-mask witness IDs differ,
 while all scientific outputs and summaries match exactly. The method was
 published before evaluation; no contract, controller or manuscript was changed.
-The separate measured-playback stage has not run on this artifact.
+The measured-playback stage above preserves the fixed first-pair schedule.
 
 The [completed Wu preparation v2](wu_pipeline_v2/RESULTS.md) publishes an
 audited offline artifact: 60 renditions, 360 parents, 800 children and 452 clip-trace

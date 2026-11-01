@@ -9,10 +9,13 @@ Read [PROTOCOL.md](PROTOCOL.md). The original parent account is primary; the
 changed chunk granularity and transport overhead are reported separately.
 Raw videos/poses are not redistributed, and no personal browser is used.
 
-The fixed plan and generated-only evidence are described in
+The completed measurements, fixed plan and generated-only evidence are in
 [RESULTS.md](RESULTS.md), with validation in [VERIFICATION.md](VERIFICATION.md).
-The real Wu campaign has not yet run. Twelve two-second configurations retain
-container-overhead cap failures under the unchanged contract.
+All 366 real sessions completed and pass the saved-event audit. All 360 main
+observations have exactly zero measured-minus-ideal original-parent recovery
+credit. Twelve two-second configurations retain container-overhead cap failures
+under the unchanged contract. The 36 original-parent protected successes are
+concentrated on one clip and are not certified admissions.
 
 ## Offline verification
 

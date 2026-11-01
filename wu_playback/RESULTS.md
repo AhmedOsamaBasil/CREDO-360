@@ -1,6 +1,75 @@
-# Integration and generated compatibility evidence
+# Fixed Wu playback results
 
-## What has and has not run
+## Completed measurements
+
+The single registered campaign completed all **366 sessions**, including 360
+main observations and six perturbation controls, without retries or failed
+sessions. All raw-event/accounting audits pass. The complete technical logs,
+audit, descriptive report and source bindings are in
+[`results/measured_v1`](results/measured_v1). No source video or raw pose is
+redistributed. The registered runner, first-pair schedule, contract and paths
+were not changed after observing outcomes.
+
+**Every main observation has exactly zero measured-minus-ideal original-parent
+recovery credit.** All 24 equal-clip summaries are consequently zero, with all
+five clips and three repetitions present in each condition. There are no
+protected-target discordances. This campaign does not establish a recovery
+advantage or a timing-induced loss under the main configurations.
+
+| Main-session result | Count |
+|---|---:|
+| Scheduled and valid | 360 |
+| Original-parent resource-protected half-debt target met | 36 |
+| Secondary actual-chunk resource-protected target met | 24 |
+| Per-parent resource-cap failures | 36 |
+| Cumulative-reserve failures | 0 |
+| Missing final-frame callback witnesses | 0 |
+| Ended/report-ready, callback-tail or old-epoch credit discordances | 0 |
+
+All protected successes occur on **e2v07**. These are executions of ungated
+proposed paths, not positive certified admissions: the preceding feasibility
+audit admitted zero of 452 pairs. Repeated executions of ten fixed pairs are
+not independent people or evidence of population-level superiority.
+
+The 12-success difference between accounts consists of the two-second
+rolling-Nash and max-min paths on e2v07, both startup modes, repeated three
+times. Their original-parent quality floors pass, but each user's secondary
+child-level account has one floor violation. Both credit fractions exceed
+one half. Thus the difference is a **changed temporal quality-floor contract**,
+not less numerical recovery credit under otherwise equivalent criteria.
+
+The recipient's complete forty seconds of recovery media finishes between
+41.4219 and 50.2625 seconds after its first recovery request (mean 45.6879).
+Finishing every media unit is not the half-debt repayment criterion: sufficient
+positive credit can accrue before the remaining media ends. Timing plots retain
+all 120 configurations and show repetition ranges, not confidence intervals.
+
+The three late-recipient controls each reduce the original-parent credited
+fraction by exactly `51022126/137431607` (approximately 0.371255) relative to
+the unperturbed ideal account; the three background-transfer controls have
+zero credit difference. Their mean complete-media finish times are 84.0180 and
+58.6514 seconds, respectively. Both controls inherit the e1v01 two-second cap
+failure and are kept separate from the main summaries. The background control
+intentionally violates the exclusive two-flow service assumption; it is not a
+counterexample to a theorem conditioned on that assumption.
+
+All 366 saved sessions identify Chromium 151.0.7922.34 and report a platform
+D3D11 video decoder. The batch used one browser process and a fresh isolated
+context/page per session; it did not reset operating-system or process caches.
+Cold means no initial playback buffer. Video callbacks witness compositor
+submission, not physical HMD presentation or every displayed frame. Finite
+measurements do not establish a hard execution-delay bound or human QoE.
+
+The complete source-bound figures and tables are in
+[`../contract_evidence/results`](../contract_evidence/results).
+
+- Measured report SHA-256: `7e72913a8feb0ab14b4be725e50048ff658dd81d447fd4ab398fb2174c8e53a2`
+- Combined evidence SHA-256: `161c6bf22c20b6489a9641fa013bdac20a459b9134d406cb7e61712a2ee34f20`
+- Figure-data SHA-256: `38f8015d191d3220cd4ae2441b80cea69068fe769a33432962bd68e04093d63f`
+
+## Earlier integration-stage record
+
+### Status at the integration freeze
 
 Method `a80a5a17e650a5aca63a5d819a27a522d1b7ea7d` was published before the
 source-specific plan was derived. The plan is an offline integration of already
@@ -8,7 +77,7 @@ exposed, frozen inputs. **No actual Wu browser-playback campaign has run at this
 stage.** The four successful browser sessions below use generated test patterns,
 not Wu videos, and cannot establish recovery performance.
 
-## Generated-only evidence
+### Generated-only evidence
 
 The first attempt failed before playback with `ERR_NETWORK_ACCESS_DENIED` on
 localhost. Its failed session and the three not-run configurations are retained
@@ -30,7 +99,7 @@ bindings, failed/not-run dispositions and report hashes are retained. Reauditing
 the saved Windows sessions under Linux reproduces the exact reports; this is
 not an independent Linux browser measurement.
 
-## Fixed Wu schedule
+### Fixed Wu schedule
 
 All 16 registered clips remain accounted for: ten eligible clips, five in each
 condition, and the original six exclusions. Exactly the first directed pair
@@ -66,7 +135,7 @@ No new people, fresh quality holdout, fitted controller, physical-network
 measurement, interactive HMD presentation or subjective QoE result is claimed.
 The later real campaign must preserve this entire schedule and failure ledger.
 
-## Bindings
+### Bindings
 
 - Registration: `4b9030e2e4d53966ef56e0601e9f873473dd862fb9645719b53ada1b8b25a2b6`
 - Complete cases/roster/schedule: `7c89c1cf432fa064fc3895192de8532ec7a85477c0ef22bd0dbe3a59f52767f3`
