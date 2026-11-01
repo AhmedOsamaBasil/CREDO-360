@@ -48,9 +48,10 @@ def render(data, output):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     import numpy as np
-    plt.rcParams.update({'font.family':'DejaVu Sans','font.size':8,
-        'axes.titlesize':9,'axes.labelsize':8,'xtick.labelsize':7,'ytick.labelsize':8,
-        'pdf.fonttype':42,'ps.fonttype':42,'savefig.dpi':300})
+    plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial','DejaVu Sans'],
+        'font.size':9,'axes.titlesize':9,'axes.labelsize':9,
+        'xtick.labelsize':9,'ytick.labelsize':9,
+        'pdf.fonttype':42,'ps.fonttype':42,'savefig.dpi':600})
     saved=[]
     def save(fig,name):
         for ext in ('pdf','png'):
@@ -59,18 +60,20 @@ def render(data, output):
             fig.savefig(path,bbox_inches='tight',**options);saved.append(path)
         plt.close(fig)
     clips=data['clips']; y=np.arange(len(clips)); labels=[r['clip'] for r in clips]
-    fig,axes=plt.subplots(1,3,figsize=(7.2,3.35),sharey=True,
+    fig,axes=plt.subplots(1,3,figsize=(7.16,3.7),sharey=True,
         gridspec_kw={'width_ratios':[2.1,1,1]})
     convex=np.array([r['convex_impossible'] for r in clips]);extra=np.array([r['additional_rejections'] for r in clips])
     impossible=convex+extra;abstain=np.array([r['abstain'] for r in clips])
     axes[0].barh(y,convex,color='#586b7f',label='Convex rejection')
-    axes[0].barh(y,extra,left=convex,color='#d18b28',label='Additional geometric rejection')
+    axes[0].barh(y,extra,left=convex,color='#d18b28',hatch='///',
+                 edgecolor='#555555',linewidth=.3,label='Additional geometric rejection')
     axes[0].barh(y,abstain,left=impossible,color='#dce1e6',label='Abstain')
     admitted=np.array([r['admit'] for r in clips])
     if admitted.any():axes[0].barh(y,admitted,left=impossible+abstain,color='#357a55',label='Admit')
     axes[0].set_yticks(y,labels);axes[0].invert_yaxis()
     axes[0].set_title('(a) Contract decision');axes[0].set_xlabel('Directed episodes')
-    axes[1].barh(y,extra,color='#d18b28');axes[1].set_title('(b) Extra rejections')
+    axes[1].barh(y,extra,color='#d18b28',hatch='///',edgecolor='#555555',linewidth=.3)
+    axes[1].set_title('(b) Extra rejections')
     axes[1].set_xlabel('Directed episodes')
     gaps=[r['opportunity_promise_gaps'] for r in clips]
     axes[2].barh(y,gaps,color='#7b538e');axes[2].set_title('(c) Opportunity gap')
@@ -79,31 +82,31 @@ def render(data, output):
         ax.set_xlim(0,50);ax.axhline(4.5,color='black',lw=.6,ls=':')
         ax.spines[['top','right']].set_visible(False);ax.set_axisbelow(True);ax.grid(axis='x',alpha=.2)
     handles,names=axes[0].get_legend_handles_labels()
-    fig.legend(handles,names,loc='lower center',bbox_to_anchor=(.5,-.08),ncol=2,frameon=False,fontsize=7)
+    fig.legend(handles,names,loc='lower center',bbox_to_anchor=(.5,-.08),ncol=2,frameon=False,fontsize=9)
     fig.tight_layout(w_pad=1.2);save(fig,'wu_feasibility')
 
     values=np.array([[float(Fraction(c['delta'])) if c['delta'] is not None else np.nan for c in row]
                      for row in data['timing_cells']])
-    fig,ax=plt.subplots(figsize=(7.2,3.6));cmap=plt.get_cmap('RdBu').copy();cmap.set_bad('#999999')
+    fig,ax=plt.subplots(figsize=(7.16,3.8));cmap=plt.get_cmap('RdBu').copy();cmap.set_bad('#999999')
     im=ax.imshow(np.ma.masked_invalid(values),vmin=-1,vmax=1,cmap=cmap,aspect='auto')
-    xticks=[f'{c["unit_seconds"]}s\n'+('buffered' if c['buffered'] else 'cold') for c in data['columns']]
+    xticks=[f'{c["unit_seconds"]} s\n'+('B' if c['buffered'] else 'C') for c in data['columns']]
     ax.set_xticks(np.arange(12),xticks);ax.set_yticks(y,labels)
     for i,name in enumerate(('Cost-greedy','Rolling Nash','Max-min')):
-        ax.text((i*4+1.5)/12+.5/12,1.02,name,transform=ax.transAxes,ha='center',fontsize=8)
+        ax.text((i*4+1.5)/12+.5/12,1.02,name,transform=ax.transAxes,ha='center',fontsize=9)
     for j in (3.5,7.5):ax.axvline(j,color='black',lw=.7)
     ax.axhline(4.5,color='black',lw=.7)
     for i,row in enumerate(data['timing_cells']):
         for j,cell in enumerate(row):
             if cell['delta'] is None:
-                ax.text(j,i,'NA',ha='center',va='center',fontsize=6)
+                ax.text(j,i,'NA',ha='center',va='center',fontsize=9)
             elif cell['cap_failures_among_valid']:
                 ax.plot(j,i,marker='x',color='black',ms=4,mew=.8)
     cb=fig.colorbar(im,ax=ax,fraction=.035,pad=.025);cb.set_label('Measured minus ideal credited fraction')
-    ax.set_xlabel('Three retained repetitions per cell; × = parent-cap failure; grey = incomplete cell',labelpad=6)
+    ax.set_xlabel('C: cold; B: buffered; ×: parent-cap failure; grey: incomplete cell',labelpad=6)
     fig.tight_layout();save(fig,'wu_timing_delta')
 
     # The entire paired completion distribution is shown, not a best/worst trace.
-    fig,axes=plt.subplots(1,2,figsize=(7.2,3.2),sharey=True)
+    fig,axes=plt.subplots(1,2,figsize=(7.16,3.7),sharey=True)
     for condition,ax in zip(('free_exploration','content_focused_memory_test'),axes):
         for j,c in enumerate(data['columns']):
             selected=[data['timing_cells'][i][j] for i,r in enumerate(clips) if r['condition']==condition]
@@ -112,7 +115,7 @@ def render(data, output):
                 stats=cell['recipient_finish_seconds'];mean=float(Fraction(stats['mean']))
                 low=float(Fraction(stats['min']));high=float(Fraction(stats['max']))
                 x=j+(k-2)*.11
-                ax.errorbar(x,mean,yerr=[[mean-low],[high-mean]],fmt='o',ms=2,
+                ax.errorbar(x,mean,yerr=[[mean-low],[high-mean]],fmt=('o','s','^')[j//4],ms=2.5,
                     lw=.6,color=('#2e668b' if j//4==0 else '#d18b28' if j//4==1 else '#7b538e'),alpha=.85)
         ax.axhline(40,color='black',ls='--',lw=.8)
         ax.set_xticks(range(12),[f'{c["unit_seconds"]}'+('B' if c['buffered'] else 'C') for c in data['columns']],rotation=45)

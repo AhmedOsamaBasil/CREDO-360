@@ -53,6 +53,14 @@ units for both users: one ten-second unit or two two-second units. It is not
 an exactly four-second initial buffer for the ten-second transport, and all
 startup wait is charged to the deadline.
 
+Plot styling follows the IEEE Author Center's [graphics guidance](https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-graphics-for-your-article/file-formatting/):
+nine-point text at a nominal 7.16-inch width, embedded TrueType fonts in the
+vector PDFs, and 600-dpi PNG previews. Arial is preferred, with DejaVu Sans as
+a portable fallback. Hatching and different marker shapes supplement color.
+These are presentation settings only; the fixed axes, cell census and exact
+numerical figure data do not change. Verify rendered size and legibility in
+the final document rather than enlarging a low-resolution raster afterward.
+
 LaTeX exports contain source-bound table rows and numerical commands, without
 choosing which outcomes to report. They retain all registrations, both conditions,
 all controls and all planned timing cells. Missing macro estimates and undefined
