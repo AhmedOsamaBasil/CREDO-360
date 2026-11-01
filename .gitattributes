@@ -137,3 +137,7 @@ wu_playback/*.cjs text eol=lf
 wu_playback/*.md text eol=lf
 wu_playback/*.json text eol=lf
 wu_playback/results/** -text whitespace=cr-at-eol
+contract_evidence/*.py text eol=lf
+contract_evidence/*.md text eol=lf
+contract_evidence/*.bib text eol=lf
+contract_evidence/results/** -text whitespace=cr-at-eol

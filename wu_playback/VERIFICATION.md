@@ -37,6 +37,13 @@ following record preserves what had been checked before real measurement.
 
 ## Method-before-plan ordering
 
+The first clean release archive reproduced the measured audit and evidence,
+but exact LaTeX-table verification failed on both operating systems because
+Git's automatic checkout conversion changed LF to CRLF. The original generated
+tables, numerical data and hashes were unchanged. Explicit source line endings
+and binary-preservation rules for `contract_evidence/results/**` correct this
+packaging issue without regenerating or relaxing any scientific result.
+
 The integration was frozen and published as
 `a80a5a17e650a5aca63a5d819a27a522d1b7ea7d` before `wu_playback.build` was
 applied to the Wu artifact. Its registered code remains unchanged. The
